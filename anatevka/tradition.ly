@@ -20,12 +20,14 @@ Annotation = {
   s1\mf | s1*3 | s1\p
   s1*18
   \repeat volta 2
-  {s1_\adLibRep^\markup { \center-align\line{\bold TEVYE: ... keep our balance? } }}
+  {s1\p_\adLibRep^\markup
+    { \center-align\line{\bold TEVYE: ... keep our balance? } }
+  }
   \repeat volta 2
-  {s1_\adLibRep^\markup {\null \lower #4
+  {s1\f_\adLibRep^\markup {\null \lower #4
               \column{\line{That I can tell you }
                       \line{in one Word: Tradition!}}}}
-  \repeat volta 2 s1
+  \repeat volta 2 s1\p
 
 }
 
@@ -51,30 +53,71 @@ Flute = {
   \relative c''{df4\staccato r af\staccato r }
 }
 
-VoiceMotiveI = { g8 | g c ~ c2. ~ | c4. c8 c c4. | r1 | r8 c c c r4 r8 }
+VoiceMotiveI = { g8 | g c ~ c2. ~ | c4. c8 c c4. | r1 | r8 c c c }
 VoiceMotiveIt = { g8 | g <c e> ~ <c e>2. ~ | <c e>4. <c e>8 <c e> <c e>4. |
-                  r1 | r8 <c e> <c e> <c e> r4 r8 }
+                  r1 | r8 <c e> <c e> <c e> }
 VerseMotiveI = \lyricmode { Tra -- di -- tion __  tra -- di -- tion tra -- di -- tion }
 
 Voice = \relative c'' {
     r2 r4 r8
-    \VoiceMotiveI \VoiceMotiveIt
+    \VoiceMotiveI r4 r8 \VoiceMotiveIt r2
 }
-Verse = { \VerseMotiveI \VerseMotiveI}
+Verse = { \VerseMotiveI \VerseMotiveI }
 
 Pause = { s1 s1*16 s1*16 }
 
-bdRC = \relative c' { r4 < c g' e' > r < c g' e'> }
-bdLC = \relative c  { c4 < g' e' > c, < g' e' > }
+CMotiveI = { g8( c4.) | e2 r4 e( | f1 | e8) }
+CMotiveIi = { g8( e'4.) | g2 r4 e( | f1 | e8) }
+
+MotiveII = { \repeat unfold 3 { c4 c8 e df4 c }
+             f8-. e-. f-. g-. e2 }
+MotiveIII = { \repeat unfold 3
+              { r4 <g c e>8-. <bf ef g>8-.
+                <af df f>4-. <g c e>-. }
+              <af df f>8-. e'-. f-. g-. <g, c e>4.--}
+MotiveIV = { g8   | g c4. ~ c2 ~ | c2. r8
+             g8-. | g <g c e>4. ~ <g c e>2 ~ | <c e>2. r8
+             g8-. | g <c e g>4. ~ <c e g>2 ~ | <e g>2. r8
+}
+CMotiveIV = { r4 c8( e) df4( c8) }
+
+rqc = \relative c' <c g' e' >4
+lqc = \relative c  <c g' e' >4
+
+bdRoc  = { r4 \rqc r \rqc }
+bdRodf = \transpose c df \bdRoc
+bdLc = \relative c  { c4 < g' e' > c, < g' e' > }
+bdLwc = \relative c  { c4 < g' e' > g, < g' e' > }
+bdLoc = \relative c  { r4 \lqc r \lqc }
+bdLodf = \transpose c df \bdLoc
 
 BdR = {
-   \bdRC | \bdRC
+  \bdRoc  | \bdRoc |
+  \bdRoc  | \bdRoc | \bdRodf | \bdRoc |
+  r2 \relative c''\CMotiveIi r8 r4 r2 |
+  \relative c''\MotiveII              |
+  \relative c''\MotiveIII
+  <<
+    \new Voice { \voiceOne \repeat volta 2 \relative c''\MotiveIV }
+    \new Voice { \voiceTwo \repeat unfold 3 {s8 | s1 | \relative c'\CMotiveIV}  }
+  >> r8
 }
 BdL = {
-  \bdLC  | \bdLC
+  \bdLc   | \bdLc  |
+  r2 \relative c' \CMotiveI r8 r4 r2  |
+  \bdLoc  | \bdLoc | \bdLodf | \lqc r4 r g |
+  \repeat unfold 4 \bdLwc
+  \repeat unfold 4 \bdLwc
+  \repeat unfold 6 \bdLwc
+
 }
 Chords = {
-  c1 | c1
+  c1 | c |
+  c  | c | df | c |
+  c  | c | df | c |
+  c1*4
+  c1*4
+  c1*4
 }
 
 \score {
@@ -100,7 +143,7 @@ Chords = {
           \BdR
         }
       }
-      \chords { \Pause \Chords }
+      \chords { \set chordChanges = ##t \Pause \Chords }
       \context Voice = "A" \Annotation
       \new Staff = "down" {
         \clef bass
