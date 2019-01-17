@@ -67,9 +67,18 @@ Flute = {
 VoiceMotiveI = { g8 | g c ~ c2. ~ | c4. c8 c c4. | r1 | r8 c c c }
 VoiceMotiveIt = { g8 | g <c e> ~ <c e>2. ~ | <c e>4. <c e>8 <c e> <c e>4. |
                   r1 | r8 <c e> <c e> <c e> }
+VoiceMotiveIi = { g8 | g c ~ c2. ~ | c4. c8 c2 | r1 | r8 c c c }
+VoiceMotiveIti = { g8 | g <c e> ~ <c e>2. ~ | <c e>4. <c e>8 <c e>2 |
+                  r1 | r8 <c e> <c e> <c e> }
+
 VoiceMotiveII = {
   \repeat unfold 2 { a8 b cs d e fs gs a | b4 e, e r8 e |f4 bf }
   \alternative { {bf r8 c8 | bf4 a a2 } {bf8 a g f | g4 f e r }}
+}
+SonsMotive = {
+  \repeat unfold 2 {af4 | df af df af | df cf bf af }
+  \alternative{ { b cs b a | af r r }
+                { a r r af | g8 f4. ~ f4 r8}}
 }
 VerseMotiveI = \lyricmode { Tra -- di -- tion __  tra -- di -- tion tra -- di -- tion }
 VersePapas = \lyricmode {
@@ -87,7 +96,17 @@ VerseMamas = \lyricmode {
   Who must raise a fam -- i -- ly and run the home
   So pa -- pa's free to read the ho -- ly book?
 }
-
+VerseMamasi = \lyricmode {
+  The ma -- ma, __ the ma -- ma tra -- di -- tion.
+}
+VerseSons = \lyricmode {
+  At three I start -- ed He -- brew school, At ten
+  I learned a trade. I hear they picked a bride for me.
+  I hope she's pret -- ty. __
+}
+VerseSonsi = \lyricmode {
+  The so -- ns, __ the sons tra -- di -- tion.
+}
 Voice = \relative c'' {
     r2 r4 r8
     \VoiceMotiveI r4 r8 \VoiceMotiveIt r2
@@ -102,10 +121,24 @@ Voice = \relative c'' {
     \key a \major
     r1*2
     \relative c' \VoiceMotiveII
+    \transpose c a {
+      \relative c' {r2 r4 r8 \VoiceMotiveI r4 r8 }
+      \relative c' {\VoiceMotiveIt r2 }
+    }
+    \key df \major
+    r1 r2 r4
+    \relative c'' \SonsMotive
+    \transpose c df {
+      \relative c'' {\VoiceMotiveIi r4 r8 }
+      \relative c'' {\VoiceMotiveIti r2 }
+    }
+
 }
 Verse = { \VerseMotiveI \VerseMotiveI
           \VersePapas \VersePapasi \VersePapasi
-          \VerseMamas }
+          \VerseMamas \VerseMamasi \VerseMamasi
+          \VerseSons \VerseSonsi \VerseSonsi
+}
 
 Pause = { s1 s1*16 s1*16 }
 
@@ -117,7 +150,8 @@ CMotiveIii = \relative c' {
   <d d'>8->-. r r4\mf <fs, a>8( <fs d' fs>4.)\< |
   <fs d' a'>2\fp\> r4\! <fs d' a'>4(\< <g ef' bf'>1\> | <fs d' a'>4)-.\!
 }
-
+CMotiveIiii = \relative c' {
+}
 
 MotiveII = { \repeat unfold 3 { c4 c8 e df4 c }
              f8-. e-. f-. g-. e2 }
@@ -130,16 +164,39 @@ MotiveIV = { g8   | g c4. ~ c2 ~ | c2. r8
              g8-. | g <c e g>4. ~ <c e g>2 ~ | <e g>2. r8
 }
 CMotiveIV = { r4 c8( e) df4( c8) }
+CMotiveV = {
+  r8\mp e8 e a\< a cs\! | <e, a cs>4-> r r
+  <<  { \voiceOne s4 | r4 <bf' d>-> r <bf d>-> }
+      \new Voice { \voiceTwo cs,(\< | d1)\! } >> \oneVoice
+  <e a cs>4-> r r <d g b e> |
+  <a' cs e a>4-- r8 a a cs\< cs e | <a, cs e>4->\! r r
+  << { \voiceOne s4 | r4 <d f>-> r <d f>-> }
+     \new Voice { \voiceTwo e,4--( | f1) } >> \oneVoice
+  <e cs' e>4-> r r8\ff \repeat unfold 2 <e a cs>8-> <g c e>->
+}
+
+
+
+
+
+
 
 rqc  = \relative c' <c g' e' >4
 rqai = \relative c' <cs a' e'>4
+resdf = \relative c'' <ef f af>8-.
+rqxdf = \relative c''' <af bf df>4-.
+
 lqc = \relative c  <c g' e' >4
 lqd = \transpose c d \lqc
+lha = \relative c { a4 <e' cs'>}
+
 
 bdRoc  = { r4 \rqc r \rqc }
 bdRodf = \transpose c df \bdRoc
 bdRoai = { r4 \rqai r4 \rqai }
 bdRobfi= \transpose a bf \bdRoai
+bdRoxdf= { r4 \resdf \resdf r4 \rqxdf}
+bdRoxd = \transpose df d \bdRoxdf
 bdLc = \relative c  { c4 < g' e' > c, < g' e' > }
 bdLwc = \relative c  { c4 < g' e' > g, < g' e' > }
 bdLoc = \relative c  { r4 \lqc r \lqc }
@@ -148,8 +205,12 @@ bdLd  = \relative c  { d4 <a' fs'> d, <a' fs'>  }
 bdLef = \transpose d ef \bdLd
 bdLid = \relative c  { d4 <a' fs'> r a, }
 bdLief = \transpose d ef \bdLid
-bdLa = \relative c { a4 <e' cs'> a,4 <e' cs'> }
+bdLa = { \lha \lha }
 bdLbf = \transpose a bf \bdLa
+bdLxdf = \relative c { df4 <af' f'> df, <bf' f'> }
+bdLdf = \relative c { df4 <af' f'> df, <af' f'> }
+bdLxd = \transpose df d \bdLxdf
+bddf = { <df ef f>4 ~ <df ef f>8 <cf df ef>( <df ef f>)-. r8 }
 
 BdR = {
   \bdRoc  | \bdRoc |
@@ -181,7 +242,15 @@ BdR = {
   \relative c' { <cs a' e'>8 r8 } \rqai r4 \rqai | \bdRoai |
   \repeat unfold 2 { \bdRoai \bdRoai \bdRobfi }
   \alternative { \bdRoai { r4 \relative c' <cs a' f'>4 \rqai r\f }}
-  r4 \rqai r2
+  r4 \rqai r2 |
+  r4 \relative c' {\CMotiveV}
+  \key df \major
+  \relative c'' <af df f> \resdf \resdf r4 \rqxdf
+  \repeat unfold 3 \bdRoxdf \bdRoxd
+  r4 \relative c'' \bddf
+  \repeat unfold 2 \bdRoxdf
+  \relative c'' {r4 \repeat unfold 2 {\slurUp\acciaccatura gs'8 <a e b>4->} r4}
+
 }
 
 BdL = {
@@ -207,7 +276,18 @@ BdL = {
   \bdLa \bdLa
   \repeat unfold 2 { \bdLa \bdLa \bdLbf }
   \alternative { \bdLa \relative c { a4 <f' cs'> <e cs'> e, }}
-  \relative c { a4 <e' cs'>} r2
+  \lha \relative c { r e\mp}
+  \relative c  {
+    \repeat unfold 2 { \bdLa | \lha a4 r | \bdLbf }
+    \alternative { { \lha r e } { a4 r4 r8 a a c } }
+  }
+  \bar "||" \key df \major
+  \repeat unfold 4 \bdLxdf \bdLxd
+  \relative c <df bf' f'>4 \relative c' \bddf
+  \repeat unfold 2 \bdLxdf
+  \relative c { <d a' fs'>4 <d' fs>-. <d fs>-. } r4
+  \repeat unfold 3 \bdLdf \bdLd
+
 }
 Chords = \chords {
   \set chordChanges = ##t
@@ -215,15 +295,19 @@ Chords = \chords {
   c1 | c |
   c  | c | df | c |
   c  | c | df | c |
-  c1*4
-  c1*4
-  c1*6
+  \repeat unfold 14 c1
   % Page 4, Takt 60
-  c1 | \time 2/4 c2 | \time 2/2 d1*2 |
-  \repeat unfold 4 { d1*2 | ef1 | d1 }
-  a1*2 |
-  a1*2 | bf1 | a1*3 | bf1 | a4 a4:aug a2 |
-  a1
+  c1 | \time 2/4 c2 | \time 2/2 d1 d1 |
+  \repeat unfold 4 { d1 d1 | ef1 | d1 }
+  a1 a1 |
+  a1 a1 | bf1 | a1 a1 a1 | bf1 | a4 a4:aug a2 |
+  a1 a1 a1 | bf1 | a2. e4:m7 | a1 a1 | bf1 | a2. c4 |
+  % key df
+  \repeat unfold 4 { df2 df:6 } d d:6 | df1:6 |
+  \repeat unfold 2 { df2 df:6 } d1:6.9 |
+  \repeat unfold 3 df1 | d1 | df2. af4:7 | df1 | df1 | d1 | df |
+  % 2/4
+
 }
 
 \score {
@@ -258,7 +342,7 @@ Chords = \chords {
       }
     >>
   >>
-  \midi { }
+  % \midi { }
   \layout {
     \context {
       \Staff \RemoveEmptyStaves
