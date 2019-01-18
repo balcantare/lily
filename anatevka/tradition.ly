@@ -6,6 +6,13 @@ ViolinMotiv = {
          g4 | c g g g | g2. g4 | f f e f   | g2. g4 |
               c g g g | g2. g4 | f f ef df
 }
+ViolinMotivi = {
+         g4 | c g g g   | g4 r r g |
+              f f e f   | g4 r r g |
+              c g g g   | g2  g4 g |
+              f f ef df | c
+}
+
 
 FluteMotive = { c4 c8 d e4 f   | g8 fs g af g4 e | f8 e f g f4 df }
 FluteMotivei = { c4 c8 d e4 f   | g8 fs g af g4. e8 | f8 e f g f4 df }
@@ -132,7 +139,13 @@ Voice = \relative c'' {
       \relative c'' {\VoiceMotiveIi r4 r8 }
       \relative c'' {\VoiceMotiveIti r2 }
     }
-
+  r2
+  \key b\major
+  r1 | r2 r4 \transpose c b {
+      \relative c' {\ViolinMotivi r4 r4 r8 }
+      \relative c' {\VoiceMotiveI r4 r8 }
+      \relative c' {\VoiceMotiveIt r2 }
+  }
 }
 Verse = { \VerseMotiveI \VerseMotiveI
           \VersePapas \VersePapasi \VersePapasi
@@ -184,6 +197,7 @@ CMotiveV = {
 rqc  = \relative c' <c g' e' >4
 rqai = \relative c' <cs a' e'>4
 resdf = \relative c'' <ef f af>8-.
+rqsdf = \relative c'' <ef f af>4-.
 rqxdf = \relative c''' <af bf df>4-.
 
 lqc = \relative c  <c g' e' >4
@@ -248,8 +262,18 @@ BdR = {
   \relative c'' <af df f> \resdf \resdf r4 \rqxdf
   \repeat unfold 3 \bdRoxdf \bdRoxd
   r4 \relative c'' \bddf
-  \repeat unfold 2 \bdRoxdf
+  \bdRoxdf | r4 \resdf \resdf r4  \rqsdf |
   \relative c'' {r4 \repeat unfold 2 {\slurUp\acciaccatura gs'8 <a e b>4->} r4}
+  \bdRoxdf |
+  \relative c' {
+    r2 r4 r8 <f af>8-> | <f af>->( <f af df>) r4 r f'8->( ef) |
+    ef( d) d( cs) cs( b a b | <f af df>) r r4 r <c af' ef'>8 r |
+    <df af' f'>4 r4 r r8 af'8-> | <f af>->( <af df f>) r4 r bf'8->( af) |
+    af( gf) gf( ef) ef( d d ef | <f df af f>8)-. r r4 r8 df <df af f> <d d,> |
+    \time 2/4 <ef gf, cf,>8 <df af f> <df af f> <d d,> | \time 2/2
+    \key b \major
+    }
+
 
 }
 
@@ -286,8 +310,24 @@ BdL = {
   \relative c <df bf' f'>4 \relative c' \bddf
   \repeat unfold 2 \bdLxdf
   \relative c { <d a' fs'>4 <d' fs>-. <d fs>-. } r4
-  \repeat unfold 3 \bdLdf \bdLd
-
+  \bdLdf
+  \relative c {
+    df4 << {\voiceOne r8 af' af( df4.)}
+           \new Voice {\voiceTwo <af f'>4 df, <af' f'>} >> \oneVoice }
+  \bdLdf \bdLd
+  \relative c {
+    <df af' f'>8 r r4 r <af gf' c>8 r
+  }
+  \relative c {
+    df4 << {\voiceOne r8 af' af( <df f>4.)}
+           \new Voice {\voiceTwo <af f'>4 df, <af' f'>} >> \oneVoice }
+  \bdLdf \bdLd
+  \relative c {
+    <df af' f'>8 r r4 r8 df df c |
+  % 2/4
+    cf df df c
+  }
+  \bar "||" \key b\major
 }
 Chords = \chords {
   \set chordChanges = ##t
@@ -307,6 +347,7 @@ Chords = \chords {
   \repeat unfold 2 { df2 df:6 } d1:6.9 |
   \repeat unfold 3 df1 | d1 | df2. af4:7 | df1 | df1 | d1 | df |
   % 2/4
+  cf8 df4.
 
 }
 
