@@ -114,6 +114,15 @@ VerseSons = \lyricmode {
 VerseSonsi = \lyricmode {
   The so -- ns, __ the sons tra -- di -- tion.
 }
+VerseDaughters = \lyricmode {
+  And who does ma -- ma teach To mend and tend and fix,
+  Pre -- par -- ing me to mar -- ry Who -- ev -- ver pa -- pa
+  picks?
+}
+VerseDaughtersi = \lyricmode {
+  The daugh -- ters, __ the daugh -- ters __ tra -- di -- tion.
+}
+
 Voice = \relative c'' {
     r2 r4 r8
     \VoiceMotiveI r4 r8 \VoiceMotiveIt r2
@@ -151,6 +160,7 @@ Verse = { \VerseMotiveI \VerseMotiveI
           \VersePapas \VersePapasi \VersePapasi
           \VerseMamas \VerseMamasi \VerseMamasi
           \VerseSons \VerseSonsi \VerseSonsi
+          \VerseDaughters \VerseDaughtersi \VerseDaughtersi
 }
 
 Pause = { s1 s1*16 s1*16 }
@@ -199,11 +209,14 @@ rqai = \relative c' <cs a' e'>4
 resdf = \relative c'' <ef f af>8-.
 rqsdf = \relative c'' <ef f af>4-.
 rqxdf = \relative c''' <af bf df>4-.
+reb = \relative c' <b fs' ds'>8
 
 lqc = \relative c  <c g' e' >4
 lqd = \transpose c d \lqc
 lha = \relative c { a4 <e' cs'>}
-
+lec = \relative c <c g' e'>8
+leb = \relative c <b fs' ds'>8
+lqfss = \relative c <fs, e' as>4
 
 bdRoc  = { r4 \rqc r \rqc }
 bdRodf = \transpose c df \bdRoc
@@ -225,6 +238,17 @@ bdLxdf = \relative c { df4 <af' f'> df, <bf' f'> }
 bdLdf = \relative c { df4 <af' f'> df, <af' f'> }
 bdLxd = \transpose df d \bdLxdf
 bddf = { <df ef f>4 ~ <df ef f>8 <cf df ef>( <df ef f>)-. r8 }
+bdLbgb = \relative c
+  { b4 <fs' ds'>8 <fs ds'>
+    fs,8 ~ <fs fs' ds'>8 <fs' ds'> r8}
+bdLiie = \relative c {
+  b4 <gs' e'>8 <gs e'> b,8 ~ <b gs' e'>8 <gs' e'> r8}
+bdLbgwc = \relative c  { c4 <g' e'> g,8 ~ <g g' e'> <g' e'> r }
+bdLb = \relative c
+  { b4 <fs' ds'>8 <fs ds'> b,4 <fs' ds'>8 <fs ds'> }
+bdLec = \relative c  { c4 <g' e'>8 <g e'> c,4 <g' e'>8 <g e'>  }
+
+
 
 BdR = {
   \bdRoc  | \bdRoc |
@@ -273,8 +297,26 @@ BdR = {
     \time 2/4 <ef gf, cf,>8 <df af f> <df af f> <d d,> | \time 2/2
     \key b \major
     }
-
-
+  \reb r8 r4 r2 | r1 | r1 |
+  \relative c''' {
+    r8 b16( c b8)-. a-. \grace {b16( c16} b8-.) r8 r4 |  r1 |
+    r8 b16( c b8)-. d-. \grace {b16( c16} b8-.) r8 r4 |
+    r1 r1 r1 r1
+    r4 ds,,8-. fs-. <ds fs b>16 b' r8 <d, fs>-. b'-. |
+    <fs b d>16-> d'-> r8 r4 r4  \tuplet 3/2 {\slurDown ds,8(\< cs ds\!}
+    << {\voiceTwo e1)|<b ds fs>8->}
+       \new Voice {\voiceOne r4 c''8 df e16( df c b af g f e| ds8) }
+    >> \oneVoice
+    r8 r4 r4 <as, e' fs'> |
+    <b fs' ds'>8 r fs'8-. b-.  <fs b ds>16-> ds'-> r8 <fs, b>-. ds'-. |
+    <b ds fs>16-> fs'-> r8 r4 r \tuplet 3/2 {\slurDown fs,8(\< es fs\!} |
+    << {\voiceTwo g1)| <b ds fs>8->}
+       \new Voice {\voiceOne r8 e16( fs g fs e fs g\< as b as g as b c\! | ds8)}
+    >> \oneVoice
+    r8 r4 r8 <b,, b'>8->\ff <as as'>-> <b b'>->
+    \key c \major
+    <c c'>-> <e g c e>-> <e g c e>-> <f af df f>->
+  }
 }
 
 BdL = {
@@ -328,7 +370,18 @@ BdL = {
     cf df df c
   }
   \bar "||" \key b\major
+  \repeat unfold 4 \bdLbgb \bdLiie
+  \repeat unfold 3 \bdLbgb \bdLbgwc
+  \leb r8 r4 r2
+  \repeat unfold 2 \bdLb \bdLec
+  \leb r8 r4 r4 \lqfss |
+  \bdLb \bdLb \bdLec |
+  \leb r8 r4 r8 \relative c { b-> a-> b-> }
+  \bar "||" \key c \major \time 2/4
+  \relative c { c8 c c df }
+  \time 2/2
 }
+
 Chords = \chords {
   \set chordChanges = ##t
   \Pause
@@ -348,7 +401,11 @@ Chords = \chords {
   \repeat unfold 3 df1 | d1 | df2. af4:7 | df1 | df1 | d1 | df |
   % 2/4
   cf8 df4.
-
+  % key b
+  \repeat unfold 8 b1 | c1 |
+  b1 b1 b1 c1 | b2. fs4 | b1 b1 c1 b1
+  % key c
+  c4. df8 |
 }
 
 \score {
