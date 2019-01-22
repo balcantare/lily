@@ -14,8 +14,9 @@ ViolinMotivi = {
 }
 
 
-FluteMotive = { c4 c8 d e4 f   | g8 fs g af g4 e | f8 e f g f4 df }
-FluteMotivei = { c4 c8 d e4 f   | g8 fs g af g4. e8 | f8 e f g f4 df }
+FluteMotive = { c4 c8 d e4 f | g8 fs g af g4 e | f8 e f g f4 df }
+FluteMotivei = { c4 c8 d e4 f | g8 fs g af g4. e8 | f8 e f g f4 df }
+FluteMotiveii = { c4 c8 d e4. f8 | g8 fs g af g4. e8 | f8 e f g f4 df }
 
 FluteMotiveI = { e8 ds e f e4 g | c g g g | g2. d4 | f f ef df  }
 
@@ -80,13 +81,19 @@ VoiceMotiveIti = { g8 | g <c e> ~ <c e>2. ~ | <c e>4. <c e>8 <c e>2 |
 
 VoiceMotiveII = {
   \repeat unfold 2 { a8 b cs d e fs gs a | b4 e, e r8 e |f4 bf }
-  \alternative { {bf r8 c8 | bf4 a a2 } {bf8 a g f | g4 f e r }}
+  \alternative { {bf r8 c8 | bf4 a a2 } {bf8 a g f | g4 f e }}
 }
 SonsMotive = {
   \repeat unfold 2 {af4 | df af df af | df cf bf af }
   \alternative{ { b cs b a | af r r }
                 { a r r af | g8 f4. ~ f4 r8}}
 }
+SonsMotivei = {
+  \repeat unfold 2 {g4 | c g c g | c bf a g }
+  \alternative{ { bf c bf af | g r r }
+                { af r r g | f8 e4. ~ e2}}
+}
+
 VerseMotiveI = \lyricmode { Tra -- di -- tion __  tra -- di -- tion tra -- di -- tion }
 VersePapas = \lyricmode {
   Who, day and night, Must scram -- ble for a liv -- ing,
@@ -138,7 +145,7 @@ Voice = \relative c'' {
     r1*2
     \relative c' \VoiceMotiveII
     \transpose c a {
-      \relative c' {r2 r4 r8 \VoiceMotiveI r4 r8 }
+      \relative c' {r4 | r2 r4 r8 \VoiceMotiveI r4 r8 }
       \relative c' {\VoiceMotiveIt r2 }
     }
     \key df \major
@@ -155,6 +162,14 @@ Voice = \relative c'' {
       \relative c' {\VoiceMotiveI r4 r8 }
       \relative c' {\VoiceMotiveIt r2 }
   }
+  \key c \major
+  r2
+  % Voice Daughters
+  r2 r4
+  \relative c'' {
+    \ViolinMotivi  r2 r4 | r2 r4 r8 g' | g c4. ~ c2 |
+    r8 c c c r4 r8 \VoiceMotiveIt r2 |
+  }
 }
 Verse = { \VerseMotiveI \VerseMotiveI
           \VersePapas \VersePapasi \VersePapasi
@@ -162,8 +177,25 @@ Verse = { \VerseMotiveI \VerseMotiveI
           \VerseSons \VerseSonsi \VerseSonsi
           \VerseDaughters \VerseDaughtersi \VerseDaughtersi
 }
+VoicePapa = {
+  \relative c' {\FluteMotive e8 ds e f e4 g}
+  \relative c' {\FluteMotiveii | c4 r r r8}
+  \relative c'' {g8 | g c ~ c2. ~ | c1 ~ | c1 }
+}
+VoiceMama = {
+  \transpose a c {\relative c'' \VoiceMotiveII}
+  \relative c'' {r8 g8 | g c ~ c2. ~ | c1 }
+}
+VoiceSons = {
+  \relative c'' {
+    \SonsMotivei
+    r4 r8 g8 g8 c4. ~ | c1
+  }
+}
+
 
 Pause = { s1 s1*16 s1*16 }
+Pausei = { s2 s1*98 }
 
 CMotiveI = { g8( c4.) | e2 r4 e( | f1 | e8) }
 CMotiveIi = { g8( e'4.) | g2 r4 e( | f1 | e8) }
@@ -198,13 +230,8 @@ CMotiveV = {
   <e cs' e>4-> r r8\ff \repeat unfold 2 <e a cs>8-> <g c e>->
 }
 
-
-
-
-
-
-
 rqc  = \relative c' <c g' e' >4
+rec  = \relative c' <c g' e' >8
 rqai = \relative c' <cs a' e'>4
 resdf = \relative c'' <ef f af>8-.
 rqsdf = \relative c'' <ef f af>4-.
@@ -316,6 +343,16 @@ BdR = {
     r8 r4 r8 <b,, b'>8->\ff <as as'>-> <b b'>->
     \key c \major
     <c c'>-> <e g c e>-> <e g c e>-> <f af df f>->
+    \rec r8 r4 r2 | r1 | r1 |
+    r2 r8 <e bf' df> <f af df> <fs b ds> |
+    <g c e> r r4 r2 | r1 r1 r1 r1 r1 |
+    r4 r8 f <af, df f> <df f af> <f af d> <af df f> |
+    \rec r8 r4 r4 <d, b' g'>8-^ r |
+    <g e' c'>8-^ r <e c' g'>-> r8 r4 <e c' g'>->
+    <g e' c'>8-^ r <e c' g'>-> r8 r4 <e c' g'>->
+    <af df f>8 f' <a, d fs> <af df f>
+    \tuplet 3/2 { <cf ff af>8 af' af }
+    <a, d fs> <af df f> | <g c e>-> r r4 r4 <f b d g>8-^ r
   }
 }
 
@@ -380,6 +417,17 @@ BdL = {
   \bar "||" \key c \major \time 2/4
   \relative c { c8 c c df }
   \time 2/2
+  \set Score.currentBarNumber = #132
+  \lec r8 r4 r2 | r1 | r1
+  \relative c {
+    r2 r8 g8 g  g | c r8 r4 r2 | r1 | r1 |
+    r2 r4 r8 g | c4 <gs' e'> c, <g' e'> |
+    \bdLc \bdLdf
+    \lec r8 r4 r4 <g, d' b'>8-^ r |
+    \repeat unfold 2 {c8-> r < g' e' >-> r c,4 < g' e' >8-> r |}
+    \repeat unfold 2 {<df af' f'>8-> r r4 }
+    \lec r8 r4 r4 <g, d' b'>8 r8 |
+  }
 }
 
 Chords = \chords {
@@ -406,10 +454,28 @@ Chords = \chords {
   b1 b1 b1 c1 | b2. fs4 | b1 b1 c1 b1
   % key c
   c4. df8 |
+  c1 | c1 | c1 | c2  g:dim | c1 c c c c c | df |
+  c2. g4 | c1 c | df | c2. g4:7 |
 }
 
 \score {
   <<
+    \new Staff = "voicePapa" {
+      \new Voice = "VoicePapa" {
+        \Pause s1 \Pausei \VoicePapa
+      }
+    }
+    \new Staff = "voiceMama" {
+      \new Voice = "VoiceMama" {
+        \Pause s1 \Pausei r1 \VoiceMama
+      }
+    }
+    \new Staff = "voiceSons" {
+      \new Voice = "VoiceSons" {
+        \Pause s1 \Pausei r2 r4 \VoiceSons
+      }
+    }
+
     \new Staff = "voice" {
       \new Voice = "Voc" {
         \Pause s1 \Voice
