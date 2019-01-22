@@ -283,6 +283,7 @@ BdR = {
   r2 \relative c''\CMotiveIi r8 r4 r2 |
   \relative c''\MotiveII              |
   \relative c''\MotiveIII
+  \pageBreak
   <<
     \new Voice { \voiceOne \repeat volta 2 \relative c''\MotiveIV }
     \new Voice { \voiceTwo \repeat unfold 3 {s8 | s1 | \relative c'\CMotiveIV}  }
@@ -296,7 +297,7 @@ BdR = {
       { <d f a>-> r <d f a>-> r }
     }
     r8 a-> g-> ef-> |
-  }
+  } \break
   \key d \major
   r1*3 \relative c'' { r2 r8 a \acciaccatura a8( bf[ a]) }
   r1*4
@@ -358,6 +359,7 @@ BdR = {
 
 BdL = {
   \bdLc   | \bdLc  |
+  \pageBreak
   r2 \relative c' \CMotiveI r8 r4 r2  |
   \bdLoc  | \bdLoc | \bdLodf | \lqc r4 r g |
   \repeat unfold 4 \bdLwc
@@ -370,6 +372,7 @@ BdL = {
     g8->-. \repeat unfold 2 { c-> c-> cs-> | d-> r d-> r r }
     c-> c-> a-> |
   }
+  \pageBreak
   \bar "||"  \key d \major
   \repeat unfold 2 {\bdLid | \bdLid | \bdLief | \bdLid }
   \repeat unfold 2 {\bdLd | \bdLd | \bdLef }
