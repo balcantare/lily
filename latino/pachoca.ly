@@ -29,8 +29,8 @@ BandR = \relative c'' {
   \key a \major
   \repeat volta 2 {
     r16 cs e a gs e fs ds |
-    e d fs d e d b g |
-    e' c8 a16 fs8 e |
+    e d fs d e d b gs |
+    e' cs8 a16 fs8 e |
     r16 b' d fs e4^\prall
     r16 cs e a gs e fs ds |
     e b8 gs'16 gs fs e a ~ |
@@ -120,6 +120,41 @@ BandL = {
       }
     >>
   } }
+  \break
+  \key a \major
+  << \relative c { \voiceOne
+      \repeat unfold 2 {
+        a16<e'cs'>8<e cs'>16 <cs gs'b e>8<c g'bf ef> |
+        b16<fs'a d>8<fs a d>16e,16<gs'b>fs,16gs
+      }
+      a16<e'cs'>8<e cs'>16b<a'ds>8<a ds>16
+      e,16<gs'b>8<gs b>16cs,<es b'>8<es b'>16
+      fs,16<cs'a'>8<cs a'>16b<a'ds>8<a ds>16
+      <gs b>4 r |
+      \repeat unfold 2 {
+        a,16<e'cs'>8<e cs'>16 <cs gs'b e>8<c g'bf ef> |
+        b16<fs'a d>8<fs a d>16e,16<gs'b>fs,16gs
+      }
+      a16<e'cs'>8 <e cs'>16g,16<e'cs'>8<e cs'>16
+      fs,16<d'a'>8<d a'>16f,16<d'a'>8<d a'>16
+      e,16<d'b'>8<d b'>16e,16<d'gs>8<d gs>16
+      <e cs'>8 <gs b> <e cs'> r
+      <e cs'>8 <gs b> <e cs'> r
+    }
+    \relative c \new Voice {\voiceTwo
+      \repeat unfold 2 {
+        a4 cs8 c |
+        b4 e,8 fs16 gs |
+      }
+      a4 b | e, cs' | fs, b | e, e16fs8gs16 |
+      \repeat unfold 2 {
+        a4 cs8 c |
+        b4 e,8 fs16 gs |
+      }
+      a4 g | fs f | e e | a8 e a16 e fs gs |
+      a8 e a r
+    }
+  >>
 }
 Chords = \chords {
   \set chordChanges = ##t
@@ -140,14 +175,15 @@ Chords = \chords {
     { a2:m/e | fs4:dim e:7 | a8:m e a4:m }
   } % a dur
   \repeat volta 2 {
-    a2 | b4:m7 e | a2  | b4:m7 e |
+    \repeat unfold 2 {a4 cs8:m7 c:m7 | b4:m7 e |}
     a4 b4:7 | e cs:7 | fs:m b:7 | e2 |
-    a2 | b4:m7 e | a2  | b4:m7 e |
+  \repeat unfold 2 {a4 cs8:m7 c:m7 | b4:m7 e |}
     a4 a:/g | d:/fs d:m/f | e:sus4.7 e:7 |
   }
   \alternative {
     { a8 e a4 } { a8 e a4 }
   }
+
 %
 }
 \score {
