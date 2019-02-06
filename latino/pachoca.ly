@@ -6,6 +6,11 @@
 
 \language "english"
 
+title = #"Paçoca"
+composer = #"Celso Machado, arr Michel Caussanel"
+meter = #"Larghetto"
+instrument = #"for Pegueri Bandoneon"
+
 #(define-markup-command (arrow layout props) ()
    "Draw an Arrow."
    (interpret-markup layout props
@@ -17,11 +22,8 @@
      #}
     ))
 
-
 \paper {
   #(set-paper-size "a4")
-%  paper-height = 11\in
-%  paper-width = 8.5\in
   indent = 0\mm
   between-system-space = 2.5\cm
   between-system-padding = #0
@@ -31,11 +33,22 @@
   markup-system-spacing = #'((basic-distance . 23)
                              (minimum-distance . 8)
                              (padding . 1))
+  print-page-number = ##t
+  print-first-page-number = ##t
+  oddHeaderMarkup = \markup \null
+  evenHeaderMarkup = \markup \null
+  oddFooterMarkup = \markup {
+    \fill-line {
+      \on-the-fly \print-page-number-check-first
+      \line{
+        #title \hspace #1
+        - \hspace #1 \fromproperty #'page:page-number-string
+      }
+    }
+  }
+  evenFooterMarkup = \oddFooterMarkup
 }
 
-title = #"Paçoca (Choro)"
-composer = #"Celso Machado, arr Michel Caussanel"
-meter = #"Larghetto"
 
 realBookTitle = \markup {
   \score {
@@ -64,6 +77,7 @@ realBookTitle = \markup {
 }
 \header {
   title = \realBookTitle
+  subtitle = #instrument
   tagline = ##f
 }
 
@@ -80,7 +94,9 @@ BandR = \relative c'' {
   }
   \alternative {
     { r16 a b c c b a b | a8. gs16 r c d ds | }
-    { r16 a b c b a gs b | a8 e a r | }
+    { r16 a b c b a gs b | a8 e a
+      \mark \markup{\fontsize #4 fine}
+      r | }
   }
   \bar "||" \break
   \mark \markup{ \box{\fontsize #4 B}}
@@ -126,9 +142,9 @@ BandR = \relative c'' {
     \mark \markup{\fontsize #4 {
         \arrow\box{A}
       }}
-
-                  d ds }
+    d ds }
   }
+  \bar "|."
 }
 
 BandL = {
@@ -146,7 +162,7 @@ BandL = {
       }
       \alternative { {
         fs,16 <a'-4ds-5>8<a ds>16fs,16<a'ds>8<a ds>16 |
-        <d-2 a'-4>8. <d gs>16 ~ <d gs>4 | }
+        <d,-2 a'-4>8. <d gs>16 ~ <d gs>4 | }
       { fs,16 <a'ds>8<a ds>16e,16 <d'gs>8 <d gs>16 |
         <e-3 c'-2>8 <gs-3 b-2> <e c'> r }
       }
@@ -161,7 +177,7 @@ BandL = {
         a4-2 g-3             | }
       \alternative {
         { fs-2 fs |  e2-5  |}
-        { fs4 e | a8-5 e-4 a r_"fine" | }
+        { fs4 e | a8-5 e-4 a  r | }
       }
     }
   >> \oneVoice  \repeat unfold 2 {
@@ -207,20 +223,20 @@ BandL = {
   \key a \major
   << \relative c { \voiceOne
       \repeat unfold 2 {
-        a16<e'cs'>8<e cs'>16 <cs gs'b e>8<c g'bf ef> |
-        b16<fs'a d>8<fs a d>16e,16<gs'b>fs,16gs
+        a16<e'cs'>8<e cs'>16 <cs b' e>8<c bf' ef> |
+        b16<a' d>8<a d>16e,16<gs'b>fs,16gs
       }
       a16<e'cs'>8<e cs'>16b<a'ds>8<a ds>16
       e,16<gs'b>8<gs b>16cs,<es b'>8<es b'>16
       fs,16<cs'a'>8<cs a'>16b<a'ds>8<a ds>16
       <gs b>4 r |
       \repeat unfold 2 {
-        a,16<e'cs'>8<e cs'>16 <cs gs'b e>8<c g'bf ef> |
+        a,16<e'cs'>8<e cs'>16 <cs b' e>8<c bf' ef> |
         b16<fs'a d>8<fs a d>16e,16<gs'b>fs,16gs
       }
       a16<e'cs'>8 <e cs'>16g,16<e'cs'>8<e cs'>16
-      fs,16<d'a'>8<d a'>16f,16<d'a'>8<d a'>16
-      e,16<d'b'>8<d b'>16e,16<d'gs>8<d gs>16
+      fs,16<a'd>8<a d>16f,16<a'd>8<a d>16
+      e,16<d'a'>8<d a'>16e,16<d'gs>8<d gs>16
       <e cs'>8 <gs b> <e cs'> r
       <e cs'>8 <gs b> <e cs'> r
     }
