@@ -112,7 +112,7 @@ Violin = {
   \relative c'' {\FluteMotive }
   \relative c'' {c1 | c4 r g' r | c r g r | df' r af r | }
   \relative c'' {\FluteMotiveI}
-  \repeat volta 2 \relative c'' { f f4 ef df }
+  \repeat volta 2 {\relative c'' { f f4 ef df }}
 }
 
 Flute = {
@@ -169,6 +169,26 @@ Annotation = {
   s1^"Die Töchter ..."
   s1 s1^\markup{\italic 8va}
   s1*3 s1^\markup{\italic 8va}
+  s1 s2 s1^\markup{\italic Chor}
+  s1*7 s1^\markup{\italic Ref}
+  \dynamicUp
+  s1*8 s1\pp
+  s1*5 s1_\markup{\italic (vamp till cue)}^\markup{fantastisches Paar}
+  s1*4 s1^\markup{...der Bettler}
+  s1_\markup{\italic (vamp till cue)}^\markup{darunter leiden?}
+  s1
+
+  s1^\markup{...geliebter Rabbi}
+  s1*3 s1_\markup{\italic (vamp till cue)}^\markup{was...uns vom Leib!}
+  s1\ff
+  s2\f s2 ^\markup{daidaidai} s1*3
+  s1\mf s1*3
+  s2^\markup{\italic 8va}  s2\ppp
+  s1*6 s1^\markup{\italic 8va}
+  s1\mf s1*4
+  s2\pp_\markup{\center-align\italic (vamp till cue)} s2^\markup{Esel}
+  s1*2
+  s4^"Pferd - Esel" s2. s1*2 s1^\markup{\italic unisono}
 }
 
 CMotiveI = { g8( c4.) | e2 r4 e( | f1 }
@@ -278,8 +298,94 @@ Notes = {
    \time 2/4
    c8-> b-> c-> df-> \bar "||"
    \key c \major \time 2/2
-   \repeat volta 2 { \rs r4 r2 | r1 r1 }
-   \alternative { {r2 r8 df df ef} {
+   \rs r4 r2 | r1 r1 |
+   r2 r8 df df ef |
+   \rs r4 r2 | r1 r1 r1 |
+   \bar "||"
+   r1
+   \set Score.currentBarNumber = #145
+   r1
+   r4 r8 f, f af d f |
+   e4 r4 r4 g |
+   c g r g | c g r g |
+   f f fs f af af fs f |
+   e4 r4 r4 g| \pageBreak
+   \bar "||"
+   \set Score.currentBarNumber = #153
+   \repeat unfold 2 {c,8-. g-. c-. g'-. df-. g-. c,-. g-. }
+   g'-. c-. g-. c,-. af-. c-. g-. c,-.
+   af'2( g4) r |
+   c8-. g-. c-. g'-. df-. g-. c,-. g-. |
+   f-. e-. f-. g-. e-. r r4 |
+   \repeat volta 2 {
+     \override NoteHead.style = #'slash
+     g4 d'8 d r4 g,
+     \revert NoteHead.style
+   }
+   \rs r4 r8 bf-> bf-> b-> |
+   \set Score.currentBarNumber = #161
+   s1*4
+   \repeat volta 2 {
+     \override NoteHead.style = #'slash
+     d8 d d4 r2
+     \revert NoteHead.style
+   }
+   \rs g16 f ef df c8
+   \override NoteHead.style = #'slash
+   b8[ b b] |
+   \revert NoteHead.style
+   \set Score.currentBarNumber = #167
+   s1*4
+   \repeat volta 2 {
+     \override NoteHead.style = #'slash
+     g4 r d'8 d g,4
+     \revert NoteHead.style
+   }
+   \rs g16 f ef df c8
+   \override NoteHead.style = #'slash
+   b'8[ b b] |
+   \revert NoteHead.style
+  \set Score.currentBarNumber = #173
+  s1*2
+  r4 g af g | f8 e f g e g e g |
+  s1*2
+  r4 g af g | f8( e f g) e2 |
+  \bar "||"
+  \key f \major
+  \set Score.currentBarNumber = #181
+  \repeat percent 7 { f'2 f } f1
+  \repeat percent 4 { f2 f } f1
+  \key c \major
+  s1
+  \set Score.currentBarNumber = #209
+  \repeat volta 2 {
+    r4 r8 <af, bf df>8 ~ <af bf df> <g a c>4 <g a c>8 |
+    <f g bf>8 <g a c>4 <af bf df>8 ~ <af bf df> <g a c>4 <g a c>8 |
+  }
+  \set Score.currentBarNumber = #213
+  \repeat percent 3 { <df gf df'>4 r4 <df gf df'> r4 }
+  \rs c'8 e df4 c
+  \bar "||"
+  \repeat percent 2 { r4 <g a c d e>4 r4 <g a c d e>4 }
+  r4 <af bf df ef f>4 r4 <af bf df ef f>4
+  <g a c d e>4 r4 r4 \rs
+  \rs r4 r2 | r2 r8 c8 d e |
+  f8 gf16 f e8 f af bf16 af g8 af |
+  c4 r r8 d,8 d ds |
+  \bar "||"
+  \set Score.currentBarNumber = #225
+  \rs g,4 c g c bf a g |
+  bf c bf a |
+  g2. r4 | c4 g c g | c bf af  g |
+  << { \voiceOne r4 \rs \rs r4 } \new Voice { \voiceTwo af2. g4 }  >>|
+  \oneVoice
+  f8 e-. r4 r2 | r4 r8 d e4 f |
+  g8 fs g af g4 e | f8 e f g f4 df |
+  e8 ds e f g4 g |
+  g4 c c c | c2. c4 | af af af af |
+  g r4 \rs r4
+  \bar "|."
+ }
 }
 
 
@@ -307,7 +413,7 @@ Chrds = \chordmode {
     d | ef }
   \alternative{ {d}{\gotoCtx "chrds-down" d}}
   \repeat percent 2 {d1} ef d1
-  \repeat percent 2 {d1} ef d1
+  \repeat percent 2 {d1} ef d4 s2 s8 bf8
   \gotoCtx "staff"
   \repeat percent 2 a1
   \repeat volta 2 {
@@ -348,10 +454,58 @@ Chrds = \chordmode {
   \repeat percent 2 b1 c1
   b4 s2.
   c4. df8
-  c1
+  c1 s1 s1 s2 g2:dim
+  c1 s1 s1 s1
+  \repeat percent 2 c1 df c
+  \repeat percent 2 c1 df c
+  c4 s2 g4:7
+  \bar "||"
+  \set Score.currentBarNumber = #153
+  \repeat percent 3 c1 df2/c c |
+  c1 df2/c c |
+  c1 | c4 s4 s8 bf4/g g8:7 |
+
+  \bar "||"
+  \gotoCtx "staff"
+  \set Score.currentBarNumber = #161
+  \repeat percent 3 c1 df2/c c
+  \gotoCtx "chrds-down"
+  c4 c:6 s2 |
+  c4 s4. g4:m7 c8 |
+
+  \bar "||"
+  \gotoCtx "staff"
+  \set Score.currentBarNumber = #167
+  \repeat percent 3 c1 df2/c c
+  \gotoCtx "chrds-down"
+  c4 s2 df4 |
+  c4 s4. g4:m7 g8:7 |
+
+  \bar "||"
+  \gotoCtx "staff"
+  \repeat percent 2 c1
+  \gotoCtx "chrds-down"
+  c1 df2/c c
+  \gotoCtx "staff"
+  \repeat percent 2 { f2:m c2 }
+  \gotoCtx "chrds-down"
+  \repeat percent 2 { f2:m c2 }
+  f1 s1*12
+  \gotoCtx "staff"
+  \repeat volta 2 {
+  c1 }
+  \gotoCtx "chrds-down"
+  c1 s1
+  \repeat percent 4 { c:9-11+ }
+  \repeat percent 2 c1 df c1
+  \repeat percent 2 c1 df c4 s4. bf4 b8
+  \repeat percent 6 c1
+  s4 d:m5-7 g:7 s4 r1
+  \repeat percent 2 c1 df c1
+  c/e s1 df c
 }
 
-alive = { s1*120 }
+alive = { s1*208 }
 
 \score {
   \new StaffGroup
