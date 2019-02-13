@@ -45,3 +45,64 @@
   \override PianoPedalBracket.thickness = #2
 }
 
+gotoCtx =
+#(define-music-function (strg)(string?)
+#{
+  \change Staff = #strg
+  #(if (string=? strg "staff") ;; Staff needs to be named equal to this
+       #{ \override ChordName.Y-offset = #-1.5 #}
+       #{ \revert ChordName.Y-offset #})
+#})
+
+% Macro to print single slash
+rs = {
+  \once \override Rest.stencil = #ly:percent-repeat-item-interface::beat-slash
+  \once \override Rest.thickness = #0.48
+  \once \override Rest.slope = #1.7
+  r4
+}
+
+% Function to print a specified number of slashes
+comp = #(define-music-function (count) (integer?)
+  #{
+    \override Rest.stencil = #ly:percent-repeat-item-interface::beat-slash
+    \override Rest.thickness = #0.48
+    \override Rest.slope = #1.7
+    \repeat unfold $count { r4 }
+    \revert Rest.stencil
+  #}
+)
+
+#(define (empty-namer pitch lower?) (make-simple-markup ""))
+rootless = {
+  \once \set chordRootNamer = #empty-namer
+}
+
+
+\paper {
+  #(set-paper-size "a4")
+  indent = 0\mm
+  between-system-space = 2.5\cm
+  between-system-padding = #0
+  %%set to ##t if your score is less than one page:
+  ragged-last-bottom = ##f
+  ragged-bottom = ##f
+  markup-system-spacing = #'((basic-distance . 23)
+                             (minimum-distance . 8)
+                             (padding . 1))
+  print-page-number = ##t
+  print-first-page-number = ##t
+  oddHeaderMarkup = \markup \null
+  evenHeaderMarkup = \markup \null
+  oddFooterMarkup = \markup {
+    \fill-line {
+      \on-the-fly \print-page-number-check-first
+      \line{
+        #title \hspace #1
+        - \hspace #1 \fromproperty #'page:page-number-string
+      }
+    }
+  }
+  evenFooterMarkup = \oddFooterMarkup
+}
+

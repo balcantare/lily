@@ -1,92 +1,16 @@
 \version "2.19"
 #(set-global-staff-size 18)
 \include "jazzchords.ily"
-\include "anatevka.ily"
-%\include "lilyjazz.ily"
 \include "jazzextras.ily"
+\include "anatevka.ily"
 \language "english"
 
-%{#(define-markup-command (barnum layout props bar) (markup?)
-   "Print Bar number"
-   (interpret-markup layout props
-     #{\markup \box{ #text}#}
-     ))
-%}
-gotoCtx =
-#(define-music-function (strg)(string?)
-#{
-  \change Staff = #strg
-  #(if (string=? strg "staff") ;; Staff needs to be named equal to this
-       #{ \override ChordName.Y-offset = #-1.5 #}
-       #{ \revert ChordName.Y-offset #})
-#})
-
-% Macro to print single slash
-rs = {
-  \once \override Rest.stencil = #ly:percent-repeat-item-interface::beat-slash
-  \once \override Rest.thickness = #0.48
-  \once \override Rest.slope = #1.7
-  r4
-}
-
-rsa = {
-  \once \override Rest.stencil = #ly:percent-repeat-item-interface::beat-slash
-  \once \override Rest.thickness = #0.48
-  \once \override Rest.slope = #1.7
-  r4->
-}
-
-% Function to print a specified number of slashes
-comp = #(define-music-function (count) (integer?)
-  #{
-    \override Rest.stencil = #ly:percent-repeat-item-interface::beat-slash
-    \override Rest.thickness = #0.48
-    \override Rest.slope = #1.7
-    \repeat unfold $count { r4 }
-    \revert Rest.stencil
-  #}
-)
-
 title = #"Tradition"
-\paper {
-  #(set-paper-size "a4")
-  indent = 0\mm
-  between-system-space = 2.5\cm
-  between-system-padding = #0
-  %%set to ##t if your score is less than one page:
-  ragged-last-bottom = ##f
-  ragged-bottom = ##f
-  markup-system-spacing = #'((basic-distance . 23)
-                             (minimum-distance . 8)
-                             (padding . 1))
-  print-page-number = ##t
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \line{
-        #title \hspace #1
-        - \hspace #1 \fromproperty #'page:page-number-string
-      }
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-}
 bookTitle = \markup {
-  \fill-line {
-    \fontsize #3
-    \override #'(offset . 7)
-    \override #'(thickness . 6)
-    \underline \larger \larger #title
-  }
+  \fontsize #3 \larger \larger
+  \line {\box{1} #title }
 }
-
-\header {
-  title = \bookTitle
-  tagline = ##f
-}
+\header { title = \bookTitle tagline = ##f }
 
 ViolinMotiv = {
          g4 | c g g g | g2. g4 | f f e f   | g2. g4 |
