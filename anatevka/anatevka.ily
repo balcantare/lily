@@ -73,22 +73,28 @@ comp = #(define-music-function (count) (integer?)
   #}
 )
 
-#(define (empty-namer pitch lower?) (make-simple-markup ""))
-rootless = {
-  \once \set chordRootNamer = #empty-namer
-}
+#(define-markup-command (arrow layout props) ()
+   "Draw an Arrow."
+   (interpret-markup layout props
+     #{\markup \overlay {
+        \override #'(thickness . 3)
+        \translate #'( 0 . 1.82)\draw-line #'(-1.5 . 0)
+        \translate #'( 1.3 . 1.8)\arrow-head #X #RIGHT ##f
+        }
+     #}
+    ))
 
 
 \paper {
   #(set-paper-size "a4")
   indent = 0\mm
-  between-system-space = 2.5\cm
+  between-system-space = 0.5\cm
   between-system-padding = #0
   %%set to ##t if your score is less than one page:
   ragged-last-bottom = ##f
   ragged-bottom = ##f
-  markup-system-spacing = #'((basic-distance . 23)
-                             (minimum-distance . 8)
+  markup-system-spacing = #'((basic-distance . 2)
+                             (minimum-distance . 2)
                              (padding . 1))
   print-page-number = ##t
   print-first-page-number = ##t

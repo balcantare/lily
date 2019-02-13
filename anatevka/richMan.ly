@@ -4,16 +4,47 @@
 \include "jazzchords.ily"
 \include "jazzextras.ily"
 \language "english"
-
-title = #"Rich Man"
 \include "anatevka.ily"
 \include "chordbass.ily"
 
+mytitle  = #"Rich Man"
+
 bookTitle = \markup {
   \fontsize #3 \larger \larger
-  \line {\box{1} #title }
+  \line {\box{4} #mytitle }
 }
 \header { title = \bookTitle tagline = ##f }
+
+\paper {
+  #(set-paper-size "a4")
+  indent = 0\mm
+  between-system-space = 0.5\cm
+  between-system-padding = #0
+  %%set to ##t if your score is less than one page:
+
+  ragged-last-bottom = ##f
+  ragged-bottom = ##f
+  page-count = #1
+  markup-system-spacing = #'((basic-distance . 2)
+                             (minimum-distance . 2)
+                             (padding . 1))
+  print-page-number = ##t
+  print-first-page-number = ##t
+  oddHeaderMarkup = \markup \null
+  evenHeaderMarkup = \markup \null
+  oddFooterMarkup = \markup {
+    \fill-line {
+      \on-the-fly \print-page-number-check-first
+      \line{
+        #mytitle \hspace #1
+        - \hspace #1 \fromproperty #'page:page-number-string
+      }
+    }
+  }
+  evenFooterMarkup = \oddFooterMarkup
+}
+
+
 
 alive = { s1*40 }
 
@@ -21,14 +52,19 @@ alive = { s1*40 }
 Annotation= {
 }
 Notes = {
+  \accidentalStyle neo-modern-voice-cautionary
   \key df \major
   s1.
-  \mark \markup{\left-align{\box{\fontsize #4 A}}}
+  \once\override Score.RehearsalMark.self-alignment-X = -1
+  \once\override Score.RehearsalMark.Y-offset = #-5
+  \mark\markup{\left-align{\box{\fontsize #4 A}}}
   s1*9
   \relative c' {
     s4 f4_\fermata gf_\fermata af_\fermata |
     \bar "||"
-    \mark \markup{ \box{\fontsize #4 B}}
+    \once\override Score.RehearsalMark.self-alignment-X = -1.5
+    \once\override Score.RehearsalMark.Y-offset = #-2
+    \mark\markup{\box{\fontsize #4 B}}
     \set Score.currentBarNumber = #20
     gf1 | gf4 af8 bf af4 gf |
     af1 | r4 g16_[ af bff cf] df4 r |
@@ -40,6 +76,8 @@ Notes = {
     r4 <ef' af>8( <d g>8)_\markup{rall.} <ef af>8( <e bf'>4 <f b>8 |
     <gf c>4) r\fermata r\fermata r\fermata
     \bar "||"
+    \once\override Score.RehearsalMark.self-alignment-X = -1
+    \once\override Score.RehearsalMark.Y-offset = #-2
     \mark \markup{ \box{\fontsize #4 B'}}
     s1*2
     \clef bass r8 df, f af ef' df c cf |
@@ -49,12 +87,16 @@ Notes = {
     r1 | \clef bass df,2 ef | ff ef | ef4 df bf cf |
     d \clef treble <c'gf'>( <cf f>) r4 | r df df df |
     df1 | r4 <ef af>8 <d g> <ef af> <e bf'>4 <f b>8 |
+    \once\override Score.RehearsalMark.self-alignment-X = #LEFT
+    \once\override Score.RehearsalMark.Y-offset = #-2
     \mark \markup{\fontsize #4 {\arrow\box{A}}}
     <gf c>2_\fermata
     r_\fermata
     \bar "||"
     \set Score.currentBarNumber = #68
-    \mark \markup{ \box{\fontsize #4 B*}}
+    \once\override Score.RehearsalMark.self-alignment-X = #LEFT
+    \once\override Score.RehearsalMark.Y-offset = #-2
+    \mark \markup{\left-align{ \box{\fontsize #4 B*}}}
     s1*3 r4 d2( df4)
     s1*2 r4 \tuplet 3/2 {r8 df' df} \tuplet 3/2 {ef4 df ef}
     f4-> r4 r2
@@ -77,10 +119,15 @@ Notes = {
     <df, f df'>4 <ef gf df'> <f af df>
     \bar "||"
     \time 4/4
-    \mark \markup{ \box{\fontsize #4 B**}}
+    \once\override Score.RehearsalMark.self-alignment-X = #LEFT
+    \once\override Score.RehearsalMark.Y-offset = #-2
+    \mark \markup{\box{\fontsize #4 B**}}
     s1*3 r4 gf8 af bff cf df4  |
     s1*2 r4 <ef, af>8 <d g> <ef af> <e bf'>4 <f b>8 |
     <gf c>4 r4_\fermata r4_\fermata r4_\fermata |
+    \bar "||"
+    \once\override Score.RehearsalMark.self-alignment-X = #LEFT
+    \once\override Score.RehearsalMark.Y-offset = #-2
     \mark \markup{ \box{\fontsize #4 B'*}}
     s1_\pp s1*2
     s4 <af cf> <gf bf> <f af>
@@ -98,6 +145,15 @@ Notes = {
     f,8\p ef f ef df4 df | r4 df8 ef f ef f ef |
     df ef f gf af gf af gf | f4-. df8-. 8-. ef4-. f-. |
     <c ef>1( <df ff>)  <ef gf>( <df ff>) <gf bff c ef>
+    <af df ff>4( <df f af>) <ef ff af cf>2 |
+    <a, df e a>4 r r2 |
+    af8 gf af gf f4 df |
+    r4 f8 gf af gf af gf |
+    <af df f>8 <bf ef gf> <c f af> <df gf bf>
+    <ef af cf>( <d f bf>) <ef af cf>( <d f bf>) |
+    <df ef g cf>4-^ <c e af c>-^ <df f af df> r
+    \bar "|."
+
   }
 }
 
@@ -123,7 +179,7 @@ ChrdsUp = \notemode {
   s1*3 | r4 s2 r4 |
   s1*18
   r4 s4 r4 g' |
-  g'2 r2 |
+  s1 %g'2 r2 |
   s1*12
   \repeat unfold 2 {g'4 r4 r4 g'4}
   s1 | g'4 r4 r2 |
@@ -186,8 +242,11 @@ Chrds = \chordmode {
   bf:dim \parenthesize ef:7 |
   af4:7 s2.
   \repeat percent 4 df1
-  af1:79- | df1:m | af1:79- | df1:m |
-  gf:dim7
+  af1:9- | df1:m | af1:9- | df1:m |
+  af:9- | df2:m bf:9- | ef1:7.11+
+  \repeat percent 2 df1
+  s1
+  ef4:aug7 af:aug7 df
 }
 
 \score {
@@ -207,6 +266,7 @@ Chrds = \chordmode {
       \remove Time_signature_engraver
       \remove Clef_engraver
       \override ChordName.Y-offset = #-1.5
+      %\override TextScript.outside-staff-priority = ##f
     } \ChrdsUp
     \new Staff = "staff" \with {
       \accepts ChordNames
@@ -215,7 +275,9 @@ Chrds = \chordmode {
       <<
         \new ChordNames \with { \override ChordName.Y-offset = #-1.5 }
           \Chrds
-        \context Voice = "voice" \Notes
+        \context Voice = "voice" \with {
+         % \override TextScript.outside-staff-priority = ##f
+        } \Notes
       >>
     \new ChordNames = "chrds-down" \with {
       \consists Percent_repeat_engraver
