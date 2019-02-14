@@ -5,16 +5,20 @@
 \include "anatevka.ily"
 \language "english"
 
-title = #"Tradition"
+sheetName = #"Tradition"
+sheetNr   = #"1"
+
 bookTitle = \markup {
   \fontsize #3 \larger \larger
-  \line {\box{1} #title }
+  \line { \box{ #sheetNr } #sheetName }
 }
+
 \header { title = \bookTitle tagline = ##f }
 
 \paper {
   #(set-paper-size "a4")
   indent = 0\mm
+  page-count = #2
   between-system-space = 0.5\cm
   between-system-padding = #0
   %%set to ##t if your score is less than one page:
@@ -31,7 +35,7 @@ bookTitle = \markup {
     \fill-line {
       \on-the-fly \print-page-number-check-first
       \line{
-        #title \hspace #1
+        \box{ #sheetNr } #sheetName \hspace #1
         - \hspace #1 \fromproperty #'page:page-number-string
       }
     }
@@ -262,7 +266,7 @@ Notes = {
    e4 r4 r4 g |
    c g r g | c g r g |
    f f fs f af af fs f |
-   e4 r4 r4 g| \pageBreak
+   e4 r4 r4 g|
    \bar "||"
    \set Score.currentBarNumber = #153
    \repeat unfold 2 {c,8-. g-. c-. g'-. df-. g-. c,-. g-. }

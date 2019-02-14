@@ -7,13 +7,17 @@
 \include "anatevka.ily"
 \include "chordbass.ily"
 
-mytitle  = #"Rich Man"
+sheetName = #"Rich Man"
+sheetNr   = #"4"
 
 bookTitle = \markup {
   \fontsize #3 \larger \larger
-  \line {\box{4} #mytitle }
+  \line { \box{ #sheetNr } #sheetName }
 }
-\header { title = \bookTitle tagline = ##f }
+\header {
+  title = \bookTitle
+  tagline = ##f
+}
 
 \paper {
   #(set-paper-size "a4")
@@ -21,7 +25,6 @@ bookTitle = \markup {
   between-system-space = 0.5\cm
   between-system-padding = #0
   %%set to ##t if your score is less than one page:
-
   ragged-last-bottom = ##f
   ragged-bottom = ##f
   page-count = #1
@@ -36,7 +39,7 @@ bookTitle = \markup {
     \fill-line {
       \on-the-fly \print-page-number-check-first
       \line{
-        #mytitle \hspace #1
+        \box{ #sheetNr } #sheetName \hspace #1
         - \hspace #1 \fromproperty #'page:page-number-string
       }
     }
@@ -137,6 +140,9 @@ Notes = {
     r4 <d f>( <ef gf>) <f a>( |
     <gf bf>2) r2\fermata |
     \bar "||"
+    \once\override Score.RehearsalMark.self-alignment-X = #-3
+    \once\override Score.RehearsalMark.Y-offset = #-2
+    \mark \markup{\box{\fontsize #4 A'}}
     f,8\p ef f ef df4 df | r4 df8 ef f ef f ef |
     df ef f gf af gf af gf | f2 r2 |
     gf4 f ff ef | df8 c bf c df2 |
@@ -202,22 +208,22 @@ Chrds = \chordmode {
    { bf2:dim7 af2:7 | df4 s2. }
   }
   \gotoCtx "chrds-up"
-  gf1:m | b:7  | e:7+ | s4 af:5-7 df:7 s4 |
+  gf1:m | b:7  | e:7+ | s4 af:m5-7 df:7 s4 |
   gf1:m | af:7 | df  | s4 df2.:7 |
   \gotoCtx "staff"
-  gf1:m | b:7  | e:7+ | \gotoCtx "chrds-up" s4 af:5-7 df:7 s4 |
+  gf1:m | b:7  | e:7+ | \gotoCtx "chrds-up" s4 af:m5-7 df:7 s4 |
   %\gotoCtx "staff"
   gf1:m | g:dim7 | af:7 | s1 |
   \gotoCtx "staff" gf1 | af:7 | \gotoCtx"chrds-up" df | bf:7 |
   ef:m7 | af:7 | df | df:7 |
-  gf:m  | s2 b2:7 | e1:6 | af2:5-7 df:7 |
+  gf:m  | s2 b2:7 | e1:6 | af2:m5-7 df:7 |
   gf1:m | g:dim7 | s4 af4:7 s2 | s1 |
   \gotoCtx "staff"
-  gf1:m | b:7  | e:7+ | s4 \gotoCtx "chrds-up" af:5-7 df:7 s4 |
+  gf1:m | b:7  | e:7+ | s4 \gotoCtx "chrds-up" af:m5-7 df:7 s4 |
   \gotoCtx "staff" gf1:m | af:7 |
   \gotoCtx "chrds-up" df  | df1:7 |
   \gotoCtx "staff"
-  gf1:m | b:7 | \gotoCtx "chrds-up" e:7+ | s4 af:5-7 df:7 s4 |
+  gf1:m | b:7 | \gotoCtx "chrds-up" e:7+ | s4 af:m5-7 df:7 s4 |
   \gotoCtx "staff"
   gf1:m | g:dim7 | \gotoCtx "chrds-up" af:7 | s1 |
   s1*2
@@ -228,14 +234,14 @@ Chrds = \chordmode {
   df1:7/f
   s2 | df2.:7 |
   \gotoCtx "staff"
-  gf1:m | b:7  | e:7+ | s4 \gotoCtx "chrds-up" af:5-7 df:7 s4 |
+  gf1:m | b:7  | e:7+ | s4 \gotoCtx "chrds-up" af:m5-7 df:7 s4 |
   \gotoCtx "staff" gf1:m | af:7 |
   \gotoCtx "chrds-up" df  | df1:7 |
   \gotoCtx "staff" gf1 | af:7 |
   df | bf:7 |
   ef:m7 | af:7 | df | df:7 |
   \gotoCtx"chrds-up"
-  gf:m  | s2 b2:7 | e1:6 | af2:5-7 df:7 |
+  gf:m  | s2 b2:7 | e1:6 | af2:m5-7 df:7 |
   gf1:m | g:dim7 | s4 af4:7 s2 | s1 |
   \repeat percent 4 df1
   af:7 | df2:m \set chordBassOnly = ##t df:/cf |

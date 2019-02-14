@@ -60,14 +60,21 @@
 %	degrés 			markup				% écriture
 JazzChordsList = {
 % minor third chords - 3 notes
-  <c es ges>1-\markup { \super "dim." } % :dim
+  <c es ges>1-\markup { \super\translate #'( 0 . 1)\draw-circle #0.6 #0.3 ##f } %"dim." } % :dim
   <c es g>-\markup { \acMin #"" } % :m
 
 % minor third chords - 4 notes
-  <c es ges beses>-\markup { \super "7dim" } % :dim7
+  <c es ges beses>-\markup {
+    \super{\translate #'( 0 . 1)\draw-circle #0.6 #0.3 ##f #"7" }} % "7dim" } % :dim7
   <c es gis>-\markup { \acMin #"aug" } % :m5+ (Ab/C)
   <c es g a>-\markup { \acMin #"6" } % :m6
-  <c es ges bes>-\markup { \acMin #"7 >5" } % :m7.5-
+  <c es ges bes>-\markup { \super
+      \overlay {
+        \translate #'( 0 . 1)\draw-circle #0.6 #0.3 ##f
+        \override #'(thickness . 3)
+        \translate #'( -0.7 . 0.3)\draw-line #'(1.4 . 1.4)
+        }
+  } %\acMin #"7 >5" } % :m7.5-
   <c es g bes>-\markup { \acMin #"7" } % :m7
   <c es gis bes>-\markup { \acMin #"7 <5" } % :m7.5+
   <c es g b>-\markup { \acMin #"M7" } % :m7+
