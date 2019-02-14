@@ -85,30 +85,3 @@ comp = #(define-music-function (count) (integer?)
     ))
 
 
-\paper {
-  #(set-paper-size "a4")
-  indent = 0\mm
-  between-system-space = 0.5\cm
-  between-system-padding = #0
-  %%set to ##t if your score is less than one page:
-  ragged-last-bottom = ##f
-  ragged-bottom = ##f
-  markup-system-spacing = #'((basic-distance . 2)
-                             (minimum-distance . 2)
-                             (padding . 1))
-  print-page-number = ##t
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      \on-the-fly \print-page-number-check-first
-      \line{
-        #title \hspace #1
-        - \hspace #1 \fromproperty #'page:page-number-string
-      }
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-}
-

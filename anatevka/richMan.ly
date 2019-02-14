@@ -70,14 +70,19 @@ Notes = {
     \mark\markup{\box{\fontsize #4 B}}
     \set Score.currentBarNumber = #20
     gf1 | gf4 af8 bf af4 gf |
-    af1 | r4 g16_[ af bff cf] df4 r |
+    af1 | r4 g16_2_[ af_3 bff_2 cf_3] df4_4 r |
     r4 ef, r ef | f f8 gf f4 ef |
     r4 f8( af) af( df) df( f) | af4 r4 r2 |
     s1*3
-    r4 ef16 df cf bff af8 r r4 |
+    r4 ef16_5 df_4 cf_3 bff_2 af8_3 r r4 |
     r1 | a,1 |
-    r4 <ef' af>8( <d g>8)_\markup{rall.} <ef af>8( <e bf'>4 <f b>8 |
-    <gf c>4) r\fermata r\fermata r\fermata
+    %\override Fingering.staff-padding = #'()
+    \set fingeringOrientations = #'(down)
+    r4 <ef'-2 af-5>8 <d-3 g-4>8_\markup{rall.}
+    <ef-2 af-5>8 <e-2 bf'-4>4 <f-3 b-5>8 |
+    <gf-2 c-4>4
+    \unset fingeringOrientations
+    r\fermata r\fermata r\fermata
     \bar "||"
     \once\override Score.RehearsalMark.self-alignment-X = -1
     \once\override Score.RehearsalMark.Y-offset = #-2
@@ -88,12 +93,17 @@ Notes = {
     ef ef d df |
     c4 f8 gf f4 ef | df4 r4 r2 |
     r1 | \clef bass df,2 ef | ff ef | ef4 df bf cf |
-    d \clef treble <c'gf'>( <cf f>) r4 | r df df df |
-    df1 | r4 <ef af>8 <d g> <ef af> <e bf'>4 <f b>8 |
+    \override Fingering.staff-padding = #'()
+    d \clef treble <c'-4gf'-2>( <cf-3 f-2>) r4 | r df df df |
+    df1 |
+    \set fingeringOrientations = #'(down)
+    r4 <ef-2 af-5>8 <d-3 g-4>8
+    <ef-2 af-5>8 <e-2 bf'-4>4 <f-3 b-5>8 |
     \once\override Score.RehearsalMark.self-alignment-X = #LEFT
     \once\override Score.RehearsalMark.Y-offset = #-2
     \mark \markup{\fontsize #4 {\arrow\box{A}}}
-    <gf c>2_\fermata
+    <gf-2 c-4>2_\fermata
+    \unset fingeringOrientations
     r_\fermata
     \bar "||"
     \set Score.currentBarNumber = #68
@@ -112,22 +122,27 @@ Notes = {
     af c8( b c) df4 d8 |
     ef4 r4 r2
     \bar "||"
-    cs,8 gs' a b cs b a g | a b cs  d e d\prall cs4 |
-    a1 | fs | fs | af2 r2_\fermata |
+    cs,8-4 gs'-3 a-2 b-3 cs-4 b-3 a-2 g-3 | a-2 b-3 cs-4  d-3 e-5 d\prall-4 cs4-3 |
+    a1-2 | fs | fs | af2 r2_\fermata |
     \time 2/4
     \override NoteHead.font-size = #-2
     \tuplet 3/2 { f'8^"boi boi boi..." d cs } \tuplet 3/2 { f8 d cs }
     \revert NoteHead.font-size
     \time 3/4
-    <df, f df'>4 <ef gf df'> <f af df>
+    <df,_4 f_2 df'^5>4 <ef_2 gf_3 df'> <f_3 af_4 df>
     \bar "||"
     \time 4/4
     \once\override Score.RehearsalMark.self-alignment-X = #LEFT
     \once\override Score.RehearsalMark.Y-offset = #-2
     \mark \markup{\box{\fontsize #4 B**}}
     s1*3 r4 gf8 af bff cf df4  |
-    s1*2 r4 <ef, af>8 <d g> <ef af> <e bf'>4 <f b>8 |
-    <gf c>4 r4_\fermata r4_\fermata r4_\fermata |
+    s1*2
+    \set fingeringOrientations = #'(down)
+    r4 <ef,-2 af-5>8 <d-3 g-4>8
+    <ef-2 af-5>8 <e-2 bf'-4>4 <f-3 b-5>8 |
+    <gf-2 c-4>4
+    \unset fingeringOrientations
+    r4_\fermata r4_\fermata r4_\fermata |
     \bar "||"
     \once\override Score.RehearsalMark.self-alignment-X = #LEFT
     \once\override Score.RehearsalMark.Y-offset = #-2
@@ -136,9 +151,11 @@ Notes = {
     s4 <af cf> <gf bf> <f af>
     s1*4
     gf1 ~ | gf1  | af1 | cf2( df) |
-    <bff df>1 | <bf df> |
-    r4 <d f>( <ef gf>) <f a>( |
-    <gf bf>2) r2\fermata |
+    \set fingeringOrientations = #'(right)
+    <bff-2 df-4>1 | <bf-2 df-4> |
+    r4 <d-3 f-4>( <ef-2 gf-4>) <f-3 a-5>( |
+    <gf-2 bf-4>2) r2\fermata |
+    \unset fingeringOrientations
     \bar "||"
     \once\override Score.RehearsalMark.self-alignment-X = #-3
     \once\override Score.RehearsalMark.Y-offset = #-2
@@ -150,14 +167,18 @@ Notes = {
     ef2\pp\glissando c'4 r
     f,8\p ef f ef df4 df | r4 df8 ef f ef f ef |
     df ef f gf af gf af gf | f4-. df8-. 8-. ef4-. f-. |
-    <c ef>1( <df ff>)  <ef gf>( <df ff>) <gf bff c ef>
-    <af df ff>4( <df f af>) <ef ff af cf>2 |
-    <a, df e a>4 r r2 |
+    \set fingeringOrientations = #'(right)
+    <c-4 ef-2>1( <df-5 ff-3>)  <ef-2 gf-3>( <df-5 ff-3>)
+    <gf-2 bff-3 c-4 ef-5>
+    <af df ff>4( <df f af>) <d f af cf>2 |
+    <a df e a>4 r r2 |
     af8 gf af gf f4 df |
     r4 f8 gf af gf af gf |
-    <af df f>8 <bf ef gf> <c f af> <df gf bf>
-    <ef af cf>( <d f bf>) <ef af cf>( <d f bf>) |
-    <df ef g cf>4-^ <c e af c>-^ <df f af df> r
+    \set fingeringOrientations = #'(down)
+    <af-2 df-3>8 <bf-2 ef-4> <c-2 f-3> <df-2 gf-4>
+    <ef-2 af-3>( <d-2 f-3>) <ef-2 af-4>( <d-2 f-3 >) |
+    \set fingeringOrientations = #'(right)
+    <ef-2 g-3 cf-4>4_^ <e-2 af-3 c-4>_^ <f-2 af-3 df-4> r
     \bar "|."
 
   }
@@ -249,7 +270,7 @@ Chrds = \chordmode {
   af4:7 s2.
   \repeat percent 4 df1
   af1:9- | df1:m | af1:9- | df1:m |
-  af:9- | df2:m bf:9- | ef1:7.11+
+  af:9- | df4:m df4 bf2:9- | ef1:7.11+
   \repeat percent 2 df1
   s1
   ef4:aug7 af:aug7 df
