@@ -1,11 +1,11 @@
-\version "2.19"
+\version "2.19.82"
 %#(ly:expect-warning (_ "cannot have note heads "))
 #(set-global-staff-size 18)
 \include "jazzchords.ily"
 \include "jazzextras.ily"
-\language "english"
-\include "anatevka.ily"
 \include "chordbass.ily"
+\include "anatevka.ily"
+\language "english"
 
 sheetName = #"Rich Man"
 sheetNr   = #"4"
@@ -283,7 +283,6 @@ Chrds = \chordmode {
        (minimum-distance . 0)
        (padding . 0)
        (stretchability . 0))
-
   }
   <<
     \new Staff = "chrds-up" \with {
@@ -293,26 +292,23 @@ Chrds = \chordmode {
       \remove Time_signature_engraver
       \remove Clef_engraver
       \override ChordName.Y-offset = #-1.5
-      %\override TextScript.outside-staff-priority = ##f
     } \ChrdsUp
     \new Staff = "staff" \with {
       \accepts ChordNames
       \consists Percent_repeat_engraver
     }
       <<
-        \new ChordNames \with { \override ChordName.Y-offset = #-1.5 }
-          \Chrds
+        \new ChordNames \with {
+          \override ChordName.Y-offset = #-1.5
+        } \Chrds
         \context Voice = "voice" \with {
-         % \override TextScript.outside-staff-priority = ##f
         } \Notes
       >>
     \new ChordNames = "chrds-down" \with {
       \consists Percent_repeat_engraver
       \override PercentRepeat.Y-offset = #1
       \override VerticalAxisGroup #'minimum-Y-extent = #'(0 . 0)
-      %\override ChordName.outside-staff-priority = #1
-    }
-     \chordmode{\alive}
+    } \chordmode{\alive}
     \context Voice = "voice" \Annotation
   >>
 }
