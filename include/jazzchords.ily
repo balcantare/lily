@@ -38,7 +38,12 @@
 % for major chords, use "acMaj" to print a small "M"
 #(define-markup-command (acMaj layout props extension) (string?)
   (interpret-markup layout props
-    (markup #:super "M" #:super extension)))
+    (markup
+      #:super
+      #:override '(font-size . -4)
+      #:override '(thickness . 0.3)
+      #:translate '( 0 . 0.3) #:triangle #f
+          #:super extension)))
 
 % for chords with up to three alterations, stacked on top of each other
 #(define-markup-command (acAlt layout props strA strB strC) (string? string? string?)
@@ -105,9 +110,9 @@ JazzChordsList = {
 	  }	% :6.9
 % special chords
   <c e g bes c'>-\markup { \super "7(Alt)" } % :c:8
-  <c e g b>-\markup { \acMaj #"7" } % :maj
-  <c e ges b>-\markup { \acMaj #"7>5" } % :maj.5-
-  <c e gis b>-\markup { \acMaj #"7<5" } % :maj.5+
+  <c e g b>-\markup { \acMaj } % :maj
+  <c e ges b>-\markup { \acMaj #">5" } % :maj.5-
+  <c e gis b>-\markup { \acMaj #"<5" } % :maj.5+
 
   <c e ges bes>-\markup { \super "7(>5)" } % :7.5-
   <c e gis bes>-\markup { \super "7(<5)" } % :7.5+
