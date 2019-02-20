@@ -110,7 +110,7 @@ JazzChordsList = {
 	  }	% :6.9
 % special chords
   <c e g bes c'>-\markup { \super "7(Alt)" } % :c:8
-  <c e g b>-\markup { \acMaj } % :maj
+  <c e g b>-\markup { \acMaj #""} % :maj
   <c e ges b>-\markup { \acMaj #">5" } % :maj.5-
   <c e gis b>-\markup { \acMaj #"<5" } % :maj.5+
 

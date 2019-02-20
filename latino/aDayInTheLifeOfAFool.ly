@@ -58,15 +58,17 @@ realBookTitle = \markup {
 
 Chords =
 \chordmode {
-        \mark \markup{ \box{\fontsize #4 A}}
+\once\override Score.RehearsalMark.self-alignment-X = #2
+
+\mark \markup{ \box{\fontsize #4 A}}
 	\partial 2 s2 |
         %	\myMark "A"
 
-	a1:m | b2:m7.5- e:7.9- | a1:m | b2:m7.5- e:7.9- |
-	a1:m | d2:m7 g:7 | c1:maj7 | e2:m7.5- a:7.9- |
-	d1:m7 | g:7 | c:maj7 | f:maj7 |
-	b:m7.5- | e:7.9- | a:m | b2:m7.5- e:7.9- |
-
+	a1:m | b2:m7.5- e:7.9- | a1:m | b2:m7.5- e:7.9- | \break
+	a1:m | d2:m7 g:7 | c1:maj7 | e2:m7.5- a:7.9- | \break
+	d1:m7 | g:7 | c:maj7 | f:maj7 | \break
+	b:m7.5- | e:7.9- | a:m | b2:m7.5- e:7.9- | \break
+\once\override Score.RehearsalMark.self-alignment-X = #-1
 \mark \markup{ \box{\fontsize #4 B}}
 	%\myMark "A'"
 
@@ -74,12 +76,13 @@ Chords =
 	e1:m7.5- | a:7.9- | d1*2:m |\break
 	d2:m d:m/c |
 	b:m7.5- e:7.9- | a:m a:m/g | f1:maj7 | \break
-	b:m7.5- | e:7 | a2:m d:m7 | a2:m \bar ":|." \break s2
-
-
+	b:m7.5- | e:7 | a2:m d:m7 | a2:m \bar ":|." \break
 	%\myMark "B"
-\mark \markup{ \box{\fontsize #4 Coda}}
+	\once\override Score.RehearsalMark.self-alignment-X = #-1
+        %\once\override Score.RehearsalMark.Y-offset = #-5
 
+        \mark \markup{ \box{\fontsize #4 Coda}}
+        s2 |
 	d2:m7 a:m7 | d:m7 a:m7 | d:m7 e:m7 | a1*2:m6 |
 
 }
