@@ -6,6 +6,18 @@
 
 %\language "english"
 
+startParenthesis = {
+  \once \override ParenthesesItem.stencils = #(lambda (grob)
+        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
+          (list (car par-list) point-stencil )))
+}
+
+endParenthesis = {
+  \once \override ParenthesesItem.stencils = #(lambda (grob)
+        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
+          (list point-stencil (cadr par-list))))
+}
+
 title = #"A Day In The Life Of A Fool"
 composer = #"Luiz Bonfa"
 meter = #"Slow Bossa Nova"
@@ -76,7 +88,8 @@ Chords =
 	e1:m7.5- | a:7.9- | d1*2:m |\break
 	d2:m d:m/c |
 	b:m7.5- e:7.9- | a:m a:m/g | f1:maj7 | \break
-	b:m7.5- | e:7 | a2:m d:m7 | a2:m \bar ":|." \break
+	b:m7.5- | e:7 | a1:m | \startParenthesis \parenthesize b4:m5-7 \endParenthesis
+	\parenthesize e4:7 \bar ":|." \break
 	%\myMark "B"
 	\once\override Score.RehearsalMark.self-alignment-X = #-1
         %\once\override Score.RehearsalMark.Y-offset = #-5

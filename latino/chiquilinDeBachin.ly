@@ -3,6 +3,7 @@
 \include "jazzchords.ily"
 \include "lilyjazz.ily"
 \include "jazzextras.ily"
+\include "chordbass.ily"
 
 \language "english"
 
@@ -60,8 +61,9 @@ Chords =
 \chordmode {
   \once\override Score.RehearsalMark.self-alignment-X = #2
   \mark \markup{ \box{\fontsize #4 I}}
+  \set chordBassOnly = ##t
   a2.:7 | d:m | g:7 | c:7+ | f:7+
-  b:m5-7 | e:7 | a:m | s2.*3 |
+  b:m5-7 | e:7 | a:m | bf:7 | a:m | bf:7 |
 
   a2.:m | a:m/g | a:m/fs | a:m/f |
   d:m | g:7 | bf:7.5- | a:7 | d:m |
@@ -69,14 +71,15 @@ Chords =
 
   a:m | a:m/g | a:m/fs | a:m/f |
   d:m | g:7 | bf:7.5- | a:7 | d:m |
-  g:7 | e:m | a:m | fs:m5- | b:7 | e:7 | s |
+  g2:7  g4:7/f | e2.:m |
+  a2:m a4:m/g | fs2.:m5-7 | b:7 | e:7 | s |
 
 
   a:m |  a:m/g | a:m/fs | a:m/f | b |
   e | bf:6.5- | a:7 | d:m | g:7 | c:7+ |
   f:7+ | d:m | f:7 | e:7 | s |
 
-  e:7 | a:m
+  e:7 | a:m | bf:7 | a:m | bf:7 | a:m
 
 }
 
@@ -119,7 +122,7 @@ Notes = \relative c''{
 
 
 
-  a2. ~ a2. ~ a2. ~ a2. \bar "|."
+  a2. ~ a2. ~ a2. ~ a2. ~ a2. \bar "|."
 
 }
 

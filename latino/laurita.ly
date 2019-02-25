@@ -85,7 +85,7 @@ Notes = \relative c'''{
      c2( ~ c8 d | c4 b2) | b4.( c16 b as b d c | b2 a4) |
     }
     \new Voice { \voiceTwo
-                 e8 e c' a f e | ef8 d ef bf' a4 |
+                 e8 e c' a f e | ef8 d ef b' a4 |
                  d,8 d b' gs e d | c b c b' a e |
     }
   >>
@@ -95,7 +95,7 @@ Notes = \relative c'''{
      c2( ~ c8 d | c4 b2) | b4.( c16 b as b d c | b2 a4) |
     }
     \new Voice { \voiceTwo
-                 e8 e c' a f e | ef8 d ef bf' a4 |
+                 e8 e c' a f e | ef8 d ef b' a4 |
                  d,8 d b' gs e d | c b c b' a e |
     }
   >>
