@@ -46,7 +46,7 @@ bookTitle = \markup {
 
 #(define print-at-bars
    (lambda (x y) (not (eq? (member x
-    '(1 3 7 11 15 33 35 39 43 47 51 55 59 63 65 67 71 75 79 85
+    '(1 3 7 11 15 33 35 39 43 47 51 55 59 63  67 71 75 79 85
        87 91 99 103 107 110 117 121 125 131 134 138 174 178 182
        186 190 194 198 202)) #f))))
 
@@ -86,8 +86,8 @@ Notes = {
     r4 r d4 | d4 d r |
 
     \bar "||"
-    \once\override Score.RehearsalMark.self-alignment-X = -1.5
-    \once\override Score.RehearsalMark.Y-offset = #-1
+    \once\override Score.RehearsalMark.self-alignment-X = -1.8
+    \once\override Score.RehearsalMark.Y-offset = #-0.8
     \mark\markup{\left-align{\box{\fontsize #4 B}}}
     \set Score.currentBarNumber = #35
     s2.*2
@@ -96,13 +96,13 @@ Notes = {
     d4 r r |
     d4 r r |
     \set Score.barNumberFormatter = #robust-bar-number-function
-    \once\override Score.RehearsalMark.Y-offset = #0
-    \mark\markup{\left-align{\musicglyph #"scripts.segno"}}
-    r d r |
+    %\once\override Score.RehearsalMark.Y-offset = #0
+    %\mark\markup{\left-align{\musicglyph #"scripts.segno"}}
+    r \segno d r |
     d8 d d4 d |
 
-   \once\override Score.RehearsalMark.self-alignment-X = -1.5
-    \once\override Score.RehearsalMark.Y-offset = #-1
+   \once\override Score.RehearsalMark.self-alignment-X = -2.5
+    \once\override Score.RehearsalMark.Y-offset = #-6
     \mark\markup{\left-align{\box{\fontsize #4 A}}}
     s2.
     \set Score.currentBarNumber = #65
@@ -114,8 +114,7 @@ Notes = {
     <<
       \relative c'' {
         \voiceOne
-        <b d>2._\markup {\halign #-1 g bordun}
-        ^\markup {\halign #-1 bd Melodie} |  <b ds>  |  <c e>  | <cs es>
+        <b d>2.^\markup {\halign #-1 bd Melodie, g bordun} |  <b ds>  |  <c e>  | <cs es>
         <d fs>  |  <df ef> |  <c e>  | <c ef>
       }
       \relative c' {\new Voice {
