@@ -112,15 +112,58 @@ comp = #(define-music-function (count) (integer?)
           \center-column {
             \line {
           #(robust-bar-number-function
-            (+ increase-amount-three barnum) measure-pos alt-number context)
-          / #(robust-bar-number-function
             (+ increase-amount-two barnum) measure-pos alt-number context)
+          / #(robust-bar-number-function
+            (+ increase-amount-three barnum) measure-pos alt-number context)
            }
            \line {
          #(robust-bar-number-function
-            (+ increase-amount-one barnum) measure-pos alt-number context)
+            barnum  measure-pos alt-number context)
          / #(robust-bar-number-function
-            barnum measure-pos alt-number context)
+            (+ increase-amount-one barnum) measure-pos alt-number context)
           } }
    #}))
 
+% sixtuple
+
+#(define (sixtuple-bar-number
+          increase-amount-one
+          increase-amount-two
+          increase-amount-three
+          increase-amount-four
+          increase-amount-five)
+  (lambda (barnum measure-pos alt-number context)
+   #{
+        \markup
+          \override #'(baseline-skip . 2)
+          \center-column {
+            \line {
+          #(robust-bar-number-function
+            (+ increase-amount-three barnum) measure-pos alt-number context)
+          / #(robust-bar-number-function
+            (+ increase-amount-four barnum) measure-pos alt-number context)
+          / #(robust-bar-number-function
+            (+ increase-amount-five barnum) measure-pos alt-number context)
+           }
+           \line {
+         #(robust-bar-number-function
+            barnum measure-pos alt-number context)
+         / #(robust-bar-number-function
+            (+ increase-amount-one barnum) measure-pos alt-number context)
+         / #(robust-bar-number-function
+            (+ increase-amount-two barnum) measure-pos alt-number context)
+          } }
+   #}))
+
+% parentheses
+startParenthesis = {
+  \once \override ParenthesesItem.stencils = #(lambda (grob)
+        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
+          (list (car par-list) point-stencil )))
+}
+
+endParenthesis = {
+  \once \override ParenthesesItem.stencils = #(lambda (grob)
+        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
+          (list point-stencil (cadr par-list))))
+}

@@ -43,11 +43,17 @@ bookTitle = \markup {
   evenFooterMarkup = \oddFooterMarkup
 }
 
+#(define print-at-bars
+   (lambda (x y) (not (eq? (member x
+    '(1 8 )) #f))))
+
+
 alive = { s1*10 }
 
 Annotation= {
 }
 Notes = {
+  \set Score.barNumberVisibility = #print-at-bars
   \accidentalStyle modern-voice-cautionary
 }
 ChrdsUp = \notemode {
@@ -56,6 +62,15 @@ ChrdsUp = \notemode {
 }
 Chrds = \chordmode {
   \gotoCtx "staff"
+}
+
+\layout {
+  \context {
+    \Score
+    \override BarNumber.break-visibility = ##(#f #t #t)
+    \override BarNumber.Y-offset = 0
+    \override BarNumber.X-offset = -2
+  }
 }
 
 \score {
