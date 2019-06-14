@@ -83,6 +83,8 @@ Notes = {
     e \override ParenthesesItem.font-size = #5
     \startParenthesis \parenthesize c^"1st only" d
     \endParenthesis \parenthesize e
+
+    \break
     \set Score.currentBarNumber = #31
     \set Score.barNumberFormatter = #(quadruple-bar-number 8 79 87)
     \mark\markup{\left-align{\box{\fontsize #4 B}}}

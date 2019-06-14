@@ -57,6 +57,7 @@ Annotation= {
 Notes = {
   \accidentalStyle neo-modern-voice-cautionary
   \key df \major
+  \bar ".|:"
   s1.
   \once\override Score.RehearsalMark.self-alignment-X = -1
   \once\override Score.RehearsalMark.Y-offset = #-5
