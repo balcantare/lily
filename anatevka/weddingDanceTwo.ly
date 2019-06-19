@@ -317,7 +317,7 @@ Chrds = \chordmode {
   bf4 \set chordBassOnly = ##t bf:/c bf:/d bf:/f
   \set chordBassOnly = ##f
   bf1 | c4:m d:dim ef:6 f:7 |
-  bf1
+  bf2 f:7
   \set chordBassOnly = ##t bf2:/bf s2
   \set chordBassOnly = ##f
   s1
