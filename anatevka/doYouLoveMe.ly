@@ -71,7 +71,7 @@ BandR = {
     %\set Score.barNumberFormatter = #(double-bar-number 10)
 
     \tiny
-    g'4 a r c,8 f | d'4 r r c,8 f | g4 a r c,8 bf'8 |
+    g'4 a r c,8 f | d'4 r r c,8 f | g4 a r c,8 bf'8 | %\break
     \normalsize a,4( b2) r4 |
     r4 <c ef>2( <c d>4) r4
     <bf d>( << {\voiceTwo bf2)} \new Voice {\voiceOne df4 c} >>
@@ -93,7 +93,7 @@ BandR = {
     c bf a ~ 8 r |
     r4 <df f> r <df ef> |
     r4 <c ef> r <c ef> |
-    r4 <bf d>( <bf c>)\fermata \breathe \tiny c8 f |
+    r4 <bf d>( <bf c>)\fermata \breathe \tiny c8 f | \break
     g4 a r c,8 f | d'4 r r8 c,8 c f | g4 a r c,8 bf'8 |
     \normalsize
     <b, a' ds>4 <c bf' e>2 \breathe r4 |
@@ -101,6 +101,8 @@ BandR = {
     r4 <bf d>4( <bf df>2) |
     c4 d e f8 \breathe r |
     <a, c>4. \breathe r8 <c ef>4\fermata \breathe r4
+    \break
+
     f4( bf bf2)\fermata
     af4( c c4.) r8 |
     c,2( bf4 ef | f--) f-- f-- f-- |
