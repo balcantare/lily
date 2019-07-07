@@ -22,7 +22,7 @@ bookTitle = \markup {
   between-system-padding = #0
   %%set to ##t if your score is less than one page:
   ragged-last-bottom = ##f
-  ragged-bottom = ##f
+  ragged-bottom = ##t
   %page-count = #1
   markup-system-spacing = #'((basic-distance . 2)
                              (minimum-distance . 2)
@@ -76,7 +76,7 @@ Notes = {
     g,8 f g f e4 c |
     r4 e8 f g f g f  |
     e f g a bf a bf a |
-    g4 b( c) c,( |
+    g4 b( c) c,( | \break
     af') g gf8 8 f4 |
     ef8 d c d ef4 r |
     ef8 d c ef d c b d |
@@ -90,6 +90,7 @@ Notes = {
     a4) cs4--( d-.) d,( |
     bf'8-.) 8-. a4 af g8 8 |
     f8. e16 d8. e16 f4( d'-.) |
+    \break
     %\bar "||"
     \time 2/2
     \repeat volta 2 {
@@ -107,8 +108,9 @@ Notes = {
     <b d>8(\f <a c> <b d> <a c> <g b>4-.) <d g> |
     r4 <g b>8 <a c> <b d> <a c> <b d> <a c> |
     <b g> <a c> <b d> <c e> <d f> <c e> <d f> <c e> |
-    <b d>2. g,4 |
-    <c' ef>4( <b d> <bf df> <a c> |
+    <b d>2. g4 |
+    \break
+    <c ef>4( <b d> <bf df> <a c> |
     bf8 a-"rit.e dim." g a bf2) |
     \mark "In4"
     bf8( a g bf a g-"moto rall." fs a) |
