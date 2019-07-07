@@ -111,7 +111,6 @@ BandL =  {
     \key f \major
     \repeat unfold 9 { f4-. g-. f-. g-. }
   }
-  }
 }
 
 Chords = \chords {
