@@ -59,28 +59,29 @@ Notes = {
     \key g \minor
     \repeat unfold 2 { <g bf>4 4 4( <fs a>) } |
     \repeat unfold 2 { <g bf>8( <fs a> <g bf>4) } |
-    <bf d>4 4 4( <a c>) |
+    <bf d>4 4 4( <a c>) \break |
     r <g bf>4 4 <fs a> |
     <e g> <g bf> <fs a> <e g> |
-    <fs a>1 ~ | 2 r |
+    <fs a>1 ~ | 2 r \break |
     \mark "Bd solo"
     bf4 4 4( a) | bf4 4 4( a) |
     bf8( a bf4) bf8( a bf4) |
-    d4 d d( c) | r4 bf bf a |
-    g bf a g | a1 ~ | a2 r |
+    d4 d d( c) \break | r4 bf bf a |
+    g bf a g | a1 ~ | a2 r \break |
     d4 c c b | b af af g |
-    c2 d | ef2. r4 |
+    c2 d | ef2. r4 \break |
     e d d cs | cs bf bf a |
     << {\voiceOne d2. d,4 | d'4. d8 d4( c) |}
        \new Voice {\voiceTwo r4 <d, fs>8( <e g> <fs a>4) d |
        fs4. fs8 fs2 }
-    >>
+    >> \break
     \repeat unfold 2 { <g bf>4 4 4( <fs a>) } |
     \repeat unfold 2 { <g bf>8( <fs a> <g bf>4) } |
-    <bf d>4 4 4( <a c>) |
+    <bf d>4 4 4( <a c>) \break |
     r <g bf>4 4 <fs a> |
     <e g> <g bf> <fs a> <e g> |
-    <g c ef>2\fermata <c, ef fs>\fermata |
+
+    <g c ef>2_\fermata <c, ef fs>\fermata |
     <bf d g>1\fermata \breathe
     \bar "|."
   }
