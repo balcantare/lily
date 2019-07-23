@@ -50,6 +50,10 @@ bookTitle = \markup {
 
 alive = { s2.*119 }
 
+goUp = \change Staff = "staff"
+goDown = \change Staff = "staff2"
+
+
 Annotation= {
 }
 Notes = {
@@ -68,9 +72,9 @@ Notes = {
       r4 f2 | r4 f2 |
       r8 c(-3 e-2 bf-3 c-2 df-4) | e(-2 af-3 df-2 e-3 af-4 df-5 |
       \bar "||" c)-4 s s2 |
-      s2. s2. | r4 <af,, c>2
+      s2. s2. | r4 c,,2
       s2.*3
-      <f' a>4-. <e g>-. <ef f>-.
+      <f a>4-. <e g>-. <ef f>-.
       s2.*4
       r4 <af c>--( <g bf>) |
       r4 <g bf>( <e af>) |
@@ -137,19 +141,21 @@ Notes = {
           s2.*3 |
 
           f4-. g-. a-. |
-          r4 <df f>8( f,) <c' ef>4-. |
-          r4 <c ef>8( f,) <c' ef>4-. |
-          r4 <df f>8( f,) <df' f>4-. |
-          r4 <d f>8( g,) <d' f>4-. |
-          r4 e2 | r4 df( c) | r4 c( bf) |
-          <bf c>2.
+          \stemDown
+          \goUp r4 <df f>8( \goDown f,) \goUp <c' ef>4-. |
+          r4 <c ef>8( \goDown f,) \goUp <c' ef>4-. |
+          r4 <df f>8( \goDown f,) \goUp <df' f>4-. |
+          r4 <d f>8( \goDown g,) \goUp <d' f>4-. |
+          s4 \voiceTwo e2 \oneVoice | \goDown r4 df( c) | r4 c( bf) |
+          <bf c>2.\stemNeutral
           \repeat unfold 2 { r4 c( df ~ | 4) c( bf) |}
           r4 c( df ~ | 4) c( df) |
-          r4 c2 | ef2. |
+          r4 c2 | \goUp \voiceTwo ef2. \oneVoice \goDown  |
           af,2.( | g) |
           g( | f)
           f( | e)
-          f4 f( af | c f af) |
+          f4 \slurDown f( af | c
+          \goUp \voiceTwo f af) | \slurNeutral \goDown \oneVoice
           \repeat unfold 2 { r4 c,( df ~ | 4) c( bf) |}
           r4 c( df ~ | 4) c( df) |
           r4 c2
@@ -160,7 +166,8 @@ Notes = {
           r e( f) |
           r g( af) |
           r b( c) |
-          f2.( | g) |
+          \goUp \voiceTwo f2.( | g) |
+          \goDown \oneVoice
           r4 df( c) |
           r g( f) |
           s2. | s | s |
@@ -169,9 +176,10 @@ Notes = {
           f( bf df) | c8( bf a4 c) |
           \slurNeutral
           bf2.( | f) | g2. ~ | g |
-          e'2. ~ | e |
+          \goUp \voiceTwo e'2. ~ | e |\oneVoice \goDown
           af,2( c4) | r4 df( bf) |
-          af( c af') | r4 g( f) |
+          af( c \goUp \voiceTwo af') | s4 g( f) |
+          \goDown \oneVoice
           s2. | s | s |
           f,4-. g-. a-. |
           s2. | s | s | s |
