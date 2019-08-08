@@ -13,7 +13,7 @@ bookTitle = \markup {
   \fontsize #3 \larger \larger
   \line { \box{ #sheetNr } #sheetName }
 }
-\header { title = \bookTitle  tagline = ##f }
+\header { title = \bookTitle  tagline = ##f  }
 
 \paper {
   #(set-paper-size "a4")
@@ -37,6 +37,7 @@ bookTitle = \markup {
       \line{
         \box{ #sheetNr } #sheetName \hspace #1
         - \hspace #1 \fromproperty #'page:page-number-string
+        \hspace #1 - \commitDate
       }
     }
   }
@@ -74,12 +75,12 @@ Notes = {
     \break
     \set Score.currentBarNumber = #15
     \set Score.barNumberFormatter = #robust-bar-number-function
-    <g, b>8( <b d>) <b d>4-- <b d>8( <c e>16 <b d> <a c>8-.) <g b>-. |
+    <g,-\balloonText #'(-1 . -1) \markup {"bd"} b>8( <b d>) <b d>4-- <b d>8( <c e>16 <b d> <a c>8-.) <g b>-. |
     <a c>4-. r r2 |
     <a c>8( <c e>) <c e>-. <c e>-. <c e>( <d fs>16 <c e> <b d>8-.) <a cs>-. |
     <b d>4-. r r2 |
     \break
-    <b d>8(^"Dialogue ends" <d f>) <d f>-. <d f>-. <d f> <ef g>16( <d f>) <c e>8-. <b d>-.
+    <b-\balloonText #'(-1 . -1) \markup {"bd"} d>8(^"Dialogue ends" <d f>) <d f>-. <d f>-. <d f> <ef g>16( <d f>) <c e>8-. <b d>-.
     <g ef'>4(\< <gs f'> <bf g'> <c a'>)\!
     <f bf>8-> <d f>-. r <d f>-. <bf ef>-. f'16-(  ef) <a, d>8-. <g c>-. |
     <f bf>8-. r8 \clef bass b,,4 c8 d16 c d8 e |
@@ -99,11 +100,11 @@ Notes = {
     }
     \set Score.currentBarNumber = #31
     \set Score.barNumberFormatter = #robust-bar-number-function
-    <bf d>8(-\mf <d f>) <d f>-. <d f>-. <d f>( <ef g>16 <d f> <c ef>8 <bf d>)
+    <bf-\balloonText #'(-1 . -1) \markup {"bd"} d>8(-\mf <d f>) <d f>-. <d f>-. <d f>( <ef g>16 <d f> <c ef>8 <bf d>)
    \clef bass
    f,4-\p g\< a c\!
    \clef treble
-   <c' ef>8( <e g>) <e g>-. <e g>-. <e g>( <f a>16 <e g> <d f>8 <cs e>)
+   <c' ef>8( <ef g>) <ef g>-. <ef g>-. <ef g>( <f a>16 <ef g> <d f>8 <cs ef>)
    bf,4(\< c d  f)\!
    f'8( af) af-. af-. af bf16 af g8 f |
    <g, ef'>4(\> <af f'> <bf g'> <c a'>-.)-\pp\!
@@ -113,7 +114,7 @@ Notes = {
    \break
    \bar "||"
    \key bf \major
-   <d, bf'>8-\f( <f cf'> <d bf'> <f cf'>\< <bf d>4 <c ef>\! |
+   <d, bf'-\balloonText #'(-0.5 . -1.6) \markup {"bd"}>8-\f( <f cf'> <d bf'> <f cf'>\< <bf d>4 <c ef>\! |
    <d f>1)\>
    <d, bf'>8(\! <f cf'> <d bf'> <f cf'>\< <bf d>4 <c ef>\! |
    <d f>1)\>
@@ -402,7 +403,10 @@ Chrds = \chordmode {
         \new ChordNames \with {
           \override ChordName.Y-offset = #-1.5
         } \Chrds
-        \context Voice = "voice" \Notes
+        \new Voice = "voice" \with {
+           \consists "Balloon_engraver"
+           \override BalloonTextItem #'annotation-balloon = ##f
+        } \Notes
       >>
 %     \new ChordNames = "chrds-down" \with {
 %       \consists Percent_repeat_engraver
