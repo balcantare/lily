@@ -37,6 +37,7 @@ bookTitle = \markup {
       \line{
         \box{ #sheetNr } #sheetName \hspace #1
         - \hspace #1 \fromproperty #'page:page-number-string
+        \hspace #1 - \commitDate
       }
     }
   }
@@ -61,7 +62,7 @@ FluteMotive = { c4 c8 d e4 f | g8 fs g af g4 e | f8 e f g f4 df }
 FluteMotivei = { c4 c8 d e4 f | g8 fs g af g4. e8 | f8 e f g f4 df }
 FluteMotiveii = { c4 c8 d e4. f8 | g8 fs g af g4. e8 | f8 e f g f4 df }
 
-FluteMotiveI = { e8 ds e f e4 g | c g g g | g2. d4 | f f ef df  }
+FluteMotiveI = { e8 ds e f e4 g | c g g g | g2. df4 | f f ef df  }
 
 Violin = {
   \relative c''' {\ViolinMotiv c1 }
@@ -100,7 +101,8 @@ Annotation = {
   s1^\markup{\halign # -2 \italic Refrain}
   s1*4
   s1^\markup{\halign # -2 \italic Thema}
-  s4 s2. s1*12
+  s4 s2. s1*6
+  s1^\markup{Bd Begleitung weg} s1*5
   % page 4
   s1_\markup{ \halign #-0.5 \italic\line{ad lib. bd/vl}}
     ^\markup{ \halign #0 \line{ von ihm erwartet}}
@@ -142,7 +144,7 @@ Annotation = {
 
   s1^\markup{...geliebter Rabbi}
   s1*3 s1_\markup{\italic (vamp till cue)}
-  ^\markup\halign #-1.5 \column{\line{was...uns}
+  ^\markup\halign #-1.5 \column{\line{Zaren}
                                 \line{vom Leib!}}
   s1\ff
   s2\f s2 ^\markup{daidaidai} s1*3
@@ -165,8 +167,8 @@ MotiveIII = { \repeat percent 3
 CMotiveIV = { r4 c8(-3 e)-2 df4(-4 c4)-3 }
 CMotiveIii = \relative c' {
   \override Fingering.staff-padding = #'()
-  <d-4 a'-3>2\< | <d a'>2->\fp\> r4\! <d a'>4\<( |
-  <ef-2 bf'-3>1\><d a' >4\!) r4 r <a' >8->-.\f r |
+  <d-3 a'-4>2\< | <d a'>2->\fp\> r4\! <d a'>4\<( |
+  <ef-2 bf'-5>1\><d a' >4\!) r4 r <a' >8->-.\f r |
   <d >8->-. r r4\mf <fs, a>8( <fs d'>4.)\< |
   <fs d'>2\fp\> r4\! \once\slurDown\stemDown<fs d'>4(\< <g ef'>1\> | <fs d'>4)-.\!
 }
@@ -253,33 +255,33 @@ Notes = {
    s1*3
    s4 r4 r2
    \bar "||"
-   s4 ds,8-. fs-. b4-. fs8-. b-. |
+   r4 ds,8-. fs-. b4-. fs8-. b-. |
    ds4-. r4 r2
-   r4 c8-2 df-4 e16(-5 df-4 c-2 b-5 af-4 g f-4 e-3| ds8)-2
+   r4 c8-5 df-4 e16(-3 df-4 c-5 b-4 af-3 g-2 f-4 e-3| ds8)-2
    r8 r4 r4 \rs |
    \rs fs8-2-. b-3-.  ds4-5-. fs,8 b-. |
    ds4-. r4 r2 |
-   r8 e,16(-3 fs-2 g fs e fs g\<-3 as-4 b-5 as-3 g-2 as b c-2\! | ds8-3)
+   r8 e,16(-2 fs-3 g-4 fs e fs g\<-2 as-3 b-4 as-3 g-2 as-3 b-4 c-5\! | ds8-3)
    r8 r4 r8 b8->\ff as-> b->
    \time 2/4
    c8-> b-> c-> df-> \bar "||"
    \key c \major \time 2/2
    \rs r4 r2 | r1 r1 |
-   r2 r8 df df ef |
-   e4 r4 r2 | r1 r1 r1 |
+   r2 r8 e, f fs |
+   g4 r4 r2 | r1 r1 r1 |
    \bar "||"
    r1
    \set Score.currentBarNumber = #145
    r1
-   r4 r8 f, f af d f |
+   r4 r8 f f af d f |
    e4 r4 r4 g |
    c g r g | c g r g |
    f8 f fs f af af fs f |
    e4 r4 r4 g|
    \bar "||"
    \set Score.currentBarNumber = #153
-   \repeat unfold 2 {c,8_3-. g_2-. c_3-. g'_5-. df_4-. g-. c,-. g-. }
-   g'_4-. c_5-. g-. c,_3-. af_2-. c_4-. g_3-. c,_4-.
+   \repeat unfold 2 {c,8_3-. g_2-. c_3-. g'_5-. df_3-. g-. c,-. g-. }
+   g'_4-. c_5-. g-. c,_2-. af_3-. c_4-. g_3-. c,_4-.
    af'2(_3 g4)_2 r |
    c8-. g-. c-. g'-. df-. g-. c,-. g-. |
    f-. e-. f-. g-. e-. r r4 |
@@ -435,7 +437,7 @@ Chrds = \chordmode {
   b1 s1 c1
   b4 s2 fs4 |
   b1 s1 c1
-  b4 s2.
+  s8 b4. s2
   c4. df8
   c4 r2. s1 s1 s4. g2:dim s8
   c1 s1 s1 s1
