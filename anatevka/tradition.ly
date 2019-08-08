@@ -18,7 +18,7 @@ bookTitle = \markup {
 \paper {
   #(set-paper-size "a4")
   indent = 0\mm
-  page-count = #2
+  page-count = #3
   between-system-space = 0.5\cm
   between-system-padding = #0
   %%set to ##t if your score is less than one page:
@@ -44,6 +44,11 @@ bookTitle = \markup {
   evenFooterMarkup = \oddFooterMarkup
 }
 
+#(define print-at-bars
+   (lambda (x y) (not (eq? (member x
+    '(1 10 18 26 33 36 44 52 60 64 72 80 91 99
+       101 109 118 128 132 145 153 161 167 173
+       181 189 193 201 209 217 225 233 )) #f))))
 
 
 ViolinMotiv = {
@@ -102,7 +107,7 @@ Annotation = {
   s1*4
   s1^\markup{\halign # -2 \italic Thema}
   s4 s2. s1*6
-  s1^\markup{Bd Begleitung weg} s1*5
+  s1^\markup{\italic bd begl weg} s1*5
   % page 4
   s1_\markup{ \halign #-0.5 \italic\line{ad lib. bd/vl}}
     ^\markup{ \halign #0 \line{ von ihm erwartet}}
@@ -113,7 +118,7 @@ Annotation = {
   s2 s2^"Der Papa ..."
   s1*10
   s4\p s2.^\markup{\italic {voc. Mamas}} | s1*3
-  s4 s4^"lesen kann" s2 | s2. s4^\markup{\halign #-2.5 \line{Die Mama ...}}
+  s4 s4^"lesen kann" s2 | s2. s4^\markup{\halign #0 \line{Die Mama ...}}
   s1*8
   s1^\markup{\italic {bd begl weg}} s1
   s1^\markup{\italic {voc. Söhne}}
@@ -151,7 +156,7 @@ Annotation = {
   s1\mf s1*3
   s2^\markup\halign #-3 \italic\line{8va}  s2\ppp
   s1*6 s1
-  s1\mf s1*4
+  s1\mf s1*4 s1*14
   s2\pp_\markup{\center-align\italic (vamp till cue)}
   s2^\markup\halign #0.5 \line{Esel, Esel}
   s1*2
@@ -187,6 +192,7 @@ bddf = { <df-3 ef-4>4 ~ <df ef>8 <cf-2 df-3>( <df ef>)-. r8 }
 Pause = { s1 s1*16 s1*16 }
 
 Notes = {
+  \set Score.barNumberVisibility = #print-at-bars
   \accidentalStyle modern-voice-cautionary
   s2 s4
   \relative c''' {\ViolinMotiv c2. }
@@ -201,23 +207,27 @@ Notes = {
                   {e8 r8 r4 r4 \rs }
     }
   }
+  \set Score.currentBarNumber = #44
   \relative c'' \MotiveII
   \relative c'' \MotiveIII r8
   \repeat volta 2 {
       \repeat percent 3 { s1 | \relative c' \CMotiveIV }
   }
-  s1
+  \break
   \set Score.currentBarNumber = #60
+  s1
+
   \time 2/4
   \relative c''{
     \repeat unfold 2 { r8 c-> c-> cs->  d4-> d->}
     r8 a' g ef
   }
-  \bar "||"
+  %\bar "||"
   \key d \major
   \rs \rs r4 \rs |
   s1*3
   s4  r4 r2
+  \set Score.currentBarNumber = #72
   r2 \relative c''{ \CMotiveIii r4 r8 d8 c bf }
   \bar "||"
   \key a \major
@@ -225,7 +235,10 @@ Notes = {
   s1*4
   \repeat unfold 2 {s4 \rs r4 s4}
   \bar "||"
+  \break
+  \set Score.currentBarNumber = #91
   \relative c'{ r4 \CMotiveV }
+  \break
   \bar "||"
   \key df \major
   s1\mf s1
@@ -233,6 +246,7 @@ Notes = {
   s1*2
   \relative c'' {\rs \repeat unfold 2 {<b e>4->} \rs}
   s1
+  \break
  \relative c''{
    r4 r8 af8-> \slurDown af->( df4) af8-> |
    \slurUp af->( df) r4 r f8-4->( ef)-2 |
@@ -259,11 +273,17 @@ Notes = {
    ds4-. r4 r2
    r4 c8-5 df-4 e16(-3 df-4 c-5 b-4 af-3 g-2 f-4 e-3| ds8)-2
    r8 r4 r4 \rs |
+  \set Score.currentBarNumber = #131
    \rs fs8-2-. b-3-.  ds4-5-. fs,8 b-. |
+  \set Score.currentBarNumber = #131
    ds4-. r4 r2 |
-   r8 e,16(-2 fs-3 g-4 fs e fs g\<-2 as-3 b-4 as-3 g-2 as-3 b-4 c-5\! | ds8-3)
+   \set Score.currentBarNumber = #131
+   r8 e,16(-2 fs-3 g-4 fs e fs g\<-2 as-3 b-4 as-3 g-2 as-3 b-4 c-5\! |
+   \set Score.currentBarNumber = #131
+   ds8-3)
    r8 r4 r8 b8->\ff as-> b->
    \time 2/4
+   \set Score.currentBarNumber = #131
    c8-> b-> c-> df-> \bar "||"
    \key c \major \time 2/2
    \rs r4 r2 | r1 r1 |
@@ -294,6 +314,7 @@ Notes = {
       g'16 f ef df c8
    \revert NoteHead.font-size
    bf_>[ bf_> b_>] |
+   \break
    \set Score.currentBarNumber = #161
    s1*4
    \repeat volta 2 {
@@ -327,18 +348,27 @@ Notes = {
   \key f \major
   \set Score.currentBarNumber = #181
   \repeat percent 7 { f'1( } f1)
-  \repeat percent 4 { f1( } f1)
+  \repeat percent 3 { f1( } f1)
   \key c \major
+  f4-. 8-. g-. a4-. bf-. | r1 |
+  c8-. b-. c-. df-. c4-. a-. | r1
+  bf8-. a-. bf-. c-. bf4-. gf-. | r1
+  a8-. gs-. a-. bf-. a4-. r | r1
+  f,4-. 8-. g-. a4-. bf-. | r1 |
+  c8-. b-. c-. df-. c4-. a-. | r1
+  bf8-. a-. bf-. c-. bf4-. gf-. | r1
+  a8-. gs-. a-. bf-. a4-. r |
   s1
   \set Score.currentBarNumber = #209
   \repeat volta 2 {
     <<
-    {\voiceOne\override NoteHead.font-size = #-2 f8 e g
+    {\voiceOne\override NoteHead.font-size = #-2 f'8 e g
      \revert NoteHead.font-size}
     \new Voice{\voiceTwo r4 r8 <af,-2 bf-3 df-4>8 ~ <af bf df> <g a c>4 <g a c>8 |
     <f g bf>8 <g a c>4 <af bf df>8 ~ <af bf df> <g a c>4 <g a c>8 |}
     >>\oneVoice
   }
+  \break
   \set Score.currentBarNumber = #213
   \repeat percent 3 { \stemDown
                       \once\set fingeringOrientations = #'(right)
@@ -462,6 +492,7 @@ Chrds = \chordmode {
   \gotoCtx "staff"
   \set Score.currentBarNumber = #167
   \repeat percent 3 c1 df2/c c
+  \break
   \gotoCtx "chrds-up"
   c4 s2 df4 |
   s4 s4. g4:m7 g8:7 |
@@ -475,7 +506,8 @@ Chrds = \chordmode {
   \repeat percent 2 { c1:/f }
   \gotoCtx "chrds-up"
   s1 df:/f
-  f1 s1*12
+  f1 s1*11
+  c1 s1*14
   \gotoCtx "staff"
   \repeat volta 2 {
   c1 }
@@ -490,7 +522,16 @@ Chrds = \chordmode {
   c/e s1 df c
 }
 
-alive = { s1*208 }
+alive = { s1*224 }
+
+\layout {
+  \context {
+    \Score
+    \override BarNumber.break-visibility = ##(#f #t #t)
+    \override BarNumber.Y-offset = 0
+    \override BarNumber.X-offset = 0
+  }
+}
 
 \score {
   \new StaffGroup
