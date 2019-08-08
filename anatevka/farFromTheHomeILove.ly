@@ -37,6 +37,7 @@ bookTitle = \markup {
       \line{
         \box{ #sheetNr } #sheetName \hspace #1
         - \hspace #1 \fromproperty #'page:page-number-string
+        \hspace #1 - \commitDate
       }
     }
   }
@@ -55,40 +56,41 @@ BandR = {
     \set Score.currentBarNumber = #1
     %\override ParenthesesItem.font-size = #4
     \key c \minor
-    r4 c''8( d ef c g f) |
-    ef( g ef bf g2) |
-    af8( c ef4) df8( f af4) |
-    g8( b df2 b4)\fermata \bar "||"
+    r4 c''8(-5 d-2 ef-3 c-5 g-4 f)-3 |
+    ef(-2 g-5 ef-4 bf-3 g2-2) |
+    af8(-2 c-3 ef4)-4 df8(-2 f-3 af4)-4 |
+    g8(-2 b-3 df2-4 b4)-3\fermata \bar "||"
     \time 2/2
-    r4^"In2" c8( d ef c g f) |
-    ef( g ef bf g2) |
+    r4^"In2" c8(-5 d-2 ef-3 c-5 g-4 f)-3 |
+    ef(-2 g-5 ef-4 bf-3 g2)-2 |
     af8( c ef4) df8( f af4) |
-    g8( b df2 b4)
-    r4 c8( d ef c g f) |
-    ef( g ef bf g2)
+    g8(-2 b-3 df2-4 b4)-3
+    r4 c8(-5 d-2 ef-3 c-5 g-4 f)-3 |
+    ef(-2 g-5 ef-4 bf-3 g2)-2
     f2( g)
     r1
     \break
     \key c \major
     \bar "||"
-    b4-- b2-- b4--
-    d-- d2-- d4--
-    c-- c2-- c4--
-    b-- b2-- b4--
-    b4-- b2-- b4--
-    d-- d2-- d4--
-    c2( b2)
-    r4 g8( a b a g fs)
+    <e b'-\balloonText #'(-0.5 . 1.5) \markup {"vl"}>4-- 2-- 4--
+    <g d'>-- 2-- 4--
+    <f c'>-- 2-- 4--
+    <b, b'>-- 2-- 4--
+    <e b'>-- 2-- 4--
+    <g d'>-- 2-- 4--
+    <f c'>2( <b, b'>2)
+    r4 g'8( a b a g fs)
     c2( b) | b1 | c |
     r4 <b e>8( <d g>) <d g>( <e b'>) <e b'>( <g d'>)
     \time 4/4
-    <a e' c'>2( <g d' b'> <f c' a'> <e b' g'>)
-    <f c' a'>( <g d' b'>) |
-    <a e' c'> <a e' cs'>4( <g b d'>)
+    \set fingeringOrientations = #'(right)
+    <a-2 e'-3 c'-5>4( r <g d' b'> r <f c' a'> r <e b' g'>) r
+    <f c' a'>( r <g d' b'>) r|
+    <a e' c'>2 cs'4(-5 d)-4
     \bar "||"
     \key c \minor
     \time 2/2
-    \repeat unfold 3 { <ef g>4( <ef g>2 <ef g>4) }
+    \repeat unfold 3 { <ef,, g>4( <ef g>2 <ef g>4) }
     <f g>4( 2 4)
     <ef g>4( 2 4) <ef g>4( 2 4)
     <f af>2( <f g>)
@@ -97,16 +99,16 @@ BandR = {
     \bar "||"
     \key c \major
     \repeat unfold 3 r1
-    r2 r8 g'( c d |
+    r2 r8 g'(-2 c-5 d-2 |
     \bar "||"
     \key c \minor
-    ef4) c8( d ef c g f) |
-    ef( g ef bf g2)
+    ef4)-3 c8(-5 d-2 ef-3 c-5 g-4 f)-3 |
+    ef(-2 g-5 ef-4 bf-3 g2)-2
     \time 4/4
     af4( bf8 af g4 f) |
-    r4 <c ef>( <e g>8) r r4 |
-    <d f>2( <df f>)\fermata |
-    <c ef>4 ~ 8 r r2 |
+    r4 <c-4 ef-2>( <e-2 g-3>8) r r4 |
+    <d-2 f-3>2( <df-5 f-3>)\fermata |
+    <c-4 ef-2>4 ~ 8 r r2 |
     \break
     \bar "||"
     a'4 a a-- g8( a) | b4 b b a8( b) |
@@ -118,10 +120,10 @@ BandR = {
     \bar "||"
     \key g \minor
     r4 <g bf>2.
-    f2( d) | e2.( g4) |
+    f2( d) | ef2.( g4) |
     af2. c4 | bf2 c\fermata |
     r1
-    r2 r4 r8 a( | bf) cs( d) fs <bf, d g>4--\fermata r
+    r2 r4 r8 a(-2 | bf)-3 cs(-2 d)-3 fs-4 <bf,-2 d-3 g-5>4--\fermata r
     \bar "|."
   }
 }
@@ -135,35 +137,36 @@ BandL =  {
     r1
     \key c \major
     \bar "||"
-    <c b' e>4 2 4
-    <e b' g'>4 2 4
-    <d a' f'>4 2 4
-    <g, f' b>4 <g ef' b'>2 <g d' b'>4
-    <c b' e>4 2 4
-    <e b' g'>4 2 4
-    <d a' f'>2
-    << { <g, b'>2 } \new Voice { \voiceOne e'4 d} >>
+    <c b'>4 2 4
+    <e b'>4 2 4
+    <d a'>4 2 4
+    <g, f'>4 <g ef'>2 <g d' >4
+    <c b'>4 2 4
+    <e b'>4 2 4
+    <d a'>2
+    << { g,2 } \new Voice { \voiceOne e'4 d} >>
     \oneVoice
     r4 e8( f g f e ds)
     a'2( g) | g1 | a | r1 |
-    f'2 e | d c | d e | f1 |
+    f'4 r e r | d r c r | d r e r | f1 |
     \bar "||"
     \key c \minor
-    <c, c'>4 2 4
-    <ef bf'>4 2 4
-    <af, c'>4 2 4
-    <g b'>4 2 4
-    <c c'>4 2 4
-    <ef bf'>4 2 4
-    <d c'>2 <g, b'>
+    \set fingeringOrientations = #'(right)
+    <c,-2 c'-5>4 2 4
+    <ef-2 bf'-4>4 2 4
+    <af,-3 c'-5>4 2 4
+    <g-2 b'-4>4 2 4
+    <c-2 c'-5>4 2 4
+    <ef-2 bf'-4>4 2 4
+    <d-2 c'-5>2 <g,-3 b'-4>
     r1
     \bar "||"
     \key c \major
     s1*4
     \key c \minor
     s1*3
-    r4 <g' c> <b df>8 r r4
-    <af c>2 <g b> | <g c>4 ~ 8 r8 r2
+    r4 <g'-2 c-4> <b-3 df-4>8 r r4
+    <af-3 c-4>2 <g-2 b-3> | <g-2 c-4>4 ~ 8 r8 r2
     \repeat unfold 8 s1
     g,1
     \key g \minor
@@ -172,7 +175,7 @@ BandL =  {
     d2( bf) | <g bf>2.( <bf ef>4) |
     <c ef>2. <ef af>4 |
     <c fs>2  <d af'> | r1 |
-    g,8( a bf) cs( d) fs( g) r8 | r1
+    g,8(-3 a-4 bf)-3 cs(-4 d)-3 fs(-5 g)-4 r8 | r1
   }
 }
 
@@ -206,11 +209,15 @@ Chords = \chords {
 
 \score {
   \new GrandStaff <<
-    \new Staff = "up" {
+    \new Staff = "up" \with {
+      \consists "Balloon_engraver"
+      \override BalloonTextItem #'annotation-balloon = ##f
+    }
+    {
       \BandR
     }
     \Chords
-    \new Staff = "down" {
+    \new Staff = "down"  {
       \clef bass
       \BandL
     }
