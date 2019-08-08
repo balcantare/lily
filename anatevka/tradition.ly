@@ -193,7 +193,7 @@ Pause = { s1 s1*16 s1*16 }
 
 Notes = {
   \set Score.barNumberVisibility = #print-at-bars
-  \accidentalStyle modern-voice-cautionary
+  \accidentalStyle neo-modern-voice-cautionary
   s2 s4
   \relative c''' {\ViolinMotiv c2. }
   <<
