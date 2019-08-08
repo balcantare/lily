@@ -37,6 +37,7 @@ bookTitle = \markup {
       \line{
         \box{ #sheetNr } #sheetName \hspace #1
         - \hspace #1 \fromproperty #'page:page-number-string
+        \hspace #1 - \commitDate
       }
     }
   }
@@ -117,6 +118,7 @@ Notes = {
       c8( df e c df e) |
       \bar "||"
       \repeat unfold 2 { r4 <f af>( <g bf> ~ | 4) <f af>( <e g>) |}
+      r4 <f af>( <g bf> ~ | 4) <f af>( <g bf>) |
       f2. | <ef f>2. |
       df'4( bf) g8( f |
       e2.) |
@@ -137,7 +139,7 @@ Notes = {
           \slurDown bf2.( | a2. | bf) | \slurNeutral
           r4 a( bf) | r4 b2 | r4 b2 |
           \tieDown c2.  ~ 2. | \tieNeutral
-          f,2. ( ef2. f2.) | r4 g( f) |
+          f,2. ( c2. f2.) | r4 g( f) |
           s2.*3 |
 
           f4-. g-. a-. |
@@ -185,8 +187,9 @@ Notes = {
           s2. | s | s | s |
           c,2 r4 | c2 r4 | c2 r4 | c2 r4 |
           \repeat unfold 2 { r4 c'( df ~ | 4) c( bf) |}
+          r4 c( df ~ | 4) c( df) |
           \repeat unfold 8 s2. |
-          <f, c' af'>2. ~ | 2. ~ | 2. ~| 4 r4 r \breathe
+          <f,, c' af'>2. ~ | 2. ~ | 2. ~| 4 r4 r \breathe
           \bar "|."
 
 
@@ -231,6 +234,7 @@ Chrds = \chordmode {
   \gotoCtx "staff2" bf:m | f:7 | bf:m |
   g:7 | \gotoCtx "chrds-up" c:7 |s2.*3
   \repeat unfold 2 { f2:m g2:m5-7 f4:m c:7 }
+  f2:m g2:m5-7 f4:m g4:m5-7 |
   \gotoCtx "staff2" f2.:m | f:7 |
   g:m5-7 | c:7.9- | f:m | bf:7.9 | g:m5-7| c:7.9- |
   \gotoCtx "staff" f:m | s s s
