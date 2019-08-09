@@ -6,8 +6,8 @@
 \include "anatevka.ily"
 \language "english"
 
-sheetName = #"Ana"
-sheetNr   = #"0"
+sheetName = #"Anatevka"
+sheetNr   = #"31"
 
 bookTitle = \markup {
   \fontsize #3 \larger \larger
