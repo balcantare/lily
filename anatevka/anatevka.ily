@@ -99,6 +99,24 @@ comp = #(define-music-function (count) (integer?)
        }
    #}))
 
+% triple bar number
+
+#(define (triple-bar-number increase-amount-one increase-amount-two)
+  (lambda (barnum measure-pos alt-number context)
+   #{
+        \markup
+          \override #'(baseline-skip . 2)
+           \line {
+         #(robust-bar-number-function
+            barnum measure-pos alt-number context)
+         / #(robust-bar-number-function
+            (+ increase-amount-one barnum) measure-pos alt-number context)
+         / #(robust-bar-number-function
+            (+ increase-amount-two barnum) measure-pos alt-number context)
+          }
+   #}))
+
+
 % quadruple bar number
 
 #(define (quadruple-bar-number

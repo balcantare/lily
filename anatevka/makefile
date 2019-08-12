@@ -25,7 +25,8 @@ sheets = tradition \
          chavale \
          anatevka \
          finalSceneUnderscoring \
-         curtainAct2 
+         curtainAct2 \
+         exit
 
 lilypond := ~/prog/apps/bin/lilypond
 
