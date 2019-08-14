@@ -18,7 +18,7 @@ bookTitle = \markup {
 \paper {
   #(set-paper-size "a4")
   indent = 0\mm
-  page-count = #3
+  page-count = #2
   between-system-space = 0.5\cm
   between-system-padding = #0
   %%set to ##t if your score is less than one page:
@@ -193,6 +193,7 @@ Pause = { s1 s1*16 s1*16 }
 
 Notes = {
   \set Score.barNumberVisibility = #print-at-bars
+  \override Score.NonMusicalPaperColumn.page-break-permission = ##f
   \accidentalStyle neo-modern-voice-cautionary
   s2 s4
   \relative c''' {\ViolinMotiv c2. }
@@ -253,7 +254,10 @@ Notes = {
    ef(-4 d)-3 d(-4 cs)-3 cs(-4 b-3 a-2 b-4 | af-3)
    r8 r4 r4 \rs |
    \rs r8 af8-2-> af->( f'4)-5 af,8-> | af->( f') r4 r bf8-5->( af)-4 |
+   \accidentalStyle teaching
    af(-4 gf)-3 gf(-4 ef)-3 ef( d) d(-3 ef-2| f8)-4-. r r4 r8 df df d |
+   %\pageBreak
+   \accidentalStyle neo-modern-voice-cautionary
    \time 2/4 ef8 df df e |
    \bar "||"
    \time 2/2
@@ -268,6 +272,7 @@ Notes = {
    }
    s1*3
    s4 r4 r2
+   \pageBreak
    \bar "||"
    r4 ds,8-. fs-. b4-. fs8-. b-. |
    ds4-. r4 r2
@@ -278,7 +283,9 @@ Notes = {
   \set Score.currentBarNumber = #131
    ds4-. r4 r2 |
    \set Score.currentBarNumber = #131
+   \accidentalStyle teaching
    r8 e,16(-2 fs-3 g-4 fs e fs g\<-2 as-3 b-4 as-3 g-2 as-3 b-4 c-5\! |
+   \accidentalStyle neo-modern-voice-cautionary
    \set Score.currentBarNumber = #131
    ds8-3)
    r8 r4 r8 b8->\ff as-> b->
@@ -286,14 +293,17 @@ Notes = {
    \set Score.currentBarNumber = #131
    c8-> b-> c-> df-> \bar "||"
    \key c \major \time 2/2
-   \rs r4 r2 | r1 r1 |
-   r2 r8 e, f fs |
-   g4 r4 r2 | r1 r1 r1 |
+   \clef bass
+   c,,8 r c8 d e4 f | g8 fs g af g4 e |
+   f8 e f g f4 df | e8 ds e f e4 g |
+   c,8 r c8 d e4 f | g8 fs g af g4. e8 |
+   f e f g f4 df | c4 r4 r2
+   \clef treble
    \bar "||"
    r1
    \set Score.currentBarNumber = #145
    r1
-   r4 r8 f f af d f |
+   r4 r8 f' f af d f |
    e4 r4 r4 g |
    c g r g | c g r g |
    f8 f fs f af af fs f |
@@ -350,6 +360,7 @@ Notes = {
   \repeat percent 7 { f'1( } f1)
   \repeat percent 3 { f1( } f1)
   \key c \major
+  \tiny
   f4-. 8-. g-. a4-. bf-. | r1 |
   c8-. b-. c-. df-. c4-. a-. | r1
   bf8-. a-. bf-. c-. bf4-. gf-. | r1
@@ -364,6 +375,7 @@ Notes = {
     <<
     {\voiceOne\override NoteHead.font-size = #-2 f'8 e g
      \revert NoteHead.font-size}
+    \normalsize
     \new Voice{\voiceTwo r4 r8 <af,-2 bf-3 df-4>8 ~ <af bf df> <g a c>4 <g a c>8 |
     <f g bf>8 <g a c>4 <af bf df>8 ~ <af bf df> <g a c>4 <g a c>8 |}
     >>\oneVoice
