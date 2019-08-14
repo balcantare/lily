@@ -306,7 +306,7 @@ Notes = {
     <g d'>4 <a fs'>8( <bf g'>8) 4.->( <bf'-4 d>8) |
     <a-5 c>8-. <g-4 bf>->( <f-3 a> <e-2 g>) <e-2 gs>-. <f-4 a>( <d-3 f> <c-2 e>) |
     <bf-3 d>4-^ <cs-2 e>8( <d-3 f> <e-2 g> <f-3 a> <g-4 bf> <bf-5 d>) |
-    <c-5 e>->( <bf-4 d> <a-2 c> <g-4 bf> <f-3 a>-.)
+    <c-5 e>( <bf-4 d> <a-2 c> <g-4 bf> <f-3 a>-.)
     \break
     << { r8 r4
          \override Score.BarNumber.X-offset = 0
@@ -317,7 +317,7 @@ Notes = {
          \override Score.BarNumber.X-offset = -1
          \override Score.BarNumber.Y-offset = -1
 
-         e1 | cs'-^ ~ | 4 cs-^ d-^ r |
+         e1 | cs'-^ ~ | 4 cs-^ d r |
          r cs-^ d-^ r |
          \override Score.BarNumber.X-offset = -2
          \override Score.BarNumber.Y-offset = -1
@@ -345,16 +345,17 @@ Notes = {
   %  \bar "||"
     \key d \major
     \set Score.barNumberFormatter = #(double-bar-number 8)
+    \override Score.NonMusicalPaperColumn.line-break-permission = ##f
     \repeat volta 2 {
-      \set fingeringOrientations = #'(right)
+      \set fingeringOrientations = #'(down up)
     <fs''-2-\balloonText #'(-1 . -0.5) \markup {"2."}
     d'-2-\balloonText #'(-1 . 1) \markup {"1."} >4
     <a-3 fs'-4> <d-4 fs-2> <e-3 g-3> |
     \acciaccatura gs8 <fs-2 a-4>2 4 <bf-3 d-2> |
-    \acciaccatura {c16 d} <a-2 c-5>4 <g-4 bf-4> <fs-3 a-2> <ef-2 g-3> |
+    \acciaccatura {c16 d} <a-2 c-5>4 <g-4 bf-4> <fs-3 a-2> <ef-2 g-3> \noBreak|
     \acciaccatura gs8 <fs a-4>2 \acciaccatura gs8 <fs a>2 \noBreak|
     <a-5 c-5>4 <g-4 bf-4> <fs-3 a-2> <ef-2 g-4> |
-    <d-4 fs-3> <ef-2 g-4> <d-4 fs-3> <c-3 ef-2> | }
+    <d-4 fs-3> <ef-2 g-4> <d-4 fs-3> <c-3 ef-2> \noBreak| }
     \alternative {
       {
         \once \override Score.VoltaBracket #'extra-offset = #'(0 . 0)
@@ -376,6 +377,7 @@ Notes = {
      >> }
     }
     %\bar "||"
+    \revert Score.NonMusicalPaperColumn.line-break-permission
     \set Score.barNumberFormatter = #robust-bar-number-function
     \set Score.currentBarNumber = #277
     \key c \major
@@ -409,7 +411,7 @@ Notes = {
     <cs-4 e> <bf-3 d> <a-2 cs> <g-3 bf> |
     <fs-2 a> <g-3 bf> <a-2 cs> <cs-4 e> |
     \override ParenthesesItem.font-size = #-2
-    <a-2 \parenthesize d f>2.-> 4-> ~ |
+    <a-2 \parenthesize d f>2. 4-> ~ |
     \set fingeringOrientations = #'(right)
     2 <a-2 d-3 fs-4>2-> |
     \bar "||"
@@ -437,11 +439,16 @@ Notes = {
     %\mark "Vivo"
     \normalsize
     << {
+      \override Score.BarNumber.X-offset = 2
+      \override Score.BarNumber.Y-offset = -5
+
         bf2 \acciaccatura {c16 bf} a2 |
         \acciaccatura {bf16 a} g2 \acciaccatura {a16 g} fs2 |
         g4 d2. ~ | 4 ef f fs |
         g af g f | ef d cs d |
         ef1 ~ | 8 r c4-> b-> bf->
+        \override Score.BarNumber.X-offset = -1.8
+        \override Score.BarNumber.Y-offset = -3
         a4( f' ef2) |
         d4( cs2 d4)-. |
         g,4( ef'4 df2) |
@@ -529,9 +536,9 @@ Chrds = \chordmode {
   g1:7 | g4:7 s2. |
   \repeat unfold 4 { a1:7 | d:m | }
   \repeat unfold 4 { g1:m | c2:7 f | }
-  \repeat percent 2 a1:7 |\repeat percent 2 { d2:m g:m | }
-  \repeat percent 2 a1:7 |\repeat percent 2 d1:m
-  \repeat percent 2 a1:7 |\repeat percent 2 { a2:7 d:m | }
+  a1:7 s1 |\repeat percent 2 { d2:m g:m | }
+  a1:7 s1 |d1:m s1
+  a1:7 s1 |\repeat percent 2 { a2:7 d:m | }
   g1:m d:m a:7 d:m |
   \break
    d1:11 s1*5 s1*4
