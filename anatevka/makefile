@@ -20,6 +20,7 @@ sheets = tradition \
          weddingSceneNo2 \
          finaleAct1 \
          doYouLoveMe \
+         sogMirDuShejnMejdele \
          farFromTheHomeILove \
          incidental \
          chavale \
