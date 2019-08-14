@@ -38,6 +38,7 @@ bookTitle = \markup {
       \line{
         \box{ #sheetNr } #sheetName \hspace #1
         - \hspace #1 \fromproperty #'page:page-number-string
+        \hspace #1 - \commitDate
       }
     }
   }
@@ -46,7 +47,7 @@ bookTitle = \markup {
 
 #(define print-at-bars
    (lambda (x y) (not (eq? (member x
-    '(1 9 29 31 37 43 63 75  142 158 173 181 189 197
+    '(1 9 29 31 37 43 61 63 75  142 158 173 181 189 197
        205 209 213 220 228 229 233 237 245 253 257 261
        277 285 293 301 309 316)) #f))))
 
@@ -71,15 +72,25 @@ Notes = {
       \once\override Score.RehearsalMark.self-alignment-X = -6 % -1.8
       \once\override Score.RehearsalMark.Y-offset = #0
       \mark\markup{\left-align{\box{\fontsize #4 A}}}
-      s1*6
-      r2 << { \voiceOne c8^"1st" cs d e }
-         \new Voice { \voiceTwo c8_"2nd" bf af g } >>
+      \override NoteHead.style = #'slash
+      \override ParenthesesItem.font-size = #3
+      \startParenthesis \parenthesize
+      d,2\rest_"5.& 6." f4 f4\rest
+      d2\rest f4
+      \endParenthesis \parenthesize f4\rest
+      \revert NoteHead.style
+      s1*4
+      r2 << { \voiceTwo c'8-2 cs-3 d-4 e-3 }
+         \new Voice {
+           \set fingeringOrientations = #'(right)
+           \voiceOne <c'-5-\balloonText #'(-1 . -1) \markup {"2."}>8 <bf-4> <af-3> <g-2> } >>
       \oneVoice
-      f'4 r r2
+      f4 r r2 \break
       s1*5
-      \once\override Score.RehearsalMark.self-alignment-X = 1
-      \mark \markup{\fontsize #4 {\arrow\box{C}      }}
+      \once\override Score.RehearsalMark.self-alignment-X = -1
+      \mark \markup{\fontsize #4 {\arrow\box{C}}}
       s1
+
     }
     r4 c,2 d4 |
     e \override ParenthesesItem.font-size = #5
@@ -96,106 +107,146 @@ Notes = {
 
     \alternative {
       {
-       s1*2 r4 c d ef | e \startParenthesis \parenthesize c^"1st only" d
-       \endParenthesis \parenthesize e }
-      { \set Score.currentBarNumber = #43
+       \once \override Score.VoltaBracket #'extra-offset = #'(0 . -0.5)
+       s1*2
+       \override Score.BarNumber.X-offset = -2
+       \override Fingering.direction = #DOWN
+       r4 c-4 d-3 ef-2 | e-3 \startParenthesis
+       \parenthesize c-4^"1st only" d-2
+       \endParenthesis \parenthesize e-3 }
+      { \once \override Score.VoltaBracket #'extra-offset = #'(0 . -0.5)
+        \override Score.BarNumber.X-offset = 6
+        \set Score.currentBarNumber = #43
         s1*2 }
     }
     r4 g2 a4 | b g a b
     \bar "||"
-    \once\override Score.RehearsalMark.self-alignment-X = 0
+    \newSpacingSection
+    \override Score.SpacingSpanner.base-shortest-duration = #(ly:make-moment 1/8)
+    \once\override Score.RehearsalMark.self-alignment-X = -0.2
     \once\override Score.RehearsalMark.Y-offset = #-2
-
     \mark \markup{\fontsize #4 {\arrow\box{AC}}}
     s1
+    \newSpacingSection
+    \revert Score.SpacingSpanner.base-shortest-duration
+
     \bar "||"
    % \break
    \once\override Score.RehearsalMark.self-alignment-X = -4.5
    \once\override Score.RehearsalMark.Y-offset = #-2
     \mark \markup{\fontsize #4 {\box{C}}}
+    %\set Score.barNumberFormatter = #robust-bar-number-function
+    \override Score.BarNumber.X-offset = -0.1
+    \set Score.currentBarNumber = #61
     \override NoteHead.style = #'slash
     b4 b2
     \revert NoteHead.style
-    d,4 | ef fs g as | b d ef g
-    \once\override Score.RehearsalMark.self-alignment-X = 1.8
+    d,4-3 | ef-2 fs-3 g-4 as-2
+    \once\override Score.RehearsalMark.self-alignment-X = -1.8
     \once\override Score.RehearsalMark.Y-offset = #-2
-
     \mark \markup{\fontsize #4 {
         \arrow\box{D}
       }}
+    | b-3 d-4 ef-2 g-4
+    \break
     %\bar "||"
     \set Score.currentBarNumber = #63
     \set Score.barNumberFormatter = #(double-bar-number 8)
     \repeat volta 2 {
-      e,2 e | f f | e e4-. f-. | e-. d-. c2 |
+      e2-3 e | f-4 f | e-3 e4-.-4 f-5-. | e-4-. df-3-. c2-2 |
     } \alternative { {
-      e2 e | f f | c4 \breathe af'_"unisono" g f | e c e f |
-    } {
+      \once \override Score.VoltaBracket #'extra-offset = #'(0 . -1.5)
+      e2 e | f f | e4 \breathe af4-4 g-2 f-4 | e-3 c-2 e-3 f-4 |
+    } {  \once \override Score.VoltaBracket #'extra-offset = #'(0 . -1.5)
+
 
     \set Score.currentBarNumber = #75
     \set Score.barNumberFormatter = #robust-bar-number-function
-    c'2 g |}
-    } af4 g f2 | ef2 df | c4 e_"unisono" df c |
-    \repeat volta 2 { \set Score.currentBarNumber = #79 s1 }
-    \once\override Score.RehearsalMark.self-alignment-X = 0.4
+    c'2-5 g-2 |}
+    } af4-4 g-3 f2-2 | ef2-2 df-3 | c4-2 e-4 df-3 c-2 |
+    \set Score.currentBarNumber = #79
+    s1
+    \once\override NoteHead.style = #'slash
+    g4 r4 r2
+    \bar "||"
+    \newSpacingSection
+    \override Score.SpacingSpanner.base-shortest-duration = #(ly:make-moment 1/8)
+    \once\override Score.RehearsalMark.self-alignment-X = 0.1
     \once\override Score.RehearsalMark.Y-offset = #0
     \mark \markup{\fontsize #2 {\arrow\box{ABACD}}}
-
     s1
+    \newSpacingSection
+    \revert Score.SpacingSpanner.base-shortest-duration
+
     %\bar "||"
   %  \break
-    \once\override Score.RehearsalMark.self-alignment-X = -4.5
+    \once\override Score.RehearsalMark.self-alignment-X = -5.5
     \mark \markup{\fontsize #4 {\box{D}}}
     \repeat volta 2 {
       \set Score.currentBarNumber = #142
       \set Score.barNumberFormatter = #(double-bar-number 8)
-       c'4(_"clarinet" e) e f | \acciaccatura fs8 g2 \acciaccatura fs8 g2
+      \once\override Score.BarNumber.Y-offset = 1
+
+       c4(_"clarinet" e) e f | \acciaccatura fs8 g2 \acciaccatura fs8 g2
        bf4( af16 bf af8 g4) f |
        e2 e |
        bf'4( af16 bf af8 g4) f |
        e4 f e16( f e8 df4) |
     } \alternative {
-      { e1( | e1 ) }
-      { c4 e2( f4) | g ef d df | }
+      {
+        \once \override Score.VoltaBracket #'extra-offset = #'(0 . -3)
+        e1( | e1 ) }
+      { \once \override Score.VoltaBracket #'extra-offset = #'(0 . -3)
+        c4 e2( f4) | g ef d df | }
     } %\break
     \repeat volta 2 {
+      \override Score.BarNumber.X-offset = 1.5
       \set Score.currentBarNumber = #158
-      r4 c \acciaccatura e8 f4 g | af bf c d |
+      r4 c \acciaccatura e8 f4^"cl ad lib" g | af bf c d |
       ef f, fs g | ef c' af g |}
     \alternative { {
+      \once \override Score.VoltaBracket #'extra-offset = #'(0 . -2)
       fs ef' d c | b c cs d |
       r4 c2 g4 | bf bf bf bf |
     } {
+      \once \override Score.VoltaBracket #'extra-offset = #'(0 . -2)
       fs4  c' bf a |
     } }
      af a bf a | g4 r4 r2 \fermata
     \bar "||"
-  %  \break
+   \break
     \time 4/4
     \set Score.currentBarNumber = #173
     \set Score.barNumberFormatter = #robust-bar-number-function
-    b,,4(_"bd" d f af)
-    g2 r |
-    c2 r |
-    fs, a |
-    f2 f4( af)
-    g2 r |
-    c2 c |
-    r4 g'8 fs f d b af |
+    \set fingeringOrientations = #'(right)
+    <b,,-3>4(_"bd" <d-2> <f-3> <af-4>)
+    g2-3 r |
+    c2-4 r |
+    fs,-2 a-3 |
+    f2-2 f4( af)-3
+    g2-2 r |
+    c2-3 c-2 |
+    r4 g'8-4 fs-2 f-5 d-4 b-3 af-2 |
  %   \break
-    r2 d,2( | ef g) | af2( c4 d) | ef2( d4 c) |
-    d2( f, | ef g) | f( fs) | r2 g'4 r4 |
+    \override Score.BarNumber.X-offset = -2
+     r2 d,2(-3 | ef-2 g)-3 | af2(-4 c4-2 d)-4 | ef2(-2 d4-4 c)-2 |
+    d2(-4 f,-3 | ef-2 g)-4 | f(-3 fs)-2 | r2 <g b d g>4 r4 |
     \time 2/2
     \repeat volta 2 {
-      g,2( af4 g) | f2( g4 f) | c'2( d4 c) | r2 g'4 r4 |
+      \override Score.BarNumber.X-offset = 0
+      g2(-5 af4-4 g)-3 | f2(-2 g4-3 f)-2 | c'2(-2 d4-3 c)-2 |
+      r2 <g b d g>4 r4 |
     }
- %   \break
+  \break
     \set Score.currentBarNumber = #197
-
-    g,1(\startTrillSpan g1)\stopTrillSpan
-    af1\trill | fs2\trill a\trill
-    g1(\startTrillSpan g1)\stopTrillSpan
-    af2\trill \grace { g16( af } a4)-. r4 r2 g'4-^ r4
+    %\override Fingering.staff-padding = #'()
+    %\override Fingering.direction = #UP
+    <g'-23>1 ~ \startTrillSpan g1\stopTrillSpan
+    <af-23>1\trill |
+    <fs-23>2\trill <a-23>\trill
+    <g-23>1(\startTrillSpan g1)\stopTrillSpan
+    <af-23>2\trill \grace { <g-2>16( <af-3> } <a-2>4)-. r4 r2 g4-^ r4
+    %\revert Fingering.staff-padding
     %\mark \markup{\fontsize #4 {\box{6A Dance}}}
       \bar "||"
     << {\voiceOne c1\startTrillSpan ~ | c1\stopTrillSpan |
@@ -203,28 +254,33 @@ Notes = {
         c1\startTrillSpan ~ | c1\stopTrillSpan |
         r8 c( d c a fs ef c | b4)  }
        \new Voice {
-         \voiceTwo g'4\ff g af g f f g f |
-         ef f ef d | g, r g'2-> |
-         g4 g af g f f g f |
-         ef f ef d | b
+         \override Score.BarNumber.X-offset = -2
+         \voiceTwo g'4-2\ff g af-3 g-2 f-3 f g-4 f |
+         ef-2 f-4 ef-2 d-4 | g,-2 r <g b d g>2-> |
+         g'4-2 g af-3 g-2 f-3 f g-4 f-3 |
+         ef-2 f-4 ef-2 d-4 | g,-2
 
        }
     >>
     \clef bass
     \oneVoice
-    cs,,4^"bd left" e d |
+    cs,,4-2^"bd left" e-3 d-2 |
     \set Score.currentBarNumber = #213
     \set Score.barNumberFormatter = #(double-bar-number 8)
 
     \repeat volta 2 {
-    g,2 b | c ef | r4 f2( af4-.) |
-    g d b af |
-    g2 b | c ef | r4 fs4( g-.) fs( | }
+    g,2-3 b-4 | c-2 ef-3 | r4 f2(-3 af4-4-.) |
+    g-3 d-2 b-3 af-4 |
+    g2-3 b-4 | c-2 ef-3 | r4 fs4(_2 g_3-.) fs_2( | }
     \alternative {
-      { \set Score.barNumberFormatter = #robust-bar-number-function
+      { \once \override Score.VoltaBracket #'extra-offset = #'(0 . -3)
+        \set Score.barNumberFormatter = #robust-bar-number-function
         \set Score.currentBarNumber = #220
-        g4-.) d b af |}
-      { \set Score.currentBarNumber = #228
+        g4_4-.) d-2 b-3 af-4 |}
+      { \once \override Score.VoltaBracket #'extra-offset = #'(0 . -3)
+        \override Score.BarNumber.X-offset = 0
+        \override Score.BarNumber.Y-offset = -2
+        \set Score.currentBarNumber = #228
         g'4-.\repeatTie fs,\fermata g\fermata af\fermata
         \breathe}
     }
@@ -232,7 +288,7 @@ Notes = {
     \key d \minor
     \clef treble
     \time 4/4
-    a''4-._"cl/bd"^"slow 4" cs-. e4. a8 |
+    a''4-._"git"^"slow 4" cs-. e4. a8 |
     g8-. f-. e-. d-. f4( d-.) |
     a4-. cs-. e4. a8 |
     g8-. f-. e-. f-. d r r4 |
@@ -241,34 +297,45 @@ Notes = {
     a4-. cs-. e4. a8 |
     g8-. f-. e-. f-. d r r4 |
     \pageBreak
+    \set fingeringOrientations = #'(down)
 
-    <g, d'>4( <bf g'>) <d bf'>4.--( <f d'>8-.) |
-    <e c'>8( <d bf'> <c a'> <bf g'> <c a'>4 <a f'>4-.) |
+    <g,-2-\balloonText #'(-1 . -1) \markup {"bd"} d'>4( <bf-3 g'>) <d-4 bf'>4.--( <f-5 d'>8-.) |
+    <e-4 c'>8( <d-3 bf'> <c-2 a'> <bf-3 g'> <c-4 a'>4 <a-2 f'>4-.) |
     <g d'>4--( <bf g'>-.) <d bf'>4.--( <f d'>8-.) |
     <e c'>8( <d bf'> <c a'> <bf g'> <a f'>8-.) 8 <af e'>  <g d'> |
-    <g d'>4 <a fs'>8( <bf g'>8) 4.->( d'8) |
-    c8-. bf->( a g) gs-. a( f e) |
-    <bf d>4-^ <cs e>8( <d f> <e g> <f a> <g bf> <bf d>) |
-    <c e>->( <bf d> <a c> <g bf> <f a>-.)
+    <g d'>4 <a fs'>8( <bf g'>8) 4.->( <bf'-4 d>8) |
+    <a-5 c>8-. <g-4 bf>->( <f-3 a> <e-2 g>) <e-2 gs>-. <f-4 a>( <d-3 f> <c-2 e>) |
+    <bf-3 d>4-^ <cs-2 e>8( <d-3 f> <e-2 g> <f-3 a> <g-4 bf> <bf-5 d>) |
+    <c-5 e>->( <bf-4 d> <a-2 c> <g-4 bf> <f-3 a>-.)
     \break
     << { r8 r4
-         cs1-> | a-> | d-> ~ | 2 d4-> r |
-         e,2-^ cs-^ | a'-^ g-^ | r4 f e-^ d-^ | r d-^ e-^ f-^ |
-         e1-^ | cs'-^ ~ | 4 cs-^ d-^ r |
+         \override Score.BarNumber.X-offset = 0
+         \override Score.BarNumber.Y-offset = -5
+
+         cs1->^"vl" | a-> | d-> ~ | 2 d4-> r |
+         e,2 cs | a' g | r4 f e d | r d e f |
+         \override Score.BarNumber.X-offset = -1
+         \override Score.BarNumber.Y-offset = -1
+
+         e1 | cs'-^ ~ | 4 cs-^ d-^ r |
          r cs-^ d-^ r |
+         \override Score.BarNumber.X-offset = -2
+         \override Score.BarNumber.Y-offset = -1
+
           r <bf d>( <a c> <g bf>) | r <f a>( <g bf> <f a>) |
-          r4 <e g>( <d f> <c e>) |
-          a' a bf a |
+          r4 <e g>( <d f> <cs e>) |
+          r4 a' bf a |
        }
     \new Staff \with {
           \remove "Time_signature_engraver"
         } {
           \clef bass
-        f,8 e d |
+          \key d \minor
+        f,8-3^"bd" e-2 d-3 |
         \time 2/2 \bar "||"
-        a'2 e | cs a | d4 r g, r | d' r g, r |
-        cs2 a | f' e | d4 r e r | f r e d |
-        cs2 a | g' e ~ | 4 a, d r | r a d r |
+        a'2-5 e-4 | cs-2 a-3 | d4-2 r g,-3 r | d'-2 r g,-3 r |
+        cs2-2 a-3 | f'-4 e-3 | d4-2 r e-3 r | f-4 r e-2 d-3 |
+        cs2-2 a-3 | g'-4 e-3 ~ | 4 a,-2 d-3 r | r a d r |
         <g, d' bf'>4 r r2 |
         <d' a' f'>4 r r2 |
         <a e' cs'>4 r r2 |
@@ -279,16 +346,21 @@ Notes = {
     \key d \major
     \set Score.barNumberFormatter = #(double-bar-number 8)
     \repeat volta 2 {
-    <fs'' d'>4 <a fs'> <d fs> <e g> |
-    \acciaccatura gs8 <fs a>2 4 <bf d> |
-    \acciaccatura {c16 d} <a c>4 <g bf> <fs a> <ef g> |
-    \acciaccatura gs8 <fs a>2 \acciaccatura gs8 <fs a>2 |
-    <a c>4 <g bf> <fs a> <ef g> |
-    <d fs> <ef g> <d fs> <c ef> | }
+      \set fingeringOrientations = #'(right)
+    <fs''-2-\balloonText #'(-1 . -0.5) \markup {"2."}
+    d'-2-\balloonText #'(-1 . 1) \markup {"1."} >4
+    <a-3 fs'-4> <d-4 fs-2> <e-3 g-3> |
+    \acciaccatura gs8 <fs-2 a-4>2 4 <bf-3 d-2> |
+    \acciaccatura {c16 d} <a-2 c-5>4 <g-4 bf-4> <fs-3 a-2> <ef-2 g-3> |
+    \acciaccatura gs8 <fs a-4>2 \acciaccatura gs8 <fs a>2 \noBreak|
+    <a-5 c-5>4 <g-4 bf-4> <fs-3 a-2> <ef-2 g-4> |
+    <d-4 fs-3> <ef-2 g-4> <d-4 fs-3> <c-3 ef-2> | }
     \alternative {
-      { << {\voiceOne r4 ef d cs | <a' c>4 4 <g bf> <fs a> | }
-       \new Voice {\voiceTwo <a, fs'>1( | d) }
-      >>}
+      {
+        \once \override Score.VoltaBracket #'extra-offset = #'(0 . 0)
+        << {\voiceTwo s4 ef-2 d-3 cs-2 | d1-3 }
+       \new Voice {\voiceOne fs1_4 | }
+      >> \break}
 
     %{ <fs, d'>4 <a fs'> <d fs> <e g> |
     \acciaccatura gs8 <fs a>2 4 <bf d> |
@@ -297,37 +369,49 @@ Notes = {
     <a c>4 <g bf> <fs a> <ef g> |
     <d fs> <ef g> <d fs> <c ef> |
     %}
-     {<d, a' d>4
-    << {\voiceOne a'( bf a) | b->( a) c->( a) |}
-        \new Voice {\voiceTwo r4 r d, | r d( ef d) |}
+     {\once \override Score.VoltaBracket #'extra-offset = #'(0 . -3)
+       a,4-2
+    << {\voiceOne a( bf a) | b->( a) c->( a) |}
+        %\new Voice {\voiceTwo r4 r d, | r d( ef d) |}
      >> }
     }
     %\bar "||"
     \set Score.barNumberFormatter = #robust-bar-number-function
     \set Score.currentBarNumber = #277
     \key c \major
-
+    \override Fingering.direction = #DOWN
     \repeat volta 2 {
-      d4 g <g bf> <a c>
-      << {\voiceOne r4 bf8( d) d( g) g( af) |
+      \override Score.BarNumber.X-offset = 0
+      \override Score.BarNumber.Y-offset = -3
+      d,4-2 g-3 bf-4 c-2
+      << {\voiceOne \tiny r4 bf8( d) d( g) g( af) |
           af2. r4 | r c,8( f) f( af) af( bf) |
           bf2. r4 | r ef,8( gf) gf( bf) bf( c) |
           <d a fs>2. <a fs d>4 ~| 2 <d a fs>4-. r }
          \new Voice
-         {\voiceTwo <g,, bf d>2-> 2-> |
-          c,4 f <f af> <g bf> | <f af c>2-> 2-> |
-          bf,4 ef <ef gf> <f af> | <ef gf bf>2 2 |
-          <d fs a>1 ~ | 2 4-> r }
+         {\voiceTwo \normalsize d,2-4 <g, bf d>2 |
+          \set fingeringOrientations = #'(right)
+          <c,-4>4 <f-2> <af-3> <bf-4> | <c-2>2 <f,-2 af-3 c-4>2 |
+          <bf,-5>4 <ef-2> <gf-3> <af-4> | <bf-3>2 <ef,-2 gf-3 bf-4>2 |
+          \set fingeringOrientations = #'(left)
+          <d-3 fs-2 a-4>1 ~ | 2 4-> r }
       >>
     }
+    \normalsize
     \key d \major
-    <fs d'>4 <a fs'> <d f> <e g> |
-    \acciaccatura gs8 <fs a>2 4 <bf d> |
-    \acciaccatura {c16 d } <a c>4 <g bf> <fs a> <ef g> |
-    <fs a>2 <ef g>4 <d f>4 |
-    <cs e> <bf d> <a cs> <g bf> |
-    <fs a> <g bf> <a cs> <cs e> |
-    <a d f>2.-> 4-> ~ | 2 <a d fs>2-> |
+    \set fingeringOrientations = #'(down)
+    <fs-2-\balloonText #'(-1 . -1) \markup {"bd"}
+    d'-\balloonText #'(-0.25 . 1) \markup {"vl"}>4
+    <a-3 fs'> <d-4 fs> <e-3 g> |
+    \acciaccatura gs8 <fs-2 a>2 4 <bf-4 d> |
+    \acciaccatura {c16 d } <a-2 c>4 <g-4 bf> <fs-3 a> <ef-2 g> |
+    <fs-5 a>2 <ef-2 g>4 <d-5 fs>4 |
+    <cs-4 e> <bf-3 d> <a-2 cs> <g-3 bf> |
+    <fs-2 a> <g-3 bf> <a-2 cs> <cs-4 e> |
+    \override ParenthesesItem.font-size = #-2
+    <a-2 \parenthesize d f>2.-> 4-> ~ |
+    \set fingeringOrientations = #'(right)
+    2 <a-2 d-3 fs-4>2-> |
     \bar "||"
     \key g \major
     << {\voiceOne \tiny
@@ -344,8 +428,8 @@ Notes = {
          g,4\fff b b c |
          d2 d4 g | f, ef d c | b2 c4 d | e cs cs d |
          ds4( e2) 4 |
-         r <a, fs'> <gs es'> <a fs'>
-         <bf g'> <a fs'> <bf g'> <c a'>
+         r fs es fs
+         g fs g a
        }
     >>
     \oneVoice
@@ -353,34 +437,36 @@ Notes = {
     %\mark "Vivo"
     \normalsize
     << {
-        bf'2 \acciaccatura {c16 bf} a2 |
+        bf2 \acciaccatura {c16 bf} a2 |
         \acciaccatura {bf16 a} g2 \acciaccatura {a16 g} fs2 |
         g4 d2. ~ | 4 ef f fs |
         g af g f | ef d cs d |
-        <ef, g c ef>1 ~ | 8 r <ef g c>4-> <d f af b>-> <c g' bf>->
-        <c f a>4( <a' d f> <g c ef>2) |
-        <f bf d>4( <e a cs>2 <f bf d>4)-. |
-        <ef g>4( <g c ef>4 <f bf df>2) |
-        <ef af c>4( <d g b>2 <ef af c>4) |
-        r4 <af c f af>2->( <g c g'>4) |
-        <fs a c fs>4-. <af d fs bf>2-> 4-. |
+        ef1 ~ | 8 r c4-> b-> bf->
+        a4( f' ef2) |
+        d4( cs2 d4)-. |
+        g,4( ef'4 df2) |
+        c4( b2 c4) |
+        r4 af'2->( g4) |
+        fs4-. bf2-> <af, d fs bf>4-. |
         \repeat unfold 4 { 4-. 2-> 4-. | }
-        <c fs bf>4-^ r r2 | r2 r4 <a b d e g>8-^ 8-^ | 4-^ r r2 |
+        <c fs bf>4-^ r r2 | r2 r4 <b d e g>8-^ 8-^ | 4-^ r r2 |
        }
        \new Staff \with {
           \remove "Time_signature_engraver"
         } {
           \clef bass
-          <ef,, ef'>2-> r4 4 ~ | 2 <d d'>2 | <g d' bf'>2.-> 4-> ~ | 2 <d d' c'>2 |
-          <g d' b'>2.-> 4-> ~ | 2 2-> |
-          <c, g' c>2.-> 4-> ~ | 8 r <c c'>4 <d d'> <e e'> |
-          <f f'>2. <a a'>4 ~ | 2 <bf bf'>2 |
-          <c c'>2. <bf bf'>4 ~ | 2 <af af'>4 <g g'> |
-          <f f'>2 <ef ef'> | <d d'> r4 <e e'>4 |
-          <f f'>4 <gs gs'> <bf bf'> <c c'> |
-          <d d'> <c c'> <d d'> <e e'> <d d'> <c c'> <bf bf'> <af af'> |
-          <fs fs'> <gs gs'> <fs fs'> <e e'>
-          <d d'> r4 r2 | r2 r4  <g d' g>8-^ 8-^ | 4-^ r4 r2
+          \key g \major
+          <ef,, df' g>2-> r4 4 ~ |
+          2 <d c' fs>2 | <g, d' bf'>2.-> 4-> ~ | 2 <d' c' fs>2 |
+          <g, d' b'>2.-> 4-> ~ | 2 2-> |
+          <c g' ef'>2.-> 4-> ~ | 8 r c4-2 d-3 e-4 |
+          f2.-3 a4-4 ~ | 2 bf2-3 |
+          c2.-5 bf4-4 ~ | 2 af4-3 g-2 |
+          f2-3 ef-2 | d-3 r4 e4-3 |
+          fs4-4 gs-3 bf-4 c-5 |
+          d-4 c-2 d-3 e-4 d-3 c-2 bf-4 af-3 |
+          fs-2 gs-4 fs-2 e-3
+          d-2 r4 r2 | r2 r4  <g, d' b'>8-^ 8-^ | 4-^ r4 r2
         }
     >>
     \bar "|."
@@ -389,6 +475,7 @@ Notes = {
 }
 ChrdsUp = \notemode {
   \override NoteHead.style = #'slash
+  s1
   \alive
 }
 Chrds = \chordmode {
@@ -418,14 +505,14 @@ Chrds = \chordmode {
   s1
   g:7 s1*2
   c1 | f:m  |  c | s |
-  c1 | f:m  |  c | s |
-  c | f:m | df | c |
+  s1 | f:m  |  c | s |
+  s | f:m | df | c |
   \gotoCtx "staff" c:m
   s1
   \gotoCtx "chrds-up"
-  c | s1*7
-  c1 | c:7 |
-  f:m | s | c:m | s | d:7 | g:7 | c | c:7 |
+  s1 c | s1*7
+  s1 s1 %c1 | c:7 |
+  s4 f2.:m | s1 | s4 c2.:m | s1 | d:7 | g:7 | c | c:7 |
   d:7 | s | g:7 |
   \set chordBassOnly = ##t
   g2:7 g:7/b | c:m c:m/ef | f:m f:m/af | a:dim fs:dim | g:7 g:7/b |
@@ -447,17 +534,18 @@ Chrds = \chordmode {
   \repeat percent 2 a1:7 |\repeat percent 2 { a2:7 d:m | }
   g1:m d:m a:7 d:m |
   \break
-  \repeat percent 6 { d1:11 } s1*4
-  \repeat percent 2 g1:m | \repeat percent 2 f:m
-  \repeat percent 2 ef:m | \repeat percent 2 d
-  \repeat percent 4 d | \repeat percent 2 a \repeat percent 2 d
-  \repeat percent 4 g | \repeat percent 2 a \repeat percent 2 d:7
-  \repeat percent 2 ef:7 | g1:m | g2:m d2:7 |
-  \repeat percent 2 g1 |
-  c1:m c2:m c2:7 |
-  f2 c:m | bf1 | c2:m bf2:m | af1 | f2:m c:m | d:7 d:m5-7 |
-  \repeat percent 4 d1:m5-7 |
-  d4:m5-7 s2. s2. g2:6.9
+   d1:11 s1*5 s1*4
+  g1:m s1 | f:m s
+  ef:m s |  d s
+  d s1*3 | a1 s
+  d1:m s2 d2
+  g1 s1*3 | a1 s1 d1:7 s1
+  ef1:7 | s2 d:7 | g1:m | s2 d2:7 |
+  g1 s1 |
+  c1:m s2 c2:7 |
+  f2 c:m | bf1 | c2:m bf2:m | af1 | f2:m c:m | d:7 d:5-7 |
+  s1*4 |
+  d4:5-7 s2. s2. g2:6
 
 
 
@@ -499,7 +587,10 @@ Chrds = \chordmode {
         \new ChordNames \with {
           \override ChordName.Y-offset = #-1.5
         } \Chrds
-        \context Voice = "voice" \Notes
+        \new Voice = "voice" \with {
+          \consists "Balloon_engraver"
+           \override BalloonTextItem #'annotation-balloon = ##f
+        } \Notes
       >>
     \new ChordNames = "chrds-down" \with {
       \consists Percent_repeat_engraver
