@@ -57,7 +57,7 @@ bookTitle = \markup {
   %%set to ##t if your score is less than one page:
   ragged-last-bottom = ##f
   ragged-bottom = ##f
-  page-count = #3
+  page-count = #4
   markup-system-spacing = #'((basic-distance . 2)
                              (minimum-distance . 2)
                              (padding . 1))
@@ -246,6 +246,65 @@ BandR = {
     cs,2^\trill~ 16 b cs e, b' e, cs' e,
     d'16 cs d f cs b cs e d cs d f cs b cs e |
     c bf c d bf a bf d c bf c d bf a bf d
+    << { \voiceOne <a c>1~ | 4 bf~ 16 a bf
+         \override LaissezVibrerTieColumn.tie-configuration
+     = #`((-4 . ,DOWN))
+         g\laissezVibrer a4~ |
+         a8 a d4 cs16 b cs a e' a, a' e | }
+       \new Voice {
+         \voiceThree s1 |
+         s4 g,2 s4 | s4 f16 a bf g s2 }
+       \relative c' {\new Voice {\voiceTwo
+         <d fs>1~ |
+         16 e fs d~ d e cs d
+         e4~ <e g>16 <d f>16 <e g> <cs e>|
+         <d f> <cs e> <d f> <cs e> d4 <e a>8 s8 s4
+       }}
+  >>
+  \oneVoice
+  f'16~ cs d~ a~ <a d f>8 r f16 e f d a' d, d' a |
+  \stemDown b~ fs \once\tieUp g~ d~ <d g b>8 r
+    \stemNeutral b'16 a b g d' g, g' d |
+  e~ b c~ g~ <g c e>8 r e16 d e c g' c, c' g |
+  \stemDown a~ e \once\tieUp f~ c~ <c f a>8 r
+    \stemNeutral a'16 g a f c' f, f' c |
+  \stemDown d~ a \once\tieUp bf~ f~ <f bf d>8 r
+    \stemNeutral d16 c d bf f' bf, bf' f |
+  \stemDown g~ d \once\tieUp e~ b <cs e g>4.
+    \stemNeutral <a d f>8
+  << { \voiceTwo s8 e' }
+     \new Voice {\voiceOne a,4}
+     \new Voice {\voiceOne s16 d8 cs16 }
+  >>
+  \oneVoice
+  \stemDown d16~ a~ \stemNeutral <a d>4 r8
+  r16 a'16 bf c
+  << { \voiceOne d8 c |
+       <g bf>4 g8 f r16 g16 a bf c8 bf |
+       <f a>4 f8 ef r16 f g a bf8 a |
+       <e g>4 r4 r16 e f g a8 g |
+       <d f>4 r4 r16 d e f g8 f |
+       <cs e>4
+     }
+     \relative c'' { \new Voice {\voiceTwo
+       d16 g, c fs, |
+       r d e f g c, f b, <c e>4 c'16 f, bf e, |
+       r16 c d ef f bf, ef a, <bf d>4 bf'16 e, a d, |
+       s2 s4 a'16 d, g cs, |
+       s2 s4 g'16 cs, f b, |
+     }}
+     %<g bf>4 g'16 c, f b, r16 g a bf c f, bf e, |
+     %  <f a>4  f'16 bf, ef a,
+     %  <<
+     %    { bf8 s8 \voiceOne bf a }
+     %    \new Voice { \voiceTwo r16 f g a bf e, a d, }
+     %  >>
+     %  \voiceTwo%
+
+     %  g4~ g16 fs g a fs8 g4 fs8 |
+     %  d4 s4 s2 |
+     % }}
+  >>
 
   }
 }
@@ -395,12 +454,33 @@ BandL =  {
        e d e a, e' a, f' a, g'2 |
        f16 e f a, e' d e g, f' e f a, e' d e g, |
        fs' e fs d g fs g d fs e fs d g  fs g d |
+       a1~ | 4 g~ 8 f e4 |
+       a4~ 16 f g d a'8
      }
      \relative c {\new Voice {\voiceTwo d8 c bf4 |
        a4 r a r | d,1 | d'~ |
        16 c d a d a e' a, fs' e fs d fs d a'c, |
        bf4. g'8 cs,4. a'8 |
-       d,8 f bf,4 a8 r r4 }}
+       d,8 f bf,4 a8 }}
+  >>
+  \oneVoice r8 cs16 b cs a |
+  d8 r f16 d a' a, d8 d, f16 e f d |
+  g8 r b16 g d' d, g8 g, b'16 a b g |
+  c8 r e16 c g' g, c8 c, e16 d e c |
+  f8 r a16 f c' c, f8 f, a'16 g a f |
+  bf8 r d16 bf f' f, bf8 bf, d16 c d bf |
+  e8 g a,16 g' a e f cs a g a8 a |
+  d8. cs16 d a f a <d, d'>8 c' bf a |
+  g' f e d c bf a g |
+  f' ef d c bf a g f |
+  << {\voiceOne
+       r16 b' cs d e a, d gs, <a cs>4 s4 |
+       r16 a bf c d g, c fs, <g bf>4 s4
+     }
+     \relative c {\new Voice {\voiceTwo
+       e8 d <cs e'> <b d'> a g f e |
+       d' c <bf d'> <a c'> g f e d |
+     }}
   >>
   }
 }
