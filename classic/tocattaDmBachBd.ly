@@ -41,7 +41,7 @@
 
 \language "english"
 
-sheetName = #"Toccata BWV538/1"
+sheetName = #"Toccata D dorian BWV538/1"
 
 bookTitle = \markup {
   \fontsize #3 \larger \larger
@@ -57,7 +57,7 @@ bookTitle = \markup {
   %%set to ##t if your score is less than one page:
   ragged-last-bottom = ##f
   ragged-bottom = ##f
-  page-count = #4
+  page-count = #5
   markup-system-spacing = #'((basic-distance . 2)
                              (minimum-distance . 2)
                              (padding . 1))
@@ -84,25 +84,25 @@ BandR = {
   \relative c' {
     \key c \major
   r2 d'16 cs d a d a e' a, |
-  f' e f d f d g d e d e c e c f c |
+  f' e f d f d <g bf,> d e d e c e c f c |
   d c d b d b e b cs b cs a d a e' a, |
   f' a, e' a, f' a, g' a, a' cs, d bf a d g, cs |
   <a, d f d'>4 r <a d a' d> r
   <<
     \relative c'' { \voiceOne
-       cs16 b cs a cs a d a e' d e cs e cs f d |
+       cs16-5 b-4 cs a cs a d a e' d e cs e cs f d |
        g f g e g e a e f4
     }
     \relative c' { \new Voice {\voiceTwo
-       <e a>4 r <e a> r |
-       <a cs> r <d, a' d>
+       <e-2 a-3>4 r <e a> r |
+       <a cs> r <a d>
     }}
   >>
   \oneVoice
-  r8 <g' bf> |
-  4 r8 <f a>8 4 r8 <e g> |
-  4 r8 <d f>8 <cs g'>4 r8 <f a> |
-  <e bf'>4 r8 <f a>8 <e g>4
+  r8 <d-2 g-3 bf-4> |
+  <c-5 g'-3 bf-4>4 r8 <c-4 f a-3>8 <bf-5 f'-3 a-2>4 r8 <bf-5 e-2 g-3> |
+  <a-4 e'-2 g-3>4 r8 <a-4 d-2 f-3>8 <a-4 cs-5 g'-2>4 r8 <d f a> |
+  <cs e bf'>4 r8 <d f a>8 <e g>4
   <<
     \relative c' { \voiceOne
       r8 <e g>8 |
@@ -119,7 +119,7 @@ BandR = {
     r8 <cs e> ~ 16 cs16
     \tieUp d ~ a
     \tieNeutral <bf d>4 ~  |
-    4 r8 r16 cs <a d> d c bf a r16 r8
+    4 r8 r16 cs-5 <a-3 d-2> d-2 c-3 bf-4 a-3 r16 r8
     r2 f'16 e f d a' f d' a |
     f' e f d f d g d e d e c e c f c |
     d c d b d b e b cs b cs a cs a d a |
@@ -146,7 +146,7 @@ BandR = {
     e' d e c e c f c d c d b d b e b |
     c b c a c a d a b a b gs e c' e, gs |
     e a e gs e a e b' c b c d c e, b' d, |
-    <c a'>4 r
+    <a c a'>4 r
     <<
       \relative c'' { \voiceOne
         \autoBeamOff
@@ -160,8 +160,8 @@ BandR = {
     \oneVoice
     \autoBeamOn
     <a' c e> <a d f> <d, f a> |
-    <d f g> <f g d'> <e g e'> <c e g> <c e f> <e a c> <d b' d> <b d f> |
-    <b d e>4 r8 <e a c> <e gs d'>4 r8 <e a e'>8 |
+    <d f g> <f g d'> <e g e'> <c e g> <c e f> <e a c> <d b' d> <b-4 d-2 f-3> |
+    <b-4 d e-2>4 r8 <e a c> <e gs d'>4 r8 <e a e'>8 |
     <gs b f'>4 r8 < a c e>8 <e b' d>4 r8 <gs b d> |
     <<
       \relative c'' { \voiceOne
@@ -178,36 +178,38 @@ BandR = {
     c16 b c a e' a, a' e \stemDown f ~ cs d ~ a ~ <a d f>8 r8 \stemNeutral |
     f16 e f d a' d, d' a \stemDown b ~ fs g ~ d ~ <d g b>8 r \stemNeutral |
     b'16 a b g d' g, g' d \stemDown e ~ b c ~ g ~ <g c e>8 r \stemNeutral |
-    e16 d e c g' c, c' g \stemDown a ~ e f ~ c ~ <c f a>8 r \stemNeutral |
-    a'16 g a f c' f, f' c \stemDown d ~ a b ~ fs < gs b d>4 ~ \stemNeutral |
+    e16 d e c g' c, c' g \stemDown a-3 ~ e-2 f-4 ~ c-5 ~ <c f a>8 r \stemNeutral |
+    a'16 g a f c' f, f' c \stemDown d-5 ~ a-2 b-4 ~ fs-2
+    \once\set fingeringOrientations = #'(down)
+    < gs-3 b d>4 ~ \stemNeutral |
     8 <e a c>8
-    << { \voiceOne s8 b' }
-       \new Voice {\voiceTwo e,4}
-       \new Voice {\voiceTwo s16 a8 gs16 }
+    << { \voiceOne s8 b'-5 }
+       \new Voice {\voiceTwo e,4-2}
+       \new Voice {\voiceTwo s16 a8-3 gs16-4 }
     >>
     \oneVoice
-    \stemDown a16 ~ e ~ c8 ~ <c e a>8 r  \stemNeutral
+    \stemDown a16-3 ~ e-2 ~ c8-5 ~ <c e a>8 r  \stemNeutral
     r16 e' f g
     <<
       \relative c''' { \voiceOne
-       a8 g <d f>4 d8 c |
-       r16 d e f g8 f <c e>4  c8 bf |
-       r16 c d ef f8 ef d2 ~ |
-       d4 c ~ c8 bf a4 |
-       g16 fs g d g d a' d, bf'2
+       a8 g <d-4 f-5>4 d8 c |
+       r16 d e f g8 f <c-4 e-5>4  c8 bf |
+       r16 c-4 d-5 ef-4 f8 ef d2-5 ~ |
+       d4 c-5 ~ c8 bf a4 |
+       g16-4 fs-2 g d g d a' d, bf'2
       }
       \relative c''' { \new Voice { \voiceTwo
-       a16 d, g cs, r a bf c d g, c fs, |
-       <g bf>4 g'16 c, f b, r16 g a bf c f, bf e, |
-       <f a>4  f'16 bf, ef a,
+       a16-5 d,-3 g-4 cs,-2 r a bf c d-5 g,-3 c-4 fs,-2 |
+       <g-2 bf-3>4 g'16 c, f b, r16 g a bf c f, bf e, |
+       <f-3 a-2>4  f'16-5 bf, ef-4 a,
        <<
-         { bf8 s8 \voiceOne bf a }
-         \new Voice { \voiceTwo r16 f g a bf e, a d, }
+         { bf8-4 s8 \voiceOne bf a }
+         \new Voice { \voiceTwo r16 f-3 g-3 a-2 bf-4 e,-2 a-3 d,-2 }
        >>
        \voiceTwo
 
-       g4~ g16 fs g a fs8 g4 fs8 |
-       d4 s4 s2 |
+       g4~-3 g16 fs g a fs8 g4 fs8 |
+       d4-3 s4 s2 |
       }}
     >>
     \oneVoice
@@ -284,7 +286,6 @@ BandR = {
        <f a>4 f8 ef r16 f g a bf8 a |
        <e g>4 r4 r16 e f g a8 g |
        <d f>4 r4 r16 d e f g8 f |
-       <cs e>4
      }
      \relative c'' { \new Voice {\voiceTwo
        d16 g, c fs, |
@@ -293,65 +294,99 @@ BandR = {
        s2 s4 a'16 d, g cs, |
        s2 s4 g'16 cs, f b, |
      }}
-     %<g bf>4 g'16 c, f b, r16 g a bf c f, bf e, |
-     %  <f a>4  f'16 bf, ef a,
-     %  <<
-     %    { bf8 s8 \voiceOne bf a }
-     %    \new Voice { \voiceTwo r16 f g a bf e, a d, }
-     %  >>
-     %  \voiceTwo%
-
-     %  g4~ g16 fs g a fs8 g4 fs8 |
-     %  d4 s4 s2 |
-     % }}
   >>
-
+  \oneVoice
+  <cs e>4
+  r16 a b cs d <cs e> <d f> <b g'> <c a'> <f a> <g b> <e cs'> |
+  <f d'> <cs' e> <d f> <b g'> <cs a'> <a f'> <b g'>
+  <cs e> <d f> <cs e> <d f> <b g'> <cs a'> <a f'> <b g'> <cs e> |
+  << {\voiceOne f16 d e cs d e f cs d e f cs d cs d <cs e> |
+      s4 a'16 f g e f8 d s4 |
+     }
+     \relative c'' {\new Voice {\voiceTwo
+      d4 d4 d4 d8 s8  |
+      <d f>16 <e g> <f a> <d g> cs8. 16 d cs d a f' a, d a}}
+  >>
+  \oneVoice
+  bf16 a bf g d' g, bf g c bf c g e' g, c g |
+  a g a f c' f, a f bf a bf f d' f, bf f |
+  g f g e bf' e, g e a g a e cs' a e' b |
+  cs b cs a e' cs a' cs, d cs d e cs8.^\prall d16 |
+  <a, f' d'>4 r8 <a f' a d> <a e' g cs>4 r8 8 |
+  <a d f d'>4 r8 <a d a' d> <bf d g e'>4 r8 <d g~ bf e> |
+  << {\voiceOne <g e'>16 cs d e f d e cs d b cs d e cs d b |
+      cs a b cs d b cs a <gs b> gs a b <a cs> a b gs |
+     }
+     \new Voice {\voiceTwo a4 r a2~ | 2 s2 }
+  >>
+  \oneVoice
+  a8 <a, cs'>16 <cs e'> <b d'> <d f'> <cs e'> <e g'>
+  <d f'>8 <fs d'>16 <a fs'> <g e'> <bf g'> <a fs'> <c a'> |
+  <bf g'> <a fs'> <bf g'> <d, a''> <a' f'> <g e'> <a f'> <c, g''>
+  <g' e'> <f d'> <g e'> <bf, f''> <f' d'> <e cs'> <f d'> <a, e''> |
+  <e' cs'> <d b'> <e cs'> <a, e''> <f' d'> <e cs'> <f d'> <a, f''>
+  <g' cs> <f b> <g cs> <bf, e'> <f' d'> <e cs'> <f d'> <a, f''> |
+  << {\voiceOne <a' g'>1~ |
+      8 \once\tieDown <d~ fs>16 <d e> <d fs>8 <cs e> d16 cs d a }
+     \relative c'{\new Voice {\voiceTwo
+      <cs e>1~ | 16 a'8. r16 a8 g16 fs4 }}
+  >>
+  fs'16 d a' c, |
+  bf a bf g d' bf g' bf, a g a fs d' a fs' a, |
+  g fs g e cs' g e' g, fs e fs d a' fs d' fs, |
+  e d e d' e, d e d' e, d e d' e, d e d' |
+  e, d e cs' e, d e cs' e, d e cs' e, d e cs' |
+  <d a' d>1^\fermata
   }
 }
 
 BandL =  {
   %\accidentalStyle modern-voice-cautionary
+  %\override Fingering.staff-padding = #'()
   \relative c' {
     \key c \major
+    \override Fingering.direction = #DOWN
+    % \set fingeringOrientations = #'(down)
   d16 cs d a d a e' a, f' e f d f d g d |
-  a' g a f a f <\parenthesize bf bf,> f g f g e g e a e
-  f e f d f d g d e d e cs a f' a, cs |
-  a d a cs a d a e' f e f g f d e a, |
-  d, cs d a d a e' a, f' e f d  f d g d |
+  a' g a f a f \parenthesize bf f g f g e g e a e
+  f e f d f d g d e d e-5 cs-4 a f' a, cs |
+  a d a cs a d a-2 e'-3 f e f g f d e-5 a,-4 |
+  d,-3 cs-2 d a d a e' a, f' e f d  f d g d |
   a'4
   <<
     \relative c' { \voiceOne
       r8 b cs16 b cs a cs a d a |
-      e' d e a, d a cs a( a4) r8 <g d'> |
-      <g c>4 r8 <a c> <f b>4 r8 <g b> |
-      <e a>4 r8 <f a>8 <e a>4 r8 <a d>8 |
-      <g cs>4 r8 <a d> bf16 a bf g a e a e |
+      e' d e a, d-5 a-4 cs-5 a\laissezVibrer-4 <a d-5>4 r8 g |
+      g4-5 r8 a-5 f4-4 r8 g-3 |
+      e4-4 r8 f8-5 e4 r8 a8-5 |
+      g4 r8 a bf16-5 a-4 bf-5 g-4 a-5 e-3 a e |
     }
     \relative c { \new Voice {\voiceTwo
       r4 a r |
-      a r d16 cs d a f' d g d |
-      e d e c e c f c d c d b d b e b |
-      cs b cs a cs a d a e' d e a, e' a, f' a, |
-      g' f g a, g' a, a' a,  cs4 r8 cs8 |
+      a r d16-3 cs-2 d-4 a-3 f'-4 d-3 g-5 d-3 |
+      e-4 d-3 e-4 c-2 e c f-4 c-2 d-3 c d b-5 d-2 b-4 e-2 b-4 |
+      cs-2 b-5 cs a-3 cs-2 a-3 d-4 a-3 e' d e a,-3 e' a, f'-4 a, |
+      g'-5 f-4 g a,-3 g' a, a' a,  cs4-2 r8 cs8-2 |
     }}
   >>
   \oneVoice
-  <d, f>4 r8 8 <bf d g>4 r8 <b d gs>
+  <d,-3 f-4>4 r8 <d-2 f-3> <bf-3 d-2 g-4>4 r8 <b-3 d-2 gs-4>
   <<
     \relative c
     { \voiceOne
       \set tieWaitForNote = ##t
-      a'8. gs16 a16 f g ~ e ~ <g e>8 r r16 fs g ~ cs, |
-      <d g>4 r16 <bf e> <a g'> g
+      a'8.-5 gs16 a16 f g-4 ~ e-3 ~ <g e>8 r r16 fs-4 g-5 ~ cs,-2 |
+      <d g-5>4 r16 <bf-3 e-4>
+      \once\set fingeringOrientations = #'(right up) <a-2 g'-4> g-3
     }
     \relative c {
     \new Voice {\voiceTwo
-      <d a>4 r8  a8 d2 ~
-      d16 a bf g d'8 d,
+      <d-2 a-2>4 r8  a8-2 d2_\markup{2-3} ~
+      d16-3 a-2 bf-4 g-4 d'8-2 d,-5
     }}
   >>
   \oneVoice
-  <d, a' d f> r16 r8  g'16 f e |
+  <d,-5 a'-2 d-2 f-3> r16 r8  g'16 f e |
   f e f d a' f d' a r2 |
   r4 r8 <bf d g> <bf c g'>4 r8 <a c f>8 |
   <a b f'>4 r8 <g b e>8 <g a e'>4 r8 <f a d>8 |
@@ -385,16 +420,17 @@ BandL =  {
   <<
     \relative c
     { \voiceOne
-      <e a>4 r4 r2 |
+      e4 r4 r2 |
       gs16 fs gs e gs e a e b' a b gs b gs c a |
       d c d b d b e b c b c a c a d a |
       b a b g b g c g a g a f a fs b a |
       gs fs gs e gs e a e b' a b e, b' e, c' e, |
       d' c d e, d' e, e' a, gs fs gs e b' gs
       << {\voiceOne e' b} {\new Voice {\voiceTwo e8}} >>
-      <c e ~ >4 e16 d << {\voiceOne e c} {\new Voice {\voiceTwo a8}}>>
+      \once\set fingeringOrientations = #'(right up)
+      <c-4 e-5 ~ >4 e16 d-4 << {\voiceOne e-5 c-4} {\new Voice {\voiceTwo a8-3}}>>
       <d f>4 s4 |
-      s4 <e, b'>4 a8. gs16
+      s4 <e, b'>4 a8.-5 gs16
     }
     \relative c {
     \new Voice {\voiceTwo
@@ -404,8 +440,8 @@ BandL =  {
       r8 g8 c,4 r8 f8 b,4 |
       r8 e8 e,4 r8 e'8 e,4 |
       r8 e'8 e,4 r8 e'8 e,4 |
-      r8 a'8 a,4 r8 d d, <ds' fs b>|
-      <e c'> <ds a' c> e e, <a e'>4
+      r8 a'8-3 a,4-2 r8 d-2 d,-4 <ds' fs b>|
+      <e c'> <ds a' c> e e, <a-2 e'-3>4
     }}
   >>
   \oneVoice a16 e c e |
@@ -420,8 +456,8 @@ BandL =  {
   f' ef d c bf a g f |
   <<
     \relative c' { \voiceOne
-      r16 bf c d ef4 r16 a, bf c d bf c a |
-      <g, bf'>4 r4 d''16 c d g, d' g, e' g, |
+      r16 bf-4 c-5 d-4 ef4-5 r16 a,-5 bf-4 c-5 d-4 bf-3 c-4 a-3 |
+      <g,-2 bf'-4>4 r4 d''16 c d g, d' g, e' g, |
       fs'2~ fs16 e fs a, e' a, fs' a, |
       g' fs g d fs e fs d g fs g d fs e fs d |
       f16 ef f g, ef' d ef c f ef f g, ef' d ef c |
@@ -429,7 +465,7 @@ BandL =  {
       g,4 af8 g
     }
     \relative c { \new Voice {\voiceTwo
-      ef4~ ef16 d ef c d8 g, d' d, |
+      ef4~-2 ef16 d ef c d8-3 g, d'-2 d,-5 |
       s2 g'4 r |
       d r d, r |
       g1 |
@@ -475,14 +511,52 @@ BandL =  {
   f' ef d c bf a g f |
   << {\voiceOne
        r16 b' cs d e a, d gs, <a cs>4 s4 |
-       r16 a bf c d g, c fs, <g bf>4 s4
+       r16 a bf c d g, c fs, <g bf>4 s4 |
+       r16 e f g a f g e f s16 s8 s4 | s1 |
      }
      \relative c {\new Voice {\voiceTwo
        e8 d <cs e'> <b d'> a g f e |
        d' c <bf d'> <a c'> g f e d |
+       a'1~ | 1 |
+
+     }}
+  >>
+  \oneVoice
+  d4~ 16 cs d a bf4~ 16 a bf g |
+  a8 d, a'4 d, r8 <f' a d> |
+  <g d'>4 r8 <f g d'> <e g c>4 r8 8 |
+  <f c'>4 r8 <e f c'> <d f d'>4 r8 <d f bf> |
+  <cs e bf'>4 r8 <d e bf'> <cs e a>4 r |
+  \tieDown
+  <g' a e'> r8 8 <f a~ d>8 <d a' f'> <a'~ e'> <a, a' g'>
+  \tieNeutral
+  d16 cs d a cs a d a e' d e a, d a e' a, |
+  f' e f a, e' a, f' a, g' f g a, f' a, g' a, |
+  << {\voiceOne s16 e'' f g a f g e f d e f g e f d |
+      e cs d e f d e cs  d b cs d e cs d b |
+      cs8 }
+     \new Voice {\voiceTwo cs4 }
+     \new Voice {\voiceTwo \tieDown a1~ | 1~ |
+                 a16 \tieNeutral f g e }
+  >>
+  f d e cs d bf c a bf g a fs |
+  g1 | a~ |
+  << {\voiceTwo
+      16 g a e a e b' e, cs' b cs a cs a e' g, |
+      fs8. g16 a4 d,2~ |
+      1~ 1~ 1~ 1~ 1~
+     }
+     \relative c' {\new Voice { \voiceOne
+      a1~ | a8~ <a d>4 <a e'>8 a4 r8 <fs a d> |
+      <g bf d>4 r8 <e g d'> <fs a d>4 r8 <d a' c>8 |
+      <e g bf>4 r8 <cs g' bf> <d a'>4 r8 <d a' c>8 |
+      <d g bf>8 r8 8 r8 8 r8 8 r8 |
+      8 r8 8 r8 8 r8 8 r8 |
+      <d fs a>1\fermata
      }}
   >>
   }
+  \bar "|."
 }
 
 \score {
