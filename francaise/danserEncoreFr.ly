@@ -51,12 +51,12 @@ endParenthesis = {
   ))
   #(set-paper-size "a4")
   indent = 0\mm
-  between-system-space = 0.5\cm
+  between-system-space = 0.3\cm
   between-system-padding = #0
   %%set to ##t if your score is less than one page:
   ragged-last-bottom = ##f
   ragged-bottom = ##f
-  page-count = #2
+  page-count = #1
   markup-system-spacing = #'((basic-distance . 2)
                              (minimum-distance . 2)
                              (padding . 1))
@@ -68,9 +68,7 @@ endParenthesis = {
     \fill-line {
       \on-the-fly \print-page-number-check-first
       \line{
-        #sheetName \hspace #1
-        - \hspace #1 \fromproperty #'page:page-number-string
-        \hspace #1 - \commitDate
+        - \hspace #1 \commitDate \hspace #1 -
       }
     }
   }
@@ -98,7 +96,7 @@ lyrRefrain = {
   }
 }
 
-lyrStropheAB = {
+lyrStropheA = {
   \lyricmode {
     Nous sommes de -- s~oi -- seaux de pas -- sa -- ge
     Ja -- mais do -- ciles ni vrai -- ment sa -- ge
@@ -111,22 +109,22 @@ lyrStropheAB = {
     Ve -- nu an -- non -- cer la sen -- ten -- ce
     Nous fai -- sons preuve d'ir -- ré -- ve -- ren -- ce
     Mais tou -- jours a -- vec e -- le -- gan -- ce
+}}
 
-    Au -- to  mé -- tro  bou -- lot  con -- so
+lyrStropheB = {
+  \lyricmode {
+    8Au -- to  mé -- tro  bou -- lot  con -- so
     Au -- to at -- tes -- ta -- tion qu'on sig -- ne
     Ab -- sur -- di -- té sur or -- don -- nan -- ce
     Et mal -- heur à ce -- lui qui pen -- se
     Et mal -- heur à ce -- lui qui dan -- se
 
-    Cha -- que me -- sure au -- to -- ri -- tai -- re
-    Cha -- que re -- lent sé -- cu -- ri -- tai -- re
+    Cha -- que me -- sure au -- to -- ri -- taire
+    Cha -- que re -- lent sé -- cu -- ri -- taire
     Voit s'en -- vo -- ler no -- tre con -- fian -- ce
     Ils font preuve de tant d'in  -- sis -- tan -- ce
     Pour con -- fi -- ner not -- re con -- sci -- ence
-
-    non non non non non non
-}
-}
+}}
 
 lyrStropheC = {
   \lyricmode {
@@ -147,11 +145,9 @@ lyrStropheC = {
 refrain = \relative c'' {
     \key g \minor
    % Refrain
-   \once\override Score.RehearsalMark.self-alignment-X = #-1
-  \mark \markup{ \box{\fontsize #1 Ref}}
    r4 \override ParenthesesItem.font-size = #5
     \startParenthesis \parenthesize
-   d8^"nur nach Strophe" d d c bf \endParenthesis \parenthesize a |
+   d8 d d c bf \endParenthesis \parenthesize a |
    g4 g8 g ~ 2 |r4 g8 g g g d' c ~ |
    c4. g8 g2 | r4 c8 c c c d c |
    bf4. g8 g2 | r8 bf bf bf bf bf c bf |
@@ -162,10 +158,8 @@ refrain = \relative c'' {
    g'4. d8 bf2 | r8 d d d d d c bf |
    d4. a8 a2 \bar "||" \break |
 }
-stropheAB = \relative c'' {
+strophe = \relative c'' {
    % Strophe
-    \once\override Score.RehearsalMark.self-alignment-X = #-1
-  \mark \markup{ \box{\fontsize #1 Str_1}}
    r8 d8 d d d c bf a |
    bf8 g d'16 d d8 d8 c bf a |
    bf g g16 g g8 g g g d' |
@@ -183,118 +177,18 @@ stropheAB = \relative c'' {
    d4. g8~ 2 |
    r8 d d d d d c bf |
    d4. a8~ 2 \bar "||" |
-   \once\override Score.RehearsalMark.self-alignment-X = 0
-   \mark \markup{\fontsize #1 {\arrow\box{Ref}}}
-   s1 \bar "||" \pageBreak |
-   \once\override Score.RehearsalMark.self-alignment-X = #-1
-  \mark \markup{ \box{\fontsize #1 Str_2}}
-   r4 d8 d d c bf a |
-   bf8 g d'16 d d8 d8 c bf a |
-   bf g g16 g g8 g g g d' |
-   c4. g8~ g2 |
-   r8 ef' ef ef ef ef d c  |
-   d4. bf8~ bf2 |
-   r8 d d d d d c bf |
-   d4. a8 ~ a2 |
-
-   r8 d d d d c bf a  |
-   bf8 g d'16 d d8 d c bf a |
-   bf16 g g8 g g g g g d' |
-   c4. g8~ g2 |
-   r8 ef' ef ef ef ef d c |
-   d4. g8~ 2 |
-   r8 d d d d d c bf |
-   d4. a8~ 2 \bar "||" |
-   \once\override Score.RehearsalMark.self-alignment-X = 0
-   \mark \markup{\fontsize #1 {\arrow\box{Ref}}}
-   s1 \bar "||" \break |
-   \once\override Score.RehearsalMark.self-alignment-X = #-1
-  \mark \markup{ \box{\fontsize #1 Interlude}}
-  r4 d8 d d c bf a |
 }
 
-interlude = \relative c'' {
- g'8 fs g4~ 8 fs g a |
- bf2~ 8 a g f  |
- g f ef4~ 8 d c d |
- ef8 d c2 bf4 |
- \tuplet 3/2 {bf8 a bf}
- \tuplet 3/2 {c bf c}
- \tuplet 3/2 {d c d}
- \tuplet 3/2 {ef d ef}
- \tuplet 3/2 {f ef f}
- \tuplet 3/2 {g f g}
- \tuplet 3/2 {a g a}
- \tuplet 3/2 {bf a bf}
- \tuplet 3/2 {c bf c}
- \tuplet 3/2 {d c d}
- ef2 | d4 c bf a |
- \tuplet 3/2 {d,8 a bf}
- \tuplet 3/2 {d a bf} d8 d4 d8
- \tuplet 3/2 {d8 a bf}
- \tuplet 3/2 {d a bf } d8 d4 d8
- \tuplet 3/2 {ef b c }
- \tuplet 3/2 {ef b c } ef8 4 8
- \tuplet 3/2 {ef b c }
- \tuplet 3/2 {ef b c } ef8 4 8
- \tuplet 3/2 {d8 a bf}
- \tuplet 3/2 {d a bf} d8 d4 d8
- \tuplet 3/2 {d8 a bf}
- \tuplet 3/2 {d a bf} d8 d4 d8
- \tuplet 3/2 {d d d}
- \tuplet 3/2 {d d d}
- \tuplet 3/2 {d d d}
- \tuplet 3/2 {d d d}
- \bar "||" \break
-}
-
-stropheC = \relative c'' {
-   % Strophe
-    \once\override Score.RehearsalMark.self-alignment-X = #-1
-  \mark \markup{ \box{\fontsize #1 Str_3}}
-   r8 d8 d d d c bf a |
-   bf8 g d'16 d d8 d8 c bf a |
-   bf g g16 g g8 g g g d' |
-   c4. g8~ g2 |
-   r8 ef' ef ef ef ef d c  |
-   d4. bf8~ bf2 |
-   r8 d d d d d c bf |
-   d4. a8 ~ a2 |
-
-   d4 d8 d~ d c bf a  |
-   bf8 g d'16 d d8 d c bf a |
-   bf8 g g g g g g d' |
-   c4. g8~ g2 |
-   r8 ef' ef ef ef ef d c |
-   d4. g8~ 2 |
-   r8 d d d d d c bf |
-   d4. a8~ 2 \bar "||" |
-   \once\override Score.RehearsalMark.self-alignment-X = 0
-   \mark \markup{\fontsize #1 {\arrow\box{Ref}}}
-   s1 \bar "||" |
-}
 
 chrdRefrain = \chordmode {
   s1 g1:m s c:m s g:m s d:7 s
   g1:m s c:m s g:m s d:7 s
 }
 
-chrdStropheAB = \chordmode {
-  g1:m s c:m s bf s d:7 s
-  g1:m s c:m s bf s d:7 s s
+chrdStrophe = \chordmode {
   g1:m s c:m s bf s d:7 s
   g1:m s c:m s bf s d:7 s
-}
-
-chrdInterlude = \chordmode {
-  s1 g1:m s c:m s bf s d:7 s
-  g1:m s c:m s bf s d:7 s
-}
-
-chrdStropheC = \chordmode {
-  g1:m s c:m s bf s d:7 s
-  g1:m s c:m s bf s d:7 s
-}
+ }
 
 
 \layout {
@@ -313,14 +207,13 @@ chrdStropheC = \chordmode {
 \score {
   \transpose g d {
   <<
-   \new ChordNames { \chrdRefrain \chrdStropheAB \chrdInterlude \chrdStropheC }
+   \new ChordNames { \chrdRefrain \chrdStrophe }
    \new Voice = "Refrain" { \refrain
-     \new Voice = "StropheAB" { \stropheAB
-       \new Voice = "Interlude" { \interlude
-         \new Voice = "StropheC" \stropheC
-   }}}
+     \new Voice = "Strophe" { \strophe }
+  }
    \new Lyrics \lyricsto "Refrain" \lyrRefrain
-   \new	Lyrics \lyricsto "StropheAB" \lyrStropheAB
-   \new Lyrics \lyricsto "StropheC" \lyrStropheC
+   \new	Lyrics \lyricsto "Strophe" \lyrStropheA
+   \new	Lyrics \lyricsto "Strophe" \lyrStropheB
+   \new Lyrics \lyricsto "Strophe" \lyrStropheC
   >> }
 }
