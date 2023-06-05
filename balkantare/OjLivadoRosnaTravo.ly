@@ -64,15 +64,15 @@ endParenthesis = {
   print-first-page-number = ##t
   oddHeaderMarkup = \markup \null
   evenHeaderMarkup = \markup \null
- % oddFooterMarkup = \markup {
- %   \fill-line {
+  oddFooterMarkup = \markup {
+    \fill-line {
  %     \on-the-fly \print-page-number-check-first
- %     \line{
- %       - \hspace #1 \commitDate \hspace #1 -
- %     }
- %   }
- % }
- % evenFooterMarkup = \oddFooterMarkup
+      \line{
+        - \hspace #1 \commitDate \hspace #1 -
+      }
+    }
+  }
+  evenFooterMarkup = \oddFooterMarkup
 }
 
 #(define print-at-bars

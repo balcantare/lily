@@ -47,7 +47,7 @@ endParenthesis = {
     #:brace "lilyjazz"
     ;;#:roman "lilyjazz-text"
     #:sans "lilyjazz-chord"
-    #:factor (/ staff-height pt 16)
+    #:factor (/ staff-height pt 18)
   ))
   #(set-paper-size "a4")
   indent = 0\mm
@@ -65,15 +65,15 @@ endParenthesis = {
   print-first-page-number = ##t
   oddHeaderMarkup = \markup \null
   evenHeaderMarkup = \markup \null
- % oddFooterMarkup = \markup {
- %   \fill-line {
+  oddFooterMarkup = \markup {
+    \fill-line {
  %     \on-the-fly \print-page-number-check-first
- %     \line{
- %       - \hspace #1 \commitDate \hspace #1 -
- %     }
- %   }
- % }
- % evenFooterMarkup = \oddFooterMarkup
+      \line{
+        - \hspace #1 \commitDate \hspace #1 -
+      }
+    }
+  }
+  evenFooterMarkup = \oddFooterMarkup
 }
 
 #(define print-at-bars
@@ -122,7 +122,7 @@ lyrStropheB = {
     Ja šte te -- be če -- kam
     Mo -- ri do -- ma da mi doj -- deš
     A ti ne do vad -- jaš, du -- šo
-    Srce mo -- je, Jo -- va __ no
+    Sr -- ce mo -- je, Jo__-___va -- no
 }}
 
 lyrStropheC = {
@@ -130,7 +130,7 @@ lyrStropheC = {
   Tvo _ -- ja -- ta maj -- ka
   Mo -- ri te -- be ne te puš -- ta
   Kraj mi -- ne da -- do -- ješ, du -- šo
-  Srce mo -- je, Jo -- va __ no
+  Sr -- ce mo -- je, Jo__-___va -- no
 }}
 
 
@@ -163,6 +163,19 @@ introAlt = \relative c' {
   %\break
 }
 
+introBass = \relative c {
+  %\voiceOne
+  \set Staff.keyAlterations = #`((1 . ,SHARP)
+                                 (3 . ,SHARP))
+  \clef bass
+  \repeat volta 2 {
+    b4. fs4 a |
+    b4. fs'4 b, |
+    b4. fs4 a |
+    b4. fs'4 b, |
+  }
+}
+
 strophe = \relative c' {
   \voiceOne
   \time 7/8
@@ -177,7 +190,8 @@ strophe = \relative c' {
     c4 b8 a4 g |
     fs4 8 g[( fs]) g[( a]) |
     fs4( a8 g[ fs] e[ ds]) |
-    ds4.~ 2 |
+    ds4.~ 2~ |
+    ds4.~ 4 s |
   }
 }
 
@@ -191,24 +205,37 @@ stropheAlt = \relative c' {
     a4 g8 fs4 e |
     ds4 8 e[( ds]) e[( fs]) |
     ds4( fs8 e[ ds] c[ b]) |
-    b4.~ 2 |
+    b4.~ 2~ |
+    b4.~ 4 r |
+
 
 }
 
 stropheBass = \relative c {
-  \accidentalStyle neo-modern-voice-cautionary
+  %\accidentalStyle neo-modern-voice-cautionary
   \clef bass
   \set Staff.keyAlterations = #`((1 . ,SHARP)
                                  (3 . ,SHARP))
-  e4 ds8 d4 cs |
-  d4. 4 8[ 8] |
-  ds4 8 4 4 |
-  4. 2 |
-  c4 8 4 e |
-  4 8 ds4 e4 |
-  b4 8 4 4 |
-  c4.( 8[ b] a4) |
-  b4.~ 2 |
+  e4. b4 e |
+  e4. a4 e |
+  d4. a'4 d, |
+  d4. g,4 d' |
+  e4. b4 e |
+  a,4. c4 a |
+ b4. fs'4 b, |
+ b4. fs4 a |
+ b4. fs'4 b, |
+ b4. fs4 a |
+
+% e4 ds8 d4 cs |
+%   d4. 4 8[ 8] |
+%   ds4 8 4 4 |
+%   4. 2 |
+%   c4 8 4 e |
+%   4 8 ds4 e4 |
+%   b4 8 4 4 |
+%   c4.( 8[ b] a4) |
+%   b4.~ 2 |
 }
 
 chrdIntro = \chordmode {
@@ -216,9 +243,9 @@ chrdIntro = \chordmode {
 }
 chrdStrophe = \chordmode {
   e4.:m s2
-  a4.:m s2
+  s4. a2:m
   d4. s2
-  g4. s2
+  s4. g2
   e4.:m s2
   a4.:m s2
   b4. s2
@@ -245,18 +272,21 @@ chrdStrophe = \chordmode {
    \new Staff <<
      \new Voice = "Intro" { \intro }
      \new Lyrics \lyricsto "Intro" \lyrIntro
-   >>
+     >>
    \new Staff <<
      \new Voice = "IntroAlt" { \introAlt }
      \new Lyrics \lyricsto "IntroAlt" \lyrIntroAlt
+     >>
    >>
-  >>
+   \new Staff <<
+     \new Voice = "IntroBass" { \introBass }
+     >>
   >>
   }
 \score {
   <<
     \new ChordNames { \chrdStrophe }
-    \new ChoirStaff <<
+    %\new ChoirStaff <<
     \new Staff <<
      \new Voice = "Strophe" { \strophe }
      \new Voice = "StropheAlt" { \stropheAlt }
@@ -267,7 +297,7 @@ chrdStrophe = \chordmode {
     \new Staff <<
       \new Voice = "Basso" { \stropheBass }
     >>
-    >>
+    %>>
   >>
 }
 

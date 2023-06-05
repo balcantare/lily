@@ -6,7 +6,7 @@
 \include "gitlog.ily"
 \language "english"
 
-sheetName = #"Aj Dewlale Koj Odi"
+sheetName = #"Rutschejok"
 
 
 bookTitle = \markup {
@@ -47,7 +47,7 @@ endParenthesis = {
     #:brace "lilyjazz"
     ;;#:roman "lilyjazz-text"
     #:sans "lilyjazz-chord"
-    #:factor (/ staff-height pt 18)
+    #:factor (/ staff-height pt 16)
   ))
   #(set-paper-size "a4")
   indent = 0\mm
@@ -59,7 +59,7 @@ endParenthesis = {
   page-count = #1
   markup-system-spacing = #'((basic-distance . 12)
                              (minimum-distance . 3)
-                             (padding . 2))
+                             (padding . 8))
   print-page-number = ##t
   print-first-page-number = ##t
   oddHeaderMarkup = \markup \null
@@ -79,10 +79,10 @@ endParenthesis = {
    (lambda (x y) (not (eq? (member x
     '(1  )) #f))))
 dropLyrics = {
-\override LyricText.extra-offset = #'(0 . -4.5)
-\override LyricHyphen.extra-offset = #'(0 . -4.5)
-\override LyricExtender.extra-offset = #'(0 . -4.5)
-\override StanzaNumber.extra-offset = #'(0 . -4.5)
+\override LyricText.extra-offset = #'(0 . -3)
+\override LyricHyphen.extra-offset = #'(0 . -3)
+\override LyricExtender.extra-offset = #'(0 . -3)
+\override StanzaNumber.extra-offset = #'(0 . -3)
 }
 raiseLyrics = {
 \revert LyricText.extra-offset
@@ -94,96 +94,48 @@ raiseLyrics = {
 skipEight = \repeat unfold 24 { \skip 2 }
 lyrStropheA = {
   \lyricmode {
-    Aj Dēw -- la -- le koj o -- di
-    Ta -- vel man -- ge Bach -- ta -- li
-    %\dropLyrics
-    Oi le le le le le
-    tai na na nai na na
-    Oi le le le le ta -- i na na na na na
-    %\raiseLyrics
-    Mu -- ri zi -- ni lu -- lud -- ji
-    lu -- lu djen -- gi schu -- kar raji
-    %\dropLyrics
-    tai na na na na le le le le na na na na na
-    %\raiseLyrics
-    Oi le le da -- na da da da ne ne ne
-    tai na na na na tai la la la da da da de na
+  Ai Ru -- tsche -- jo -- tschik Ru -- tsche -- jok
+  Ai praw ja wo -- du ma -- te jom
+  \dropLyrics
+  Ro -- ma -- le -- le i te scha -- wa -- le -- le
 }}
 
 lyrStropheB = {
   \lyricmode {
-    Tschor da -- ni pe lu -- lu -- dji
-    te na djal -- tar la -- ko dji
-    \skipEight
-    te na djal -- tar la -- ko dji
-    Tsch'av -- lā me schu -- kar bōr -- ōri
+  Ai Retsch -- ka pa -- nu -- ti -- las -- ja
+  Ai s_mi -- loy Ras -- lu -- tschil -- sja ja
 }}
 
 lyrStropheC = {
   \lyricmode {
-  Usch -- ti op -- re sche -- je Hoj,
-  Hū -- lav tut tai la -- schār tut
-  \skipEight
-  Hū -- lav tut tai la -- schār tut
-  A -- ven le rom, man -- gen tut!
+  Ai tscha -- jo -- ri, tu tscha -- jo -- ri
+  sow -- na -- ku -- mi tscher -- ge -- no -- ri
 }}
 
 lyrStropheD = {
   \lyricmode {
-  Aj, Dēw -- la -- le Jal -- din -- la
-  pe Ker -- tschi -- ma tra -- de -- la
-  \skipEight
-  pe Ker -- tschi -- ma, pe bā -- ri
-  kaj pi -- jen e -- mol ta -- ti
 }}
 
 
 strophe = \relative c' {
   %\voiceOne
   \time 2/4
-  \key e \minor
-  \repeat volta 2 {
-    \set Score.repeatCommands = #'((volta "1") end-repeat)
-   e8 g g fs |
-   g16 fs8. e8 r |
-   e'16 d8. d8 b |
-   b a g r
-   \bar "||" | \break
-   \set Score.repeatCommands = #'((volta "2") end-repeat)
-   \bar ".|:" r8 g g fs |
-   g4 fs8 e |
-   r8 e' d b |
-   b4 a8 g
-   \bar "|" |
-  \set Score.repeatCommands = #'((volta #f))
-   \break
-   r a a16 g a8 |
-   a a16 c b8 a |
-   b8 b4 b8~ |
-   b8 r8 r4 |
-   \break
-   e,8 g g fs |
-   g fs e4 |
-   e'8 d d b |
-   b a g r |
-   \break
-   fs16 e d8 d fs |
-   g16 fs g8 a g16 fs |
-   e8 e4 e8~ |
-   e r r4  \bar ":|.|:" |
-   \break
-   \repeat volta 2 {
-      <g b>2 |
-      <a c>4. 8 |
-      <g b>16 <fs a>16 <g b>8 8 8 |
-      <b d>8 <a c> <g b> r |
-      \break
-      fs16 e d8 d fs |
-      g16 fs g8 a4 |
-      g16 fs e8 e4~ |
-      e8 8 r4 |
-   }
-  }
+  \key a \minor
+   %\partial 4.
+   r8 e8 d e |
+   f4 4 |
+   g g |
+   \appoggiatura g16
+   e4. r8 | \break
+   r8 g g g |
+   a4 a |
+   g a |
+   f e | \break
+   d e |
+   g8 f e d |
+   e4 a, |
+   a4. r8
+    \bar "|."
 }
 
 stropheAlt = \relative c' {
@@ -197,13 +149,18 @@ stropheBass = \relative c' {
 }
 
 chrdStrophe = \chordmode {
-  e2:m s g s
-  e2:m s s4 g s2
-  a:m s b:7 s
-  e:m s g s
-  d b:7 e:m s
-  g d:7 g s
-  d b:7 e:m s
+  a2:m
+  d:m
+  g
+  c
+  s
+  a:m
+  a:7
+  d:m
+  s
+  e:7
+  a:m
+  s
 
 }
 
@@ -230,10 +187,10 @@ chrdStrophe = \chordmode {
     % \new Voice = "StropheAlt" { \stropheAlt }
    >>
   % \new Lyrics \lyricsto "Refrain" \lyrRefrain
-   \new	Lyrics \lyricsto "Strophe" \lyrStropheA
-   \new	Lyrics \lyricsto "Strophe" \lyrStropheB
+  \new	Lyrics \lyricsto "Strophe" \lyrStropheA
+  \new	Lyrics \lyricsto "Strophe" \lyrStropheB
    \new Lyrics \lyricsto "Strophe" \lyrStropheC
-   \new Lyrics \lyricsto "Strophe" \lyrStropheD
+  % \new Lyrics \lyricsto "Strophe" \lyrStropheD
   % \new Staff <<
   %   \new Voice = "Basso" { \stropheBass }
   >>

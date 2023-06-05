@@ -6,7 +6,7 @@
 \include "gitlog.ily"
 \language "english"
 
-sheetName = #"Aj Dewlale Koj Odi"
+sheetName = #"Nasten'ka"
 
 
 bookTitle = \markup {
@@ -59,15 +59,15 @@ endParenthesis = {
   page-count = #1
   markup-system-spacing = #'((basic-distance . 12)
                              (minimum-distance . 3)
-                             (padding . 2))
+                             (padding . 8))
   print-page-number = ##t
   print-first-page-number = ##t
   oddHeaderMarkup = \markup \null
   evenHeaderMarkup = \markup \null
   oddFooterMarkup = \markup {
     \fill-line {
- %     \on-the-fly \print-page-number-check-first
-      \line{
+      %\on-the-fly \print-page-number-check-first
+     \line{
         - \hspace #1 \commitDate \hspace #1 -
       }
     }
@@ -94,95 +94,86 @@ raiseLyrics = {
 skipEight = \repeat unfold 24 { \skip 2 }
 lyrStropheA = {
   \lyricmode {
-    Aj Dēw -- la -- le koj o -- di
-    Ta -- vel man -- ge Bach -- ta -- li
-    %\dropLyrics
-    Oi le le le le le
-    tai na na nai na na
-    Oi le le le le ta -- i na na na na na
-    %\raiseLyrics
-    Mu -- ri zi -- ni lu -- lud -- ji
-    lu -- lu djen -- gi schu -- kar raji
-    %\dropLyrics
-    tai na na na na le le le le na na na na na
-    %\raiseLyrics
-    Oi le le da -- na da da da ne ne ne
-    tai na na na na tai la la la da da da de na
+  \set stanza = #"1. "
+  Ne, vy -- dj'a, Ne li, tu vy -- dj'a
+  Na -- stin -- ke,
+  Tu li vy -- dj'a, Ai, tu vy -- dj'a
+  Go -- zhyn' -- ko mi -- ri.
+  \once \override LyricText.self-alignment-X = #LEFT
+  \set stanza = \markup { \right-align Refrain:}
+  _ Ai, ne -- ne ne -- ne,
+  Ai, ne -- ne ne -- ne
+  Ai, ne -- ne -- ne -- ne, ne
+  _ Ai, ne -- ne ne -- ne,
+  Ai, ne -- ne, ne -- ne -- ne --  ne -- ne -- ne -- ne,
 }}
 
 lyrStropheB = {
   \lyricmode {
-    Tschor da -- ni pe lu -- lu -- dji
-    te na djal -- tar la -- ko dji
-    \skipEight
-    te na djal -- tar la -- ko dji
-    Tsch'av -- lā me schu -- kar bōr -- ōri
+  \set stanza = #"3. "
+  %Ai, ne -- ne, ai ne -- ne -- ne -- ne,
+  %Ai, ne -- ne
+  %Ai, ne -- ne -- ne,
+  %Ai, ne -- ne -- ne,
+  %Ai, ne -- ne -- ne -- ne,
+  Tu pok -- xel,
+  Tu _ pok _ -- xel,
+  Na -- stin -- 'ke.
+  Tu pok -- xel,
+  Ai, tu pok -- xel
+  Tu, go -- zyhn' -- ko mi -- rí.
+  \set stanza = #"2. "
+  Na -- ne ko -- nes -- ke
+  Na -- ne ko -- nes -- ke
+  Na -- stya -- ke te -- e skxe -- lel
+  Na -- ne ko -- nes -- ke
+  Na -- ne ko -- nes -- ke
+  Na -- stya -- ke te zba -- gal.
 }}
 
 lyrStropheC = {
   \lyricmode {
-  Usch -- ti op -- re sche -- je Hoj,
-  Hū -- lav tut tai la -- schār tut
-  \skipEight
-  Hū -- lav tut tai la -- schār tut
-  A -- ven le rom, man -- gen tut!
+    \set stanza = #"3. "
+    %\repeat unfold 24 { \skip 4 }
+    Tu pok -- xel,
+    Tu _ pok _ -- xel,
+    Na -- stin -- 'ke.
+    Tu pok -- xel,
+    Ai, tu pok -- xel
+    Tu, go -- zyhn' -- ko mi -- rí.
 }}
 
 lyrStropheD = {
   \lyricmode {
-  Aj, Dēw -- la -- le Jal -- din -- la
-  pe Ker -- tschi -- ma tra -- de -- la
-  \skipEight
-  pe Ker -- tschi -- ma, pe bā -- ri
-  kaj pi -- jen e -- mol ta -- ti
 }}
 
 
 strophe = \relative c' {
   %\voiceOne
   \time 2/4
-  \key e \minor
-  \repeat volta 2 {
-    \set Score.repeatCommands = #'((volta "1") end-repeat)
-   e8 g g fs |
-   g16 fs8. e8 r |
-   e'16 d8. d8 b |
-   b a g r
-   \bar "||" | \break
-   \set Score.repeatCommands = #'((volta "2") end-repeat)
-   \bar ".|:" r8 g g fs |
-   g4 fs8 e |
-   r8 e' d b |
-   b4 a8 g
-   \bar "|" |
-  \set Score.repeatCommands = #'((volta #f))
-   \break
-   r a a16 g a8 |
-   a a16 c b8 a |
-   b8 b4 b8~ |
-   b8 r8 r4 |
-   \break
-   e,8 g g fs |
-   g fs e4 |
-   e'8 d d b |
-   b a g r |
-   \break
-   fs16 e d8 d fs |
-   g16 fs g8 a g16 fs |
-   e8 e4 e8~ |
-   e r r4  \bar ":|.|:" |
-   \break
+  \key g \minor
+  \mark \markup{ \box{\fontsize #4 A}}
+   d8. d16 g4
+   fs16 g a fs g4
+   d4 e
+   f2 \break
+   d8. 16 g8. bf16
+   8. a16 8 g
+   g fs ef d
+   \mark \markup{ \box{\fontsize #2 Fine}}
+   d4. \break
    \repeat volta 2 {
-      <g b>2 |
-      <a c>4. 8 |
-      <g b>16 <fs a>16 <g b>8 8 8 |
-      <b d>8 <a c> <g b> r |
-      \break
-      fs16 e d8 d fs |
-      g16 fs g8 a4 |
-      g16 fs e8 e4~ |
-      e8 8 r4 |
-   }
+     \mark \markup{ \box{\fontsize #4 B}}
+   d8
+   d8. d16 g8 16 16
+   fs8. fs16 g8 16 16
+   d8 8 e16 d e8
+   f4. f8 \break
+   d8. 16 g8 16 16
+   bf8. a16 8 ef16 ef
+   g8 fs ef d
+   d4.
+
   }
 }
 
@@ -197,13 +188,24 @@ stropheBass = \relative c' {
 }
 
 chrdStrophe = \chordmode {
-  e2:m s g s
-  e2:m s s4 g s2
-  a:m s b:7 s
-  e:m s g s
-  d b:7 e:m s
-  g d:7 g s
-  d b:7 e:m s
+   d4:7 g:m
+   d:7 g:m
+   \set chordBassOnly = ##t
+   g:m/g c
+   f2
+   d4:7 g:m
+   \set chordBassOnly = ##f
+   c:m c:dim/ef
+   d2 s
+   d4 g:m
+   d:7 g:m
+   \set chordBassOnly = ##t
+   g:m/g c
+   f2
+   d4:7 g:m
+   \set chordBassOnly = ##f
+   c:m c:dim/ef
+   d2 s4.
 
 }
 
@@ -230,11 +232,27 @@ chrdStrophe = \chordmode {
     % \new Voice = "StropheAlt" { \stropheAlt }
    >>
   % \new Lyrics \lyricsto "Refrain" \lyrRefrain
-   \new	Lyrics \lyricsto "Strophe" \lyrStropheA
-   \new	Lyrics \lyricsto "Strophe" \lyrStropheB
-   \new Lyrics \lyricsto "Strophe" \lyrStropheC
-   \new Lyrics \lyricsto "Strophe" \lyrStropheD
+  \new	Lyrics \lyricsto "Strophe" \lyrStropheA
+  \new	Lyrics \lyricsto "Strophe" \lyrStropheB
+  % \new Lyrics \lyricsto "Strophe" \lyrStropheC
+  % \new Lyrics \lyricsto "Strophe" \lyrStropheD
   % \new Staff <<
   %   \new Voice = "Basso" { \stropheBass }
   >>
+}
+\markup { \vspace #3  \hspace #6 \fontsize #2
+  \column{
+    \line{ \box{ A} 1. Strophe }
+    \line{ \box{ B} Refrain}
+    \line{ \box{ B} 2. Strophe}
+    \line{ \box{ B} Refrain}
+    \line{ \box{ A} 3. Strophe }
+    \line{ \box{ B} Refrain}
+    \line{ \box{A/B} Solo}
+    \line{ \box{ A} 1. Strophe langsam}
+    \line{ 2 x\box{ B} Refrain }
+    \line{ \box{ A} 1. Strophe langsam .. \box{Fine}}
+
+
+  }
 }
