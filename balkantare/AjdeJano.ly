@@ -78,73 +78,97 @@ endParenthesis = {
 #(define print-at-bars
    (lambda (x y) (not (eq? (member x
     '(1  )) #f))))
-dropLyrics = {
-\override LyricText.extra-offset = #'(0 . -4.5)
-\override LyricHyphen.extra-offset = #'(0 . -4.5)
-\override LyricExtender.extra-offset = #'(0 . -4.5)
-\override StanzaNumber.extra-offset = #'(0 . -4.5)
+dropLyricsA = {
+\override LyricText.extra-offset = #'(0 . -3)
+\override LyricHyphen.extra-offset = #'(0 . -3)
+\override LyricExtender.extra-offset = #'(0 . -3)
+\override StanzaNumber.extra-offset = #'(0 . -3)
 }
+
+dropLyricsB = {
+\override LyricText.extra-offset = #'(0 . -1.5)
+\override LyricHyphen.extra-offset = #'(0 . -1.5)
+\override LyricExtender.extra-offset = #'(0 . -1.5)
+\override StanzaNumber.extra-offset = #'(0 . -1.5)
+}
+
 raiseLyrics = {
 \revert LyricText.extra-offset
 \revert LyricHyphen.extra-offset
 \revert LyricExtender.extra-offset
 \revert StanzaNumber.extra-offset
 }
+skipA = \repeat unfold 4 { \skip 4 }
+skipB = \repeat unfold 8 { \skip 4 }
+skipC = \repeat unfold 5 { \skip 4 }
 
-skipEight = \repeat unfold 24 { \skip 2 }
 lyrStropheA = {
   \lyricmode {
-  \set stanza = #"1. "
-  Ne, vy -- dj'a, Ne li, tu vy -- dj'a
-  Na -- stin -- ke,
-  Tu li vy -- dj'a, Ai, tu vy -- dj'a
-  Go -- zhyn' -- ko mi -- ri.
-  \once \override LyricText.self-alignment-X = #LEFT
-  \set stanza = \markup { \right-align Refrain:}
-  _ Ai, ne -- ne ne -- ne,
-  Ai, ne -- ne ne -- ne
-  Ai, ne -- ne -- ne -- ne, ne
-  _ Ai, ne -- ne ne -- ne,
-  Ai, ne -- ne, ne -- ne -- ne --  ne -- ne -- ne -- ne,
+  \dropLyricsA
+  Aj -- de Ja -- no
+  \raiseLyrics
+  ko -- lo da i -- gra -- mo,
+  \dropLyricsA
+  Aj -- de Ja -- no
+  aj -- de du -- šo
+  \raiseLyrics
+  ko -- lo
+  da i -- gra -- ___ -- mo.
+  \dropLyricsA
+  Aj -- de Ja -- no
+  aj -- de du -- šo
+  \raiseLyrics
+  ko -- lo
+  da i -- gra -- ___ -- mo.
 }}
 
 lyrStropheB = {
   \lyricmode {
-  \set stanza = #"3. "
-  %Ai, ne -- ne, ai ne -- ne -- ne -- ne,
-  %Ai, ne -- ne
-  %Ai, ne -- ne -- ne,
-  %Ai, ne -- ne -- ne,
-  %Ai, ne -- ne -- ne -- ne,
-  Tu pok -- xel,
-  Tu _ pok _ -- xel,
-  Na -- stin -- 'ke.
-  Tu pok -- xel,
-  Ai, tu pok -- xel
-  Tu, go -- zyhn' -- ko mi -- rí.
-  \set stanza = #"2. "
-  Na -- ne ko -- nes -- ke
-  Na -- ne ko -- nes -- ke
-  Na -- stya -- ke te -- e skxe -- lel
-  Na -- ne ko -- nes -- ke
-  Na -- ne ko -- nes -- ke
-  Na -- stya -- ke te zba -- gal.
+  %Aj -- de Ja -- no
+  \skipA
+  kon -- je
+  \dropLyricsB
+  da pro -- da -- mo,
+  \raiseLyrics
+  %Aj -- de Ja -- no aj -- de du -- šo
+  \skipB
+  kon -- je
+  \dropLyricsB
+  da pro -- da -- ___ -- mo.
+  %Aj -- de Ja -- no aj -- de du -- šo
+  \raiseLyrics
+  \skipB
+  kon -- je
+  \dropLyricsB
+  da pro -- da -- ___ -- mo.
 }}
 
 lyrStropheC = {
   \lyricmode {
-    \set stanza = #"3. "
-    %\repeat unfold 24 { \skip 4 }
-    Tu pok -- xel,
-    Tu _ pok _ -- xel,
-    Na -- stin -- 'ke.
-    Tu pok -- xel,
-    Ai, tu pok -- xel
-    Tu, go -- zyhn' -- ko mi -- rí.
+  %Aj -- de Ja -- no
+  \skipA
+  ku -- ču
+  %da pro -- da -- mo,
+  \skipA
+  %Aj -- de Ja -- no aj -- de du -- šo
+  \skipB
+  ku -- ču
+  %da pro -- da -- ___ -- mo.
+  \skipC
+  %Aj -- de Ja -- no aj -- de du -- šo
+  \skipB
+  ku -- ču
+  %da pro -- da -- ___ -- mo.
+  \skipC
 }}
 
 lyrStropheD = {
   \lyricmode {
+    Da pro -- da -- mo, sa -- mo da i -- gra -- mo.
+    Da pro -- da --  mo, Ja -- no du -- šo, sa -- mo
+    da i -- gra -- ___ -- mo.
+    Da pro -- da --  mo, Ja -- no du -- šo, sa -- mo
+    da i -- gra -- ___ -- mo.
 }}
 
 
@@ -155,14 +179,14 @@ strophe = \relative c'' {
   g4 fs8 e[( fs]) g4 |
   g4 fs8 fs4 e |
   e8[( fs e)] d2~ |
-  d4.~ d2 |
+  d4.~ d2 | \break
 
   g4 a8 b4 b |
   a4 g8 fs4 e |
   a4 g8 fs4 e8[( fs]) |
   g4.~ 4 \tuplet 3/2 { fs8( g fs) } |
   e4.~ 2~ |
-  4.~ 4 r |
+  4.~ 4 r |\break
 
   g4 a8 b4 b |
   a4 g8 fs4 e |
@@ -225,10 +249,10 @@ chrdStrophe = \chordmode {
     % \new Voice = "StropheAlt" { \stropheAlt }
    >>
   % \new Lyrics \lyricsto "Refrain" \lyrRefrain
-  %\new	Lyrics \lyricsto "Strophe" \lyrStropheA
-  %\new	Lyrics \lyricsto "Strophe" \lyrStropheB
-  % \new Lyrics \lyricsto "Strophe" \lyrStropheC
-  % \new Lyrics \lyricsto "Strophe" \lyrStropheD
+  \new	Lyrics \lyricsto "Strophe" \lyrStropheA
+  \new	Lyrics \lyricsto "Strophe" \lyrStropheB
+  \new Lyrics \lyricsto "Strophe" \lyrStropheC
+  \new Lyrics \lyricsto "Strophe" \lyrStropheD
   % \new Staff <<
   %   \new Voice = "Basso" { \stropheBass }
   >>
