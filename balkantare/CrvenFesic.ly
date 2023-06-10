@@ -6,8 +6,7 @@
 \include "gitlog.ily"
 \language "english"
 
-sheetName = #"Nane Zocha"
-
+sheetName = #"Cerven fesić"
 
 bookTitle = \markup {
   \fontsize #3 \larger
@@ -79,17 +78,19 @@ endParenthesis = {
    (lambda (x y) (not (eq? (member x
     '(1  )) #f))))
 dropLyricsA = {
-\override LyricText.extra-offset = #'(0 . -3)
-\override LyricHyphen.extra-offset = #'(0 . -3)
-\override LyricExtender.extra-offset = #'(0 . -3)
-\override StanzaNumber.extra-offset = #'(0 . -3)
+\override LyricText.extra-offset = #'(0 . -5.5)
+\override LyricHyphen.extra-offset = #'(0 . -5.5)
+\override LyricExtender.extra-offset = #'(0 . -5.5)
+\override StanzaNumber.extra-offset = #'(0 . -5)
+\set stanza = \markup{ \right-brace #80 }
 }
 
 dropLyricsB = {
-\override LyricText.extra-offset = #'(0 . -1.5)
-\override LyricHyphen.extra-offset = #'(0 . -1.5)
-\override LyricExtender.extra-offset = #'(0 . -1.5)
-\override StanzaNumber.extra-offset = #'(0 . -1.5)
+\override LyricText.extra-offset = #'(0 . -3)
+\override LyricHyphen.extra-offset = #'(0 . -3)
+\override LyricExtender.extra-offset = #'(0 . -3)
+\override StanzaNumber.extra-offset = #'(0 . -2)
+\set stanza = \markup{ \right-brace #50 }
 }
 
 raiseLyrics = {
@@ -98,80 +99,97 @@ raiseLyrics = {
 \revert LyricExtender.extra-offset
 \revert StanzaNumber.extra-offset
 }
-skipA = \repeat unfold 4 { \skip 4 }
-skipB = \repeat unfold 8 { \skip 4 }
-skipC = \repeat unfold 5 { \skip 4 }
 
 lyrStropheA = {
   \lyricmode {
-  Na -- ne tso -- cha, na -- ne gad,
-  mi ki -- nel man -- ge o dad
-  sar me dža -- va pal o rom,
-  mi ki -- nel man -- ge o rom ge o rom
-
-  Naj na na na naj na na na na naj na
-  na na naj na na na na na naj na
-  na na naj na na na na a naj a na na na na na na naj na
-  hop hop hop
+   \set stanza = #"1. "
+   Cr -- ven fe -- sić,
+   \dropLyricsA  ma __ _ mo \raiseLyrics
+   cr -- ven fe -- sić
+   \set stanza = #"1. "
+   cr -- ven fe -- sić
+   \dropLyricsA joj ma -- mi -- ce \raiseLyrics
+   \set stanza = #"1. "
+   cr -- ven fe -- sić,
+   \dropLyricsB u dra -- ga -- na mo -- ga,
+   \dropLyricsA
+   joj ma -- mo ma -- mi -- ce!
 }}
+skipA = \repeat unfold 3 { \skip 4 }
+skipB = \repeat unfold 4 { \skip 4 }
+skipC = \repeat unfold 5 { \skip 4 }
+skipD = \repeat unfold 5 { \skip 4 }
 
 lyrStropheB = {
   \lyricmode {
-  Da -- do ma -- mo cin če -- ňa,
-  o la če -- ňa som -- na_ku -- ne
-  sar tu man -- ge na ci -- ne_ha,
-  na ba -- šav -- na o čha -- ja.
-  o čha -- ja.
+   \set stanza = #"2. "
+  Cr -- ne o -- či,
+  %m -- a -- mo
+  \skipA
+  cr -- ne o -- či
+  \set stanza = #"2. "
+  cr -- ne o -- či
+  %joj ma -- mi -- ce,
+  \skipB
+  \set stanza = #"2. "
+  cr -- ne o -- či,
+  %u dra -- ga -- na mo -- ga,
+  %\skipC
+  %\skipD%joj ma -- mo ma -- mi -- ce
 }}
-
 
 lyrStropheC = {
   \lyricmode {
-    Ge -- l'om me an -- dro -- da_sa -- dos,
-    pri -- ker -- džo -- me
-    les -- ke -- ro
-    po -- ker -- džo -- me tro še -- ro,
-    kaj tu ka -- mes mro ji -- lo
-    mro ji -- lo
-
+    \set stanza = #"3. "
+   Med -- na us -- ta, \skipA
+   med -- na us -- ta
+   \set stanza = #"3. "
+   med -- na us -- ta
+   \skipB
+   \set stanza = #"3. "
+   med -- na us -- ta,
 }}
 
 lyrStropheD = {
   \lyricmode {
+    \set stanza = #"4. "
+    Da me ho -- če, \skipA
+    da me ho -- če
+    \set stanza = #"4. "
+    da me ho -- če
+    \skipB
+    \set stanza = #"4. "
+    da me ho -- če pol -- ju -- bi -- ti mo -- ga
+
 }}
 
-
+lyrStropheE = {
+  \lyricmode {
+    \set stanza = #"5. "
+    Da -- la bih mu, \skipA
+    da -- la bih mu
+    \set stanza = #"5. "
+    da -- la bih mu
+    \skipB
+    \set stanza = #"5. "
+    da -- la bih mu sve ca -- re -- vo bla -- go
+}}
 strophe = \relative c' {
   %\voiceOne
   \accidentalStyle neo-modern %-voice-cautionary
   \time 4/4
-  \key a \minor
-  a4. b8 c( b) c4
-  e4 d8( c) c2
-  r4 a'8 a a4. 8
-  a8( g) g( fs) g4( a4) %\break
+  \key d \major
+  a8 d cs d e4 e8( g)
+  fs2 d8 cs b a
+  a8 d cs d e4 e8 g
+  fs1 \break
   \repeat volta 2 {
-  r8 f4 d8 g4. f8
-  e8( f) e( ds) e4( c)
-  r4 f8 f e4 d }
-  \alternative {
-    { a4 a a'( g) }
-    { a,4 gs a r }
-  } \bar "||" \break
-  a4. b8 c b c4
-  d8 e8 d b c4 c
-  r8 a'4 a8 a4. 8
-  a8 g g fs g4 a4 % \break
-  \repeat volta 2 {
-  r8 f4 d8 g4. f8
-  e8 f e ds e4 c
-  r4 f8 f e4 d }
-  \alternative {
-    { a4 a a' g }
-    { a,4 gs a r }
-  } \break
-
-\bar "|."
+    r8 a4 gs8 a4 fs
+    g8 g fs fs e4 fs
+    g4.( fs8) g8 fs e d
+    e1
+  }
+%\bar "|."
 }
 
 
@@ -186,17 +204,8 @@ stropheBass = \relative c' {
 }
 
 chrdStrophe = \chordmode {
-  a1:m g2:7 c
-  f1 c2 cs:dim
-  d:m e:7 a:m7 fs:m5-7
-  d:m7 e:7 a:m7 cs:dim
-  a4:m e:7 a2:m
-
-  a1:m g2:7 c
-  f1 c2 cs:dim
-  d:m e:7 a:m7 fs:m5-7
-  d:m7 e:7 a:m7 cs:dim
-  a4:m e:7 a2:m
+  d2 a d1 s2 a2 d1
+  d1 a s  s
  }
 
 
@@ -225,7 +234,8 @@ chrdStrophe = \chordmode {
   \new	Lyrics \lyricsto "Strophe" \lyrStropheA
   \new	Lyrics \lyricsto "Strophe" \lyrStropheB
   \new Lyrics \lyricsto "Strophe" \lyrStropheC
-%  \new Lyrics \lyricsto "Strophe" \lyrStropheD
+  \new Lyrics \lyricsto "Strophe" \lyrStropheD
+  \new Lyrics \lyricsto "Strophe" \lyrStropheE
   % \new Staff <<
   %   \new Voice = "Basso" { \stropheBass }
   >>
