@@ -182,7 +182,7 @@ lyrStropheF = {
   }}
 
 strophe = \relative c'' {
-  %\voiceOne
+  \voiceOne
   \accidentalStyle neo-modern %-voice-cautionary
   \time 6/8
   \key c \minor
@@ -202,18 +202,18 @@ strophe = \relative c'' {
 }
 
 
-stropheAlt = \relative c' {
+stropheAlt = \relative c'' {
   \voiceTwo
   g8[ 8 8] 8[ 8 f]
   c4. c
-  g8[ g g e e e]
+  g'8[ g g] ef[ ef ef]
   ef4. ef8[ 8 d]
-  e4 g8 g[ ef d]
+  ef4 g8 g[ ef d]
   ef4 c8~ c[ ef ef]
   d4 d8 d[ ef d]
   c4.
    ef8[ 8 d]
-  e4 g8 g[ ef d]
+  ef4 g8 g[ ef d]
   ef4 c8~ c[ ef ef]
   d4 d8 d[ ef d]
   c4.
@@ -250,7 +250,7 @@ chrdStrophe = \chordmode {
    %\new Voice = "Refrain" { \refrain
    \new Staff <<
      \new Voice = "Strophe" { \strophe }
-    % \new Voice = "StropheAlt" { \stropheAlt }
+     \new Voice = "StropheAlt" { \stropheAlt }
    >>
   % \new Lyrics \lyricsto "Refrain" \lyrRefrain
   \new	Lyrics \lyricsto "Strophe" \lyrStropheA
