@@ -47,7 +47,7 @@ endParenthesis = {
     #:brace "lilyjazz"
     ;;#:roman "lilyjazz-text"
     #:sans "lilyjazz-chord"
-    #:factor (/ staff-height pt 20)
+    #:factor (/ staff-height pt 16)
   ))
   #(set-paper-size "a4")
   indent = 0\mm
