@@ -113,8 +113,8 @@ lyrStropheA = {
   e -- e -- ej e -- ej lju -- ba
   da -- nu -- li tscha -- tscho da -- le
   ai po -- ka sol -- nusch -- ka
-  ro -- ma -- le
-  njä sa -- id -- jot.
+  ro -- ma -- ___ -- le
+  njä said -- jot.
 }}
 
 skipA = \repeat unfold 14 { \skip 4 }
@@ -148,7 +148,7 @@ lyrStropheD = {
 
 strophe = \relative c'' {
   %\voiceOne
-  \accidentalStyle neo-modern-voice-cautionary
+  \accidentalStyle modern %-voice-cautionary
   \time 4/4
   \key e \minor
   b4. a8 b4 b8( c) |
@@ -157,16 +157,16 @@ strophe = \relative c'' {
   a4.( g8) g4 r4 | \break
   b4. a8 b4 b8( c) |
   a4. g8 a4 r8 b |
-  a4. g8 fs4. e8 |
+  a8( g) g2 fs8 e8 |
   e2 r2 | \break
   b' d |
   cs4. r8 d4 cs |
-  b4 b2 r4 |
-  b8 b b4~ b8 a c4 | \break
-  b8 a4 r8 b4 b |
-  b8( c) a4~ a8 g8 a4 |
-  r8 b8 a4 b8( a) g4 |
-  e4. e8 e4 r |
+  b4 b r b8 b |
+  b4. a8 c4 b8 a |
+  r4 b4 b b8( c) |
+  a4. g8 a4 r8 b8 |
+  a4 b8( a) g4 fs8 e |
+  e2 r |
 
   \bar "|."
 }
@@ -182,17 +182,18 @@ stropheBass = \relative c' {
 }
 
 chrdStrophe = \chordmode {
-  e2.:m a4:m
+  e2.:m s4 %a4:m
   b2:7 e:m
-  e2.:m a4:m
+  e2.:m s4 %a4:m
   b2:7 e:m
-  e2.:m a4:m
-  b1:7 s e:m
+  e2.:m s4 %a4:m
+  a2:m b2:7
+  c b:7  e1:m
   g a e:m
-  s2. a4:m
-  b2:7 e:m
-  a4:m b2.:7
-  s2. g4
+  a2:m b2:7
+  e1:m
+  a2:m b2:7
+  c2 b2:7
   e1:m
 
 }
