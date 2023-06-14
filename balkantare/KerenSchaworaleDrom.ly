@@ -98,34 +98,34 @@ raiseLyrics = {
 \revert LyricExtender.extra-offset
 \revert StanzaNumber.extra-offset
 }
-skipA = \repeat unfold 4 { \skip 4 }
-skipB = \repeat unfold 8 { \skip 4 }
+
 skipC = \repeat unfold 5 { \skip 4 }
 
 lyrStropheA = {
   \lyricmode {
   \set stanza = #"1. "
-  Kē -- ren, scha -- wo -- ra -- le, drom,
-  te kē -- lel o pu -- ro rom
-  \set stanza = #"1. & 3."
-  tai na na na na na da la la na na na
+  Kē -- ren, ša -- vo -- ra -- le drom,
+  te khē -- lel o pu -- ro rom,
+  %\set stanza = #"1. & 3."
+  aj la la la la la la la la laj laj laj
   \set stanza = #"1. "
-  pu -- ro rom te ke -- le -- la
-  Bisch -- ta -- jek djehs ma -- law -- la
-  \set stanza = #"1. - 4. "
-oi ne ne ne ne na na da na na na
-}}
+  o_pu -- ro rom te khe -- le -- la
+  a -- ma -- ri vo -- ja ker -- la.
+  %\set stanza = #"1. - 4. "
+  aj la la la la la la la laj laj laj
 
+}}
+skipA = \repeat unfold 12 { \skip 2 }
+skipB = \repeat unfold 12 { \skip 2 }
 lyrStropheB = {
   \lyricmode {
   \set stanza = #"2. "
-  Ma -- lw mū -- ri tschis -- ma -- bāra
-  te schu -- nēn ad -- jēs -- te -- hāra
-  \set stanza = #"2. & 4. "
-  oi, le le le _ ti tai na ne na na na
+  Du -- j du -- j de -- šu -- duj,
+  cšu -- mi -- dav -- me la -- ko muj,
+  \skipB
   \set stanza = #"2. "
-  du -- i, du -- i, de -- schu -- dui
-  tschu -- mi -- dau mē la -- ko mui
+  la -- ko  muj szi ru -- pu -- no,
+  taj o ša -- vo szom -- na -- kuno.
 }}
 
 skipA = \repeat unfold 12 { \skip 2 }
@@ -133,12 +133,12 @@ skipA = \repeat unfold 12 { \skip 2 }
 lyrStropheC = {
   \lyricmode {
   \set stanza = #"3. "
-  La -- ko mui si ru -- pu -- no
-  pusch -- ke tru -- bul -- la di -- no
+  A -- ma -- ri szi, a -- ma -- ri,
+  A -- ma -- ri ci -- ni bó -- ri,
   \skipA
   \set stanza = #"3. "
-  A -- ma -- ri si, a -- ma -- ri
-  a -- ma -- ri zi -- ni bō --  ri
+  A -- lo ma -- lo ma -- lo ma
+  A -- lo ma -- lo ma -- lo ma
 }}
 
 lyrStropheD = {
@@ -171,7 +171,7 @@ strophe = \relative c'' {
   a8 a b a |
   e e c4 | \break
   d4 d16 e f8 |
-  g8 e  c[ r16 b] |
+  g8 e  c[ b] |
   a8 a4. |
   a4 r |
 
@@ -221,7 +221,7 @@ chrdStrophe = \chordmode {
   \new	Lyrics \lyricsto "Strophe" \lyrStropheA
   \new	Lyrics \lyricsto "Strophe" \lyrStropheB
   \new Lyrics \lyricsto "Strophe" \lyrStropheC
-  \new Lyrics \lyricsto "Strophe" \lyrStropheD
+  % \new Lyrics \lyricsto "Strophe" \lyrStropheD
   % \new Staff <<
   %   \new Voice = "Basso" { \stropheBass }
   >>
