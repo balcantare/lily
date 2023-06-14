@@ -165,6 +165,7 @@ strophe = \relative c'' {
      { e4. }
   } \break
   \repeat volta 2 {
+    \voiceOne
   g4 |
   a4. b4 |
   \appoggiatura b16 a4. a4 |
@@ -187,8 +188,25 @@ strophe = \relative c'' {
 
 
 stropheAlt = \relative c' {
+  \partial 4
+  s4 |
+  s8 s s s s | s8 s s s s | s8 s s s s |
+  s8 s s s s | s
   \voiceTwo
-
+  e4
+  e4. e4 |
+  e4. e4 |
+  e4. d4 |
+  d4. d4 |
+  e4. e4 |
+  e4.
+  d4
+  d4. d4 |
+  d4. d4 |
+  d4. d4 |
+  d4. d4 |
+  e4. e4 |
+  e4. s4 |
 }
 
 stropheBass = \relative c' {
@@ -230,7 +248,7 @@ chrdStrophe = \chordmode {
    %\new Voice = "Refrain" { \refrain
    \new Staff <<
      \new Voice = "Strophe" { \strophe }
-    % \new Voice = "StropheAlt" { \stropheAlt }
+     \new Voice = "StropheAlt" { \stropheAlt }
    >>
   % \new Lyrics \lyricsto "Refrain" \lyrRefrain
   \new	Lyrics \lyricsto "Strophe" \lyrStropheA
