@@ -1,5 +1,5 @@
 \version "2.19"
-#(set-global-staff-size 18)
+#(set-global-staff-size 24)
 \include "jazzchords.ily"
 \include "lilyjazz.ily"
 \include "jazzextras.ily"
@@ -30,8 +30,8 @@ instrument = #"for Pegueri Bandoneon"
   %%set to ##t if your score is less than one page:
   ragged-last-bottom = ##t
   ragged-bottom = ##f
-  markup-system-spacing = #'((basic-distance . 23)
-                             (minimum-distance . 8)
+  markup-system-spacing = #'((basic-distance . 12)
+                             (minimum-distance . 6)
                              (padding . 1))
   print-page-number = ##t
   print-first-page-number = ##t
@@ -86,6 +86,7 @@ BandR = \relative c'' {
   \key d \minor
   \time 6/8
   \partial 2
+  \accidentalStyle modern
   a4 f
   %\mark \markup{ \box{\fontsize #4 A}}
   \repeat volta 2 {
@@ -99,13 +100,13 @@ BandR = \relative c'' {
       g2.~ g~
       g4 f d
       f d f
-      e2.~ e~ e~ e4 a f}
+      e2.~ e~ e~ e4 a f} %\break
     { a,4\repeatTie a2
      c4 a c
      d2 f4
      a4 g2~ g f4
     d2.~ d~ d~ 4 a'4 f}
-  } \break
+  }  \break
   \repeat volta 2 {
     d4. a8 d e
     f4. e8 f g
@@ -120,22 +121,22 @@ BandR = \relative c'' {
     g4. f8 e f
     e4. d8 cs d
     e4. d8 cs d
-    a'4. e8 cs e
-    cs4. a8 g a
-    g4. f8 e f
+    a'4. e8 a e
+    cs4. a8 cs a
+    g4. f8 g f
     e4. d8 cs e
    }
-   { a'4. a8 bf a
+   { a'4. c8 bf a
      a4. f8 g a
      f4. d8 e f
      g4. f8 e f
-     e4. cs8 d e
+     e4. d8 cs  e
      d4. a8 f e
-     e4. d8 cs e
-     e4. d8 cs e
+     e4. d8 cs d
+     e4. d8 cs d
      e4. d8 cs d
    }
-  } \pageBreak
+  } %\break %\pageBreak
   \repeat volta 2 {
     d4 a' a
     a a bf
@@ -143,9 +144,9 @@ BandR = \relative c'' {
     g4-\prall f4 g
     a f f
     f-\prall e d
-    a2.
   } \alternative {
-    { d4 f a
+    { a2.
+      d4 f a
       g4 g g
       g g g
       g2.-\prall
@@ -153,13 +154,14 @@ BandR = \relative c'' {
       a e e e e f
       g2.~ g4 f e
     }
-    { a4 d f
+    { a,2.
+      a'4 d f
       a f g
       a2 f8 g
       a4 g f
-      e-\prall d cs
+      e-\prall d c
       d2.~ d~ d~ d4 a f }
-  }
+  } \break
   \repeat volta 2 {
     a2.~ 4 g f
     g2.~ 4 a f
@@ -191,7 +193,7 @@ BandR = \relative c'' {
       a4 a' f
       g2.~ g
       f~ 4 e d
-      e2. s s r4 a f
+      e2.~ e~ e r4 a f
     } {
       a,2. ~a4
       r4 a
@@ -206,22 +208,65 @@ BandR = \relative c'' {
   %\%bar "|."
 }
 
-LeftPartA = {<<
+LeftPartA = {}
+
+BandL = {
+  \key d \minor
+  s4 s4
+  \accidentalStyle modern
+  <<
    % \override Fingering.staff-padding = #'()
-    \relative c, { \voiceTwo
+    \relative c, { \voiceOne
        d2. e f  a d c b bf
        g a
        bf b a g f e
        bf' f d g a d c b bf
     }
-    \relative c \new Voice {\voiceOne
-       \repeat unfold 3 { s4. <f a> }
+    \relative c \new Voice {\voiceTwo
+       s4. <f a>
+       s4. <g bf>
+       s4. <d a'>
        s4. <g cs>
-       \repeat unfold 3 { s4. <a f'> }
-       s4. <a f'>
+       \repeat unfold 3 { s4. <f d'> }
+       s4. <a d>
        \repeat unfold 3 { s4. <d, bf'> }
        s4. <d gs>
-       \repeat unfold 4 { s4. <e cs'> }
+       s4. <e cs'>
+       s4. <e cs'>
+       s4. <d a'>
+       s4. <cs a'>
+       s4. <f d'>
+       s4. <c a'>
+       s4. <f a>
+       s4. <d bf'>
+       s4. <g cs>
+       \repeat unfold 3 { s4. <a f'> }
+       s4. <f d'>
+    }
+   >>
+   <<
+   % \override Fingering.staff-padding = #'()
+    \relative c, { \voiceOne
+       d2. e f  a d c b bf
+       g a
+       bf gs a g f e
+       bf' f d g a d c b bf
+    }
+    \relative c \new Voice {\voiceTwo
+       s4. <f a>
+       s4. <g bf>
+       s4. <f a>
+       s4. <g cs>
+       \repeat unfold 3 { s4. <a d> }
+       s4. <d, a'>
+       s4. <d bf'>
+       s4. <e c'>
+       s4. <f d'>
+       s4. <f b>
+       s4. <e cs'>
+       s4. <e cs'>
+       s4. <d a'>
+       s4. <cs g'>
        s4. <f d'>
        s4. <e a>
        s4. <f a>
@@ -230,14 +275,41 @@ LeftPartA = {<<
        \repeat unfold 3 { s4. <a f'> }
        s4. <f d'>
     }
-     >> }
-
-BandL = {
-  \key d \minor
-  s4 s4
-  \LeftPartA
-  \LeftPartA
-  \LeftPartA
+     >>
+     <<
+   % \override Fingering.staff-padding = #'()
+    \relative c, { \voiceOne
+       d2. e f  a d c b bf
+       g a
+       bf gs a g f e
+       b' bf a d g, a d c b bf
+    }
+    \relative c \new Voice {\voiceTwo
+       s4. <f a>
+       s4. <cs g'>
+       s4. <d a'>
+       s4. <e cs'>
+       s4. <a f'>
+       s4. <a f'>
+       s4. <d, a'>
+       s4. <d a'>
+       s4. <d bf'>
+       s4. <e c'>
+       s4. <f d'>
+       s4. <f b>
+       s4. <e cs'>
+       s4. <d bf'>
+       s4. <d a'>
+       s4. <cs g'>
+       s4. <f d'>
+       s4. <f d'>
+       s4. <e c'>
+       s4. <f d'>
+       s4. <d bf'>
+       s4. <e c'>
+       \repeat unfold 4 { s4. <a f'> }
+    }
+     >>
   \relative c, {
     \oneVoice
     r4 d' e
@@ -270,14 +342,14 @@ BandL = {
        r g a bf a g
        r e f g f e
        r d e f g e
-       d2.
+       f2.
        }
        \relative c, { \new Voice {
          \voiceTwo
      d2. f cs a'
      g bf gs b a~ a s s
      %%
-     cs, a' f d bf' g a
+     cs, a' f d bf' g a~ a d,~ d~ d
        }}
     >>
 
@@ -289,26 +361,59 @@ BandL = {
 Chords = \chords {
   %\set chordChanges = ##t
   s2 |
+
+
+  d2.:m e2.:dim d2.:m/f
+  a2.:7
   \set chordBassOnly = ##t
-  \repeat unfold 3 {
-  d2.:m d2.:m/e d2.:m/f
-  a2.
-  d:m d:m/c d:m/b d:m/bf
+  d:m d:m/c d:m/b bf:7+
   g:m g:m/a g:m/bf
   b:dim
-  a a:/g a:/f a:/e
+  a a:/g
+  \set chordBassOnly = ##f
+  d:m/f a:7/e
   % alt
-  d:m/bf
+  bf
+  f d:m g:m a:7 d:m
+  d:m/c d:m/b d:m/bf
+
+  d2.:m e2.:dim d2.:m/f
+  a2.:7
+  \set chordBassOnly = ##t
+  d:m d:m/c d:m/b bf:7+
+  g:m a:m bf
+  gs:dim
+  a a:/g
+  \set chordBassOnly = ##f
+  d:m/f a:7/e
+  % alt
+  bf
   f:7+ d:m g:m a:7 d:m
-  d:m/c d:m/b d:m/bf}
+  \set chordBassOnly = ##t
+  d:m/c b:dim bf
+\set chordBassOnly = ##f
+  d2.:m a:7/e d2.:m/f
+  a2.
+  \set chordBassOnly = ##t
+  d:m d:m/c d:m/b bf:7+
+  g:m a:m bf
+  gs:dim
+  \set chordBassOnly = ##f
+  a g:m d:m/f a:7/e
+  % alt
+  b:dim
+  bf
+  a:m bf g:m a:m d:m
+  \set chordBassOnly = ##t
+  d:m/c d:m/b d:m/bf
 
 }
 \score {
   \new GrandStaff <<
+    \Chords
     \new Staff = "up" {
       \BandR
     }
-    \Chords
     \new Staff = "down" {
       \clef bass
       \BandL
