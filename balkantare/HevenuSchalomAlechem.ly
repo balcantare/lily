@@ -169,7 +169,7 @@ lyrStropheE = {
     dans le monde!
 }}
 
-strophe = \relative c' {
+strophe = \transpose a d \relative c' {
   %\voiceOne
   \time 2/2
   \key a \minor
@@ -197,7 +197,7 @@ stropheBass = \relative c' {
 
 }
 
-chrdStrophe = \chordmode {
+chrdStrophe = \transpose a d \chordmode {
   s4.
   \set chordBassOnly = ##t
   a2:m a:m/e a:m/a a:m/e
