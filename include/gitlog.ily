@@ -29,6 +29,25 @@
    (close-pipe port)
    (if (eof-object? str) "" str)))
 
+#(define (commit-date filename)
+   (let* ((port (open-input-pipe
+                 (string-join
+                  (list
+                    "cd" filedir "&&"
+                    "git"
+                    "log -n 1"
+                    "--pretty=format:%cd --date=format:\"%d.%m.%Y\""
+                    "--quiet"
+                    "--" filename
+                    "2>/dev/null")
+                  " ")))
+         (str  (read-delimited "" port))
+         )
+     (close-pipe port)
+     (if (eof-object? str) "~" str))
+   )
+%#result
+
 %{
 #(define-markup-command (commitDate layout props) ()
    (let* ((result (string-split
