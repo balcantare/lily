@@ -1,83 +1,8 @@
-\version "2.19.82"
-#(set-global-staff-size 24)
-\include "jazzchords.ily"
-\include "jazzextras.ily"
-\include "chordbass.ily"
-\include "gitlog.ily"
-\language "english"
+\version "2.22.2"
+fileName = "PoszlaKarolinka.ly"
+sheetName = "Poszła Karolinka"
+\include "book.ily"
 
-sheetName = #"Poszła Karolinka"
-
-
-bookTitle = \markup {
-  \fontsize #2 \larger
-  \line { #sheetName }
-}
-
-#(define-markup-command (arrow layout props) ()
-   "Draw an Arrow."
-   (interpret-markup layout props
-     #{\markup \overlay {
-        \override #'(thickness . 3)
-        \translate #'( 0 . 1.82)\draw-line #'(-1.5 . 0)
-        \translate #'( 1.3 . 1.8)\arrow-head #X #RIGHT ##f
-        }
-     #}
-    ))
-
-% parentheses
-startParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list (car par-list) point-stencil )))
-}
-
-endParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list point-stencil (cadr par-list))))
-}
-
-\header { title = \bookTitle  tagline = ##f }
-
-\paper {
-  #(define fonts
-    (set-global-fonts
-    #:music "lilyjazz"
-    #:brace "lilyjazz"
-    ;;#:roman "lilyjazz-text"
-    #:sans "lilyjazz-chord"
-    #:factor (/ staff-height pt 22)
-  ))
-  #(set-paper-size "a4")
-  indent = 0\mm
-  between-system-space = 3\cm
-  between-system-padding = #2
-  %%set to ##t if your score is less than one page:
-  ragged-last-bottom = ##t
-  ragged-bottom = ##f
-  page-count = #1
-  %markup-system-spacing = #'((basic-distance . 12)
-  %                           (minimum-distance . 6)
-  %                           (padding . 8))
-  print-page-number = ##t
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      %\on-the-fly \print-page-number-check-first
-     \line{
-        - \hspace #1 \commitDate \hspace #1 -
-      }
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-}
-
-#(define print-at-bars
-   (lambda (x y) (not (eq? (member x
-    '(1  )) #f))))
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -3)
 \override LyricHyphen.extra-offset = #'(0 . -3)
@@ -110,7 +35,9 @@ lyrStropheA = {
   do Go -- go -- li -- na,
   \set stanza = #"1. "
   a Kar -- li -- czek za nią,
-  a Kar -- li -- czek za nią,
+  a Kar -- li -- czek
+  \set stanza = #"1. "
+  za nią,
   z_fla -- szecz -- ką wi -- na.
 }}
 
@@ -122,7 +49,9 @@ lyrStropheB = {
   Go -- go -- lin al -- lein,
   \set stanza = #"2. "
   Kar -- lit -- schek folgt ei -- lig,
-  Kar -- lit -- schek folgt ei -- lig,
+  Kar -- lit -- schek folgt
+  \set stanza = #"2. "
+  ei -- lig,
   mit 'nem Fläsch -- chen Wein.
 
 }}
@@ -136,7 +65,9 @@ lyrStropheC = {
     wen -- det sie den Blick.
     \set stanza = #"3. "
     Nach dem hüb -- schen Bur -- schen,
-    nach dem hüb -- schen Bur -- schen,
+    nach dem hüb -- schen
+    \set stanza = #"3. "
+    Bur -- schen,
     schaut sie nicht zu -- rück.
      \skipB
      \dropLyricsA
@@ -155,7 +86,9 @@ lyrStropheD = {
     in die wei -- te Welt,
     \set stanza = #"4. "
     führ mich zu dem Bur -- schen,
-    führ mich zu dem Bur -- schen,
+    führ mich zu dem
+    \set stanza = #"4. "
+    Bur -- schen,
     der mir mehr ge -- fällt.
 }}
 
@@ -169,7 +102,9 @@ lyrStropheE = {
     Tag,
     \set stanza = #"5. "
     sag's dir im -- mer wie -- der,
-    sag's dir im -- mer wie -- der,
+    sag's dir im -- mer
+    \set stanza = #"5. "
+    wie -- der,
     daß ich dich nicht mag.
      \skipC
     %Ka -- ro -- lin -- ka,
@@ -186,7 +121,9 @@ lyrStropheF = {
     Gäs -- te war -- ten dort!
     \set stanza = #"6. "
     Bin schon auf der Brü -- cke,
-    bin schon auf der Brü -- cke,
+    bin schon auf der
+    \set stanza = #"6. "
+    Brü -- cke,
     bin schon zu weit fort!
 }}
 
@@ -198,7 +135,9 @@ lyrStropheG = {
    Was hab ich ge -- tan?
    \set stanza = #"7. "
    Das will ich nicht sa -- gen,
-   das will ich nicht sa -- gen,
+   das will ich nicht
+   \set stanza = #"7. "
+   sa -- gen,
    das geht dich nichts an.
    \skipC
    \set stanza = #"7. "
@@ -213,7 +152,9 @@ lyrStropheH = {
     al -- ler -- letz -- tes Wort,
     \set stanza = #"8. "
     und dem hüb -- schen Bur -- schen,
-    und dem hüb -- schen Bur -- schen,
+    und dem hüb -- schen
+    \set stanza = #"8. "
+    Bur -- schen,
     läuft das Mädchen fort.
 }}
 
@@ -226,13 +167,16 @@ strophe = \relative c'' {
   %\partial 8
   %g'8-\prall^\markup{Akkordeon} d b a g4 r
   \repeat volta 2 {
-  \mark \markup{ \box{\fontsize #4 A}}
+  \once\override Score.RehearsalMark.self-alignment-X = 2
+  \mark \markup{ \box{\fontsize #3 A}}
+
   g8 g d b'
   g4 d
   g8 g fs e
   d4 r } \break
-
-  \mark \markup{ \box{\fontsize #4 B}}
+  \once\override Score.RehearsalMark.self-alignment-X = 2
+  %\once\override Score.RehearsalMark.Y-offset = #0
+  \mark \markup{\left-align \box{\fontsize #3 B}}
   b8 c d d
   d4 e
   c8 c c c
@@ -249,7 +193,8 @@ strophe = \relative c'' {
   %g'4
   \break
   \repeat volta 2 {
-  \mark \markup{ \box{\fontsize #4 C}}
+  \once\override Score.RehearsalMark.self-alignment-X = 2
+  \mark \markup{ \box{\fontsize #3 C}}
 
   b'4 b
   c8 b a g
@@ -275,7 +220,8 @@ stropheAlt = \relative c'' {
    a8 a a a
    a4 b
    g8 g a a
-   g2^\markup{Mandoline}
+   g2^\markup{\hspace #3 \fontsize #2
+              { \bold{*}Mandoline}}
 
    %s2 s2
    b4 g
@@ -283,7 +229,8 @@ stropheAlt = \relative c'' {
    c4 e,
    a4 a
    b8 a g a
-   b2^\markup{Akkordeon}
+   b2^\markup{\hspace #3 \fontsize #2
+              { \bold{*}Akkordeon}}
 }
 
 stropheBass = \relative c' {
@@ -304,41 +251,41 @@ chrdStrophe = \chordmode {
  }
 
 
-\layout {
-  \context {
-    \Lyrics
-    \override LyricText #'font-size = #+2
+
+\bookpart {
+  \paper {
+    page-count = #1
+    #(define fonts (book-font 1))
+    ragged-last-bottom = ##f
   }
-  \context {
-    \Score
-%    \override BarNumber.break-visibility = ##(#f #t #t)
-%%    \override BarNumber.Y-offset = 0
-%    \override BarNumber.X-offset = -2
+  \header {
+    title = \sheetName
   }
-}
+  \tocItem \markup \sheetName
+  \markup{ \vspace #0.5 \fill-line {
+    \center-column {
+      \line { \fontsize #2 {
+        \box{A}\box{B}\box{B}*Ak
+        \bold{|:} \box{A}\box{B}*Md
+        \box{A}\box{B}\box{C}*Ak \bold{:|}
+        \box{A}\box{B}\box{B}} \rest "4" }}}
+  }
 
-\score {
-  <<
-   \new ChordNames { \chrdStrophe }
-   %\new Voice = "Refrain" { \refrain
-   \new Staff <<
-     \new Voice = "Strophe" { \strophe }
-     \new Voice = "StropheAlt" { \stropheAlt }
-   >>
-  % \new Lyrics \lyricsto "Refrain" \lyrRefrain
-  \new Lyrics \lyricsto "Strophe" \lyrStropheA
-  \new Lyrics \lyricsto "Strophe" \lyrStropheB
-  \new Lyrics \lyricsto "Strophe" \lyrStropheC
-  \new Lyrics \lyricsto "Strophe" \lyrStropheD
-  \new Lyrics \lyricsto "Strophe" \lyrStropheE
-  \new Lyrics \lyricsto "Strophe" \lyrStropheF
-  \new Lyrics \lyricsto "Strophe" \lyrStropheG
-  \new Lyrics \lyricsto "Strophe" \lyrStropheH
-
-  %\new Staff <<
-  %   \new Voice = "StropheAlt" { \stropheAlt }
-  %  >>
-
-  %\new Lyrics \lyricsto "StropheAlt" \lyrStropheD
-  >>
+  \score {
+    <<
+    \new ChordNames { \chrdStrophe }
+    \new Staff <<
+      \new Voice = "Strophe" { \strophe }
+      \new Voice = "StropheAlt" { \stropheAlt }
+      >>
+    \new Lyrics \lyricsto "Strophe" \lyrStropheA
+    \new Lyrics \lyricsto "Strophe" \lyrStropheB
+    \new Lyrics \lyricsto "Strophe" \lyrStropheC
+    \new Lyrics \lyricsto "Strophe" \lyrStropheD
+    \new Lyrics \lyricsto "Strophe" \lyrStropheE
+    \new Lyrics \lyricsto "Strophe" \lyrStropheF
+    \new Lyrics \lyricsto "Strophe" \lyrStropheG
+    \new Lyrics \lyricsto "Strophe" \lyrStropheH
+    >>
+  }
 }

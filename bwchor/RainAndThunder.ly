@@ -1,83 +1,8 @@
-\version "2.19.82"
-#(set-global-staff-size 24)
-\include "jazzchords.ily"
-\include "jazzextras.ily"
-\include "chordbass.ily"
-\include "gitlog.ily"
-\language "english"
+\version "2.22.2"
+fileName = "RainAndThunder.ly"
+sheetName = "Rain and Thunder"
+\include "book.ily"
 
-sheetName = #"Rain and Thunder"
-
-
-bookTitle = \markup {
-  \fontsize #3 \larger
-  \line { #sheetName }
-}
-
-#(define-markup-command (arrow layout props) ()
-   "Draw an Arrow."
-   (interpret-markup layout props
-     #{\markup \overlay {
-        \override #'(thickness . 3)
-        \translate #'( 0 . 1.82)\draw-line #'(-1.5 . 0)
-        \translate #'( 1.3 . 1.8)\arrow-head #X #RIGHT ##f
-        }
-     #}
-    ))
-
-% parentheses
-startParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list (car par-list) point-stencil )))
-}
-
-endParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list point-stencil (cadr par-list))))
-}
-
-\header { title = \bookTitle  tagline = ##f }
-
-\paper {
-  #(define fonts
-    (set-global-fonts
-    #:music "lilyjazz"
-    #:brace "lilyjazz"
-    ;;#:roman "lilyjazz-text"
-    #:sans "lilyjazz-chord"
-    #:factor (/ staff-height pt 23)
-  ))
-  #(set-paper-size "a4")
-  indent = 0\mm
-  between-system-space = 3\cm
-  between-system-padding = #2
-  %%set to ##t if your score is less than one page:
-  ragged-last-bottom = ##t
-  ragged-bottom = ##f
-  page-count = #1
-  markup-system-spacing = #'((basic-distance . 12)
-                             (minimum-distance . 3)
-                             (padding . 8))
-  print-page-number = ##t
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      %\on-the-fly \print-page-number-check-first
-     \line{
-        - \hspace #1 \commitDate \hspace #1 -
-      }
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-}
-
-#(define print-at-bars
-   (lambda (x y) (not (eq? (member x
-    '(1  )) #f))))
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -3)
 \override LyricHyphen.extra-offset = #'(0 . -3)
@@ -98,58 +23,92 @@ raiseLyrics = {
 \revert LyricExtender.extra-offset
 \revert StanzaNumber.extra-offset
 }
-skipA = \repeat unfold 4 { \skip 4 }
 skipB = \repeat unfold 8 { \skip 4 }
 skipC = \repeat unfold 5 { \skip 4 }
 
 lyrStropheA = {
   \lyricmode {
-  \set stanza = #"1. "
+  \set stanza = #"e) "
   Rain, rain rain and thun -- der,
   wake the thir -- ty earth from slum -- ber.
+  \set stanza = #"e) "
   Rain, rain rain and thun -- der
   fal -- ling on the ground.
-
+  \set stanza = #"e1. "
   If I had a piece of ground,
   then I would plant seeds all a -- round.
+  \set stanza = #"e1. "
   Beans and peas and corn so sweet,
   the things I like to eat.
-
+  \set stanza = #"e1. "
   If I had the time to grow it,
   plant and wa -- ter, rake and hoe it,
+  \set stanza = #"e1. "
   it would be the gree -- nest gar -- den
   a -- ny -- one has seen.
 }}
 
 lyrStropheB = {
   \lyricmode {
-   \set stanza = #"2. "
-
+  \set stanza = #"d) "
+  Komm, oh komm nur Re -- gen
+  bring der Er -- de Kraft und Se -- gen!
+  \set stanza = #"d) "
+  Komm, oh komm nur Re -- gen
+  Le -- ben will die Welt.
+  \set stanza = #"d1. "
+  Hätt ich ei -- nen klei -- nen Gar -- ten
+  mit -- 'ner schö -- nen Wie -- se drin,
+  \set stanza = #"d1. "
+  würd ich je -- des Jahr drauf war -- ten,
+  daß die Blu -- men blühn.
+  \set stanza = #"d1. "
+  Wür -- de lie -- gen zwi -- schen Blü -- ten,
+  ü -- ber mir die Son -- ne warm. ___
+  \set stanza = #"d1. "
+  Mei -- nen Gar -- ten würd ich hü -- ten
+  und den Bie -- nen -- schwarm!
 }}
 
-
+skipA = \repeat unfold 25 { \skip 4 }
 lyrStropheC = {
   \lyricmode {
-   \set stanza = #"3. "
+   \skipA
+   \set stanza = #"d2. "
+   Und die Kin -- der spie -- len Ha -- schen
+   ach so sorg -- los und so frei!
+   \set stanza = #"d2. "
+   Wür -- den von den Bee -- ren na -- schen,
+   mir wärs ei -- ner -- lei!
+   \set stanza = #"d2. "
+   und auf mei -- nen Bee -- ten  ste -- hen
 
+   Blu -- men -- kohl und Ros -- ma -- rin ___
+   \set stanza = #"d2. "
+   klei -- ne Pflan -- zen wach -- sen se -- hen
+   gibt dem Le -- ben Sinn.
 }}
 
 lyrStropheD = {
   \lyricmode {
-   \set stanza = #"4. "
-}}
+   \skipA
+   \set stanza = #"d3. "
+   Wie ein Blu -- men -- gar -- ten
+   blü -- hen will in uns die Fan -- ta -- sie,
+   \set stanza = #"d3. "
+   uns -- re Träu -- me sol -- len sprü -- hen
+   bunt und schön wie nie!
+   \set stanza = #"d3. "
+   Wie der Re -- gen lässt die Lie -- be
 
-lyrStropheE = {
-  \lyricmode {
-  \set stanza = #"5. "
+   Freu -- de wach -- sen ü -- bers Jahr, ___
+   \set stanza = #"d3. "
+   es ge -- dei -- hen zar -- te Trie -- be,
+   Träu -- me wer -- den wahr!
 }}
-
-lyrStropheF = {
-  \lyricmode {
-  }}
 
 strophe = \relative c' {
-  %\voiceOne
+  \voiceTwo
   \accidentalStyle neo-modern %-voice-cautionary
   \time 4/4
   \key d \major
@@ -158,7 +117,7 @@ strophe = \relative c' {
   d4 d d8 d fs a
   g8.[ fs16 e8 d] cs e cs a
   d4 d d8 d fs a
-  g8[ fs e8. cs16] d2 }
+  g8[ fs e8. cs16] d2 } \break
   a'16[ a8. a8. fs16] g8[ g g8. e16]
   fs8[ fs fs d ] e cs16( b) a4
   a'8 a a fs g[ g g8. g16]
@@ -179,20 +138,30 @@ strophe = \relative c' {
 \bar "|."
 }
 
-stropheSopran = \relative c'' {
-  %\voiceThree
+stropheSopran = \relative c' {
+  \voiceOne
+  fs4 fs fs8 fs a d
+  b8.[ a16 g8 fs] e fs g e
+  fs4 fs fs8 8 a d
+  b8[ a g8. e16] fs2
+  d'16[ d8. d8. a16] b8[ b b8. b16]
+  a8[ a a fs] g8 g g4
 
-}
-
-stropheAlt = \relative c'' {
-  %\voiceTwo
-
-}
-
-stropheBass = \relative c {
-  \clef bass
-  \key a \minor
-
+  d'8[ d d a] b8[ b b8. b16]
+  a8[ fs g e] fs2
+  d'16[ 8. 8. a16] b8 8 16 16 r8
+  a8 8 8 fs g g g g
+  d'8[ 16 8. a8] b8[ 8 8. 16]
+  a8[ fs g16 e8( fs16)~] fs8 fs4.
+  \bar "||" \break
+  d'8. e16 fs8 d g2
+  a8. g16 fs8 a g fs e cs
+  d8. e16 fs8 d g2
+  a16 fs8. g8 e d2
+  d8 d16 e fs8 d e8 e16 fs g8 e
+  fs8 fs16 g a8 fs g fs e cs
+  d8 d16 e fs8 d g2
+  a16 fs8. g8 e d2
 }
 
 chrdStrophe = \chordmode {
@@ -203,38 +172,49 @@ chrdStrophe = \chordmode {
    d2 g d a d g d4 a d2
 }
 
-
-\layout {
-  \context {
-    \Lyrics
-    \override LyricText #'font-size = #+2
+  \layout {
+    \context {
+      \Lyrics
+     % \override LyricText #'font-size = #1.5
+     % \override VerticalAxisGroup.staff-affinity = ##f
+     % \override VerticalAxisGroup.staff-staff-spacing =
+     %   #'((basic-distance . 0)
+%	   (minimum-distance . 0.85)
+%	   (padding . 1.5))
+    }
   }
-  \context {
-    \Score
-%    \override BarNumber.break-visibility = ##(#f #t #t)
-%%    \override BarNumber.Y-offset = 0
-%    \override BarNumber.X-offset = -2
-  }
-}
+staffSize = #(define-music-function (parser location new-size) (number?)
+  #{
+    \set fontSize = #new-size
+    \override StaffSymbol.staff-space = #(magstep new-size)
+    \override StaffSymbol.thickness = #(magstep new-size)
+  #})
 
-\score {
-  <<
-   \new ChordNames { \chrdStrophe }
-   %\new Voice = "Refrain" { \refrain
-   \new Staff <<
-     %\new Voice = "StropheSopran" { \stropheSopran }
-     \new Voice = "Strophe" { \strophe }
-     \new Voice = "StropheAlt" { \stropheAlt }
-   >>
-  % \new Lyrics \lyricsto "Refrain" \lyrRefrain
-  \new	Lyrics \lyricsto "Strophe" \lyrStropheA
-  \new	Lyrics \lyricsto "Strophe" \lyrStropheB
-  \new Lyrics \lyricsto "Strophe" \lyrStropheC
-  \new Lyrics \lyricsto "Strophe" \lyrStropheD
-  \new Lyrics \lyricsto "Strophe" \lyrStropheE
-  \new Lyrics \lyricsto "Strophe" \lyrStropheF
-   %\new Staff <<
-   %  \new Voice = "Tenor" { \stropheSopran }
-   %>>
- >>
+\bookpart {
+  %#(set-global-staff-size 19)
+
+  \paper {
+    page-count = #1
+    #(define fonts (book-font 1))
+    ragged-last-bottom = ##f
+  }
+  \header {
+    title = \sheetName
+  }
+  \tocItem \markup \sheetName
+
+  \score {
+    <<
+    \new ChordNames { \chrdStrophe }
+    \new Staff \with { \staffSize #-4 }
+      <<
+      \new Voice = "StropheSopran" { \stropheSopran }
+      \new Voice = "Strophe" { \strophe }
+      >>
+    \new Lyrics \lyricsto "Strophe" \lyrStropheA
+    \new Lyrics \lyricsto "Strophe" \lyrStropheB
+    \new Lyrics \lyricsto "Strophe" \lyrStropheC
+    \new Lyrics \lyricsto "Strophe" \lyrStropheD
+    >>
+  }
 }
