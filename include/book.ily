@@ -9,7 +9,6 @@ includeOnce =
        (list "\\include \"" filename "\"")))
      (primitive-eval (list 'define (string->symbol filename) #t)))))
 
-
 \includeOnce "jazzchords.ily"
 \includeOnce "jazzextras.ily"
 \includeOnce "chordbass.ily"
@@ -18,7 +17,7 @@ includeOnce =
 
 \paper {
   #(define fonts (book-font 1.2))
-  #(define fileCommitDate (commit-date fileName))
+  #(define fileCommitDate (commit-date))
   oddFooterMarkup = \markup {
     \fill-line {
        \line{

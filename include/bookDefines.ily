@@ -1,5 +1,15 @@
 \language "english"
 
+includeSheet =
+#(define-void-function (filename) (string?)
+   (primitive-eval (list 'define 'sheet-filename filename))
+   (ly:parser-include-string
+     (string-concatenate
+       (list "\\include \"" filename "\"")
+     )
+   )
+ )
+
 #(define-markup-command (arrow layout props) ()
    "Draw an Arrow."
    (interpret-markup layout props
