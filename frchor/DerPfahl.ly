@@ -1,164 +1,99 @@
-\version "2.19.82"
-#(set-global-staff-size 24)
-\include "jazzchords.ily"
-\include "jazzextras.ily"
-\include "chordbass.ily"
-\include "gitlog.ily"
-\language "english"
-
-sheetName = #"Der Pfahl"
-
-
-bookTitle = \markup {
-  \fontsize #3 \larger
-  \line { #sheetName }
-}
-
-#(define-markup-command (arrow layout props) ()
-   "Draw an Arrow."
-   (interpret-markup layout props
-     #{\markup \overlay {
-        \override #'(thickness . 3)
-        \translate #'( 0 . 1.82)\draw-line #'(-1.5 . 0)
-        \translate #'( 1.3 . 1.8)\arrow-head #X #RIGHT ##f
-        }
-     #}
-    ))
-
-% parentheses
-startParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list (car par-list) point-stencil )))
-}
-
-endParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list point-stencil (cadr par-list))))
-}
-
-\header { title = \bookTitle  tagline = ##f }
-
-\paper {
-  #(define fonts
-    (set-global-fonts
-    #:music "lilyjazz"
-    #:brace "lilyjazz"
-    ;;#:roman "lilyjazz-text"
-    #:sans "lilyjazz-chord"
-    #:factor (/ staff-height pt 23)
-  ))
-  #(set-paper-size "a4")
-  indent = 0\mm
-  between-system-space = 3\cm
-  between-system-padding = #2
-  %%set to ##t if your score is less than one page:
-  ragged-last-bottom = ##t
-  ragged-bottom = ##f
-  page-count = #1
-  markup-system-spacing = #'((basic-distance . 8)
-                             (minimum-distance . 3)
-                             (padding . 8))
-  print-page-number = ##t
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      %\on-the-fly \print-page-number-check-first
-     \line{
-        - \hspace #1 \commitDate \hspace #1 -
-      }
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-}
-
-#(define print-at-bars
-   (lambda (x y) (not (eq? (member x
-    '(1  )) #f))))
-dropLyricsA = {
-\override LyricText.extra-offset = #'(0 . -3)
-\override LyricHyphen.extra-offset = #'(0 . -3)
-\override LyricExtender.extra-offset = #'(0 . -3)
-\override StanzaNumber.extra-offset = #'(0 . -3)
-}
-
-dropLyricsB = {
-\override LyricText.extra-offset = #'(0 . -1.5)
-\override LyricHyphen.extra-offset = #'(0 . -1.5)
-\override LyricExtender.extra-offset = #'(0 . -1.5)
-\override StanzaNumber.extra-offset = #'(0 . -1.5)
-}
-
-raiseLyrics = {
-\revert LyricText.extra-offset
-\revert LyricHyphen.extra-offset
-\revert LyricExtender.extra-offset
-\revert StanzaNumber.extra-offset
-}
-skipA = \repeat unfold 4 { \skip 4 }
-skipB = \repeat unfold 8 { \skip 4 }
-skipC = \repeat unfold 5 { \skip 4 }
+\version "2.22.2"
+fileName = "DerPfahl.ly"
+sheetName = "Der Pfahl"
+\include "book.ily"
 
 lyrStropheA = {
   \lyricmode {
+    \set stanza = #"1a) "
     Son -- nig be -- gann es zu ta -- gen,
+    \set stanza = #"1a) "
     ich stand ganz früh vor dem Tor,
-    sah nach dem fah -- ren -- den Wa -- gen,
+    sah nach dem fah -- ren -- den
+    \set stanza = #"1a) "
+    Wa -- gen,
     da sprach Alt Si -- set zu mir:
 
+   \set stanza = #"ref a) "
    Ich drü -- cke hier und du ziehst weg,
-   so krie -- gen wir den Pfahl vom Fleck,
-   wer -- den ihn fäl -- len, fäl -- len, fäl -- len
+   so krie -- gen
+   \set stanza = #"ref a) "
+   wir den Pfahl vom Fleck,
+   wer -- den ihn fäl -- len, fäl -- len,
+   \set stanza = #"ref a) "
+   fäl -- len
    wer -- fen ihn faul und morsch zu Dreck.
 }}
 
 lyrStropheB = {
   \lyricmode {
+    \set stanza = #"1b) "
     'Siehst du den brü -- chi -- gen Pfahl dort,
+    \set stanza = #"1b) "
     mit unse -- ren Fes -- seln um -- schnürt?
-    Schaf -- fen wir doch die -- se Qual fort,
+    Schaf -- fen wir doch die -- se
+    \set stanza = #"1b) "
+    Qual fort,
     ran an ihn, daß er sich rührt!'
 
+  \set stanza = #"ref b) "
   Erst wenn die Ein -- tracht uns be -- wegt,
-  ha -- ben wir ihn bald um -- ge -- legt,
-  und er wird fal -- len, fal -- len, fal -- len,
+  ha -- ben wir
+  \set stanza = #"ref b) "
+  ihn bald um -- ge -- legt,
+  und er wird fal -- len, fal -- len,
+  \set stanza = #"ref b) "
+  fal -- len,
   wenn sich ein je -- der von uns regt.
 }}
 
 
 lyrStropheC = {
   \lyricmode {
+ \set stanza = #"2a) "
  Ach, Si -- set, noch ist es nicht_ge -- schafft,
+ \set stanza = #"2a) "
  an mei -- ner Hand platzt die Haut,
- lang ___ -- sam schwin -- det auch meine Kraft,
+ lang ___ -- sam schwin -- det auch
+ \set stanza = #"2a) "
+ meine Kraft,
  er ist zu mäch -- tig ge -- baut.
 }}
 
 lyrStropheD = {
   \lyricmode {
-    Wird es uns je -- mals ge -- lin -- gen?
+    \set stanza = #"2b) "
+ Wird es uns je -- mals ge -- lin -- gen?
+    \set stanza = #"2b) "
     Si -- set, es fällt mir so schwer!
-    Wenn wir das Lied noch mal sin -- gen geht es viel
+    Wenn wir das Lied noch mal
+    \set stanza = #"2b) "
+    sin -- gen geht es viel
     bes -- ser komm her!
 }}
 
 lyrStropheE = {
   \lyricmode {
+  \set stanza = #"3a) "
   Der al -- te Si __  _ set sagt_nichts mehr,
+  \set stanza = #"3a) "
   bö -- ser Wind hat ihn ver -- weht,
-  kei -- ner weiß von sei -- ner Heim -- kehr,
+  kei -- ner weiß von sei -- ner
+  \set stanza = #"3a) "
+  Heim -- kehr,
   od -- er gar wie es ihm geht.
 
 }}
 
 lyrStropheF = {
   \lyricmode {
+  \set stanza = #"3b) "
   Alt Si -- set sa __ gt uns al -- len,
+  \set stanza = #"3b) "
   hör auch du krie__ -- g es mit:
-  'Der mor -- sche Pfahl wird schon fal -- len,
+  'Der mor -- sche Pfahl wird schon
+  \set stanza = #"3b) "
+  fal -- len,
   wie es ge -- schie __ ht  im Lied!
 }}
 
@@ -194,56 +129,36 @@ strophe = \relative c' {
 %\bar "|."
 }
 
-
-stropheAlt = \relative c' {
-  \voiceTwo
-
-}
-
-stropheBass = \relative c {
-  \clef bass
-  \key a \minor
-
-}
-
 chrdStrophe = \chordmode {
-  s4. e4.:m b:7 e2.:m e2.:m b2.:7
-  a:m b4.:7 e:m s b:7 e:m
+  s4.
+  e4.:m b:7 e2.:m e2.:m b2.:7
+  e4.:m b:7 e2.:m a4.:m b4.:7 e:m
   s b2.:7  e:m   b2.:7  e:m
-  a:m e:m b:7 e:m
+  a:m e:m b:7 e4:m
  }
 
-
-\layout {
-  \context {
-    \Lyrics
-    \override LyricText #'font-size = #+2
+\bookpart {
+  \paper {
+    ragged-right = ##f
+    page-count = #1
+    #(define fonts (book-font 1.1))
   }
-  \context {
-    \Score
-%    \override BarNumber.break-visibility = ##(#f #t #t)
-%%    \override BarNumber.Y-offset = 0
-%    \override BarNumber.X-offset = -2
+  \header {
+    title = \sheetName
   }
-}
-
-\score {
-  <<
-   \new ChordNames { \chrdStrophe }
-   %\new Voice = "Refrain" { \refrain
-   \new Staff <<
-     \new Voice = "Strophe" { \strophe }
-    % \new Voice = "StropheAlt" { \stropheAlt }
-   >>
-  % \new Lyrics \lyricsto "Refrain" \lyrRefrain
-  \new	Lyrics \lyricsto "Strophe" \lyrStropheA
-  \new	Lyrics \lyricsto "Strophe" \lyrStropheB
-  \new Lyrics \lyricsto "Strophe" \lyrStropheC
-  \new Lyrics \lyricsto "Strophe" \lyrStropheD
-  \new Lyrics \lyricsto "Strophe" \lyrStropheE
-  \new Lyrics \lyricsto "Strophe" \lyrStropheF
-   %\new Staff <<
-   %  \new Voice = "Basso" { \stropheBass }
-   %>>
- >>
+  \tocItem \markup \sheetName
+  \score {
+    <<
+    \new ChordNames { \chrdStrophe }
+    \new Staff <<
+      \new Voice = "Strophe" { \strophe }
+      >>
+    \new Lyrics \lyricsto "Strophe" \lyrStropheA
+    \new Lyrics \lyricsto "Strophe" \lyrStropheB
+    \new Lyrics \lyricsto "Strophe" \lyrStropheC
+    \new Lyrics \lyricsto "Strophe" \lyrStropheD
+    \new Lyrics \lyricsto "Strophe" \lyrStropheE
+    \new Lyrics \lyricsto "Strophe" \lyrStropheF
+    >>
+  }
 }

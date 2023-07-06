@@ -1,83 +1,6 @@
-\version "2.19.82"
-#(set-global-staff-size 24)
-\include "jazzchords.ily"
-\include "jazzextras.ily"
-\include "chordbass.ily"
-\include "gitlog.ily"
-\language "english"
-
-sheetName = #"Sag mir wo die Blumen sind"
-
-
-bookTitle = \markup {
-  \fontsize #1 \larger
-  \line { #sheetName }
-}
-
-#(define-markup-command (arrow layout props) ()
-   "Draw an Arrow."
-   (interpret-markup layout props
-     #{\markup \overlay {
-        \override #'(thickness . 3)
-        \translate #'( 0 . 1.82)\draw-line #'(-1.5 . 0)
-        \translate #'( 1.3 . 1.8)\arrow-head #X #RIGHT ##f
-        }
-     #}
-    ))
-
-% parentheses
-startParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list (car par-list) point-stencil )))
-}
-
-endParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list point-stencil (cadr par-list))))
-}
-
-\header { title = \bookTitle  tagline = ##f }
-
-\paper {
-  #(define fonts
-    (set-global-fonts
-    #:music "lilyjazz"
-    #:brace "lilyjazz"
-    ;;#:roman "lilyjazz-text"
-    #:sans "lilyjazz-chord"
-    #:factor (/ staff-height pt 18)
-  ))
-  #(set-paper-size "a4")
-  indent = 0\mm
-  between-system-space = 3\cm
-  between-system-padding = #2
-  %%set to ##t if your score is less than one page:
-  ragged-last-bottom = ##t
-  ragged-bottom = ##f
-  page-count = #1
-  markup-system-spacing = #'((basic-distance . 12)
-                             (minimum-distance . 3)
-                             (padding . 8))
-  print-page-number = ##t
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
- %     \on-the-fly \print-page-number-check-first
-      \line{
-        - \hspace #1 \commitDate \hspace #1 -
-      }
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-}
-
-#(define print-at-bars
-   (lambda (x y) (not (eq? (member x
-    '(1  )) #f))))
+\version "2.22.2"
+sheetName = "Sag mir wo die Blumen sind"
+\include "book.ily"
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -5.5)
@@ -107,7 +30,14 @@ skipA = \repeat unfold 13 { \skip 2 }
 lyrStropheA = {
   \skipA
   \lyricmode {
-  %\set stanza = #"1. "
+  \set stanza =
+  \markup {
+    \column {
+      \vspace #-1.2
+      "1. " "2. " "3. "
+    }
+    %\vspace #-0.5 \right-brace #60
+  }
   \dropLyricsB
   Sag mir wo die
   \raiseLyrics
@@ -116,14 +46,23 @@ lyrStropheA = {
   sind,
   wo sind sie ge -- blie -- ben?
   \dropLyricsB
+  \set stanza =
+  \markup {
+    \column {
+      \vspace #-1.2
+      "1. " "2. " "3. "
+    }
+  }
   Sag mir, wo die
   \raiseLyrics Blu -- men
   \dropLyricsA sind,
   \dropLyricsB
   was ist ge -- scheh'n?
   \raiseLyrics
+  \set stanza = "1-3. "
   Sag mir, wo die
-  \raiseLyrics Blu -- men
+  \raiseLyrics \set stanza = "1. "
+  Blu -- men
   \dropLyricsA sind?
   \raiseLyrics
   Mäd -- chen pflück -- ten sie ge -- schwind.
@@ -144,6 +83,7 @@ lyrStropheB = {
   \skipC
   Mäd -- chen
   \skipD
+  \set stanza = "2. "
   Mäd -- chen
   \skipG
   Män -- ner nah -- men sie ge -- schwind.
@@ -157,6 +97,7 @@ lyrStropheC = {
    \skipC
    Män -- ner
    \skipD
+   \set stanza = "3. "
    Män -- ner \skipG %sind?
    Zo -- gen fort, der Krieg be -- ginnt.
 }}
@@ -165,11 +106,16 @@ skipF = \repeat unfold 5 { \skip 2 }
 lyrStropheD = {
   \lyricmode {
   \skipA
+  \set stanza = "4. "
   Sag wo die Sol -- da -- ten
   \skipE
+  \set stanza = "4. "
   Sag wo die Sol -- da -- ten
   \skipF
-  Sag wo die Sol -- da -- ten
+  \set stanza = "4. "
+  Sag wo die Sol --
+  \set stanza = "4. "
+  da -- ten
   \skipG
   Ü -- ber Grä -- bern weht der Wind.
 }}
@@ -177,11 +123,16 @@ lyrStropheD = {
 lyrStropheE = {
   \lyricmode {
     \skipA
+    \set stanza = "5. "
     Sag mir wo die Grä -- ber
     \skipE
+    \set stanza = "5. "
     Sag mir wo die Grä -- ber
    \skipF
-   Sag mir wo die Grä -- ber
+   \set stanza = "5. "
+   Sag mir wo die
+   \set stanza = "5. "
+   Grä -- ber
    \skipG
    Blu -- men blüh'n im Som -- mer -- wind.
 
@@ -221,16 +172,6 @@ strophe = \relative c'' {
   \bar "|."
 }
 
-stropheAlt = \relative c' {
-  \voiceTwo
-
-}
-
-stropheBass = \relative c' {
-  \clef bass
-
-}
-
 chrdStrophe = \chordmode {
   %\set chordBassOnly = ##t
   c1 a:m d:m g
@@ -242,35 +183,24 @@ chrdStrophe = \chordmode {
   f g c
 }
 
-
-\layout {
-  \context {
-    \Lyrics
-    \override LyricText #'font-size = #+2
+\bookpart {
+  \paper {
+    page-count = #1
+    #(define fonts (book-font 1.4))
   }
-  \context {
-    \Score
-%    \override BarNumber.break-visibility = ##(#f #t #t)
-%%    \override BarNumber.Y-offset = 0
-%    \override BarNumber.X-offset = -2
-  }
-}
+  \bookItem
 
-\score {
-  <<
-   \new ChordNames { \chrdStrophe }
-   %\new Voice = "Refrain" { \refrain
-   \new Staff <<
-     \new Voice = "Strophe" { \strophe }
-    % \new Voice = "StropheAlt" { \stropheAlt }
-   >>
-  % \new Lyrics \lyricsto "Refrain" \lyrRefrain
-  \new	Lyrics \lyricsto "Strophe" \lyrStropheA
-  \new	Lyrics \lyricsto "Strophe" \lyrStropheB
-   \new Lyrics \lyricsto "Strophe" \lyrStropheC
-   \new Lyrics \lyricsto "Strophe" \lyrStropheD
+  \score {
+    <<
+    \new ChordNames { \chrdStrophe }
+    \new Staff <<
+      \new Voice = "Strophe" { \strophe }
+      >>
+    \new Lyrics \lyricsto "Strophe" \lyrStropheA
+    \new Lyrics \lyricsto "Strophe" \lyrStropheB
+    \new Lyrics \lyricsto "Strophe" \lyrStropheC
+    \new Lyrics \lyricsto "Strophe" \lyrStropheD
     \new Lyrics \lyricsto "Strophe" \lyrStropheE
-  % \new Staff <<
-  %   \new Voice = "Basso" { \stropheBass }
-  >>
+    >>
+  }
 }
