@@ -1,0 +1,11 @@
+OUTDIR := $(CURDIR)/out
+SUBDIRS := frchor
+
+$(OUTDIR) :
+	mkdir $(OUTDIR)
+
+.PHONY: all $(MAKECMDGOALS) $(SUBDIRS)
+$(MAKECMDGOALS) all: $(OUTDIR) $(SUBDIRS) 
+
+$(SUBDIRS):
+	$(MAKE) -C $@ OUTDIR=$(OUTDIR) $(MAKECMDGOALS)
