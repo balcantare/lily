@@ -1,5 +1,5 @@
 OUTDIR := $(CURDIR)/out
-SUBDIRS := frchor
+SUBDIRS := balcantare frchor bwchor 
 
 $(OUTDIR) :
 	mkdir $(OUTDIR)
