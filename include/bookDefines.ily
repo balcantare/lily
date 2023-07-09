@@ -10,6 +10,16 @@ includeSheet =
    )
  )
 
+bookItem =
+#(define-void-function () ()
+  (ly:parser-include-string
+   "\\header {
+     title = \\sheetName
+   }
+   \\tocItem \\markup \\sheetName
+   ")
+  )
+
 #(define-markup-command (arrow layout props) ()
    "Draw an Arrow."
    (interpret-markup layout props
