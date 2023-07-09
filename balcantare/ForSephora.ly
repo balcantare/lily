@@ -1,95 +1,7 @@
-\version "2.19.82"
-#(set-global-staff-size 20)
-\include "jazzchords.ily"
-\include "jazzextras.ily"
-\include "chordbass.ily"
-\include "gitlog.ily"
-\language "english"
-
-sheetName = #"For Sephora"
-
-
-bookTitle = \markup {
-  \fontsize #1 %\larger
-  \line { \sheetName }
-}
-
-#(define-markup-command (arrow layout props) ()
-   "Draw an Arrow."
-   (interpret-markup layout props
-     #{\markup \overlay {
-        \override #'(thickness . 3)
-        \translate #'( 0 . 1.82)\draw-line #'(-1.5 . 0)
-        \translate #'( 1.3 . 1.8)\arrow-head #X #RIGHT ##f
-        }
-     #}
-    ))
-
-% parentheses
-startParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list (car par-list) point-stencil )))
-}
-
-endParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list point-stencil (cadr par-list))))
-}
-
-\header { title = \bookTitle  tagline = ##f }
-
-\paper {
-  #(define fonts
-    (set-global-fonts
-    #:music "lilyjazz"
-    #:brace "lilyjazz"
-    ;;#:roman "lilyjazz-text"
-    #:sans "lilyjazz-chord"
-    #:factor (/ staff-height pt 20)
-  ))
-  #(set-paper-size "a4")
-  indent = 0\mm
-  between-system-space = 0.5\cm
-  between-system-padding = #0
-  %%set to ##t if your score is less than one page:
-  ragged-last-bottom = ##t
-  ragged-bottom = ##f
-  page-count = #1
-  markup-system-spacing = #'((basic-distance . 2)
-                             (minimum-distance . 2)
-                             (padding . 1))
-  print-page-number = ##t
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
- %     \on-the-fly \print-page-number-check-first
-      \line{
-        - \hspace #1 \commitDate \hspace #1 -
-      }
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-}
-
-#(define print-at-bars
-   (lambda (x y) (not (eq? (member x
-    '(1  )) #f))))
-dropLyrics = {
-\override LyricText.extra-offset = #'(0 . -3)
-\override LyricHyphen.extra-offset = #'(0 . -3)
-\override LyricExtender.extra-offset = #'(0 . -3)
-\override StanzaNumber.extra-offset = #'(0 . -3)
-}
-raiseLyrics = {
-\revert LyricText.extra-offset
-\revert LyricHyphen.extra-offset
-\revert LyricExtender.extra-offset
-\revert StanzaNumber.extra-offset
-}
+\version "2.22.2"
+fileName = "ForSephora.ly"
+sheetName = "For Sephora"
+\include "book.ily"
 
 strophe = \relative c'' {
   %\voiceOne
@@ -213,28 +125,25 @@ chrdStrophe = \chordmode {
  fs:m5-7 b:7 e:m b:7
 }
 
-
-\layout {
-  \context {
-    \Lyrics
-    \override LyricText #'font-size = #+2
+\bookpart {
+  \paper {
+    page-count = #1
+    #(define fonts (book-font 1.35))
+    ragged-last-bottom = ##f
   }
-  \context {
-    \Score
-%    \override BarNumber.break-visibility = ##(#f #t #t)
-%%    \override BarNumber.Y-offset = 0
-%    \override BarNumber.X-offset = -2
+  \header {
+    title = \sheetName
   }
-}
-
-\score {
-  <<
-   \new ChordNames { \chrdStrophe }
-   \new Staff <<
-     \new Voice = "Strophe" { \strophe }
-   >>
-   \new Staff <<
-     \new Voice = "Bass" { \stropheBass}
-   >>
-  >>
+  \tocItem \markup \sheetName
+  \score {
+    <<
+    \new ChordNames { \chrdStrophe }
+    \new Staff <<
+      \new Voice = "Strophe" { \strophe }
+      >>
+    %\new Staff <<
+    %  \new Voice = "Bass" { \stropheBass}
+    %>>
+    >>
+  }
 }

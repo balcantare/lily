@@ -1,5 +1,4 @@
 \version "2.22.2"
-fileName = "bwchor.ly"
 \include "book.ily"
 
 \bookpart {
@@ -23,12 +22,18 @@ fileName = "bwchor.ly"
   \markuplist \table-of-contents
 }
 
-\include "CuecaBoliviana.ly"
-\include "PoszlaKarolinka.ly"
-\include "DaJeVisnja.ly"
-\include "DeColores.ly"
-\include "OiUVysnevomuSadotcku.ly"
-\include "OdYavoShalomAleinu.ly"
-\include "RainAndThunder.ly"
-\include "SolangeUnsreLiederKlingen.ly"
-\include "TotaHelpa.ly"
+\includeSheet "AmaniLeo.ly"
+\includeSheet "CuecaBoliviana.ly"
+\includeSheet "DaJeVisnja.ly"
+\includeSheet "DeColores.ly"
+\includeSheet "../balcantare/Ederlezi.ly"
+\includeSheet "HinehMatov.ly"
+\includeSheet "MateAroha.ly"
+\includeSheet "../balcantare/NaneTsocha.ly"
+\includeSheet "OiUVysnevomuSadotcku.ly"
+\includeSheet "OdYavoShalomAleinu.ly"
+\includeSheet "PoszlaKarolinka.ly"
+\includeSheet "RainAndThunder.ly"
+\includeSheet "SolangeUnsreLiederKlingen.ly"
+\includeSheet "TotaHelpa.ly"
+\includeSheet "../frchor/ZogenEinstFuenfWildeSchwaene.ly"

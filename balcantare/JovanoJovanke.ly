@@ -1,98 +1,7 @@
-\version "2.19.82"
-#(set-global-staff-size 24)
-\include "jazzchords.ily"
-\include "jazzextras.ily"
-\include "chordbass.ily"
-\include "gitlog.ily"
-\language "english"
-
-sheetName = #"Jovano Jovanke"
-
-
-bookTitle = \markup {
-  \fontsize #3 \larger
-  \line { #sheetName }
-}
-
-#(define-markup-command (arrow layout props) ()
-   "Draw an Arrow."
-   (interpret-markup layout props
-     #{\markup \overlay {
-        \override #'(thickness . 3)
-        \translate #'( 0 . 1.82)\draw-line #'(-1.5 . 0)
-        \translate #'( 1.3 . 1.8)\arrow-head #X #RIGHT ##f
-        }
-     #}
-    ))
-
-% parentheses
-startParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list (car par-list) point-stencil )))
-}
-
-endParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list point-stencil (cadr par-list))))
-}
-
-\header { title = \bookTitle  tagline = ##f }
-
-\paper {
-  #(define fonts
-    (set-global-fonts
-    #:music "lilyjazz"
-    #:brace "lilyjazz"
-    ;;#:roman "lilyjazz-text"
-    #:sans "lilyjazz-chord"
-    #:factor (/ staff-height pt 18)
-  ))
-  #(set-paper-size "a4")
-  indent = 0\mm
-  between-system-space = 3\cm
-  between-system-padding = #6
-  ragged-right = ##f
-  %%set to ##t if your score is less than one page:
-  ragged-last-bottom = ##f
-  ragged-bottom = ##f
-  page-count = #1
-  markup-system-spacing = #'((basic-distance . 3)
-                             (minimum-distance . 3)
-                             (padding . 2))
-  print-page-number = ##t
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
- %     \on-the-fly \print-page-number-check-first
-      \line{
-        - \hspace #1 \commitDate \hspace #1 -
-      }
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-}
-
-#(define print-at-bars
-   (lambda (x y) (not (eq? (member x
-    '(1  )) #f))))
-dropLyrics = {
-\override LyricText.extra-offset = #'(0 . -4.5)
-\override LyricHyphen.extra-offset = #'(0 . -4.5)
-\override LyricExtender.extra-offset = #'(0 . -4.5)
-\override StanzaNumber.extra-offset = #'(0 . -4.5)
-}
-raiseLyrics = {
-\revert LyricText.extra-offset
-\revert LyricHyphen.extra-offset
-\revert LyricExtender.extra-offset
-\revert StanzaNumber.extra-offset
-}
-
-skipEight = \repeat unfold 24 { \skip 2 }
+\version "2.22.2"
+fileName = "JovanoJovanke.ly"
+sheetName = "Jovano Jovanke"
+\include "book.ily"
 
 lyrIntro = {
   \lyricmode {
@@ -132,8 +41,6 @@ lyrStropheC = {
   Kraj mi -- ne da -- do -- ješ, du -- šo
   Sr -- ce mo -- je, Jo__-___va -- no
 }}
-
-
 
 intro = \relative c' {
   %\voiceTwo
@@ -251,54 +158,52 @@ chrdStrophe = \chordmode {
   b4. s2
 }
 
-
-\layout {
-  \context {
-    \Lyrics
-    \override LyricText #'font-size = #+2
+\bookpart {
+  \paper {
+    page-count = #1
+    #(define fonts (book-font 1.35))
+    ragged-right = ##f
+    ragged-last-bottom = ##f
   }
-  \context {
-    \Score
-%    \override BarNumber.break-visibility = ##(#f #t #t)
-%%    \override BarNumber.Y-offset = 0
-%    \override BarNumber.X-offset = -2
+  \header {
+    title = \sheetName
   }
-}
-
-\score {
-  <<
-   \new ChordNames { \chrdIntro }
-   \new ChoirStaff <<
-   \new Staff <<
-     \new Voice = "Intro" { \intro }
-     \new Lyrics \lyricsto "Intro" \lyrIntro
-     >>
-   \new Staff <<
-     \new Voice = "IntroAlt" { \introAlt }
-     \new Lyrics \lyricsto "IntroAlt" \lyrIntroAlt
-     >>
+  \tocItem \markup \sheetName
+  \score {
+    <<
+    \new ChordNames { \chrdIntro }
+    \new ChoirStaff <<
+    \new Staff <<
+      \new Voice = "Intro" { \intro }
+      \new Lyrics \lyricsto "Intro" \lyrIntro
+      >>
+    \new Staff <<
+      \new Voice = "IntroAlt" { \introAlt }
+      \new Lyrics \lyricsto "IntroAlt" \lyrIntroAlt
+    >>
    >>
    \new Staff <<
      \new Voice = "IntroBass" { \introBass }
      >>
   >>
   }
-\score {
-  <<
-    \new ChordNames { \chrdStrophe }
-    %\new ChoirStaff <<
-    \new Staff <<
-     \new Voice = "Strophe" { \strophe }
-     \new Voice = "StropheAlt" { \stropheAlt }
-    >>
-    \new Lyrics \lyricsto "Strophe" \lyrStropheA
-    \new	Lyrics \lyricsto "Strophe" \lyrStropheB
-    \new Lyrics \lyricsto "Strophe" \lyrStropheC
-    \new Staff <<
-      \new Voice = "Basso" { \stropheBass }
-    >>
+  \score {
+    <<
+      \new ChordNames { \chrdStrophe }
+      %\new ChoirStaff <<
+      \new Staff <<
+        \new Voice = "Strophe" { \strophe }
+        \new Voice = "StropheAlt" { \stropheAlt }
+        >>
+      \new Lyrics \lyricsto "Strophe" \lyrStropheA
+      \new Lyrics \lyricsto "Strophe" \lyrStropheB
+      \new Lyrics \lyricsto "Strophe" \lyrStropheC
+      \new Staff <<
+        \new Voice = "Basso" { \stropheBass }
+        >>
     %>>
   >>
+  }
 }
 
 

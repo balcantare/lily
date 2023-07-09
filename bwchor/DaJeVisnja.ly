@@ -1,5 +1,5 @@
 \version "2.22.2"
-fileName = "DaJeVisnja"
+fileName = "DaJeVisnja.ly"
 sheetName = "Da je višnja"
 \include "book.ily"
 

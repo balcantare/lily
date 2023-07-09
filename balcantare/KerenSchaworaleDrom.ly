@@ -1,105 +1,6 @@
-\version "2.19.82"
-#(set-global-staff-size 24)
-\include "jazzchords.ily"
-\include "jazzextras.ily"
-\include "chordbass.ily"
-\include "gitlog.ily"
-\language "english"
-
-sheetName = #"Keren, Schaworale, Drom"
-
-
-bookTitle = \markup {
-  \fontsize #3 \larger
-  \line { #sheetName }
-}
-
-#(define-markup-command (arrow layout props) ()
-   "Draw an Arrow."
-   (interpret-markup layout props
-     #{\markup \overlay {
-        \override #'(thickness . 3)
-        \translate #'( 0 . 1.82)\draw-line #'(-1.5 . 0)
-        \translate #'( 1.3 . 1.8)\arrow-head #X #RIGHT ##f
-        }
-     #}
-    ))
-
-% parentheses
-startParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list (car par-list) point-stencil )))
-}
-
-endParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list point-stencil (cadr par-list))))
-}
-
-\header { title = \bookTitle  tagline = ##f }
-
-\paper {
-  #(define fonts
-    (set-global-fonts
-    #:music "lilyjazz"
-    #:brace "lilyjazz"
-    ;;#:roman "lilyjazz-text"
-    #:sans "lilyjazz-chord"
-    #:factor (/ staff-height pt 18)
-  ))
-  #(set-paper-size "a4")
-  indent = 0\mm
-  between-system-space = 3\cm
-  between-system-padding = #2
-  %%set to ##t if your score is less than one page:
-  ragged-last-bottom = ##t
-  ragged-bottom = ##f
-  page-count = #1
-  markup-system-spacing = #'((basic-distance . 12)
-                             (minimum-distance . 3)
-                             (padding . 8))
-  print-page-number = ##t
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      %\on-the-fly \print-page-number-check-first
-     \line{
-        - \hspace #1 \commitDate \hspace #1 -
-      }
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-}
-
-#(define print-at-bars
-   (lambda (x y) (not (eq? (member x
-    '(1  )) #f))))
-dropLyricsA = {
-\override LyricText.extra-offset = #'(0 . -3)
-\override LyricHyphen.extra-offset = #'(0 . -3)
-\override LyricExtender.extra-offset = #'(0 . -3)
-\override StanzaNumber.extra-offset = #'(0 . -3)
-}
-
-dropLyricsB = {
-\override LyricText.extra-offset = #'(0 . -1.5)
-\override LyricHyphen.extra-offset = #'(0 . -1.5)
-\override LyricExtender.extra-offset = #'(0 . -1.5)
-\override StanzaNumber.extra-offset = #'(0 . -1.5)
-}
-
-raiseLyrics = {
-\revert LyricText.extra-offset
-\revert LyricHyphen.extra-offset
-\revert LyricExtender.extra-offset
-\revert StanzaNumber.extra-offset
-}
-
-skipC = \repeat unfold 5 { \skip 4 }
+\version "2.22.2"
+sheetName = "Keren, Schaworale, Drom"
+\include "book.ily"
 
 lyrStropheA = {
   \lyricmode {
@@ -115,14 +16,15 @@ lyrStropheA = {
   aj la la la la la la la laj laj laj
 
 }}
+
 skipA = \repeat unfold 12 { \skip 2 }
-skipB = \repeat unfold 12 { \skip 2 }
+
 lyrStropheB = {
   \lyricmode {
   \set stanza = #"2. "
   Du -- j du -- j de -- šu -- duj,
   cšu -- mi -- dav -- me la -- ko muj,
-  \skipB
+  \skipA
   \set stanza = #"2. "
   la -- ko  muj szi ru -- pu -- no,
   taj o ša -- vo szom -- na -- kuno.
@@ -152,7 +54,6 @@ lyrStropheD = {
    te nā tscha -- tschi -- po pe -- nau!
 }}
 
-
 strophe = \relative c'' {
   %\voiceOne
   \accidentalStyle neo-modern %-voice-cautionary
@@ -174,18 +75,7 @@ strophe = \relative c'' {
   g8 e  c[ b] |
   a8 a4. |
   a4 r |
-
   \bar "|."
-}
-
-stropheAlt = \relative c' {
-  \voiceTwo
-
-}
-
-stropheBass = \relative c' {
-  \clef bass
-
 }
 
 chrdStrophe = \chordmode {
@@ -195,34 +85,20 @@ chrdStrophe = \chordmode {
   d:m s4 e:7 a2:m s
 }
 
-
-\layout {
-  \context {
-    \Lyrics
-    \override LyricText #'font-size = #+2
+\bookpart {
+  \paper {
+    #(define fonts (book-font 1.4))
   }
-  \context {
-    \Score
-%    \override BarNumber.break-visibility = ##(#f #t #t)
-%%    \override BarNumber.Y-offset = 0
-%    \override BarNumber.X-offset = -2
+  \bookItem
+  \score {
+    <<
+    \new ChordNames { \chrdStrophe }
+    \new Staff <<
+      \new Voice = "Strophe" { \strophe }
+      >>
+    \new Lyrics \lyricsto "Strophe" \lyrStropheA
+    \new Lyrics \lyricsto "Strophe" \lyrStropheB
+    \new Lyrics \lyricsto "Strophe" \lyrStropheC
+    >>
   }
-}
-
-\score {
-  <<
-   \new ChordNames { \chrdStrophe }
-   %\new Voice = "Refrain" { \refrain
-   \new Staff <<
-     \new Voice = "Strophe" { \strophe }
-    % \new Voice = "StropheAlt" { \stropheAlt }
-   >>
-  % \new Lyrics \lyricsto "Refrain" \lyrRefrain
-  \new	Lyrics \lyricsto "Strophe" \lyrStropheA
-  \new	Lyrics \lyricsto "Strophe" \lyrStropheB
-  \new Lyrics \lyricsto "Strophe" \lyrStropheC
-  % \new Lyrics \lyricsto "Strophe" \lyrStropheD
-  % \new Staff <<
-  %   \new Voice = "Basso" { \stropheBass }
-  >>
 }

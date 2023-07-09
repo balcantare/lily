@@ -1,5 +1,5 @@
 \version "2.22.2"
-fileName = "SolangeUnsreLiederKlingen"
+fileName = "SolangeUnsreLiederKlingen.ly"
 sheetName = "Solange unsre Lieder klingen"
 \include "book.ily"
 

@@ -1,97 +1,7 @@
-\version "2.19.82"
-#(set-global-staff-size 24)
-\include "jazzchords.ily"
-\include "jazzextras.ily"
-\include "chordbass.ily"
-\include "gitlog.ily"
-\language "english"
+\version "2.22.2"
+sheetName = "Nasten'ka"
+\include "book.ily"
 
-sheetName = #"Nasten'ka"
-
-
-bookTitle = \markup {
-  \fontsize #3 \larger
-  \line { #sheetName }
-}
-
-#(define-markup-command (arrow layout props) ()
-   "Draw an Arrow."
-   (interpret-markup layout props
-     #{\markup \overlay {
-        \override #'(thickness . 3)
-        \translate #'( 0 . 1.82)\draw-line #'(-1.5 . 0)
-        \translate #'( 1.3 . 1.8)\arrow-head #X #RIGHT ##f
-        }
-     #}
-    ))
-
-% parentheses
-startParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list (car par-list) point-stencil )))
-}
-
-endParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
-          (list point-stencil (cadr par-list))))
-}
-
-\header { title = \bookTitle  tagline = ##f }
-
-\paper {
-  #(define fonts
-    (set-global-fonts
-    #:music "lilyjazz"
-    #:brace "lilyjazz"
-    ;;#:roman "lilyjazz-text"
-    #:sans "lilyjazz-chord"
-    #:factor (/ staff-height pt 18)
-  ))
-  #(set-paper-size "a4")
-  indent = 0\mm
-  between-system-space = 3\cm
-  between-system-padding = #2
-  %%set to ##t if your score is less than one page:
-  ragged-last-bottom = ##t
-  ragged-bottom = ##f
-  page-count = #1
-  markup-system-spacing = #'((basic-distance . 12)
-                             (minimum-distance . 3)
-                             (padding . 8))
-  print-page-number = ##t
-  print-first-page-number = ##t
-  oddHeaderMarkup = \markup \null
-  evenHeaderMarkup = \markup \null
-  oddFooterMarkup = \markup {
-    \fill-line {
-      %\on-the-fly \print-page-number-check-first
-     \line{
-        - \hspace #1 \commitDate \hspace #1 -
-      }
-    }
-  }
-  evenFooterMarkup = \oddFooterMarkup
-}
-
-#(define print-at-bars
-   (lambda (x y) (not (eq? (member x
-    '(1  )) #f))))
-dropLyrics = {
-\override LyricText.extra-offset = #'(0 . -4.5)
-\override LyricHyphen.extra-offset = #'(0 . -4.5)
-\override LyricExtender.extra-offset = #'(0 . -4.5)
-\override StanzaNumber.extra-offset = #'(0 . -4.5)
-}
-raiseLyrics = {
-\revert LyricText.extra-offset
-\revert LyricHyphen.extra-offset
-\revert LyricExtender.extra-offset
-\revert StanzaNumber.extra-offset
-}
-
-skipEight = \repeat unfold 24 { \skip 2 }
 lyrStropheA = {
   \lyricmode {
   \set stanza = #"1. "
@@ -111,11 +21,6 @@ lyrStropheA = {
 lyrStropheB = {
   \lyricmode {
   \set stanza = #"3. "
-  %Ai, ne -- ne, ai ne -- ne -- ne -- ne,
-  %Ai, ne -- ne
-  %Ai, ne -- ne -- ne,
-  %Ai, ne -- ne -- ne,
-  %Ai, ne -- ne -- ne -- ne,
   Tu pok -- xel,
   Tu _ pok _ -- xel,
   Na -- stin -- 'ke.
@@ -143,11 +48,6 @@ lyrStropheC = {
     Tu, go -- zyhn' -- ko mi -- rí.
 }}
 
-lyrStropheD = {
-  \lyricmode {
-}}
-
-
 strophe = \relative c' {
   %\voiceOne
   \time 2/4
@@ -173,18 +73,7 @@ strophe = \relative c' {
    bf8. a16 8 ef16 ef
    g8 fs ef d
    d4.
-
   }
-}
-
-stropheAlt = \relative c' {
-  \voiceTwo
-
-}
-
-stropheBass = \relative c' {
-  \clef bass
-
 }
 
 chrdStrophe = \chordmode {
@@ -206,53 +95,36 @@ chrdStrophe = \chordmode {
    \set chordBassOnly = ##f
    c:m c:dim/ef
    d2 s4.
-
 }
 
-
-\layout {
-  \context {
-    \Lyrics
-    \override LyricText #'font-size = #+2
+\bookpart {
+  \paper {
+    page-count = #1
+    #(define fonts (book-font 1.35))
   }
-  \context {
-    \Score
-%    \override BarNumber.break-visibility = ##(#f #t #t)
-%%    \override BarNumber.Y-offset = 0
-%    \override BarNumber.X-offset = -2
+  \bookItem
+  \score {
+    <<
+    \new ChordNames { \chrdStrophe }
+    \new Staff <<
+      \new Voice = "Strophe" { \strophe }
+      >>
+    \new Lyrics \lyricsto "Strophe" \lyrStropheA
+    \new Lyrics \lyricsto "Strophe" \lyrStropheB
+    >>
   }
-}
-
-\score {
-  <<
-   \new ChordNames { \chrdStrophe }
-   %\new Voice = "Refrain" { \refrain
-   \new Staff <<
-     \new Voice = "Strophe" { \strophe }
-    % \new Voice = "StropheAlt" { \stropheAlt }
-   >>
-  % \new Lyrics \lyricsto "Refrain" \lyrRefrain
-  \new	Lyrics \lyricsto "Strophe" \lyrStropheA
-  \new	Lyrics \lyricsto "Strophe" \lyrStropheB
-  % \new Lyrics \lyricsto "Strophe" \lyrStropheC
-  % \new Lyrics \lyricsto "Strophe" \lyrStropheD
-  % \new Staff <<
-  %   \new Voice = "Basso" { \stropheBass }
-  >>
-}
-\markup { \vspace #3  \hspace #6 \fontsize #2
-  \column{
-    \line{ \box{ A} 1. Strophe }
-    \line{ \box{ B} Refrain}
-    \line{ \box{ B} 2. Strophe}
-    \line{ \box{ B} Refrain}
-    \line{ \box{ A} 3. Strophe }
-    \line{ \box{ B} Refrain}
-    \line{ \box{A/B} Solo}
-    \line{ \box{ A} 1. Strophe langsam}
-    \line{ 2 x\box{ B} Refrain }
-    \line{ \box{ A} 1. Strophe langsam .. \box{Fine}}
-
-
+  \markup { \vspace #3  \hspace #6 \fontsize #2
+    \column{
+      \line{ \box{ A} 1. Strophe }
+      \line{ \box{ B} Refrain}
+      \line{ \box{ B} 2. Strophe}
+      \line{ \box{ B} Refrain}
+      \line{ \box{ A} 3. Strophe }
+      \line{ \box{ B} Refrain}
+      \line{ \box{A/B} Solo}
+      \line{ \box{ A} 1. Strophe langsam}
+      \line{ 2 x\box{ B} Refrain }
+      \line{ \box{ A} 1. Strophe langsam .. \box{Fine}}
+    }
   }
 }
