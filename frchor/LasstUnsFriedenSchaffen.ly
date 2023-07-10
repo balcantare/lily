@@ -1,5 +1,4 @@
 \version "2.22.2"
-fileName = "LasstUnsFriedenSchaffen.ly"
 sheetName = "Lasst uns Frieden schaffen"
 \include "book.ily"
 
@@ -9,8 +8,9 @@ lyrStropheA = {
   Ach, ich wünscht', ich könn -- te flie -- gen,
   \set stanza = #"1. "
   fort von all dem Hass, de Krie -- gen,
+  fort von all dem
   \set stanza = #"1. "
-  fort von all dem Wahn -- sin,
+  Wahn -- sin,
   der uns in die En -- ge
   treibt.
 
@@ -37,8 +37,9 @@ lyrStropheB = {
   Stoppt die Macht der Rüs -- tungs -- bos -- se
   \set stanza = #"2. "
   und die We -- ge der Ge -- schos -- se,
+  die sie oh -- ne
   \set stanza = #"2. "
-  die sie oh -- ne Skru -- pel
+  Skru -- pel
   über -- all -- hin ex -- por -- tie -- rn'!
   \set stanza = #"2. "
   Und Mil -- liar -- den Gel -- der flie -- ßen,
@@ -57,8 +58,9 @@ lyrStropheC = {
   Völ -- ker, lasst Euch nicht ver -- blen -- den,
   \set stanza = #"3. "
   Men -- schen nehmt Euch bei den Hän -- den!
+  Lasst nicht zu, dass
   \set stanza = #"3. "
-  Lasst nicht zu, dass sie uns auf -- ein -- an -- der
+  sie uns auf -- ein -- an -- der
   het -- zen wolln'!
   \set stanza = #"3. "
   Denn in al -- len ih -- ren Krie -- gen
