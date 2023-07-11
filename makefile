@@ -1,11 +1,11 @@
-OUTDIR := $(CURDIR)/out
+OUTDIR := out
 SUBDIRS := balcantare frchor bwchor 
 
 $(OUTDIR) :
 	mkdir $(OUTDIR)
 
-.PHONY: all $(MAKECMDGOALS) $(SUBDIRS)
-$(MAKECMDGOALS) all: $(OUTDIR) $(SUBDIRS) 
+.PHONY: all install $(MAKECMDGOALS) $(SUBDIRS)
+$(MAKECMDGOALS) all install: $(OUTDIR) $(SUBDIRS) 
 
 $(SUBDIRS):
-	$(MAKE) -C $@ OUTDIR=$(OUTDIR) $(MAKECMDGOALS)
+	$(MAKE) -C $@ $(MAKECMDGOALS)

@@ -9,8 +9,8 @@
 # https://github.com/rpspringuel/lilypond_make/blob/mad-scientist_dependencies/Makefile
 #
 
-OUTDIR = $(CURDIR)
-targets = $(addprefix $(OUTDIR)/,$(books)) 
+INSTDIR = $(TOPDIR)/out
+install_targets = $(addprefix $(INSTDIR)/,$(books) $(patsubst %.pdf,%.log,$(books))) 
 
 LILY_CMD := lilypond \
   -ddelete-intermediate-files \
@@ -24,15 +24,20 @@ LILY_CMD := lilypond \
 # Input and output files are searched in the directories listed in
 # the VPATH variable.  All of them are subdirectories of the current
 # directory (given by the GNU make variable `CURDIR').
-VPATH := $(CURDIR) $(OUTDIR) 
+# VPATH := $(CURDIR) $(OUTDIR) 
 
-.PHONY: all
-all: $(targets)
+.PHONY: all install
+all: $(books)
+install: $(install_targets)
 
-DEPFILES := $(addsuffix .dly,$(basename $(targets)))
+DEPFILES := $(addsuffix .dly,$(basename $(books)))
 $(DEPFILES):
 include $(wildcard $(DEPFILES))
 
-$(OUTDIR)/%.pdf: %.ly
+%.pdf: %.ly
 	date > $(*F).log
-	$(LILY_CMD) -o $(OUTDIR)/$(*F) $< 2>> $(OUTDIR)/$(*F).log
+	$(LILY_CMD) $< 2>> $(*F).log
+
+$(INSTDIR)/%: %
+	cp $< $(INSTDIR)
+
