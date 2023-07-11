@@ -30,4 +30,5 @@
 \includeSheet "LasstUnsFriedenSchaffen.ly"
 \includeSheet "../bwchor/MateAroha.ly"
 \includeSheet "SagMirWoDieBlumenSind.ly"
+\includeSheet "WerMoechteNichtImLebenBleiben.ly"
 \includeSheet "ZogenEinstFuenfWildeSchwaene.ly"
