@@ -4,8 +4,8 @@ SUBDIRS := balcantare frchor bwchor
 $(OUTDIR) :
 	mkdir $(OUTDIR)
 
-.PHONY: all install $(MAKECMDGOALS) $(SUBDIRS)
-$(MAKECMDGOALS) all install: $(OUTDIR) $(SUBDIRS) 
+.PHONY: all install $(SUBDIRS)
+all: $(OUTDIR) $(SUBDIRS) 
 
 $(SUBDIRS):
-	$(MAKE) -C $@ $(MAKECMDGOALS)
+	$(MAKE) -C $@ all install

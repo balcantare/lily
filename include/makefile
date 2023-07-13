@@ -39,5 +39,5 @@ include $(wildcard $(DEPFILES))
 	$(LILY_CMD) $< 2>> $(*F).log
 
 $(INSTDIR)/%: %
-	cp $< $(INSTDIR)
+	cp $< $@
 
