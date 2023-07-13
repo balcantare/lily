@@ -24,6 +24,7 @@
 }
 
 \includeSheet "../bwchor/AmaniLeo.ly"
+\includeSheet "DasWeicheWasser.ly"
 \includeSheet "DerPfahl.ly"
 \includeSheet "HevenuSchalomAlechem.ly"
 \includeSheet "../bwchor/HinehMatov.ly"
