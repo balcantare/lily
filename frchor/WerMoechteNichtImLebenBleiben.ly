@@ -93,21 +93,21 @@ strophe = \relative c' {
 }
 
 chrdStrophe = \chordmode {
+  \set chordBassOnly = ##t
   a2:m f
   d:m e:m
   a2:m
   f2 g
   c
   e2:m f
-  a:m e:m f2 g
-  c a:m d:m f
-  g f
-  e:m  f
-  a:m g
-  d:m f
-  g f
-  e:m f
-  a:m g
+  a:m c g2 g4:/a g:/b
+  c2 a:m d:m f
+  g1
+  g1
+  c2 a:m
+  f d:m
+  g1 g1
+  c
 
 }
 

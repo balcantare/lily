@@ -17,7 +17,7 @@ raiseLyrics = {
 \revert StanzaNumber.extra-offset
 }
 
-skipA = \repeat unfold 19 { \skip 2 }
+skipA = \repeat unfold 21 { \skip 2 }
 skipB = \repeat unfold 32 { \skip 2 }
 lyrStropheA = {
   \skipA
@@ -91,9 +91,9 @@ strophe = \relative c' {
   e e fs g4 b
   r8 d4 c8 b4 a
   r8 g g a b4 g
-  r8 a4 g8 g[ fs8] e4~
+  r8 a4 g8 g[ fs8 8 e]
 
-  e2 r4
+  e2_\markup{fine} r4
   \break \repeat volta 2 {
     <b \parenthesize b'>4 ^\markup{ \box{\fontsize #4 A}}
   %\bar "||"
@@ -104,12 +104,12 @@ strophe = \relative c' {
   e,4. fs8 g4 a
   b4 b a d
   b8 b b b a4 g
-  e2 r4_\markup{\box{\fontsize #3 {4..C}}}
+  e2 r4_\markup{\box{\fontsize #3 {4..C,7..I}}}
    \once \override Score.RehearsalMark.break-visibility =
     #end-of-line-visible
   \once \override Score.RehearsalMark.self-alignment-X =
     #RIGHT
-  \mark \markup{wdhl 5.,6.}
+  \mark \markup{\box{wdhl:5.,6.}}
   \bar ":|." \break
 
   b'4^\markup{  \box{\fontsize #4 B}}
@@ -152,35 +152,25 @@ strophe = \relative c' {
   r8 fs4 g8 \tuplet 3/2 { g4  a a }
   a8 b b4~ 2
   r8 a4 b8 \tuplet 3/2 { c4 d e }
-  g2. r4
-
-  %{fs4. fs8 a4 d
-  fs4 fs a fs
-  e,4. cs8 g4 a
-  fs4 fs a d
-  fs8 8 8 8 a4 g
-  e2 r4 fs'8 c
-  d4 d fs d
-  e4 e d fs8 a
-  %}
-
+  \set Score.measureLength = #(ly:make-moment 3/4)
+  g2._\markup{\box{\fontsize #3 ..A5}}
   \bar "|."
 }
 
 chrdStrophe = \chordmode {
     s8 e8:m s2.
-    a1:m e:m a1:m e1:m
-    c1 g2 d
-    b1:m c2 d
+    a1:m e:m a2:m b:7 e1:m
+    e2:m c g2 d
+    e2:m c2 g d
     e1:m
-    g2 d2 b1:m e:m
+    g2 d2 b1 e:m
     g c2 d
-    e1:m c2 b2
-    s1 s2
+    e1:m c2 d2
+    g a:m b
     e1:m g2 d2
-    b1 c1 e2:m s4
+    c2 d e:m c e:m s4
     s4 c2 s4
-    e1:m d g a:m b:m a:m e:m
+    e1:m d g a:m b:m a2:m c e2:m
 }
 
 
@@ -192,9 +182,9 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames { \transpose g f \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" { \transpose g f \strophe }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
