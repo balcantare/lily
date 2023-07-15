@@ -33,5 +33,6 @@
 \includeSheet "../bwchor/MateAroha.ly"
 \includeSheet "../bwchor/NgaIwiE.ly"
 \includeSheet "SagMirWoDieBlumenSind.ly"
+\includeSheet "WeShallOvercome.ly"
 \includeSheet "WerMoechteNichtImLebenBleiben.ly"
 \includeSheet "ZogenEinstFuenfWildeSchwaene.ly"
