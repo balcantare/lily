@@ -120,7 +120,7 @@ lyrStropheF = {
 
 strophe = \relative c' {
   %\voiceOne
-  \accidentalStyle neo-modern %-voice-cautionary
+  %\accidentalStyle neo-modern %-voice-cautionary
   \time 6/8
   \partial 4.
   \key e \minor
