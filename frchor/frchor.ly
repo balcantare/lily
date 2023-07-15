@@ -31,6 +31,7 @@
 \includeSheet "../bwchor/HinehMatov.ly"
 \includeSheet "LasstUnsFriedenSchaffen.ly"
 \includeSheet "../bwchor/MateAroha.ly"
+\includeSheet "../bwchor/NgaIwiE.ly"
 \includeSheet "SagMirWoDieBlumenSind.ly"
 \includeSheet "WerMoechteNichtImLebenBleiben.ly"
 \includeSheet "ZogenEinstFuenfWildeSchwaene.ly"
