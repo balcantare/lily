@@ -21,8 +21,8 @@ lyrStropheA = {
   Und all die Träu -- me von ges -- tern
   ha -- ben uns die Bäu -- me er -- zählt.
 
-  ha -- yo -- weh ha -- yo -- weh
-  ha -- yo -- weh ha -- yo -- weh weh
+  %ha -- yo -- weh ha -- yo -- weh
+  %ha -- yo -- weh ha -- yo -- weh weh
 
   Der Him -- mel ist un -- ser Va -- ter
   be -- hü -- tet uns al -- le hier:
@@ -69,6 +69,7 @@ strophe = \relative c' {
       d1
       r1 r1
       \bar "||"
+      \mark \markup{\fontsize #2 \box H}
       a'8 a8 4 4 f
       g1 r1
       g8 g8 4 a bf
@@ -91,7 +92,7 @@ strophe = \relative c' {
       c4. d8 c4 bf
       g1 r1 r2. d'4
       d4. c8 d4 c
-      c1 r1 r1
+      bf1 r1 r1
       d,4. e8 d4 c d1 \break
       r1 c'8 c8 c4 4 a
       g1
@@ -115,7 +116,14 @@ strophe = \relative c' {
   bf4. a8 bf4 a8 a
   g2 d4 a'8 g
   f4. d8 d4 c8 e
-  d1 \break
+  d1
+  \once \override Score.RehearsalMark.break-visibility =
+    #end-of-line-visible
+  \once \override Score.RehearsalMark.self-alignment-X =
+    #RIGHT
+  \mark \markup {\fontsize #2 \box ..H }
+  \bar "||" \break
+  %{
   \repeat volta 2 {
     \mark \markup{\fontsize #1 \box H}
     a'8 a a4 a f
@@ -125,7 +133,10 @@ strophe = \relative c' {
     { d1 }
     { d2. \bar "||" }
   } \break
+  %}
+  \set Score.measureLength = #(ly:make-moment 1/4)
   a4
+  \set Score.measureLength = #(ly:make-moment 2/2)
   d4 d8 d d4 f8( e)
   d2 d4. c8
   f4 f8 f a4 g8( a)
@@ -139,7 +150,7 @@ strophe = \relative c' {
     #end-of-line-visible
   \once \override Score.RehearsalMark.self-alignment-X =
     #RIGHT
-  \mark \markup {\fontsize #1 \box ..H }
+  \mark \markup {\fontsize #2 \box ..H }
   \break
   \set Score.measureLength = #(ly:make-moment 1/4)
   a4
@@ -156,7 +167,7 @@ strophe = \relative c' {
     #end-of-line-visible
   \once \override Score.RehearsalMark.self-alignment-X =
     #RIGHT
-  \mark \markup {\fontsize #1 \box ..H }
+  \mark \markup {\fontsize #2 \box ..H }
 
   \bar "|."
 }
@@ -167,13 +178,13 @@ chrdStrophe = \chordmode {
   f c s s
   g:m s s s
   d:m s s s
-  d:m c s s
+  s8 d2:m s4. c1 s s
   d:m s s
   c s s
   d:m s
   d:m s f c g:m s d:m s
-  d:m  c s d:m d:m
-  d:m s f c g:m s d:m s s4
+  s4 % d1:m  c s d:m d:m
+  d1:m s f c g:m s d:m s s4
   d1:m s f c g:m s d:m s
 }
 
@@ -194,7 +205,7 @@ staffSize = #(define-music-function (parser location new-size) (number?)
   \score {
     <<
     \new ChordNames { \chrdStrophe }
-    \new Staff \with { \staffSize #-3 } <<
+    \new Staff \with { \staffSize #-2 } <<
       \new Voice = "StropheA" { \strophe }
       >>
     \new Lyrics \lyricsto "StropheA" \lyrStropheA

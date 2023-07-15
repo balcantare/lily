@@ -89,7 +89,7 @@ strophe = \relative c' {
   b4 d r8 d d c
   b4 g' e d
   c2 r2
-  \bar "||"
+  \bar "|."
 }
 
 chrdStrophe = \chordmode {

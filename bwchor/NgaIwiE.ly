@@ -115,9 +115,9 @@ chrdStrophe = \chordmode {
   \tocItem \markup \sheetName
   \score {
     <<
-    \new ChordNames { \transpose ef c' \chrdStrophe }
+    \new ChordNames { \transpose ef g \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe" { \transpose ef c' \strophe }
+      \new Voice = "Strophe" { \transpose ef g \strophe }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB

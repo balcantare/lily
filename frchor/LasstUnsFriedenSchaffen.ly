@@ -40,7 +40,7 @@ lyrStropheB = {
   die sie oh -- ne
   \set stanza = #"2. "
   Skru -- pel
-  über -- all -- hin ex -- por -- tie -- rn'!
+  ü -- ber -- allhin ex -- por -- tie -- rn'!
   \set stanza = #"2. "
   Und Mil -- liar -- den Gel -- der flie -- ßen,
   da -- mit Men -- schen

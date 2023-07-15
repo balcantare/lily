@@ -92,6 +92,7 @@ strophe = \relative c' {
   \partial 4
   \bar ".|:"
   \repeat volta 2 {
+    \mark \markup{\fontsize #2 \box{I}}
   d4
   g4.a8 b4 a8 b
   c4. b8 a4 g
@@ -115,19 +116,24 @@ strophe = \relative c' {
    { g4( b) d2 }
    { g,1 }
   }
+  \once \override Score.RehearsalMark.break-visibility =
+    #end-of-line-visible
+  \once \override Score.RehearsalMark.self-alignment-X =
+    #RIGHT
+  \mark \markup{\fontsize #2 \box{2..I}}
+
   \bar "|."
 }
 
 chrdStrophe = \chordmode {
   s4
   \set chordBassOnly = ##t
-  g2 g:/d
-  a:m a:m/c
-  d d:/a g1 g
-  g2 g:/d g:/b g:/g
-  c c:/e d g
-  d d:/a g e:m
-  a:m d g g:/d
+  g1 a:m
+  d g g
+  g s
+  c d2 g
+  d1 g2 e:m
+  a:m d g1
   g1
 }
 
