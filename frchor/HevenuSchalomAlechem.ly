@@ -99,11 +99,11 @@ strophe = \transpose a d \relative c' {
 
 chrdStrophe = \transpose a d \chordmode {
   s4.
-  \set chordBassOnly = ##t
-  a2:m a:m/e a:m/a a:m/e
-  a:7 a:7/cs d:m d:m/f
-  e:7 e:7/b a:m a:m/e
-  e:7 e:7/b e:7/e a8:m
+  %\set chordBassOnly = ##t
+  a1:m s
+  a:7 d:m
+  e:7 a:m
+  e:7 e2:7 a8:m
 }
 
 \bookpart {
