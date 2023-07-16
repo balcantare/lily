@@ -88,7 +88,8 @@ strophe = \relative c' {
   f8 f f e d4 c
   b4 d r8 d d c
   b4 g' e d
-  c2 r2
+  \set Score.measureLength = #(ly:make-moment 2/4)
+  c2 %s2
   \bar "|."
 }
 
@@ -100,7 +101,7 @@ chrdStrophe = \chordmode {
   f2 g
   c
   e2:m f
-  a:m c g2 g4:/a g:/b
+  a:m c g1
   c2 a:m d:m f
   g1
   g1

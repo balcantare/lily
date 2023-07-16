@@ -46,14 +46,14 @@ lyrStropheA = {
 lyrStropheB = {
   \lyricmode {
     \set stanza = "2. "
-    Hast Du toter Sol -- dat
+    Hast_Du to -- ter Sol -- dat
     mal ein Mäd -- chen ge -- liebt,
     \set stanza = "2. "
     Sicher nicht, denn nur
     dort wo es
     Frie -- ___ den gibt,
     \set stanza = "2. "
-    kön -- nen Zärt -- lich -- keit
+    können Zärt ___ -- lich -- keit
     und Ver -- trau -- en ge -- deihn'.
     \set stanza = "2. "
     Warst_Sol -- dat um zu sterben,
@@ -121,7 +121,7 @@ lyrStropheD = {
     Dann kann es ge -- schehn', daß bald
     nie -- mand mehr lebt,
     \set stanza = "4. "
-    der die Mil -- liard -- den ___ ___ von
+    der die Mil -- ___ -- ___ -- liard -- den von
     To -- ten be -- gräbt.
     \set stanza = "4. "
     Doch längst fin -- den sich mehr
@@ -202,7 +202,7 @@ chrdStrophe = \chordmode {
   g2. s
   c2.
   a:m
-  d s g2 c4 c2. g2. s c a:m
+  d s g2 c4 g2. g2. s c a:m
   d s g2 c4 g2. s s
   a:m s d s g d s g s a:m s
   d s g2 d4 g2. g
