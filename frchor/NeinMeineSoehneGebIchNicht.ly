@@ -12,15 +12,19 @@ lyrStropheA = {
   \set stanza = " 1."
   Ich denk, ich schreib euch bes -- ser schon
   bei -- zei -- ten
+  \set stanza = " 1."
   und sag euch heu -- te schon end -- gül -- tig
   ab.
   Ihr braucht nicht lan -- ge Lis -- ten
-  aus -- zu -- brei -- ten,
+  aus -- zu -- \set stanza = " 1." brei -- ten,
   um zu se -- hen, daß ich auch zwei Söh  ne
   hab'.
+  \set stanza = " 1."
   Ich lieb die bei -- den,
   das will ich euch sa -- gen,
+  \set stanza = " 1."
   mehr als mein Le -- ben, als mein Au -- gen -- licht,
+  \set stanza = " 1."
   und die, die wer -- den kei -- ne Waf -- fen
   tra -- gen.
   Nein, mei -- ne Söh -- ne geb' ich nicht.
@@ -31,70 +35,76 @@ lyrStropheA = {
 lyrStropheB = {
   \lyricmode {
     \skipA
+    \set stanza = " 2."
     Ich ha -- be sie die Ach -- tung vor dem
     Le -- ben,
+    \set stanza = " 2."
     vor je -- der Kre -- a -- tur als höch -- sten
     Wert,
-    ich ha -- be sie Er -- bar -- men und Ver -- ge -- ben
+    ich ha -- be sie Er -- bar -- men und Ver --
+    \set stanza = " 2." ge -- ben
     und wo im -- mer es ___ ging lie -- ben ge -- lehrt.
+    \set stanza = " 2."
     Nun wer -- det ihr sie nicht mit Hass ver -- der -- ben,
-    keine Zie -- le, kei -- ne Eh -- re, kei -- ne Pflicht
-    sind's Wert, da -- für zu tö -- ten und zu ster -- ben,
+    \set stanza = " 2." keine Zie -- le, kei -- ne Eh -- re, kei -- ne Pflicht
+    \set stanza = " 2." sind's Wert, da -- für zu tö -- ten und zu ster -- ben,
 }}
 
 lyrStropheC = {
   \lyricmode {
     \skipA
-    Ganz si -- cher nicht für euch hat ih -- re
-    Mut -- ter sie un -- ter Schmer -- zen auf
+    \set stanza = " 3." Ganz si -- cher nicht für euch hat ih -- re
+    Mut -- ter \set stanza = " 3." sie un -- ter Schmer -- zen auf
     die Welt ge -- bracht.
-    Nicht für euch und nicht als Ka -- no -- nen -- fut -- ter.
+    Nicht für euch und nicht als Ka -- no -- nen --
+    \set stanza = " 3." fut -- ter.
     Nicht ___ für euch hab' ich man -- che Fie -- ber -- nacht
-    ver -- zwei -- felt an dem klei -- nen Bett ge -- stan -- den,
-    und kühlt' ein klei -- nes glü -- hen -- des Ge -- sicht,
-    bis wir in der Er -- schöpf -- ung Ru -- he fan -- den,
+    \set stanza = " 3." ver -- zwei -- felt an dem klei -- nen Bett ge -- stan -- den,
+    \set stanza = " 3." und kühlt' ein klei -- nes glü -- hen -- des Ge -- sicht,
+    \set stanza = " 3." bis wir in der Er -- schöpf -- ung Ru -- he fan -- den,
 }}
 lyrStropheD = {
   \lyricmode {
     \skipA
-    Sie wer -- den nicht in Reih' und Glied mar --  schie -- ren,
-    nicht durch -- hal -- ten, nicht kämp -- fen bis zu -- letzt,
+    \set stanza = " 4." Sie wer -- den nicht in Reih' und Glied mar --  schie -- ren,
+    \set stanza = " 4." nicht durch -- hal -- ten, nicht kämp -- fen bis zu -- letzt,
     auf ei -- nem gott -- ver -- lass' -- nen Feld
-    er -- frie -- ren,
+    er -- \set stanza = " 4." frie -- ren,
     wäh -- rend ihr euch in ___ wei -- che Kis -- sen setzt.
-    Die Kin -- der schüt -- zen vor al -- len Ge -- fah -- ren
-    ist_doch mei -- ne ver -- dammte Va ___ -- ter ___ -- pflicht,
-    und das heißt auch sie vor euch zu be --  wah -- ren!
+    \set stanza = " 4." Die Kin -- der schüt -- zen vor al -- len Ge -- fah -- ren
+    \set stanza = " 4." ist_doch mei -- ne ver -- dammte Va ___ -- ter ___ -- pflicht,
+    \set stanza = " 4." und das heißt auch sie vor euch zu be --  wah -- ren!
 }}
 lyrStropheE = {
   \lyricmode {
     \skipA
-    Ich wer -- de sie den Un -- ge -- hor -- sam
+    \set stanza = " 5." Ich wer -- de sie den Un -- ge -- hor -- sam
     leh -- ren,
-    den Wi -- der -- stand und die Un -- beug -- sam -- keit
-    ge -- gen je -- den Be -- fehl auf -- zu -- be -- geh -- ren
+    \set stanza = " 5." den Wi -- der -- stand und die Un -- beug -- sam -- keit
+    ge -- gen je -- den Be -- fehl auf -- zu -- be --
+    \set stanza = " 5." geh -- ren
     und ___ nicht zu bu -- ckeln vor der Ob -- rig -- keit.
-    Ich werd' sie lehr'n, den eig' -- nen
+    \set stanza = " 5." Ich werd' sie lehr'n, den eig' -- nen
     Weg zu ge -- hen,
-    vor kei -- nem Po -- panz, kei -- nem
+    \set stanza = " 5." vor kei -- nem Po -- panz, kei -- nem
     Welt -- ge -- richt,
-    vor kei -- nem als sich sel -- ber
+    \set stanza = " 5." vor kei -- nem als sich sel -- ber
     grad' zu ste -- hen,
 }}
 lyrStropheF = {
   \lyricmode {
     \skipA
-    Und e -- her wer -- de ich mit ih -- nen
-    flie -- hen, als dass ihr sie zu eu -- ren
+    \set stanza = " 6." Und e -- her wer -- de ich mit ih -- nen
+    flie -- hen, \set stanza = " 6." als dass ihr sie zu eu -- ren
     Knech -- ten macht,
     e -- her mit ih -- nen in die Frem -- de
-    zie -- hen,
+    \set stanza = " 6." zie -- hen,
     in ___ Ar -- mut und wie Die -- be in der Nacht.
-    Wir ha -- ben nur dies ei -- ne kur -- ze
+    \set stanza = " 6." Wir ha -- ben nur dies ei -- ne kur -- ze
     Le -- ben,
-    ich schwör's und sag's euch gra -- de ins
+    \set stanza = " 6." ich schwör's und sag's euch gra -- de ins
     Ge -- sicht:
-    Sie wer -- den es für eu -- ren Wahn
+    \set stanza = " 6." Sie wer -- den es für eu -- ren Wahn
     nicht ge -- ben:
 }}
 
