@@ -203,7 +203,7 @@ chrdStrophe = \chordmode {
   c2.
   a:m
   d s g2 c4 g2. g2. s c a:m
-  d s g2 c4 g2. s s
+  d s g2 d4 g2. s s
   a:m s d s g d s g s a:m s
   d s g2 d4 g2. g
   d s c g d s c g g c s d s g c d g

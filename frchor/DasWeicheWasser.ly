@@ -136,10 +136,9 @@ strophe = \relative c' {
   e4. fs8 g4 a
   b4 b a d
   b8 b b b a4 g
-  e2 r2
   \set Score.measureLength = #(ly:make-moment 3/4)
-  r2_\markup{\box{\fontsize #3 2..I}}
-  r4 }
+  e2 r4_\markup{\box{\fontsize #3 2..I}}^\fermata
+  }
   \break
   \set Score.measureLength = #(ly:make-moment 4/4)
   \tuplet 3/2
@@ -151,9 +150,8 @@ strophe = \relative c' {
   g2. r4
   r8 fs4 g8 \tuplet 3/2 { g4  a a }
   a8 b b4~ 2
-  r8 a4 b8 \tuplet 3/2 { c4 d e }
-  \set Score.measureLength = #(ly:make-moment 3/4)
-  g2._\markup{\box{\fontsize #3 ..A5}}
+  r8 a4 b8 \tuplet 3/2
+  { c4 d e_\markup{\box{\fontsize #3 ..A5}}^\fermata }
   \bar "|."
 }
 
@@ -162,15 +160,15 @@ chrdStrophe = \chordmode {
     a1:m e:m a2:m b:7 e1:m
     e2:m c g2 d
     e2:m c2 g d
-    e1:m
-    g2 d2 b1 e:m
-    g c2 d
-    e1:m c2 d2
+    e2:m d
+    g2 d2 b2. b4 e1:m
+    g2 d c2 d
+    e2:m b:m c2 d2
     g a:m b
-    e1:m g2 d2
-    c2 d e:m c e:m s4
+    e2:m d g2 d2
+    c2. d4 e2:m s4
     s4 c2 s4
-    e1:m d g a:m b:m a2:m c e2:m
+    e1:m d g a:m b:m a2:m c
 }
 
 
