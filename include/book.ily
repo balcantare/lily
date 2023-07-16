@@ -1,4 +1,14 @@
-#(set-global-staff-size 24)
+#(if
+  (not (defined? 'book-staff-size-set))
+  (begin
+    (if
+      (not (defined? 'book-staff-size))
+      (define book-staff-size 24)
+    )
+    (set-global-staff-size book-staff-size)
+  )
+)
+
 includeOnce =
 #(define-void-function (filename) (string?)
    (if

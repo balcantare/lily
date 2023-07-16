@@ -44,9 +44,6 @@ endParenthesis = {
           (list point-stencil (cadr par-list))))
 }
 
-
-
-
 \paper {
 
   #(define-public (book-font font-factor)
