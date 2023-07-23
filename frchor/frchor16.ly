@@ -27,6 +27,7 @@
   \markuplist \table-of-contents
 
 }
+\includeSheet "AllesWohlDemVolke.ly"
 \includeSheet "JetztWirdFriedenGemacht.ly"
 \includeSheet "NeinMeineSoehneGebIchNicht.ly"
 \includeSheet "WeitInDerChampagne.ly"
