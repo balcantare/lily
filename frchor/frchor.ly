@@ -27,6 +27,7 @@
 \includeSheet "DasWeicheWasser.ly"
 \includeSheet "DerPfahl.ly"
 \includeSheet "DieErdeIstUnsereMutter.ly"
+\includeSheet "HeuteUndHier.ly"
 \includeSheet "HevenuSchalomAlechem.ly"
 \includeSheet "../bwchor/HinehMatov.ly"
 \includeSheet "LasstUnsFriedenSchaffen.ly"
