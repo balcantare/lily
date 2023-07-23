@@ -155,7 +155,8 @@ chrdStrophe = \chordmode {
   a2 d:m
   a2 d:m
   g:m d:m
-  e a
+  e a4 s2
+  a1 s2 d4:m
 }
 
 \bookpart {
