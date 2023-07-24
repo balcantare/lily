@@ -1,7 +1,7 @@
 #(if
   (or (not (defined? 'current-book-staff-size))
-      (not (equal? current-book-staff-size
-                   book-staff-size))
+      ;(not (equal? current-book-staff-size
+      ;             book-staff-size))
       )
   (begin
     (if
