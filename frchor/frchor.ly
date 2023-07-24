@@ -35,17 +35,18 @@ sheetCopyright = "©friedensingen.de"
   \markuplist \table-of-contents
 }
 
-\includeSheet "../bwchor/AmaniLeo.ly"
-\includeSheet "DasWeicheWasser.ly"
-\includeSheet "DerPfahl.ly"
-\includeSheet "DieErdeIstUnsereMutter.ly"
-\includeSheet "HeuteUndHier.ly"
-\includeSheet "HevenuSchalomAlechem.ly"
-\includeSheet "../bwchor/HinehMatov.ly"
-\includeSheet "LasstUnsFriedenSchaffen.ly"
-\includeSheet "../bwchor/NgaIwiE.ly"
-\includeSheet "../bwchor/OdYavoShalomAleinu.ly"
-\includeSheet "SagMirWoDieBlumenSind.ly"
-\includeSheet "WeShallOvercome.ly"
-\includeSheet "WerMoechteNichtImLebenBleiben.ly"
-\includeSheet "ZogenEinstFuenfWildeSchwaene.ly"
+\includeSheet "../bwchor/AmaniLeo.ly"   % 2
+\includeSheet "DasWeicheWasser.ly"      % 3
+\includeSheet "DerPfahl.ly"             % 4
+\includeSheet "DieErdeIstUnsereMutter.ly" % 5
+\includeSheet "HeuteUndHier.ly"           % 6
+\includeSheet "HevenuSchalomAlechem.ly"   % 7
+\includeSheet "../bwchor/HinehMatov.ly"   % 8
+\includeSheet "LasstUnsFriedenSchaffen.ly" % 9
+\includeSheet "../bwchor/NgaIwiE.ly"       % 10
+\includeSheet "../bwchor/OdYavoShalomAleinu.ly" % 11
+\includeSheet "SagMirWoDieBlumenSind.ly" % 12
+\includeSheet "../bwchor/SolangeUnsreLiederKlingen.ly" % 13
+\includeSheet "WeShallOvercome.ly"                % 14
+\includeSheet "WerMoechteNichtImLebenBleiben.ly"  % 15
+\includeSheet "ZogenEinstFuenfWildeSchwaene.ly"   % 16

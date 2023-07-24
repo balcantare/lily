@@ -137,6 +137,6 @@ chrdStrophe = \chordmode {
         \override LyricText #'font-size = #+1
       }
     }
-    \midi {}
+    %\midi {}
   }
 }

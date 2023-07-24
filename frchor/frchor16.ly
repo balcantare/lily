@@ -35,8 +35,8 @@ sheetCopyright = "©friedensingen.de"
   \markuplist \table-of-contents
 
 }
-\includeSheet "AllesWohlDemVolke.ly"
-\includeSheet "JetztWirdFriedenGemacht.ly"
-\includeSheet "../bwchor/MateAroha.ly"
-\includeSheet "NeinMeineSoehneGebIchNicht.ly"
-\includeSheet "WeitInDerChampagne.ly"
+\includeSheet "AllesWohlDemVolke.ly"       % 2
+\includeSheet "JetztWirdFriedenGemacht.ly" % 3
+\includeSheet "../bwchor/MateAroha.ly"     % 4
+\includeSheet "NeinMeineSoehneGebIchNicht.ly" % 5
+\includeSheet "WeitInDerChampagne.ly"         % 6

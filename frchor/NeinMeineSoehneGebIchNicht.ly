@@ -162,6 +162,8 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
+    %#(ly:reset-all-fonts)
+    %#(layout-set-absolute-staff-size (* 16 pt))
     #(define fonts (book-font 1))
   }
   \bookItem
