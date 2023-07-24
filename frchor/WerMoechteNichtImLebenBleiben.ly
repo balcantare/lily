@@ -1,5 +1,7 @@
 \version "2.22.2"
 sheetName = "Wer möchte nicht im Leben bleiben"
+sheetPoet = "Wera Küchenmeister"
+sheetComposer = "Kurt Schwaen"
 \include "book.ily"
 
 skipA = \repeat unfold 24 { \skip 2 }
