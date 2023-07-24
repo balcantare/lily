@@ -1,6 +1,6 @@
 \version "2.22.2"
-fileName = "OdYavoShalomAleinu.ly"
 sheetName = "Od yavo' shalom aleinu"
+sheetComposer = "Mosh Ben-Ari"
 \include "book.ily"
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -1.5)
@@ -14,8 +14,6 @@ raiseLyrics = {
 \revert LyricExtender.extra-offset
 \revert StanzaNumber.extra-offset
 }
-
-
 lyrStropheA = {
   \lyricmode {
   \set stanza = #"h) "
@@ -97,10 +95,7 @@ chrdStrophe =  \chordmode {
     page-count = #1
     #(define fonts (book-font 1.4))
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
     <<
     \new ChordNames { \chrdStrophe }
