@@ -1,5 +1,7 @@
 \version "2.22.2"
 sheetName = "Weit in der Champagne"
+sheetComposer = "Eric Bogles"
+sheetPoet = "dt. Text Hannes Wader"
 #(define book-staff-size 16)
 \include "book.ily"
 
@@ -191,13 +193,10 @@ strophe = \relative c' {
   c4. b8 c4
   a4.( g8 fs4)
   g2.
-
-
-\bar "|."
+  \bar "|."
 }
 
 chrdStrophe = \chordmode {
-  %\set chordBassOnly = ##t
   s4
   g2. s
   c2.
@@ -209,39 +208,16 @@ chrdStrophe = \chordmode {
   d s c g d s c g g c s d s g c d g
 }
 
-staffSize = #(define-music-function (parser location new-size) (number?)
-  #{
-    \set fontSize = #new-size
-    \override StaffSymbol.staff-space = #(magstep new-size)
-    \override StaffSymbol.thickness = #(magstep new-size)
-  #})
-
-\layout {
-  \context {
-    \Lyrics
-      \override LyricText #'font-size = #+1
-  }
-}
-
 \bookpart {
   \paper {
     page-count = #1
     #(define fonts (book-font 1))
   }
   \bookItem
-
   \score {
     <<
-    \new ChordNames \with {
-        %font-size = #-3
-    } {
-      %\override ChordName.font-size = #-2
-      %\override ChordName.extra-spacing-height = #'(0.5 . -5)
-      \chrdStrophe }
-    \new Staff \with {
-      %\staffSize #-3
-      % minimumVerticalExtent = #'(-1 . 1)
-     } <<
+    \new ChordNames { \chrdStrophe }
+    \new Staff <<
       \new Voice = "Strophe" { \strophe }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
@@ -249,5 +225,11 @@ staffSize = #(define-music-function (parser location new-size) (number?)
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     >>
+    \layout {
+      \context {
+        \Lyrics
+        \override LyricText #'font-size = #0
+      }
+    }
   }
 }

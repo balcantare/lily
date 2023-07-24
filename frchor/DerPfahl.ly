@@ -1,5 +1,4 @@
 \version "2.22.2"
-fileName = "DerPfahl.ly"
 sheetName = "Der Pfahl"
 \include "book.ily"
 
@@ -119,8 +118,6 @@ lyrStropheF = {
 }}
 
 strophe = \relative c' {
-  %\voiceOne
-  %\accidentalStyle neo-modern %-voice-cautionary
   \time 6/8
   \partial 4.
   \key e \minor
@@ -164,10 +161,7 @@ chrdStrophe = \chordmode {
     page-count = #1
     #(define fonts (book-font 1.1))
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
     <<
     \new ChordNames { \chrdStrophe }
@@ -182,4 +176,14 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheF
     >>
   }
+  \markup {
+    \vspace #0.5
+    \override #'(baseline-skip . 0.75)
+    \column {
+    \null
+    \fill-line {\line { Katalanisches Lied, während der Franko - Diktatur
+            verboten}}
+    \fill-line {\line { das spanische Wort für Pfahl bedeutet auf
+            Katalanisch Staat }}
+  } }
 }

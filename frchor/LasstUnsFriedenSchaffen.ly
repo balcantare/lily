@@ -1,5 +1,6 @@
 \version "2.22.2"
 sheetName = "Lasst uns Frieden schaffen"
+sheetComposer = "Beate Tarach"
 \include "book.ily"
 
 skipA = \repeat unfold 21 {\skip 8}
@@ -143,10 +144,7 @@ chrdStrophe = \chordmode {
     page-count = #1
     #(define fonts (book-font 1))
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
     <<
     \new ChordNames { \chrdStrophe }

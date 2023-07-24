@@ -1,5 +1,6 @@
 \version "2.22.2"
-sheetName = #"Das weiche Wasser"
+sheetName = "Das weiche Wasser"
+sheetComposer = "Bots"
 \include "book.ily"
 
 dropLyricsA = {

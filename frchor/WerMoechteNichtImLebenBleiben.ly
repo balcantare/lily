@@ -113,14 +113,10 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    %ragged-right = ##f
     page-count = #1
     #(define fonts (book-font 1.2))
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
     <<
     \new ChordNames { \chrdStrophe }

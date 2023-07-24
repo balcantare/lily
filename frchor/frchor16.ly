@@ -1,4 +1,5 @@
 \version "2.22.2"
+sheetCopyright = "©friedensingen.de"
 #(define book-staff-size 16)
 \include "book.ily"
 
@@ -16,18 +17,26 @@
     tagline = ##f
     subtitle = ##f
   }
-  \markup { \fill-line { \center-column {
-	  \line {\abs-fontsize #18 "Musikbuch des "}
-	  \null
-	  \line {\abs-fontsize #18 "Bautzner Friedenschors"}
-	  \null
-	  \line {\abs-fontsize #10 "16pt"}
-	  \null
-	} } }
+  \markup {
+    \fill-line {
+      \override #'(baseline-skip . 8)
+      \center-column {
+        	\line { \abs-fontsize #18 "Noten der"}
+	\vspace #2
+	\line { \abs-fontsize #18 "Straßenmusik"}
+	\vspace #2
+	\line { \abs-fontsize #18 "für den Frieden"}
+        \line { \abs-fontsize #10 "Teil II, 16pt"}
+        \line { \abs-fontsize #10 "friedensingen.de"}
+        \vspace #8
+      }
+    }
+  }
   \markuplist \table-of-contents
 
 }
 \includeSheet "AllesWohlDemVolke.ly"
 \includeSheet "JetztWirdFriedenGemacht.ly"
+\includeSheet "../bwchor/MateAroha.ly"
 \includeSheet "NeinMeineSoehneGebIchNicht.ly"
 \includeSheet "WeitInDerChampagne.ly"

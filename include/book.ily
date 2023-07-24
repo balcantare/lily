@@ -1,10 +1,14 @@
 #(if
-  (not (defined? 'book-staff-size-set))
+  (or (not (defined? 'current-book-staff-size))
+      (not (equal? current-book-staff-size
+                   book-staff-size))
+      )
   (begin
     (if
       (not (defined? 'book-staff-size))
       (define book-staff-size 24)
     )
+    (define current-book-staff-size book-staff-size)
     (set-global-staff-size book-staff-size)
   )
 )
@@ -29,11 +33,18 @@ includeOnce =
   #(define fonts (book-font 1.2))
   #(define fileCommitDate (commit-date))
   oddFooterMarkup = \markup {
+    \column{
+    \vspace #0.5
     \fill-line {
-       \line{
-        - \hspace #1 \fileCommitDate \hspace #1 -
+      \line { }
+      \line {- \hspace #1 \fileCommitDate \hspace #1 -}
+      \line {
+        #(if (and (defined? 'sheetCopyright)
+                  (string? sheetCopyright))
+             sheetCopyright
+             "")
       }
-    }
+    }}
   }
   evenFooterMarkup = \oddFooterMarkup
 }

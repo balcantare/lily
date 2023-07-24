@@ -2,7 +2,6 @@
 sheetName = "We shall overcome"
 \include "book.ily"
 
-
 lyrStropheA = {
   \lyricmode {
   \set stanza = "1. "
@@ -110,7 +109,6 @@ chrdStrophe = \chordmode {
     #(define fonts (book-font 1.4))
   }
   \bookItem
-
   \score {
     <<
     \new ChordNames { \chrdStrophe }

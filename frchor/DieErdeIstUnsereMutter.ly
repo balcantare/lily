@@ -1,5 +1,6 @@
 \version "2.22.2"
-sheetName = #"Die Erde ist unsere Mutter"
+sheetName = "Die Erde ist unsere Mutter"
+sheetComposer = "Beate Tarach"
 \include "book.ily"
 
 lyrStropheA = {
@@ -186,7 +187,7 @@ staffSize = #(define-music-function (parser location new-size) (number?)
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.1))
+    #(define fonts (book-font 1))
   }
   \bookItem
   \score {

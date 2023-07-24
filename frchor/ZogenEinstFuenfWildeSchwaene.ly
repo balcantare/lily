@@ -1,7 +1,6 @@
 \version "2.22.2"
-sheetName = #"Zogen einst fünf wilde Schwäne"
+sheetName = "Zogen einst fünf wilde Schwäne"
 \include "book.ily"
-
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -4.5)

@@ -1,6 +1,6 @@
 \version "2.22.2"
 sheetName = "Heute und hier"
-%#(define book-staff-size 16)
+sheetComposer = "Beate Tarach"
 \include "book.ily"
 
 
@@ -115,14 +115,10 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    %ragged-right = ##f
     page-count = #1
     #(define fonts (book-font 1.2))
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
     <<
     \new ChordNames { \chrdStrophe }

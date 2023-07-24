@@ -1,8 +1,8 @@
 \version "2.22.2"
 sheetName = "Nein, meine Söhne geb' ich nicht!"
+sheetComposer = "Reinhard Mey"
 #(define book-staff-size 16)
 \include "book.ily"
-
 
 skipA = \repeat unfold 8 { \skip 2 }
 
@@ -165,7 +165,6 @@ chrdStrophe = \chordmode {
     #(define fonts (book-font 1))
   }
   \bookItem
-
   \score {
     <<
     \new ChordNames { \chrdStrophe }

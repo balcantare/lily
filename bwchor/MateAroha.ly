@@ -1,5 +1,8 @@
 \version "2.22.2"
 sheetName = "Mate Aroha"
+sheetComposer = "trad. Maori"
+sheetPoet = "dt. Text Beate Tarach"
+#(define book-staff-size 16)
 \include "book.ily"
 
 dropLyricsA = {
@@ -7,7 +10,6 @@ dropLyricsA = {
 \override LyricHyphen.extra-offset = #'(0 . -3)
 \override LyricExtender.extra-offset = #'(0 . -3)
 \override StanzaNumber.extra-offset = #'(0 . -2.5)
-%\set stanza = \markup{ \right-brace #50 }
 }
 
 lyrStropheA = {
@@ -237,14 +239,10 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    %ragged-right = ##f
     page-count = #1
     #(define fonts (book-font 1))
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
   <<
     \new ChordNames { \chrdStrophe }
@@ -274,6 +272,6 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "StropheAlt" \lyrStropheHa
     \new Lyrics \lyricsto "StropheAlt" \lyrStropheIa
   >>
-}
+  }
 }
 

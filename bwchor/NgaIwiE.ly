@@ -1,5 +1,7 @@
 \version "2.22.2"
 sheetName = "Nga iwi e"
+sheetComposer = "trad. Maori"
+sheetPoet = "dt. Text Beate Tarach"
 \include "book.ily"
 
 lyrStropheA = {
@@ -105,14 +107,10 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    %ragged-right = ##f
     page-count = #1
     #(define fonts (book-font 1.3))
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
     <<
     \new ChordNames { \transpose ef g \chrdStrophe }

@@ -1,5 +1,7 @@
 \version "2.22.2"
 sheetName = "Sag mir wo die Blumen sind"
+sheetComposer = "Pete Seeger"
+sheetPoet = "dt. Text Max Colpet"
 \include "book.ily"
 
 dropLyricsA = {
@@ -7,7 +9,6 @@ dropLyricsA = {
 \override LyricHyphen.extra-offset = #'(0 . -5.5)
 \override LyricExtender.extra-offset = #'(0 . -5.5)
 \override StanzaNumber.extra-offset = #'(0 . -5.5)
-%\set stanza = \markup{ \right-brace #70 }
 }
 
 dropLyricsB = {
@@ -15,7 +16,6 @@ dropLyricsB = {
 \override LyricHyphen.extra-offset = #'(0 . -2.7)
 \override LyricExtender.extra-offset = #'(0 . -2.7)
 \override StanzaNumber.extra-offset = #'(0 . -2.7)
-%\set stanza = \markup{ \right-brace #70 }
 }
 
 raiseLyrics = {
@@ -189,7 +189,6 @@ chrdStrophe = \chordmode {
     #(define fonts (book-font 1.4))
   }
   \bookItem
-
   \score {
     <<
     \new ChordNames { \chrdStrophe }

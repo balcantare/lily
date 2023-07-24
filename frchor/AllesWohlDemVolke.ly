@@ -1,8 +1,8 @@
 \version "2.22.2"
 sheetName = "Alles Wohl dem Volke!"
+sheetComposer = "Beate Tarach"
 #(define book-staff-size 16)
 \include "book.ily"
-
 
 lyrStropheA = {
   \lyricmode {
@@ -161,14 +161,10 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    %ragged-right = ##f
     page-count = #1
     #(define fonts (book-font 1))
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
     <<
     \new ChordNames { \chrdStrophe }

@@ -3,6 +3,8 @@
 includeSheet =
 #(define-void-function (filename) (string?)
    (primitive-eval (list 'define 'sheet-filename filename))
+   (primitive-eval (list 'define 'sheetComposer #f))
+   (primitive-eval (list 'define 'sheetPoet #f))
    (ly:parser-include-string
      (string-concatenate
        (list "\\include \"" filename "\"")
@@ -13,12 +15,20 @@ includeSheet =
 bookItem =
 #(define-void-function () ()
   (ly:parser-include-string
-   "\\header {
-     title = \\sheetName
-   }
-   \\tocItem \\markup \\sheetName
-   ")
-  )
+    (string-concatenate
+     (list "\\header {title = \\sheetName\n"
+       (if (and (defined? 'sheetComposer)
+                (string? sheetComposer))
+         "composer = \\sheetComposer\n"
+         "")
+       (if (and (defined? 'sheetPoet)
+                (string? sheetPoet))
+        "poet = \\sheetPoet\n"
+        "")
+        "}\n\\tocItem \\markup \\sheetName\n")
+     )
+   )
+ )
 
 #(define-markup-command (arrow layout props) ()
    "Draw an Arrow."
@@ -97,5 +107,6 @@ endParenthesis = {
     \Lyrics
     \override LyricText #'font-size = #+2
   }
+  %#(set-global-staff-size 24)
 }
 

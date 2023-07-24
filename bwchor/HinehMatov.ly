@@ -1,5 +1,4 @@
 \version "2.22.2"
-fileName = "HinehMatov.ly"
 sheetName = "Hineh Matov"
 \include "book.ily"
 
@@ -68,14 +67,10 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    %ragged-right = ##f
     page-count = #1
     #(define fonts (book-font 1.6))
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
     <<
     \new ChordNames { \chrdStrophe }
