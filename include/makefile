@@ -19,7 +19,7 @@ LILY_CMD := lilypond \
   -I $(TOPDIR)/include
 
 # The suffixes used in this Makefile.
-.SUFFIXES: .ly .ily .dly .pdf 
+.SUFFIXES: .ly .ily .dly .pdf .log
 
 # Input and output files are searched in the directories listed in
 # the VPATH variable.  All of them are subdirectories of the current
