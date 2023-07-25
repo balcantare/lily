@@ -1,5 +1,5 @@
 OUTDIR := out
-SUBDIRS := balcantare frchor bwchor 
+SUBDIRS := balcantare frchor bwchor freylax
 
 $(OUTDIR) :
 	mkdir $(OUTDIR)
