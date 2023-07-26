@@ -28,6 +28,9 @@ sheetCopyright = "©freylax"
   \markuplist \table-of-contents
 
 }
-\includeSheet "Dubbele.ly"       % 2
+\includeSheet "Dubbele.ly"
+\includeSheet "FairyDance.ly"
+\includeSheet "FairyValse.ly"
+\includeSheet "SalbeiSchottisch.ly"
 \includeSheet "ToutLeLongDuBois.ly" % 3
 \includeSheet "Zelda.ly"     % 4
