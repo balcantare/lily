@@ -35,24 +35,3 @@ strophe = \relative c'' {
   \bar "|."
 }
 
-chrdStrophe = \chordmode {
-  a2.:m f4. c2. g a4.:m
-  a2.:m f4. c2. g a4.:m
-  s4. a2.:m f g a:m
-  a2.:m f g a4.:m
-}
-
-\bookpart {
-  \paper {
-    page-count = #1
-  }
-  \bookItem
-  \score {
-    <<
-    \new ChordNames { \chrdStrophe }
-    \new Staff <<
-      \new Voice = "Strophe" { \strophe }
-      >>
-    >>
-  }
-}
