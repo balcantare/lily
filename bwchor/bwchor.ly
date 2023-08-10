@@ -33,6 +33,7 @@
 \includeSheet "OiUVysnevomuSadotcku.ly"
 \includeSheet "OdYavoShalomAleinu.ly"
 \includeSheet "PoszlaKarolinka.ly"
+\includeSheet "RedIsTheRose.ly"
 \includeSheet "RainAndThunder.ly"
 \includeSheet "SolangeUnsreLiederKlingen.ly"
 \includeSheet "TotaHelpa.ly"
