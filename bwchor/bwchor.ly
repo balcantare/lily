@@ -27,6 +27,7 @@
 \includeSheet "DaJeVisnja.ly"
 \includeSheet "DeColores.ly"
 \includeSheet "../balcantare/Ederlezi.ly"
+\includeSheet "EsteSiJaPoharVinaZaplatim.ly"
 \includeSheet "HinehMatov.ly"
 \includeSheet "MateAroha.ly"
 \includeSheet "../balcantare/NaneTsocha.ly"
