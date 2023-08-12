@@ -1,6 +1,6 @@
 \version "2.22.2"
-fileName = "SolangeUnsreLiederKlingen.ly"
 sheetName = "Solange unsre Lieder klingen"
+sheetComposer = "Beate Tarach"
 \include "book.ily"
 
 dropLyricsA = {
@@ -147,10 +147,7 @@ chrdStrophe = \chordmode {
     #(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
     <<
     \new ChordNames { \chrdStrophe }

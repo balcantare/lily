@@ -1,5 +1,6 @@
 \version "2.22.2"
 sheetName = "Hineh Matov"
+sheetPoet = "Beate Tarach"
 \include "book.ily"
 
 lyrStropheA = {

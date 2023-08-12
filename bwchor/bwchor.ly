@@ -36,6 +36,7 @@
 \includeSheet "PoszlaKarolinka.ly"
 \includeSheet "RedIsTheRose.ly"
 \includeSheet "RainAndThunder.ly"
+\includeSheet "Salaleo.ly"
 \includeSheet "SolangeUnsreLiederKlingen.ly"
 \includeSheet "TotaHelpa.ly"
 \includeSheet "../frchor/ZogenEinstFuenfWildeSchwaene.ly"

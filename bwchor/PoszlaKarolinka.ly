@@ -1,7 +1,7 @@
 \version "2.22.2"
 fileName = "PoszlaKarolinka.ly"
 sheetName = "Poszła Karolinka"
-\include "book.ily"
+\include "../include/book.ily"
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -3)
@@ -250,18 +250,13 @@ chrdStrophe = \chordmode {
 
  }
 
-
-
 \bookpart {
   \paper {
     page-count = #1
     #(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \markup{ \vspace #0.5 \fill-line {
     \center-column {
       \line { \fontsize #2 {
@@ -270,7 +265,6 @@ chrdStrophe = \chordmode {
         \box{A}\box{B}\box{C}*Ak \bold{:|}
         \box{A}\box{B}\box{B}} \rest "4" }}}
   }
-
   \score {
     <<
     \new ChordNames { \chrdStrophe }
