@@ -3,7 +3,7 @@ sheetName = "Mate Aroha"
 sheetComposer = "trad. Maori"
 sheetPoet = "dt. Text Beate Tarach"
 #(define book-staff-size 16)
-\include "book.ily"
+\include "../include/book.ily"
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -3)
@@ -272,6 +272,12 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "StropheAlt" \lyrStropheHa
     \new Lyrics \lyricsto "StropheAlt" \lyrStropheIa
   >>
+  %\layout {
+  %    \context {
+  %      \Lyrics
+  %      \override LyricText #'font-size = #0
+  %    }
+  %  }
   }
 }
 

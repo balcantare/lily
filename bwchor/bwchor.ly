@@ -1,12 +1,13 @@
 \version "2.22.2"
-\include "book.ily"
+sheetCopyright = "©balcantare.de"
+\include "../include/book.ily"
 
 \bookpart {
   \paper{
-    tocTitleMarkup = \markup \huge \column {
+     tocTitleMarkup = \markup \huge \column {
       \fill-line { \null "Inhalt" \null }
       \hspace #1
-    }
+     }
   }
   \header {
     title = ##f
@@ -15,10 +16,22 @@
     tagline = ##f
     subtitle = ##f
   }
-  \markup { \fill-line { \center-column {
-	  \line {\abs-fontsize #20 "Musikbuch des Bunte Welt Chors Soritz"}
-	  \null
-	} } }
+  \markup { \fill-line {
+    \override #'(baseline-skip . 4)
+      \center-column {
+        	\line { \abs-fontsize #26 "Noten des"}
+	\vspace #1.5
+	\line { \abs-fontsize #26 "Bunte Welt Chors"}
+	\vspace #1.5
+	\line { \abs-fontsize #26 "Soritz"}
+	\vspace #0.5
+        \line { \abs-fontsize #14 "Teil I, 24pt"}
+        \line { \abs-fontsize #14 "balcantare.de"}
+        \vspace #4
+      }
+    }
+
+  }
   \markuplist \table-of-contents
 }
 
@@ -29,7 +42,7 @@
 \includeSheet "../balcantare/Ederlezi.ly"
 \includeSheet "EsteSiJaPoharVinaZaplatim.ly"
 \includeSheet "HinehMatov.ly"
-\includeSheet "MateAroha.ly"
+\includeSheet "LaPigiatura.ly"
 \includeSheet "../balcantare/NaneTsocha.ly"
 \includeSheet "OiUVysnevomuSadotcku.ly"
 \includeSheet "OdYavoShalomAleinu.ly"
