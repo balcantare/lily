@@ -1,7 +1,6 @@
 \version "2.22.2"
-fileName = "DeColores.ly"
 sheetName = "De Colores"
-\include "book.ily"
+\include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
