@@ -1,5 +1,6 @@
 \version "2.22.2"
 sheetName = "Red is the Rose"
+sheetComposer = "arr. Reinhard Simmgen"
 \include "../include/book.ily"
 
 lyrStropheA = {
@@ -114,8 +115,8 @@ stropheBass = \relative c {
 chrdStrophe =  \chordmode {
   s8
   d2 s
-  e:m a
-  d d:/b g a
+  e:m s4 a
+  d2 d:/b g a
   g d e:m
   a d g a d
 }

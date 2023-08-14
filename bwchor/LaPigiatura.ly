@@ -22,14 +22,17 @@ skipA = \repeat unfold 6 { \skip 8 }
 
 lyrStropheA = {
   \lyricmode {
-  \set stanza = #"1,4. "
+  \set stanza = #"1,2. "
   Fio -- rie fan -- ta -- sia
-  \skipA
+  %\skipA
+  la la -- la la -- la la
   for -- za che sei tut -- ti noi
-  \skipA
-  \set stanza = #"1,4. "
+  %\skipA
+  la la -- la la -- la la
+  \set stanza = #"1,2. "
   fe -- sta di co -- lori
-  \skipA
+  %\skipA
+  la la -- la la -- la la
   pi -- gia for -- te_e
   can -- ta_in -- sie  -- me_a noi.
 
@@ -38,12 +41,12 @@ lyrStropheA = {
   la la -- la la -- la la og -- ni
   goccia_è un te -- so -- ro
   la la -- la la -- la la
-  \dropLyricsA
+  %\dropLyricsA
   \set stanza = #"1,2. "
   mo ti fer -- ma -- re
   la la -- la la -- la la
-  \raiseLyrics
-  \set stanza = #"1. " pi -- gia
+  %\raiseLyrics
+  pi -- gia
   for -- te_e can -- ta_in -- sie  -- me_a noi.
   \set stanza = #"1. "
   E ris -- po -- di -- gli che hai
@@ -84,12 +87,12 @@ lyrStropheB = {
 
 lyrStropheC = {
   \lyricmode {
-  \set stanza = #"3. "
+  \set stanza = #"3,4. "
   Blu -- men_und Fan -- ta -- sie
   \skipA
   und ein Fest so bunt wie nie!
   \skipA
-  \set stanza = #"3. "
+  \set stanza = #"3,4. "
   Gol -- den prangt der Wein
   \skipA
   Heu -- te fah -- ren wir die Ern -- te ein!
@@ -107,7 +110,7 @@ lyrStropheC = {
   \skip 8 bei die -- ser Far -- ben -- pracht
   ein ed -- ler Trop -- fen rin -- ne
   \set stanza = #"3. "
-  von gu -- ter Hand ge -- macht
+  von uns -- rer Hand ge -- macht
   gut ge -- macht
   gut ge -- macht
 }}
@@ -119,19 +122,19 @@ strophe = \relative c' {
   \key c \major
   \mark \markup{ \box{\fontsize #3 A}}
   e4 g, e'8. g16 e4
-  <g c>8. <e g>16 8. <d f>16 8 <c e>8 g g
+  <g c>8. <e g>16 8. <d f>16 8 <c e>8 g[ g]
   f'4 f g,8. f'16 d4
   a'4. g8 g f d f
   e4 g, e'8. g16 e4
-  <g c>8. <e g>16 8. <d f>16 8 <c e>8 e f
+  <g c>8. <e g>16 8. <d f>16 8 <c e>8 e[ f]
   g4 c8( g) g g g8. f16
   e2 r2^\markup{\fontsize #2 \bold fine}
-  e4 c8 g e'4 c
-  g'8. e16 8. d16 d8 c g g
+  e4 c8 g' e4 c
+  g'8. e16 8. d16 d8 c g[ g]
   f'8 f~ 8. e16 e8 d r4
   a'4. g8 g f d f
   e4 c8 g' e4 c
-  g'8. e16 8. d16 d8 c e f
+  g'8. e16 8. d16 d8 c e[ f]
   g4 c8( g) g g g8. f16
   e2 r2 \bar "||"
   \break
@@ -157,9 +160,9 @@ strophe = \relative c' {
   8( d)~ d2 r4
   r8 d' d d d4 b8 c~
   c8( g)~ g4 r2
-  d'8 d d d d4 b8 c~
-  c e~ 2.
-  r8 d d d e4 b8 c~
+  c8 c c c c4 g8 f~
+  f g~ 2.
+  r8 d' d d e4 b8 c~
   8 c16 16  c4 r2
   r8 c16 16 c4 r2 \bar "||"
   % \bar "|."
@@ -174,7 +177,7 @@ chrdStrophe = \chordmode {
   c g
   s8 g2. s8  c1 s
   s8 c2. s8 g1 s c
-  g c g c s
+  c g g c s
 }
 
 \bookpart {
@@ -193,7 +196,7 @@ chrdStrophe = \chordmode {
       \new Voice = "Strophe" { \strophe }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
-    \new Lyrics \lyricsto "Strophe" \lyrStropheB
+    %\new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     >>
     \layout {

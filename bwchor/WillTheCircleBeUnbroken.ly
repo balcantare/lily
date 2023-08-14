@@ -1,76 +1,76 @@
 \version "2.22.2"
 sheetName = "Will the circle be unbroken"
-sheetComposer = "Jonny Cash"
+sheetComposer = "Jonny Cash, arr. Reinhard Simmgen"
 sheetPoet = "Jerry Lee Lewis"
 \include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
-  \set stanza = #"ref 1-11. "
+  \set stanza = #"ref. "
   Will the circ -- le
   be un -- bro -- ken
-  \set stanza = #"ref 1-11. "
+  \set stanza = #"ref. "
   By and by Lord, by and by
   There's a bet -- ter
-  \set stanza = #"ref 1-11. "
+  \set stanza = #"ref. "
   home a -- wai -- ting
   In the sky Lord, in the sky
 }}
 
 lyrStropheB = {
   \lyricmode {
-   \set stanza = #"2. "
+   \set stanza = #"1. "
    I was stan -- ding
    by the win -- dow
-   \set stanza = #"2. "
+   \set stanza = #"1. "
    On one cold and clou -- dy day
    When I saw the
-   \set stanza = #"2. "
+   \set stanza = #"1. "
    hearse come rol -- ling
    For to car -- ry_my mo -- ther_a -- way
 }}
 lyrStropheC = {
   \lyricmode {
-   \set stanza = #"4. "
+   \set stanza = #"2. "
    I said to the un -- der -- ta -- ker
-   \set stanza = #"4. "
+   \set stanza = #"2. "
    Un -- der -- ta -- ker please drive slow
    For this la -- dy
-   \set stanza = #"4. "
+   \set stanza = #"2. "
    you are car -- rying
    Lord I hate to see her go
 }}
 lyrStropheD = {
   \lyricmode {
-   \set stanza = #"6. "
+   \set stanza = #"3. "
    Oh, I fol -- lowed close be -- hind her
-   \set stanza = #"6. "
+   \set stanza = #"3. "
    Tried to hold up and be brave
    But I could not
-   \set stanza = #"6. "
+   \set stanza = #"3. "
    hide my sor -- row
    When they laid her in the grave
 }}
 lyrStropheE = {
   \lyricmode {
-   \set stanza = #"8. "
+   \set stanza = #"4. "
    I went back home,
    the_home was lone -- some
-   \set stanza = #"8. "
+   \set stanza = #"4. "
    Since my mo -- ther, she was gone
    All my bro -- thers
-   \set stanza = #"8. "
+   \set stanza = #"4. "
    and_sis -- ters cry -- ing
    What a home so sad and_a -- lone
 }}
 lyrStropheF = {
   \lyricmode {
-   \set stanza = #"10. "
+   \set stanza = #"5. "
    We sang so -- ngs o -- f child -- hood
-   \set stanza = #"10. "
+   \set stanza = #"5. "
    Hymns of faith that made us strong
    Ones that mo -- ther
-   \set stanza = #"10. " may -- belle
+   \set stanza = #"5. " may -- belle
    taught us
    Hear the an -- gels sing a -- long
 }}

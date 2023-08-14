@@ -1,12 +1,12 @@
 \version "2.22.2"
 sheetName = "Salaleo"
-sheetComposer = "Begrüßungslied aus Ghana"
+sheetComposer = "Begrüßungslied aus Ghana, arr. Reinhard Simmgen"
 sheetPoet = "dt. Beate Tarach"
 \include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
-  \set stanza = #"1. "
+  \set stanza = #"1,3. "
   Sa -- la -- le -- o,
   Sa -- la -- le' hi -- dra
   Sa -- la -- le -- o,
@@ -82,7 +82,9 @@ strophe = \relative c' {
   \mark \markup{ \box{\fontsize #3 A}}
   \repeat volta 2 {
     fs8 8
-    fs4. d8~ 4 fs8 8
+    fs4.^\fermata d8~\fermata
+    4^\markup{\fontsize #1 \bold fine}
+    fs8 8
     fs4 a8 g ~ 4 fs8 8
     fs4. d8~ 4 fs8 8
     4 a8 g~ 4  a8 8
@@ -151,7 +153,7 @@ stropheBass = \relative c {
     d4 b8 a~ 4
   }
   \repeat volta 2 {
-    a8 a
+    r4
     a2 d b2. r4
     d2 fs
     d2. r4
@@ -180,7 +182,7 @@ chrdStrophe =  \chordmode {
   }
   \bookItem
   \header {
-    subtitle = "A | A | B | A"
+    subtitle = "A | B | A | A"
   }
   \score {
     <<
@@ -191,7 +193,7 @@ chrdStrophe =  \chordmode {
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "StropheAlt" \lyrStropheB
-    \new Lyrics \lyricsto "Strophe" \lyrStropheC
+    %\new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Staff <<
       \new Voice = "Basso" { \stropheBass }
       >>

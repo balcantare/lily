@@ -11,8 +11,8 @@ lyrStropheA = {
   po -- hár
   vi -- na za -- pla -- tim
   \set stanza = #"1,2. "
-  po -- rom sa já,
-  po -- rom sa já
+  po -- tom sa já,
+  po -- tom sa já
   k_mo -- jéj mi -- léj
   na -- vrá -- tím.
   \set stanza = #"1. "
@@ -24,13 +24,13 @@ lyrStropheA = {
   do -- bré ví -- no
   z_po -- há -- rá.
 
-  tra la -- la
+  la la -- la
   la -- la la -- la
-  tra -- la -- la -- la --
+  la -- la -- la -- la --
   la -- la -- la -- la -- la
   -- la -- la -- la -- la -- la
-  tra la -- la la -- la la -- la
-  tra -- la -- la -- la --
+  la la -- la la -- la la -- la
+  la -- la -- la -- la --
   la -- la -- la -- la -- la
   -- la -- la -- la -- la -- la
 
@@ -40,8 +40,6 @@ lyrStropheA = {
   pij -- me. chlap -- ci.
   do -- bré ví -- no
   z_po -- há -- rá.
-
-  dum dum dum
 }}
 
 
@@ -206,11 +204,11 @@ chrdStrophe =  \chordmode {
   a
   d:m
   g:m
-  d4:m g
+  d4:m g:m
   d:m a
   d2:m
-  s
-  a:m e a:m d:m a4:m d:m a:m e a2:m s
+  s4 e
+  a2:m e a:m d:m a4:m d:m a:m e a2:m s
   d2:m f c f d:m g:m d:m a
   d:m a d:m g:m d4:m g:m d:m a d2:m s
   d2:m a d:m g:m
