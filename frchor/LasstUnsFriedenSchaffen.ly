@@ -72,7 +72,7 @@ lyrStropheC = {
   \set stanza = #"3. "
   Müt -- ter, leis -- tet
   Wi -- der -- stand,
-  bevor_sie Eu -- re Söh -- ne holn'!
+  be -- vor sie Eu -- re Söhne_holn'!
 }}
 
 strophe = \relative c' {
@@ -87,17 +87,17 @@ strophe = \relative c' {
   f4. f8 a8 e4 f16 e
   d4. d8 e2 \break
   \bar ".|:"
-  a8 a8 a8 bf a8 bf
+  a8 a8 a8 a a8 bf
   a8 f
   g8 g g8 g8
   g8 g8 a g
   bf8 bf bf bf bf8 bf
   a8 g
-  g8 g8 g8 f8
-  g2 %\break
-  d8 d8 d8 e
+  e8 8 8 f8
+  e2 %\break
+  d8 d8 d8 d
   d e8 f d
-  f8 f8 f  g
+  f8 f8 f  f
   f g a  f
   g8 g8 g g
   a8 g8 g g
@@ -109,10 +109,10 @@ strophe = \relative c' {
     f8 e
     \time 4/4
   d4 d
-  d8 d f g
-  a4 a a8 a
-   g8 f g4 g
-   g8 g f e
+  d8 e f g
+  a4 a a8 f
+   g8 a g4 g
+   g8 e f e
    \set Score.measureLength = #(ly:make-moment 3/4)
    e8 d8~  d2 }
   %\bar "|."

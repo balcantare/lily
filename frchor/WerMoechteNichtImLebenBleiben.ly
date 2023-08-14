@@ -72,6 +72,7 @@ strophe = \relative c' {
   \time 4/4
   \key c \major
   %\partial 4
+  \mark \markup{ \fontsize #4 *}
   c8 e g e c e g4
   c2~ 8 b a g
   a e c a f' d a d
@@ -91,24 +92,24 @@ strophe = \relative c' {
   b4 d r8 d d c
   b4 g' e d
   \set Score.measureLength = #(ly:make-moment 2/4)
+  \mark \markup{ \fontsize #4 *}
   c2 %s2
   \bar "|."
 }
 
 chrdStrophe = \chordmode {
   \set chordBassOnly = ##t
-  a2:m f
-  d:m e:m
+  c1
+  s
   a2:m
-  f2 g
+  d:m g
   c
-  e2:m f
-  a:m c g1
-  c2 a:m d:m f
+  c2 d:m
+  c1 g1
+  c1 d:m   g1
   g1
-  g1
-  c2 a:m
-  f d:m
+  c1
+  d:m
   g1 g1
   c2
 }

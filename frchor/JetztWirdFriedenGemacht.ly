@@ -43,8 +43,8 @@ lyrStropheB = {
   Ich hab ge -- hofft, \skip 16 daß das Blatt sich
   jetzt_wen -- det.
   \set stanza = #"2. "
-  Ich hab ge -- hofft, \skip 16 daß der Wind sich
-  jetzt_dreht.
+  Ich hab ge -- hofft, \skip 16 daß der Wind_sich
+  jetzt dreht.
   \set stanza = #"2. "
   \skip 16 Daß, was uns ka -- putt macht en -- det,
   und ge -- mein -- sam et -- was neu ent -- steht!
@@ -115,13 +115,13 @@ strophe = \relative c'{
   a8 g~ g2.
   \tuplet 3/2 { f8 e f }
   d8 c~ c4. d8
-  d2. \bar "" \break r16  c c c
+  d2. \bar "" \break r16  e e d
   e16 e e d e8
-  << { d16 e~  } \new Voice { \voiceTwo e16 d } >>
+  d16 e~
   e16
   c8. \bar "" \break r16 c c b
   c16 c c b c8
-  << {b16 c~ } \new Voice { \voiceTwo c16 b  } >>
+  b16 c~
   c4.
   \bar "" \break
   r16 c
@@ -134,8 +134,8 @@ strophe = \relative c'{
   g g g e g8 e16 g~ g c,8. \bar "" \break r16 c c b
   c8. b16 c8 c16 b c4. r16 c
   f16 f f e f8 e16 f~ f d8. \bar "" \break d8 e
-  f8 f4 f8 \tuplet 3/2 { f4 e f }
-  d2. r8
+  f8 f4 f8 \tuplet 3/2 { f4 <e g> <f a> }
+  <d g>2. r8
   \bar "" \break
   r16
   <<
@@ -144,16 +144,16 @@ strophe = \relative c'{
     g16 |
     c16 c c b  c g g g  g e8. e8 g
    %<e g>16 16 16 <d f> <e g> <c e> <c e> <b d> <c e>8 8 8 <e g>8
-    g4 f8. e16 c4. \bar "" \break e16 f
+    g4 f8. e16 c4. \bar "" \break f16 e
     d8. d16 d8 e f f g a a g g8. a16 g4. r16 g
     c16 c c b c g g g g8 e4 \bar "" \break r16 g
     g4 f8 e c4. r16 e
-    d d d d d8. c16 d8 d e8 f
+    e d d d d8. e16 f8 f g8 a
     %\time 3/4
-    d2 r8 a8
+    g2 r8 g,8
     %\time 4/4
-    d8. c16
-    \mark \markup{ \fontsize #4 *} c2. r4
+    f'8. e16
+    \mark \markup{ \fontsize #4 *} e2. r4
     }
     \new Voice {
      % \voiceTwo
@@ -168,7 +168,7 @@ chrdStrophe = \chordmode {
   c1:7+ s s s s
   c a:m f  d2:m g2
   s2.
-  c1 a:m f d:m g
+  c1 a:m d:m f g
   c1 a:m d:m g
   c a:m d:m g
   a:m

@@ -79,12 +79,12 @@ strophe = \relative c' {
      \relative c'' {
       \voiceOne
       \override Rest #'staff-position = #0
-      r1 c8 c8 c4 4 bf
+      r1 c8 c8 c4 4 a
       g1
       r1
       d'8 d8 d4 4 c
       a1 \break
-      r1 c8 c8 c4 4 bf
+      r1 c8 c8 c4 4 a
       g1 r1
       d'8 d8 d4 4 c
       d2.
@@ -143,8 +143,8 @@ strophe = \relative c' {
   a4
   \set Score.measureLength = #(ly:make-moment 2/2)
   d4 d d f8 e
-  d2 d
-  f4 f8 f a4 g8 a
+  d2 d4. c8
+  f4 f a4 g8 a
   g2. \bar "" \break
   a4
   bf4. a8 bf4 a8 a

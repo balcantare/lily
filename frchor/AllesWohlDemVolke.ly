@@ -109,29 +109,29 @@ strophe = \relative c''{
   \partial 8
   \bar "."
   a16 g
-  a4.. g16 f8 d4 e16 d
-  e8 e16 e16~ e8 f16( g) f4. \bar "" \break
-  a16 g
+  a4.. g16 f8 d4 d16 d
+  e8 e16 e16~ e8 f16( e) d4. \bar "" \break
+  a'16 g
   a4.. g16 f8 d4 e16 d
   e8 e16 e16 \tuplet 3/2 { e8 f g} a4. \bar "" \break
   bf16 a
   bf4.. a16 g8 d4 d16 d
   f8 f f8. g16 a4
   r8_\markup{\box{\fontsize#3 5..Coda}} \bar "" \break
-  r16 a16
-  a4 r16 a a a bf8 a r16 a16 a a
+  r16 f16
+  e4 r16 a a a bf8 a r16 a16 a a
   \time 2/4
-  a g g f f e f g
+  a g g f f f f g
   \time 4/4
   e4. d8
   d4 r8
   \bar "" \break
   e16 d
-  e16 e e f g g f e  f f f e d[ d] \bar "" \break e d
-  e e e f g g f e f f f e d[ d]  \bar "" \break d d
-  g8 g16 a bf8 a16 g f f f g a8 \bar "" \break g16 f
+  cs16 cs cs d e e f e  f e d cs d[ d] \bar "" \break e d
+  cs cs cs d e e f e f d  d cs d[ d]  \bar "" \break d d
+  g16 g g g~ g8 a16 g f d d cs d8 \bar "" \break d16 d
   \time 3/4
-  e e e f e e ds e a a a bf
+  e e e d e e e e a a a bf
   \time 2/4
   \set Score.measureLength = #(ly:make-moment 3/8)
   a4.
@@ -141,7 +141,7 @@ strophe = \relative c''{
   \set Score.measureLength = #(ly:make-moment 4/4)
   a4.. a16 bf8 a4 a16 a
   \set Score.measureLength = #(ly:make-moment 3/4)
-  a g g g g f f e d4
+  a g g f f e e cs d4
   \bar "|."
 }
 
