@@ -37,6 +37,7 @@ sheetCopyright = "©balcantare.de"
 
 \includeSheet "AmaniLeo.ly"
 \includeSheet "BurschenAusMystrina.ly"
+\includeSheet "Ceresnicki.ly"
 \includeSheet "CuecaBoliviana.ly"
 \includeSheet "DaJeVisnja.ly"
 \includeSheet "DeColores.ly"
