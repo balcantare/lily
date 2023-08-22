@@ -26,12 +26,12 @@ lyrStropheA = {
 lyrStropheB = {
   \lyricmode {
   \set stanza = #"2. "
-  Byl o fra -- jer ma -- lo -- va -- ný
+  Byl to fra -- jer ma -- lo -- va -- ný
   ak rů -- ža,
   to -- ho bych si vy -- vo -- li -- la
   za mu -- ža.
   \set stanza = #"2. "
-  Byl o fra -- jer ma -- lo -- va -- ný
+  Byl to fra -- jer ma -- lo -- va -- ný
   ak rů -- ža,
   to -- ho bych si vy -- vo -- li -- la
   za mu -- ža.
@@ -100,13 +100,13 @@ lyrStropheAbass = {
 lyrStropheBbass = {
   \lyricmode {
   \set stanza = #"2. "
-  Byl o fra -- jer %ma -- lo -- va -- ný
+  Byl to fra -- jer %ma -- lo -- va -- ný
   ak rů -- ža,
   %to -- ho bych si
   vy -- vo -- li -- la
   za mu -- ža.
   \set stanza = #"2. "
-  Byl o fra -- jer %ma -- lo -- va -- ný
+  Byl to fra -- jer %ma -- lo -- va -- ný
   ak rů -- ža,
   %to -- ho bych si
   vy -- vo -- li -- la
