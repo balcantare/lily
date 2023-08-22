@@ -99,15 +99,15 @@ strophe = \relative c' {
 
 chrdStrophe = \chordmode {
   a1:m g2:7 c
-  f1 c2 cs:dim
-  d:m e:7 a:m7 fs:m5-7
-  d:m7 e:7 a:m7 cs:dim
+  f1 c2 a:7
+  d1:m a:m
+  d2:m e:7 a:m a:7
   a4:m e:7 a2:m
 
   a1:m g2:7 c
-  f1 c2 cs:dim
-  d:m e:7 a:m7 fs:m5-7
-  d:m7 e:7 a:m7 cs:dim
+  f1 c2 a:7
+  d1:m a:m
+  d2:m e:7 a:m a:7
   a4:m e:7 a2:m
  }
 
