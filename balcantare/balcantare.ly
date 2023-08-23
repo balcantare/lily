@@ -35,6 +35,7 @@
 \includeSheet "CsardasReinhard.ly"
 \includeSheet "CrvenFesic.ly"
 \includeSheet "DoluNaPtschelina.ly"
+\includeSheet "DorogojDlinnoyu.ly"
 \includeSheet "EchJablotschka.ly"
 \includeSheet "Ederlezi.ly"
 \includeSheet "ForSephora.ly"
