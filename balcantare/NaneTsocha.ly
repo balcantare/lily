@@ -3,36 +3,16 @@ fileName = "NaneTsocha.ly"
 sheetName = "Nane Zocha"
 \include "book.ily"
 
-dropLyricsA = {
-\override LyricText.extra-offset = #'(0 . -3)
-\override LyricHyphen.extra-offset = #'(0 . -3)
-\override LyricExtender.extra-offset = #'(0 . -3)
-\override StanzaNumber.extra-offset = #'(0 . -3)
-}
-
-dropLyricsB = {
-\override LyricText.extra-offset = #'(0 . -1.5)
-\override LyricHyphen.extra-offset = #'(0 . -1.5)
-\override LyricExtender.extra-offset = #'(0 . -1.5)
-\override StanzaNumber.extra-offset = #'(0 . -1.5)
-}
-
-raiseLyrics = {
-\revert LyricText.extra-offset
-\revert LyricHyphen.extra-offset
-\revert LyricExtender.extra-offset
-\revert StanzaNumber.extra-offset
-}
-skipA = \repeat unfold 4 { \skip 4 }
-skipB = \repeat unfold 8 { \skip 4 }
-skipC = \repeat unfold 5 { \skip 4 }
-
 lyrStropheA = {
   \lyricmode {
-  Na -- ne tso -- cha, na -- ne gad,
-  mi ki -- nel man -- ge o dad
-  sar me dža -- va pal o rom,
-  mi ki -- nel man -- ge o rom ge o rom
+  \set stanza = #"1. "
+  Na -- ne zo -- cha, na -- ne gad,
+  me ki -- nel
+  \set stanza = #"1. "
+  man -- ge jo dad!
+  Syr vy -- dža -- va pa -- le rom.
+  \set stanza = #"1. "
+  Me ki -- nel man -- ge jo rom. ge jo rom.
 
   Naj na na na naj na na na na naj na
   na na naj na na na na na naj na
@@ -42,27 +22,29 @@ lyrStropheA = {
 
 lyrStropheB = {
   \lyricmode {
-  Da -- do ma -- mo cin če -- ňa,
-  o la če -- ňa som -- na_ku -- ne
-  sar tu man -- ge na ci -- ne_ha,
-  na ba -- šav -- na o čha -- ja.
-  o čha -- ja.
+  \set stanza = #"2. "
+  Da -- do, kin man -- ge čin -- ja!
+  O čin -- ja
+  \set stanza = #"2. "
+  som -- na ku -- ne.
+  Na -- ki -- ne -- sa o čin -- ja,
+  \set stanza = #"2. "
+  Na -- be -- ša -- va dro ča -- ja.
+  dro ča -- ja.
 }}
 
 
 lyrStropheC = {
   \lyricmode {
-    Ge -- l'om me an -- dro -- da_sa -- dos,
-    pri -- ker -- džo -- me
-    les -- ke -- ro
-    po -- ker -- džo -- me tro še -- ro,
-    kaj tu ka -- mes mro ji -- lo
-    mro ji -- lo
-
-}}
-
-lyrStropheD = {
-  \lyricmode {
+    \set stanza = #"3. "
+    Za -- ge -- jom me dre da_sa -- do,
+    Sris -- ker -- diom \set stanza = #"3. "
+    ___
+    man sve -- to.
+    Pri -- ker -- diom les ke še -- ro,
+    \set stanza = #"3. "
+    Te ka -- mes mi -- ro i -- lo.
+    ro i -- lo.
 }}
 
 strophe = \relative c' {
@@ -72,7 +54,7 @@ strophe = \relative c' {
   \key a \minor
   a4. b8 c( b) c4
   e4 d8( c) c2
-  r4 a'8 a a4. 8
+  r4 a'8 a a4. \bar "" \break 8
   a8( g) g( fs) g4( a4) %\break
   \repeat volta 2 {
   r8 f4 d8 g4. f8
@@ -116,10 +98,7 @@ chrdStrophe = \chordmode {
     page-count = #1
     #(define fonts (book-font 1.4))
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
     <<
     \new ChordNames { \chrdStrophe }
