@@ -85,7 +85,7 @@ lyrStropheD = {
     da me ho -- če
     \skipB
     \set stanza = #"4. "
-    da me ho -- če pol -- ju -- bi -- ti mo -- ga
+    da me ho -- če pol __ _ ju __ _ bi -- ti
 
 }}
 
@@ -110,10 +110,10 @@ strophe = \relative c' {
   a8 d cs d e4 e8 g
   fs1 \break
   \repeat volta 2 {
-    r8 a4 gs8 a4 fs
-    g8 g fs fs e4 fs
-    g4.( fs8) g8 fs e d
-    e1
+    r8 <a fs>4 <gs e>8 <a fs>4 <fs d>
+    <g e>8 <g e> <fs d> <fs d> <e cs>4 <fs d>
+    <g e>4.( <fs d>8) <g e>8 <fs d> <e cs> <d b>
+    <e a,>1
   }
 %\bar "|."
 }
