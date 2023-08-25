@@ -1,7 +1,6 @@
 \version "2.22.2"
-fileName = "NaneTsocha.ly"
 sheetName = "Nane Zocha"
-\include "book.ily"
+\include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {

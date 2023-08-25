@@ -124,16 +124,18 @@ strophe = \relative c' {
   \revert NoteHead.style
   \break
 
-  c8. d16 e8 e |
-  f8. e16 c8 a |
-  \override NoteHead.style = #'cross
-  b8 b b r |
-  \revert NoteHead.style
-  gs16 a8. b8 e  |
-  d16 c8. b8 gs |
-  \override NoteHead.style = #'cross
-  a8 a a r
-  \bar "|."
+  \repeat volta 2 {
+    c8. d16 e8 e |
+    f8. e16 c8 a |
+    \override NoteHead.style = #'cross
+    b8 b b r |
+    \revert NoteHead.style
+    gs16 a8. b8 e  |
+    d16 c8. b8 gs |
+    \override NoteHead.style = #'cross
+    a8 a a r
+  }
+  %\bar "|."
 }
 
 
@@ -150,7 +152,7 @@ stropheBass = \relative c' {
 chrdStrophe = \chordmode {
   a2:m d4:m g c2 d:m g c
   \parenthesize a
-  d:m a:m e a:m e:7 a:m
+  d:m a:m e e s a:m
   a2:m  s %d2:m %a:m
   e2 %a:m e:7
   e s
