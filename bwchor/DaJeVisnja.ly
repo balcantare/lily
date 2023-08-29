@@ -54,7 +54,7 @@ strophe = \relative c'' {
   a2 a g4 g8( a)
   f4.( e8) d2 e4 c
   g'2 f4( g) e4( d8 c)
-  d1 f4. g8 a2 a g4 g8( a)
+  d1 f4.^\markup{\box{\fontsize #3 Coda}} g8 a2 a g4 g8( a)
   f4.( e8) d2 e4 c
   g'2 f4( g) e( d8 c)
   d1

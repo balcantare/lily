@@ -142,13 +142,18 @@ strophe = \relative c'' {
   \voiceOne
   \time 2/2
   \key c \major
+  \mark
+  \markup{ \box{\fontsize #3 A}
+           Intro 2 Takte,
+           Zwischenspiel |½A|½B|
+  }
   \repeat unfold 2 {
   g8 f e f g f e f
   g4 a g2
   c8 b a g a g f e
   f4 e d2
   } \break
-
+  \mark \markup{ \box{\fontsize #3 B}}
   \repeat volta 2 {
   d'4 d d d
   d8 c b a g2

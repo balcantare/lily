@@ -148,8 +148,8 @@ stropheAlt = \relative c' {
   a8 a4.
   a4 r \break
   \repeat volta 2 {
-    d4 d
-    f,8 4.
+    bf4 bf
+    f8 4.
     e8 g4.
     f4. r8
     f4. g8
@@ -176,9 +176,9 @@ stropheAlt = \relative c' {
   a8 r4 8
   b8 r4 b8
   a2( gs
-  e cs4) r
+  e a4) r
   \repeat volta 2 {
-    bf'4 4
+    bf4 4
     f8 4.
     e8 g4.
     f4. r8
@@ -209,14 +209,14 @@ chrdStrophe =  \chordmode {
   d2:m
   s4 e
   a2:m e a:m d:m a4:m d:m a:m e a2:m s
-  d2:m f c f d:m g:m d:m a
+  bf2 f c f d:m g:m d:m a
   d:m a d:m g:m d4:m g:m d:m a d2:m s
   d2:m a d:m g:m
   d2:m a d4:m a d2:m
   a2:m e
   a2:m d:m
   a:m e a4:m e a2:m
-  d:m f g:m d:m s
+  bf f c f d:m
   g:m d:m a
   d:m a d:m g:m d4:m g:m d:m a
   d2:m s

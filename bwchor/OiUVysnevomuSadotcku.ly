@@ -1,32 +1,20 @@
 \version "2.22.2"
-fileName = "OiUVysnevomuSadotcku.ly"
 sheetName = "Oi u Vyšnevomu Sadočku"
-\include "book.ily"
-
-dropLyricsA = {
-\override LyricText.extra-offset = #'(0 . -1.5)
-\override LyricHyphen.extra-offset = #'(0 . -1.5)
-\override LyricExtender.extra-offset = #'(0 . -1.5)
-\override StanzaNumber.extra-offset = #'(0 . -1.5)
-}
-raiseLyrics = {
-\revert LyricText.extra-offset
-\revert LyricHyphen.extra-offset
-\revert LyricExtender.extra-offset
-\revert StanzaNumber.extra-offset
-}
+\include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
   \set stanza = #"1. "
   Oi u vyš -- nje -- wo -- mu
   sa -- dotč -- ku
+  \set stanza = #"1. "
   tam so -- lo -- vei -- ko
   šte -- be -- tav.
   wiet, wiet,  wiet,
   tjoch, tjoch,  tjoch,
   ai -- ja -- ja,
   och, och, och,
+  \set stanza = #"1. "
   tam so -- lo -- wej -- ko
   šte -- be -- tav.
 }}
@@ -37,8 +25,10 @@ lyrStropheB = {
   \set stanza = #"2. "
   Oi u ce -- le -- no -- mu
   sa -- dotč -- ku
+  \set stanza = #"2. "
   Ko -- sak div -- čy -- nu u -- vi -- tčav.
   \skipA
+  \set stanza = #"2. "
   Ko -- sak div -- čy -- nu u -- vi -- tčav.
 }}
 
@@ -46,8 +36,10 @@ lyrStropheC = {
   \lyricmode {
   \set stanza = #"3. "
   Oi tyi div -- čy -- no čor -- no -- bro -- wa,
+  \set stanza = #"3. "
   A čyi pid -- ješ tyi ca me -- ne?
   \skipA
+  \set stanza = #"3. "
   A čyi pid -- ješ tyi ca me -- ne?
 }}
 
@@ -55,17 +47,21 @@ lyrStropheD = {
   \lyricmode {
   \set stanza = #"4. "
   Mo -- ja ma -- tu -- sja te -- be cna -- je,
+  \set stanza = #"4. "
   tyi toi ko -- sak, tšo vcje gul -- jae.
   \skipA
+  \set stanza = #"4. "
   tyi toi ko -- sak, tšo vcje gul -- jae.
 }}
 lyrStropheE = {
   \lyricmode {
   \set stanza = #"5. "
   A ja ma -- tu -- si ne clja -- ka -- jus,
+  \set stanza = #"5. "
   Jak -- šo s_to -- bo -- ju
   poko -- cha -- jus.
   \skipA
+  \set stanza = #"5. "
   Jak -- šo s_to -- bo -- ju
   poko -- cha -- jus.
 }}
@@ -76,6 +72,8 @@ strophe = \relative c' {
   \time 3/4
   \key b \minor
   %\partial 2
+  \mark \markup{\box{Zwischenspiel}}
+  s2.s s s \break
   \mark \markup{\box{Intro}}
   s2.s s s \bar "||" \break
   b4 4 4
@@ -101,7 +99,7 @@ strophe = \relative c' {
 }
 
 stropheAlt = \relative c'' {
-  s2.*12
+  s2.*16
   \voiceTwo
   g4 4 4
   fs4 4 4
@@ -114,11 +112,9 @@ stropheAlt = \relative c'' {
 }
 
 chrdStrophe =  \chordmode {
-  b2.:m e fs b:m
-  b2.:m
-  e:m
-  b2:m a4
-  d2 fs4
+  b2.:m e:m b2:m a4 d2 fs4
+  b2.:m e:m fs b:m
+  b2.:m e:m b2:m a4 d2 fs4
   b2.:m
   e:m
   b2:m a4
@@ -131,12 +127,8 @@ chrdStrophe =  \chordmode {
   \paper {
     page-count = #1
     #(define fonts (book-font 1.4))
-    %ragged-last-bottom = ##f
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
     <<
     \new ChordNames { \chrdStrophe }
