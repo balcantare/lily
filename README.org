@@ -8,7 +8,9 @@ clone lilyjazz
 copy the fonts to lilypond installation
 : $ cd lilyjazz
 : $ cp otf/*.otf supplementary-files/lilyjazz-chord/*.otf supplementary-files/lilyjazz-text/*.otf /usr/local/share/lilypond/2.24.2/fonts/otf
+: $ cp otf/*.otf supplementary-files/lilyjazz-chord/*.otf supplementary-files/lilyjazz-text/*.otf /opt/homebrew/share/lilypond/2.24.2/fonts/otf
 : $ cp svg/* /usr/local/share/lilypond/2.24.2/fonts/svg 
+: $ cp svg/* /opt/homebrew/share/lilypond/2.24.2/fonts/svg
 *** on ubuntu
 : $ wget https://gitlab.com/lilypond/lilypond/-/releases/v2.24.2/downloads/lilypond-2.24.2-linux-x86_64.tar.gz
 : $ tar -x -f lilypond-2.24.2-linux-x86_64.tar.gz

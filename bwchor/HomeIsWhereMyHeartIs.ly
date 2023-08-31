@@ -1,24 +1,28 @@
 \version "2.24.0"
 sheetName = "Home is where my heart is"
 sheetComposer = "arr. Reinhard Simmgen"
+sheetPoet ="dt. Beate Tarrach"
 \include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
-  \set stanza = #"e) "
+  \set stanza = #"1. "
   've_been trav' -- ling a day,
   've_been trav' -- ling a year,
-  've_been trav' -- ling a life -- time
+  've_been \set stanza = #"1. "
+  trav' -- ling a life -- time
   to find my way home.
+  \set stanza = #"1. "
   Home is where my heart is,
   home is where my heart is,
+  \set stanza = #"1. "
   home is where my heart is,
   my heart is with you.
 }}
 
 lyrStropheABass = {
   \lyricmode {
-  \set stanza = #"e) "
+  \set stanza = #"1.  "
   Trav' -- ling,
   trav' -- ling,
   trav' -- ling,
@@ -26,23 +30,42 @@ lyrStropheABass = {
   trav' -- ling,
   trav' -- ling,
   my way home.
+  \set stanza = #"1. "
   Home is where heart is,
   home is where heart is,
-  home is where heart is,
+  \set stanza = #"1. "
+  home is where heart is, \skip 8
   heart is with you.
 }}
 
+
 lyrStropheB = {
   \lyricmode {
-   \set stanza = #"d) "
+   \set stanza = #"2. "
    Bin_ge -- reist ei -- nen Tag,
    bin_ge -- reist für ein Jahr,
-   bin_ge -- reist all mein Le -- ben,
+   bin_ge -- 
+   \set stanza = #"2. "
+   reist all mein Le -- ben,
    mein Herz blieb bei dir.
+   \set stanza = #"2. "
    Hei -- mat, wo mein Herz blieb,
    Hei -- mat, wo mein Herz blieb,
+   \set stanza = #"2. "
    Hei -- mat, wo mein Herz blieb,
    mein Herz blieb bei dir.
+}}
+
+lyrStropheBBass = {
+  \lyricmode {
+  
+  \repeat unfold  15 {\skip 8} 
+  \set stanza = #"2. "
+  Hei -- mat wo_mein Herz blieb,
+  Hei -- mat wo_mein Herz blieb,
+  \set stanza = #"2. "
+  Hei -- mat wo_mein Herz blieb, mein
+Herz blieb bei dir.
 }}
 
 strophe = \relative c'' {
@@ -98,17 +121,17 @@ stropheBass = \relative c {
   r4
   c4 c c c d2
   c4 c c c f2
-  e4 c c c f2
+  e4 c c c f4. f8
   f4 g e d2.
 }
 chrdStrophe = \chordmode {
    s4
    c2. g c g
-   c a:m f c
-   c s4 g2
-   c2. s4 g2
-   c2. s4 g2
-   f2. g
+   c a:m d:m g
+   c  g
+   c2.  g
+   c2.  a:m
+   d:m g
 }
 
 \bookpart {
@@ -131,6 +154,7 @@ chrdStrophe = \chordmode {
       \new Voice = "Basso" { \stropheBass }
       >>
         \new Lyrics \lyricsto "Basso" \lyrStropheABass
+        \new Lyrics \lyricsto "Basso" \lyrStropheBBass
     >>
 
   }
