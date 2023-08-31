@@ -7,8 +7,21 @@ clone lilyjazz
 : $ git clone https://github.com/OpenLilyPondFonts/lilyjazz.git
 copy the fonts to lilypond installation
 : $ cd lilyjazz
-: $ cp otf/*.otf /usr/local/share/lilypond/2.24.2/fonts/otf
-: $ cp svg/* /usr/local/share/lilypond/2.24.2/fonts/svg
-: $ cp supplementary-files/lilyjazz-chord/*.otf /usr/local/share/lilypond/2.24.2/fonts/otf
-: $ cp supplementary-files/lilyjazz-text/*.otf /usr/local/share/lilypond/2.24.2/fonts/otf
-/usr/local/share/lilypond/2.24.2
+: $ cp otf/*.otf supplementary-files/lilyjazz-chord/*.otf supplementary-files/lilyjazz-text/*.otf /usr/local/share/lilypond/2.24.2/fonts/otf
+: $ cp svg/* /usr/local/share/lilypond/2.24.2/fonts/svg 
+*** on ubuntu
+: $ wget https://gitlab.com/lilypond/lilypond/-/releases/v2.24.2/downloads/lilypond-2.24.2-linux-x86_64.tar.gz
+: $ tar -x -f lilypond-2.24.2-linux-x86_64.tar.gz
+link to lilypond exec
+: $ cd ~/bin; ln -s ~/lilypond-2.24.2/bin/lilypond .
+clone lilyjazz
+: $ git clone https://github.com/OpenLilyPondFonts/lilyjazz.git
+copy the fonts to lilypond installation
+: $ cd lilyjazz
+: $ cp otf/*.otf supplementary-files/lilyjazz-chord/*.otf supplementary-files/lilyjazz-text/*.otf ~/lilypond-2.24.2/share/lilypond/2.24.2/fonts/otf
+: $ cp svg/* ~/lilypond-2.24.2/share/lilypond/2.24.2/fonts/svg
+** build book
+: $ cd lily
+: $ make all install
+
+
