@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetName = "Weit in der Champagne"
 sheetComposer = "Eric Bogles"
 sheetPoet = "dt. Text Hannes Wader"
@@ -228,7 +228,7 @@ chrdStrophe = \chordmode {
     \layout {
       \context {
         \Lyrics
-        \override LyricText #'font-size = #0
+        \override LyricText.font-size = #0
       }
     }
   }

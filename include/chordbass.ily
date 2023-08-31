@@ -1,4 +1,4 @@
-\version "2.19.82"
+\version "2.24.0"
 
 
 #(define (define-translator-property symbol type? description)
@@ -7,7 +7,7 @@
 	            (string? description)))
       (ly:error "error in call of define-translator-property"))
   (if (not (equal? (object-property symbol 'translation-doc) #f))
-      (ly:error (_ "symbol ~S redefined") symbol))
+      (ly:error (G_ "symbol ~S redefined") symbol))
 
   (set-object-property! symbol 'translation-type? type?)
   (set-object-property! symbol 'translation-doc description)

@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetName = "Jetzt wird Frieden gemacht!"
 sheetComposer = "Beate Tarach"
 #(define book-staff-size 16)
@@ -196,7 +196,7 @@ chrdStrophe = \chordmode {
 
       \context {
         \Lyrics
-        \override LyricText #'font-size = #+0
+        \override LyricText.font-size = #+0
       }
     }
   }

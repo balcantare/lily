@@ -6,9 +6,11 @@
   (begin
     (if
       (not (defined? 'book-staff-size))
-      (define book-staff-size 24)
+      ;(define book-staff-size 24)
+      (primitive-eval (list 'define 'book-staff-size 24))
     )
-    (define current-book-staff-size book-staff-size)
+    ;(define current-book-staff-size book-staff-size)
+    (primitive-eval (list 'define 'current-book-staff-size book-staff-size))
     (set-global-staff-size book-staff-size)
   )
 )

@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 fileName = "AndroVerdan.ly"
 sheetName = "Andro Verdan"
 \include "book.ily"
@@ -109,7 +109,7 @@ strophe = \relative c' {
   e2 |  \break
   d8 d d g |
   f8 e d8( b) |
-  \override ParenthesesItem.font-size = #5
+  \override Parentheses.font-size = #5
   c4. \startParenthesis \parenthesize b16( c |
   \endParenthesis \parenthesize cs2) | \break
   d8 d d d |

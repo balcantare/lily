@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetName = "Nein, meine Söhne geb' ich nicht!"
 sheetComposer = "Reinhard Mey"
 #(define book-staff-size 16)
@@ -184,7 +184,7 @@ chrdStrophe = \chordmode {
     \layout {
       \context {
         \Lyrics
-        \override LyricText #'font-size = #+0
+        \override LyricText.font-size = #+0
       }
     }
   }

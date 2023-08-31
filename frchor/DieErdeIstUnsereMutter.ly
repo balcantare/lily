@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetName = "Die Erde ist unsere Mutter"
 sheetComposer = "Beate Tarach"
 \include "book.ily"
@@ -78,7 +78,7 @@ strophe = \relative c' {
     \new Voice = "StropheB" {
      \relative c'' {
       \voiceOne
-      \override Rest #'staff-position = #0
+      \override Rest.staff-position = #0
       r1 c8 c8 c4 4 a
       g1
       r1

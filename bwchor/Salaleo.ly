@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetName = "Salaleo"
 sheetComposer = "Begrüßungslied aus Ghana, arr. Reinhard Simmgen"
 sheetPoet = "dt. Beate Tarach"
@@ -66,7 +66,6 @@ lyrStropheD = {
   \lyricmode {
   \repeat unfold 40 {\skip 8}
   \set stanza = #"bass: "
-  Sa -- la
   Sa -- la -- leo
   Ma -- ma deo
   Sa -- la -- leo
@@ -202,7 +201,7 @@ chrdStrophe =  \chordmode {
     \layout {
       \context {
         \Lyrics
-        \override LyricText #'font-size = #0.55
+        \override LyricText.font-size = #0.55
       }
     }
   }

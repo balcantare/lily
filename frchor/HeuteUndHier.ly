@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetName = "Heute und hier"
 sheetComposer = "Beate Tarach"
 \include "book.ily"
@@ -67,7 +67,7 @@ strophe = \relative c'{
   %\partial 8
   e4. f8 e4. f8
   d4. c8 c4. \bar "" \break
-  \bar ".|:" g8
+  \bar ".|:-|" g8
   e'8 e8 e8. g16 g8 g4 g8
   f8 f g8. f16 e8 d c4
   f8 f f f e e4 e8
@@ -134,7 +134,7 @@ chrdStrophe = \chordmode {
     \layout {
       \context {
         \Lyrics
-        \override LyricText #'font-size = #+1
+        \override LyricText.font-size = #+1
       }
     }
     %\midi {}

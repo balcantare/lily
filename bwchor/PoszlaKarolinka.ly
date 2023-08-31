@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 fileName = "PoszlaKarolinka.ly"
 sheetName = "Poszła Karolinka"
 \include "../include/book.ily"
@@ -185,7 +185,7 @@ strophe = \relative c'' {
   b2
   \bar "||"
 
-  %\override ParenthesesItem.font-size = #5
+  %\override Parentheses.font-size = #5
   %\startParenthesis \parenthesize
 
   %b'8^\markup{ Mandoline} b b a g4
@@ -263,7 +263,7 @@ chrdStrophe = \chordmode {
         \box{A}\box{B}\box{B}*Ak
         \bold{|:} \box{A}\box{B}*Md
         \box{A}\box{B}\box{C}*Ak \bold{:|}
-        \box{A}\box{B}\box{B}} \rest "4" }}}
+        \box{A}\box{B}\box{B}} \rest {4} }}}
   }
   \score {
     <<

@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetName = "La Pigiatura"
 sheetComposer = "Traubenpresserlied aus \"Der gezähmte Widerspenstige\""
 sheetPoet = "dt. Text Beate Tarach"
@@ -202,7 +202,7 @@ chrdStrophe = \chordmode {
     \layout {
       \context {
         \Lyrics
-        \override LyricText #'font-size = #1.2
+        \override LyricText.font-size = #1.2
       }
     }
   }

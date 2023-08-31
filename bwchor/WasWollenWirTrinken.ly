@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetName = "Was wollen wir trinken"
 sheetComposer = "Bretonisches Lied, arr. Reinhard Simmgen"
 \include "../include/book.ily"
@@ -63,8 +63,8 @@ strophe = \relative c'' {
   \voiceTwo
   \time 2/2
   \key d \minor
-  \override Rest #'staff-position = #0
-  \bar ".|:"
+  \override Rest.staff-position = #0
+  \bar ".|:-|"
   \repeat volta 2 {
     r4 g4 g8 f e4
     f2 d
@@ -174,7 +174,7 @@ chrdStrophe = \chordmode {
     \layout {
       \context {
         %\Lyrics
-        %\override LyricText #'font-size = #1
+        %\override LyricText.font-size = #1
       }
     }
   }

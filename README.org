@@ -1,2 +1,14 @@
-# lily
-my lilypond sources
+* lily sources for our music
+** lilypond installation
+*** on mac
+: $ brew install lilypond
+: $ brew install --cask frescobaldi
+clone lilyjazz
+: $ git clone https://github.com/OpenLilyPondFonts/lilyjazz.git
+copy the fonts to lilypond installation
+: $ cd lilyjazz
+: $ cp otf/*.otf /usr/local/share/lilypond/2.24.2/fonts/otf
+: $ cp svg/* /usr/local/share/lilypond/2.24.2/fonts/svg
+: $ cp supplementary-files/lilyjazz-chord/*.otf /usr/local/share/lilypond/2.24.2/fonts/otf
+: $ cp supplementary-files/lilyjazz-text/*.otf /usr/local/share/lilypond/2.24.2/fonts/otf
+/usr/local/share/lilypond/2.24.2

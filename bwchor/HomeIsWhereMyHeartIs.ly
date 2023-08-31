@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetName = "Home is where my heart is"
 sheetComposer = "arr. Reinhard Simmgen"
 \include "../include/book.ily"
@@ -51,8 +51,8 @@ strophe = \relative c'' {
   \time 3/4
   \key c \major
   \partial 4
-  \override Rest #'staff-position = #0
-  \bar ".|:"
+  \override Rest.staff-position = #0
+  \bar ".|:-|"
   \repeat volta 2 {
     r8 g8
     c4 d e d2 r8 g,

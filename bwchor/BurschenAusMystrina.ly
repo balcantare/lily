@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetName = "Burschen aus Mystrina"
 sheetComposer = "Slowakisches Volkslied, arr. Reinhard Simmgen"
 sheetPoet = "dt. Beate Tarach"
@@ -53,7 +53,7 @@ intro = \relative c' {
   \accidentalStyle neo-modern %-voice-cautionary
   \time 2/4
   \key f \major
-  \override Rest #'staff-position = #0
+  \override Rest.staff-position = #0
   <f a>8 <a c>8 8. 16
   <bf d>8 <g bf> <e g>8. <d f>16
   <c e>8 c d e
@@ -66,8 +66,8 @@ strophe = \relative c' {
   \accidentalStyle neo-modern %-voice-cautionary
   \time 2/4
   \key f \major
-  \override Rest #'staff-position = #0
-  \bar ".|:"
+  \override Rest.staff-position = #0
+  \bar ".|:-|"
   \repeat volta 2 {
   f8 f f4 g8 g g4
   a8 f4.
@@ -177,7 +177,7 @@ chrdStrophe = \chordmode {
     \layout {
       \context {
         \Lyrics
-        \override LyricText #'font-size = #1
+        \override LyricText.font-size = #1
       }
     }
 

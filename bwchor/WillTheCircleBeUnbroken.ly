@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetName = "Will the circle be unbroken"
 sheetComposer = "Jonny Cash, arr. Reinhard Simmgen"
 sheetPoet = "Jerry Lee Lewis"
@@ -81,7 +81,7 @@ strophe = \relative c' {
   \time 2/2
   \key g \major
   \partial 4
-  \override Rest #'staff-position = #0
+  \override Rest.staff-position = #0
   d8 e
   g4 g r b8 a
   g4 b r \bar "" \break

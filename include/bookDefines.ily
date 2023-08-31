@@ -1,3 +1,4 @@
+\version "2.24.0"
 \language "english"
 
 includeSheet =
@@ -43,14 +44,14 @@ bookItem =
 
 % parentheses
 startParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
+  \once \override Parentheses.stencils = #(lambda (grob)
+        (let ((par-list (parentheses-interface::calc-parenthesis-stencils grob)))
           (list (car par-list) point-stencil )))
 }
 
 endParenthesis = {
-  \once \override ParenthesesItem.stencils = #(lambda (grob)
-        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
+  \once \override Parentheses.stencils = #(lambda (grob)
+        (let ((par-list (parentheses-interface::calc-parenthesis-stencils grob)))
           (list point-stencil (cadr par-list))))
 }
 
@@ -93,7 +94,7 @@ endParenthesis = {
   evenHeaderMarkup = \markup \null
   %oddFooterMarkup = \markup {
   %  \fill-line {
- %     \on-the-fly \print-page-number-check-first
+ %     \if \should-print-page-number
   %    \line{
   %      - \hspace #1 \commitDate \hspace #1 -
   %    }
@@ -105,7 +106,7 @@ endParenthesis = {
 \layout {
   \context {
     \Lyrics
-    \override LyricText #'font-size = #+2
+    \override LyricText.font-size = #+2
   }
   %#(set-global-staff-size 24)
 }

@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetName = "Alles Wohl dem Volke!"
 sheetComposer = "Beate Tarach"
 #(define book-staff-size 16)
@@ -180,7 +180,7 @@ chrdStrophe = \chordmode {
     \layout {
       \context {
         \Lyrics
-        \override LyricText #'font-size = #+1
+        \override LyricText.font-size = #+1
       }
     }
     %\midi {}
