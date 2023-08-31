@@ -22,6 +22,9 @@ copy the fonts to lilypond installation
 : $ cd lilyjazz
 : $ cp otf/*.otf supplementary-files/lilyjazz-chord/*.otf supplementary-files/lilyjazz-text/*.otf ~/lilypond-2.24.2/share/lilypond/2.24.2/fonts/otf
 : $ cp svg/* ~/lilypond-2.24.2/share/lilypond/2.24.2/fonts/svg
+*** for all
+install lilypond documentation
+: $ wget https://gitlab.com/lilypond/lilypond/-/releases/v2.24.2/downloads/lilypond-2.24.2-documentation.tar.xz
 ** build book
 : $ cd lily
 : $ make all install
