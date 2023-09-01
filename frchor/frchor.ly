@@ -39,7 +39,6 @@ sheetCopyright = "©friedensingen.de"
 \includeSheet "DasWeicheWasserBm.ly"      % 3
 \includeSheet "DerPfahl.ly"             % 4
 \includeSheet "DieErdeIstUnsereMutter.ly" % 5
-\includeSheet "DieWeissenTaubenSindMuede.ly"
 \includeSheet "HeuteUndHier.ly"           % 6
 \includeSheet "HevenuSchalomAlechem.ly"   % 7
 \includeSheet "../bwchor/HinehMatov.ly"   % 8
