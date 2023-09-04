@@ -25,7 +25,7 @@ lyrStropheA = {
   \lyricmode {
   \set stanza = #"1."
   Komm her, Ma -- rie,
-  ei letz -- tes Glas,
+  ein letz -- tes Glas,
   ge -- nie -- ßen wir den
   \set stanza = #"1."
   Au -- gen -- blick,
