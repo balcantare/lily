@@ -1,11 +1,11 @@
-OUTDIR := out
+INSTDIR := out
 SUBDIRS := balcantare frchor bwchor freylax
 
-$(OUTDIR) :
-	mkdir $(OUTDIR)
+$(INSTDIR) :
+	mkdir $(INSTDIR)
 
 .PHONY: all install $(SUBDIRS)
-all: $(OUTDIR) $(SUBDIRS) 
+all: $(INSTDIR) $(SUBDIRS) 
 
 $(SUBDIRS):
-	$(MAKE) -C $@ all install
+	$(MAKE) -C $@ INSTDIR=../$(INSTDIR) all install
