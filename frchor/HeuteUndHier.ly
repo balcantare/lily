@@ -12,10 +12,13 @@ lyrStropheA = {
      \set stanza = #"1. "
     Was wird aus uns' -- rem Mor -- gen?
     Wo -- hin wird un -- ser Weg uns führ'n?
+    \set stanza = #"1. "
     Blei -- ben uns die Sor -- gen,
     daß wir im Krie -- ge uns ver -- lier'n?
+    \set stanza = #"1. "
     Die Hoff -- nung in den Her -- zen,
     sie darf nie -- mals ver -- geh'n.
+    \set stanza = #"1. "
     Daß auf der Er -- de Frie -- den wer -- de,
     lasst uns zu -- sam -- men steh'n.
 
@@ -32,11 +35,11 @@ lyrStropheB = {
     \set stanza = #"2. "
     \skip 8 Sin -- gen wir ge -- mein -- sam,
     ent -- steht ein un -- sicht -- ba -- res
-    Band zwi -- \skip 8 schen \skip 8 Men -- schen,
+    Band \set stanza = #"2. " zwi -- \skip 8 schen \skip 8 Men -- schen,
     \skip 8 die sich vor -- her nie ge -- kannt.
-    \skip 16 Lasst es stär -- ker wer -- den,
+    \set stanza = #"2. " \skip 16  Lasst es stär -- ker wer -- den,
     \skip 8 dann be -- kommt's die Kraft,
-    \skip 16 die \skip 8 in den Her -- zen die -- ser
+    \set stanza = #"2. " \skip 16 die \skip 8 in den Her -- zen die -- ser
     \skip 16 Er -- de Frie -- den schafft!
 }}
 
@@ -46,12 +49,12 @@ lyrStropheC = {
     \set stanza = #"3. "
     \skip 8 Klin -- gen uns -- 're Lie -- der
     \skip 8 lan -- ge noch in je -- dem fort,
-    se -- hen wir uns wie -- der,
+    \set stanza = #"3. " se -- hen wir uns wie -- der,
     \skip 8 ir -- gend -- wann am glei -- chen Ort.
-    Wird un -- ser Chor ge -- wach -- sen
+    \set stanza = #"3. " Wird un -- ser Chor ge -- wach -- sen
     \skip 8 und
     noch bun -- ter sein,
-    und al -- \skip 8 le \skip 8 stim -- men
+    \set stanza = #"3. " und al -- \skip 8 le \skip 8 stim -- men
     in den \skip 16
     gro -- ßen  Chor mit ein.
 }}
@@ -121,9 +124,9 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames { \transpose c d {\chrdStrophe }}
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" { \transpose c d {\strophe }}
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
