@@ -106,7 +106,7 @@ stropheBass = \relative c {
   d4 d8 d
   e( d) d d
   b4. d8
-  a4 d8 fs
+  a4 d8 d
   g4 fs8 d
   cs4( d)
   d2
