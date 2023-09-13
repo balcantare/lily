@@ -4,33 +4,33 @@ sheetName = "Hevenu Schalom Alechem"
 
 lyrStropheA = {
   \lyricmode {
-  \set stanza = #"h) "
+  \set stanza = #"hb) "
   He --  ve -- nu sha -- lom a -- le -- chem,
   He --  ve -- nu
-  \set stanza = #"h) "
+  \set stanza = #"hb) "
   sha -- lom a -- le -- chem,
   He --  ve -- nu
-  \set stanza = #"h) "
+  \set stanza = #"hb) "
   sha -- lom a -- le -- chem,
   He --  ve -- nu
-  \set stanza = #"h) "
+  \set stanza = #"hb) "
   sha -- lom,
   sha -- lom, sha -- lom,
-  a -- le -- chem
+  a -- le -- chem.
 }}
 
 lyrStropheB = {
   \lyricmode {
-  \set stanza = #"d) "
+  \set stanza = #"de) "
   Wir woll -- len Frie -- den für al -- le,
   Wir woll -- len
-  \set stanza = #"d) "
+  \set stanza = #"de) "
   Frie -- den für al -- le,
   Wir woll -- len
-  \set stanza = #"d) "
+  \set stanza = #"de) "
   Frie -- den für al -- le,
   Wir woll -- len
-  \set stanza = #"d) "
+  \set stanza = #"de) "
   Frie -- den, Frie -- den, Frie -- den für die Welt!
 }}
 
@@ -51,33 +51,84 @@ lyrStropheC = {
 
 lyrStropheD = {
   \lyricmode {
-    \set stanza = #"su) "
+    \set stanza = #"so) "
     Pschee -- je -- my po -- koj schim lud -- schom,
     Pschee -- je -- my
-    \set stanza = #"su) "
+    \set stanza = #"so) "
     po -- koj schim lud -- schom,
     Pschee -- je -- my
-    \set stanza = #"su) "
+    \set stanza = #"so) "
     po -- koj schim lud -- schom,
     Pschee -- je -- my
-    \set stanza = #"su) "
+    \set stanza = #"so) "
     po -- koj, po -- koj, po -- koj kujsch -- de -- mu!
 }}
 
 lyrStropheE = {
   \lyricmode {
-    \set stanza = #"f) "
+    \set stanza = #"fr) "
     Nous vous an -- non -- çons la paix, ___
     Nous vous an --
-    \set stanza = #"f) " non -- çons la paix, ___
+    \set stanza = #"fr) " non -- çons la paix, ___
     Nous vous an --
-    \set stanza = #"f) "
+    \set stanza = #"fr) "
     non -- çons la paix, ___
     Nous vous an --
-    \set stanza = #"f) "
+    \set stanza = #"fr) "
     non -- çons la paix, la paix,
     dans le monde!
 }}
+
+lyrStropheF = {
+  \lyricmode {
+    \set stanza = #"ru) "
+    Da bud -- jet mir wsejg -- da s_wa -- mi,
+    Da bud -- jet
+    \set stanza = #"ru) "
+    mir wsejg -- da s_wa -- mi,
+    Da bud -- jet
+    \set stanza = #"ru) "
+    mir wsejg -- da s_wa -- mi,
+    Da bud -- jet
+    \set stanza = #"ru) "
+    mir, mir wsejg -- da
+    s_wa -- mi bud -- jet mir.
+  }
+}
+
+lyrStropheG = {
+  \lyricmode {
+    \set stanza = #"uk) "
+    Zschob na -- sawž -- dy
+    myr buw s_wa -- mi,
+    Zschob na -- sawž --
+    \set stanza = #"uk) " dy
+    myr buw s_wa -- mi,
+    Zschob na -- sawž --
+    \set stanza = #"uk) " dy
+    myr buw s_wa -- mi,
+    Pow -- ju -- dy
+    \set stanza = #"uk) " myr buw s_wa -- mi,
+    s_wa -- mi na -- sawž -- dy.
+  }
+}
+
+lyrStropheH = {
+  \lyricmode {
+    \set stanza = #"sl) "
+    Praj -- me si mie -- er pre_v -- schet -- kych,
+    Praj -- me si
+    \set stanza = #"sl) "
+    mie -- er pre_v -- schet -- kych,
+    Praj -- me si
+    \set stanza = #"sl) "
+    mie -- er pre_v -- schet -- kych,
+    Praj -- me si
+    \set stanza = #"sl) "
+    pre -- dov -- schet -- kym,
+    pre -- dov -- schet -- kym mier.
+  }
+}
 
 strophe = \transpose a d \relative c' {
   %\voiceOne
@@ -108,7 +159,7 @@ chrdStrophe = \transpose a d \chordmode {
 
 \bookpart {
   \paper {
-    #(define fonts (book-font 1.35))
+    #(define fonts (book-font 1.2))
   }
   \bookItem
   \score {
@@ -119,9 +170,12 @@ chrdStrophe = \transpose a d \chordmode {
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
-    \new Lyrics \lyricsto "Strophe" \lyrStropheC
+    %\new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     \new Lyrics \lyricsto "Strophe" \lyrStropheE
+    \new Lyrics \lyricsto "Strophe" \lyrStropheF
+    \new Lyrics \lyricsto "Strophe" \lyrStropheG
+    \new Lyrics \lyricsto "Strophe" \lyrStropheH
     >>
   }
 }
