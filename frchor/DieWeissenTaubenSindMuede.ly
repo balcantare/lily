@@ -46,8 +46,8 @@ lyrStropheA = {
   leer.
 
   Je -- doch die Fal -- ken flie -- gen wei -- ter!
-  Sie sind so stark wie nie zu --
-  \set stanza = #"1-3." vor,
+  Sie sind so stark wie nie vor --
+  \set stanza = #"1-3." her,
   und ih -- re Flü -- gel wer -- den
   brei -- ter,
   und täg -- lich \set stanza = #"1-3."
@@ -198,7 +198,7 @@ strophe = \relative c' {
 chrdStrophe = \chordmode {
   s8
   d2 a g d g d a
-  d
+  s
   d a g d g a d s
   d g d s
   b:m g a s
