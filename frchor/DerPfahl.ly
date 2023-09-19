@@ -95,7 +95,7 @@ lyrStropheD = {
 lyrStropheE = {
   \lyricmode {
   \set stanza = \stanzaC
-  Der al -- te Si __  _ set sagt_nichts mehr,
+  Der al -- te Si__  - set sagt_nichts mehr,
   \set stanza = \stanzaC
   bö -- ser Wind hat ihn ver -- weht,
   kei -- ner weiß von sei -- ner
@@ -108,13 +108,13 @@ lyrStropheE = {
 lyrStropheF = {
   \lyricmode {
   %\set stanza = #"3b) "
-  Alt Si -- set sa __ gt uns al -- len,
+  Alt Si -- set sagt__ _  uns al -- len,
   %\set stanza = #"3b) "
-  hör auch du krie__ -- g es mit:
+  hör auch du krieg__ _ es mit:
   'Der mor -- sche Pfahl wird schon
   %\set stanza = #"3b) "
   fal -- len,
-  wie es ge -- schie __ ht  im Lied!
+  wie es ge -- schieht__ _  im Lied!
 }}
 
 strophe = \relative c' {
