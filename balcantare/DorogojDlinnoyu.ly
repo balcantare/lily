@@ -96,9 +96,9 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-      \new ChordNames { \chrdStrophe }
+      \new ChordNames { \transpose f g {\chrdStrophe }}
       \new Staff <<
-        \new Voice = "Strophe" { \strophe }
+        \new Voice = "Strophe" { \transpose f g { \strophe} }
       >>
     \new	Lyrics \lyricsto "Strophe" \lyrStropheA
     \new	Lyrics \lyricsto "Strophe" \lyrStropheB

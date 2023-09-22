@@ -62,7 +62,7 @@ lyrStropheD = {
 
 
 strophe = \relative c' {
-  \voiceOne
+  \voiceTwo
   \time 4/4
   \key c \major
   \partial 4
@@ -81,8 +81,8 @@ strophe = \relative c' {
   }
 }
 
-stropheAlt = \relative c' {
-  \voiceTwo
+stropheAlt = \relative c'' {
+  \voiceOne
    c4 |
    b4 b8 b~ 4 c |
    b4 b8 b~ 2 |
@@ -95,6 +95,7 @@ stropheAlt = \relative c' {
 }
 
 stropheBass = \relative c' {
+  \key c \major
   \clef bass
   g4 |
   4 8 8~ 4 4 |
@@ -120,19 +121,19 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames { \transpose g f {\chrdStrophe }}
     \new ChoirStaff
       <<
       \new Staff <<
-        \new Voice = "Strophe" { \strophe }
-        \new Voice = "StropheAlt" { \stropheAlt }
+        \new Voice = "Strophe" { \transpose g f {\strophe }}
+        \new Voice = "StropheAlt" { \transpose g f {\stropheAlt }}
         >>
       \new Lyrics \lyricsto "Strophe" \lyrStropheA
       \new Lyrics \lyricsto "Strophe" \lyrStropheB
       \new Lyrics \lyricsto "Strophe" \lyrStropheC
       \new Lyrics \lyricsto "Strophe" \lyrStropheD
       \new Staff <<
-        \new Voice = "Basso" { \stropheBass }
+        \new Voice = "Basso" { \transpose g f {\stropheBass }}
         >>
       >>
     >>
