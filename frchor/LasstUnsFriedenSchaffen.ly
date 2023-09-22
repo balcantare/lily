@@ -11,7 +11,7 @@ lyrStropheA = {
   \set stanza = #"1. "
   Ach, ich wünscht', ich könn -- te flie -- gen,
   \set stanza = #"1. "
-  fort von all dem Hass, de Krie -- gen,
+  fort von all dem Hass, den Krie -- gen,
   \set stanza = #"1. "
   fort von all dem
   Wahn -- sin,

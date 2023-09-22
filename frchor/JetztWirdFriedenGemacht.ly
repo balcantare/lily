@@ -16,7 +16,7 @@ lyrStropheA = {
   \repeat unfold 3 { \skip 16}
   im -- mer wenn der Wind sich dreht,
   \set stanza = #"1. "
-  \skip 16 im -- er wenn was Al -- tes en -- det,
+  \skip 16 im -- mer wenn was Al -- tes en -- det,
   kommt die Zeit, daß et -- was neu ent -- steht.
   \set stanza = #"1. "
   Gibt's ei -- ne Chance, daß wir es mit ge -- stal -- ten?
@@ -26,7 +26,7 @@ lyrStropheA = {
   \set stanza = #"1. "
   müss -- te end -- lich das Ei -- ne ge -- schehn':
   \set stanza = "1-3."
-  Wir frie -- ren  all -- le Waf -- fen ein und sa -- gen:
+  Wir frie -- ren  al -- le Waf -- fen ein und sa -- gen:
   Jetzt wird Frie -- den ge -- macht!
   Es ist Zeit! Zu vie -- le Men -- schen wer -- den
   grau -- sam um -- ge -- bracht!
