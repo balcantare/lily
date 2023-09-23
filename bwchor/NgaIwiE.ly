@@ -12,7 +12,7 @@ lyrStropheA = {
   Ki -- a
   \set stanza = #"1m) "
   Ko -- ta -- hi Rá
-  Te Moa -- na Nui_a Ki -- wa.
+  Te Moa -- na Nui a Ki -- wa.
   \set stanza = #"ref m) "
   E I A I E!
   E I A I E!
@@ -26,7 +26,7 @@ lyrStropheB = {
   ki te
   \set stanza = #"2m) "
   ma -- na mo -- tu_ha -- ke
-  me te a -- ro -- ha.
+  me te a -- _ ro -- ha.
   \set stanza = #"ref d) "
   Wir sind nicht al -- lein!
   Wir sind nicht al -- lein!
@@ -39,7 +39,7 @@ lyrStropheC = {
   wir sind ver -- eint,
   Wie das
   \set stanza = #"1d) "
-  Meer und die Wellen.
+  Meer und die Wel -- len.
   Wir sind stark und ver -- eint.
 }}
 
@@ -49,7 +49,7 @@ lyrStropheD = {
   Wir ha -- ben Kraft, wir ha -- ben Mut,
   Denn in
   \set stanza = #"2d) "
-  un -- se -- rem Herzen, da ist
+  un -- se -- rem Her -- zen, da ist
   Feu -- er und Glut!
 }}
 
@@ -60,7 +60,7 @@ lyrStropheE = {
   wir sind der Stein!
   Lass ihn
   \set stanza = #"3d) "
-  rol -- len, dann wird_er
+  rol -- len, dann wird er
   Stein des An -- sto -- ßes sein!
 }}
 
@@ -72,7 +72,7 @@ lyrStropheF = {
   Der da
   \set stanza = #"4d) "
   ü -- ber das Land zieht
-  und Ver -- ände -- rung
+  und Ver -- än -- de -- rung
   bringt.
 }}
 
@@ -86,7 +86,7 @@ strophe = \relative c' {
     c8 c bf c~ 2
     ef8 ef d ef~ 4 ef8 ef
     d8 d d d~ d d c d
-    ef8( ef) d c~ 2
+    ef8 ef d c~ 2
   } \break
   \repeat volta 2 {
     <ef g>2. <g c>8 <f bf>8~
