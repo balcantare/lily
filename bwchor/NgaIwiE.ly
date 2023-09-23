@@ -28,8 +28,8 @@ lyrStropheB = {
   ma -- na mo -- tu_ha -- ke
   me te a -- ro -- ha.
   \set stanza = #"ref d) "
-  Wir sind nicht allein!
-  Wir sind nicht allein!
+  Wir sind nicht al -- lein!
+  Wir sind nicht al -- lein!
 }}
 
 lyrStropheC = {

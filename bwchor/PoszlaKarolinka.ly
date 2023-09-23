@@ -34,11 +34,11 @@ lyrStropheA = {
   Po -- szła Ka -- ro -- lin -- ka
   do Go -- go -- li -- na,
   \set stanza = #"1. "
-  a Kar -- li -- czek za nią,
+  a Kar -- li -- czek za nia,
   a Kar -- li -- czek
   \set stanza = #"1. "
-  za nią,
-  z_fla -- szecz -- ką wi -- na.
+  za nia,
+  z_fla -- szecz -- ka wi -- na.
 }}
 
 lyrStropheB = {
@@ -155,7 +155,7 @@ lyrStropheH = {
     und dem hüb -- schen
     \set stanza = #"8. "
     Bur -- schen,
-    läuft das Mädchen fort.
+    läuft das Mäd -- chen fort.
 }}
 
 
@@ -166,6 +166,7 @@ strophe = \relative c'' {
   \key g \major
   %\partial 8
   %g'8-\prall^\markup{Akkordeon} d b a g4 r
+  \bar ".|:"
   \repeat volta 2 {
   \once\override Score.RehearsalMark.self-alignment-X = 2
   \mark \markup{ \box{\fontsize #3 A}}
@@ -183,7 +184,7 @@ strophe = \relative c'' {
   c4 d
   b8 b c c
   b2
-  \bar "||"
+  %\bar "||"
 
   %\override Parentheses.font-size = #5
   %\startParenthesis \parenthesize
