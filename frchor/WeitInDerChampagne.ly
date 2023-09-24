@@ -68,7 +68,7 @@ lyrStropheB = {
     wie__es kommt, mit Ge -- walt.
     \set stanza = "2. " Dazu
     warst Du ent -- schlos -- sen,
-    hast Dich a -- be -- r dann
+    hast Dich a -- ber \skip 8 dann
     \set stanza = "2. " vor Dir sel -- ber
     ge -- schämt und es doch nie ge -- tan.
 }}
@@ -97,7 +97,7 @@ lyrStropheC = {
     Hast Du nach Dei -- ner
     Mut -- ter ge -- schrien bis zu -- letzt.
     \set stanza = "3. "
-    Bist Du auf Dei -- nen Bein -- stüm -- pfen
+    Bist_Du auf Dei -- nen Bein -- stüm -- pfen \skip 8
     wei -- ter ge -- rannt?
     \set stanza = "3. "
     Und Dein Grab birgt es mehr als ein Bein ei -- ne
@@ -108,8 +108,8 @@ lyrStropheD = {
   \lyricmode {
     \set stanza = "4. "
     Es blieb nur das Kreuz ___ als
-    ein -- zi -- ge Spur ___
-    \set stanza = "4. "
+    ein -- zi -- ge Spur
+    \set stanza = "4. " \skip 4
     von Dei -- nem Le -- ben
     doch hör mei -- nen Schwur:
     \set stanza = "4. "

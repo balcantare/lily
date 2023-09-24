@@ -81,7 +81,7 @@ lyrStropheE = {
     \set stanza = " 5." Ich wer -- de sie den Un -- ge -- hor -- sam
     leh -- ren,
     \set stanza = " 5." den Wi -- der -- stand und die Un -- beug -- sam -- keit
-    ge -- gen je -- den Be -- fehl auf -- zu -- be --
+    gegen je -- _ den Be -- fehl auf -- zu -- be --
     \set stanza = " 5." geh -- ren
     und ___ nicht zu bu -- ckeln vor der Ob -- rig -- keit.
     \set stanza = " 5." Ich werd' sie lehr'n, den eig' -- nen
@@ -97,7 +97,7 @@ lyrStropheF = {
     \set stanza = " 6." Und e -- her wer -- de ich mit ih -- nen
     flie -- hen, \set stanza = " 6." als dass ihr sie zu eu -- ren
     Knech -- ten macht,
-    e -- her mit ih -- nen in die Frem -- de
+    eher mit ih -- _ nen in die Frem -- de
     \set stanza = " 6." zie -- hen,
     in ___ Ar -- mut und wie Die -- be in der Nacht.
     \set stanza = " 6." Wir ha -- ben nur dies ei -- ne kur -- ze
