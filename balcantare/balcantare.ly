@@ -47,6 +47,7 @@
 \includeSheet "PodmowskojeWecera.ly"
 \includeSheet "RomanoDrom.ly"
 \includeSheet "Rutschejok.ly"
+\includeSheet "Schiffsjungentanz.ly"
 \includeSheet "SchukaHisOZiro.ly"
 \includeSheet "StoMiEMilo.ly"
 \includeSheet "UtcaUtca.ly"
