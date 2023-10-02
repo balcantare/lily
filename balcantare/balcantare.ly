@@ -51,6 +51,7 @@
 \includeSheet "Schiffsjungentanz.ly"
 \includeSheet "SchukaHisOZiro.ly"
 \includeSheet "StoMiEMilo.ly"
+\includeSheet "TumBalalaike.ly"
 \includeSheet "UtcaUtca.ly"
 \includeSheet "Werila.ly"
 \includeSheet "XekinaiSamiotissa.ly"
