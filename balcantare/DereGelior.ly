@@ -47,7 +47,7 @@ lyrStropheA = {
   \raiseLyrics
   A -- man a -- man a -- man
   sa -- ma -- nin sa -- man sa -- man
-  Bi -- zim dü -- ğün ne -- sa -- man
+  ya -- rin ol -- du -- ğu de -- re
   ya -- le -- le -- lim
   }}
 
@@ -56,8 +56,8 @@ lyrStropheB = {
   %\set stanza = \stanza
   Al be -- ni gö -- tür de -- re
   \repeat unfold 6 {\skip 8}
-  Ya -- rin d -- du -- ğu
-  ye -- re
+  ya -- rin ol -- du -- ğu
+  de -- re
 }}
 
 
@@ -67,7 +67,7 @@ lyrStropheC = {
     Ben ar -- mu -- du dis -- le -- dim
     \repeat unfold 6 {\skip 8}
     \set stanza = \stanzaB
-    Sa -- pi -- ni gü -- müs -- le -- dim
+    Sa -- pi -- nı gü -- müs -- le -- dim
 }}
 
 lyrStropheD = {
