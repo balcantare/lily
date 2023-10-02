@@ -43,12 +43,12 @@ lyrStropheA = {
   \set stanza = \stanzaA
   Ku -- mu -- nu se -- re se -- re
   \dropLyrics
-  ya -- le -- le -- lim
+  ya -- le -- le -- lim.
   \raiseLyrics
   A -- man a -- man a -- man
   sa -- ma -- nin sa -- man sa -- man
   ya -- rin ol -- du -- ğu de -- re
-  ya -- le -- le -- lim
+  ya -- le -- le -- lim.
   }}
 
 lyrStropheB = {
@@ -72,7 +72,7 @@ lyrStropheC = {
 
 lyrStropheD = {
   \lyricmode {
-    Ben ya -- ri -- min is -- mi -- ni
+    Ben ya -- rı -- mın is -- mi -- ni
     \repeat unfold 6 {\skip 8}
     Men -- di -- li -- me
     is -- le -- dim
@@ -82,10 +82,10 @@ lyrStropheE = {
   \lyricmode {
     \set stanza = \stanzaC
     Ar -- mut dal -- da
-    bi -- ri -- ki
+    bir i -- ki
     \repeat unfold 6 {\skip 8}
     \set stanza = \stanzaC
-    sa -- yin ba -- kin
+    sa -- yın ba -- kın
     a -- ni -- ki
     }}
 
@@ -94,7 +94,7 @@ lyrStropheF = {
     Gü -- zel -- le -- rim
     i -- çin -- de
     \repeat unfold 6 {\skip 8}
-    Be -- nim ya -- rim
+    Be -- nim ya -- rım
     gü -- li -- ç
 
 }}
