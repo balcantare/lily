@@ -42,6 +42,7 @@
 \includeSheet "Ederlezi.ly"
 \includeSheet "ForSephora.ly"
 \includeSheet "FroehlicherKreis.ly"
+\includeSheet "Ivanica.ly"
 \includeSheet "JovanoJovanke.ly"
 \includeSheet "KerenSchaworaleDrom.ly"
 \includeSheet "NaneTsocha.ly"
