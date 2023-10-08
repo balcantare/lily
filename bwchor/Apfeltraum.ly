@@ -91,11 +91,11 @@ lyrStropheF = {
   A -- pfel -- baum.
 }}
 
-strophe = \relative c'' {
+strophe = \relative c' {
   \voiceOne
   \override Rest.staff-position = #0
   \time 2/2
-  \key c \major
+  \key a \minor
   \bar ".|:"
   \repeat volta 2 {
   r4 e8 e e e d c
@@ -120,7 +120,7 @@ strophe = \relative c'' {
   }
 }
 
-stropheAlt = \relative c'' {
+stropheAlt = \relative c' {
   \voiceTwo
   \repeat volta 2 {
   s4 c8 c c c b a
@@ -154,8 +154,8 @@ stropheBass = \relative c {
   % \alternative { {r1} }
   \repeat volta 2 {
   g4 g8 a4 a8 a4
-  g4 g8 c4 c8 d8 c b c
-  g1
+  g4 g8 c,4 c8 d8 c b c
+  g'1
   }
 }
 
@@ -178,10 +178,10 @@ chrdStrophe =  \chordmode {
   \bookItem
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames { \transpose c g \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
-      \new Voice = "StropheAlt" { \stropheAlt }
+      \new Voice = "Strophe" { \transpose c g \strophe }
+      \new Voice = "StropheAlt" { \transpose c g \stropheAlt }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
@@ -190,7 +190,7 @@ chrdStrophe =  \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheE
     \new Lyrics \lyricsto "Strophe" \lyrStropheF
     \new Staff <<
-      \new Voice = "StropheBass" { \stropheBass }
+      \new Voice = "StropheBass" { \transpose c g \stropheBass }
       >>
 
     >>
