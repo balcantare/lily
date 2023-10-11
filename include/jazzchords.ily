@@ -41,7 +41,7 @@
     (markup
       #:super
       #:override '(font-size . -4)
-      #:override '(thickness . 0.3)
+      #:override '(thickness . 3)
       #:translate '( 0 . 0.3) #:triangle #f
           #:super extension)))
 
