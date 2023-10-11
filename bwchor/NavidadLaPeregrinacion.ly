@@ -86,6 +86,7 @@ strophe = \relative c'' {
   \accidentalStyle neo-modern-voice-cautionary
   \time 6/8
   \key g \minor
+  \mark \markup{\box{Zs}}
   d2. ef c d bf c c bf \break
   d g, c f bf, bf a g %\bar "||"
   \break
@@ -109,6 +110,11 @@ strophe = \relative c'' {
   bf4 c8 r c4 |
   ef8 ef4 d8( c4) |
   bf4.~ bf4 r8
+  \once \override Score.RehearsalMark.break-visibility =
+    #end-of-line-visible
+  \once \override Score.RehearsalMark.self-alignment-X =
+    #RIGHT
+  \mark \markup{\box{..Coda}}
   } \break
   f'2.( | ef4.) r8 ef4 |
   ef8 ef4 ef4. |
@@ -117,10 +123,17 @@ strophe = \relative c'' {
   c4. r8 a4 |
   a8 a4 c4. |
   %\ccharnote{17}{\hskip2cm\hbox{\boxit{..Zwischenspiel}}}\
-  bf4.~ bf4 r8 \bar "||"
+
+  bf4.~ bf4 r8
+  \once \override Score.RehearsalMark.break-visibility =
+    #end-of-line-visible
+  \once \override Score.RehearsalMark.self-alignment-X =
+    #RIGHT
+  \mark \markup{\box{..Zs}}
+  \bar "|."
   \break
   %\ccharnote{10}{\hskip1cm\hbox{\boxit{Coda}}}\
-  r8 d d d d d |
+  r8^\markup{\box{\fontsize #2 Coda}} d d d d d |
   d d d d d4 | r8 d4 d d8 |
   d4. d4.~ d4.  r4.
 
@@ -139,7 +152,7 @@ chrdStrophe = \chordmode {
 
   g:7 c:m7 f:7 bf:7+ g4.:m g:m7
   c:7 a:m5-7 d d:7 g2.:m
-
+   s4.
   g:69
 }
 
