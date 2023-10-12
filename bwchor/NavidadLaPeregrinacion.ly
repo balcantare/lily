@@ -23,22 +23,22 @@ lyrStropheA = {
     \skipA
   \set stanza = \stanzaA
   A la hue -- lla, la hue -- lla
-  Jo -- sé_y Ma -- ri -- a,
+  Jo -- sé‿y Ma -- ri -- a,
   \set stanza = \stanzaA
   Por las pam -- pas he -- la -- dos
-  Car -- dos y'_or -- ti -- gas,
+  Car -- dos y'‿or -- ti -- gas,
 
   \set stanza = \stanzaA
   A la hue -- lla, la hue -- lla
   Cor -- tan -- do cam -- po,
   \set stanza = \stanzaA
-  No_hay co -- bi -- jo ni fon -- da
+  No‿hay co -- bi -- jo ni fon -- da
   Si gan an -- dan -- do.
 
-  Ah --  Jo -- sé_y Ma -- ri -- a,
+  Ah --  Jo -- sé‿y Ma -- ri -- a,
  Con un Dios na -- die sa -- bi -- a.
  A la hue -- lla la hue -- lla, hue -- lli -- ta
- Jo -- sé_y Ma -- ri -- a.
+ Jo -- sé‿y Ma -- ri -- a.
 }}
 lyrStropheB = {
   \lyricmode {
@@ -48,8 +48,8 @@ lyrStropheB = {
  Si nin -- gu -- n tea -- lo -- a
  A -- don -- de na -- ces,
  Don -- de na -- ces flor -- ci -- ta
- Que_es -- tás cre -- cien -- do,
- Pa -- lo -- mi -- ta_a -- sus -- ta -- da
+ Que‿es -- tás cre -- cien -- do,
+ Pa -- lo -- mi -- ta‿a -- sus -- ta -- da
  Gri -- llo sin sue -- ño.
   }
 }
@@ -60,14 +60,14 @@ lyrStropheC = {
   A la hue -- lla, la hue -- lla,
  Los per -- e -- gri -- nos,
   \set stanza = \stanzaB
-  Pres -- ten -- me_un -- a ta --
+  Pres -- ten -- me‿un -- a ta --
   pe -- ra, Pa -- ra mi ni -- ño,
   \set stanza = \stanzaB
  A la hue -- lla, la hue -- lla,
  Sol -- es y lu -- nas,
   \set stanza = \stanzaB
- Los o -- si -- tos de_al -- men -- dra,
- Piel de_a -- cei -- tu -- na.
+ Los o -- si -- tos de‿al -- men -- dra,
+ Piel de‿a -- cei -- tu -- na.
 }}
 lyrStropheD = {
   \lyricmode {
@@ -77,7 +77,7 @@ lyrStropheD = {
  Que mi ni -- ño ya vie -- ne,
  Há -- gan -- le si -- tio,
  Un ran -- chi -- to de quin -- cha,
- So -- lo me_am -- pa -- ra,
+ So -- lo me‿am -- pa -- ra,
  Dos a -- lien -- tos a -- mi -- gos,
  La lu -- na cla -- ra.
 }}

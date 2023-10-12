@@ -22,18 +22,18 @@ lyrStropheA = {
   \lyricmode {
     \skipA
   \set stanza = \stanzaA
-  Ji -- ne -- te de_un ra -- yo ro __ jo
+  Ji -- ne -- te de‿un ra -- yo ro __ jo
   \set stanza = \stanzaA
-  Vie -- ne vo -- lan do_el An -- gel Ga -- briel
-  Con sa -- ble pun -- ta de_es --
+  Vie -- ne vo -- lan do‿el An -- gel Ga -- briel
+  Con sa -- ble pun -- ta de‿es --
   \set stanza = \stanzaA
   tre -- lla
   Que vue -- le
   "\"Pla" -- te ca -- ba -- ca -- "te\"."
-  Soy la_es -- cla -- va del Se -- ñor
+  Soy la‿es -- cla -- va del Se -- ñor
   lle -- van -- do su cor -- a -- cón.
-  Ca -- pu -- llo que se_ha -- ce flor
-  Y se_a -- bri -- rá en Na -- vi -- dad.
+  Ca -- pu -- llo que se‿ha -- ce flor
+  Y se‿a -- bri -- rá en Na -- vi -- dad.
 }}
 lyrStropheB = {
   \lyricmode {
@@ -52,8 +52,8 @@ lyrStropheC = {
   El An -- gel Ga -- briel ya vuel __ ve
   \set stanza = \stanzaB
   \skip 8
-  pa -- go don -- de se_en cuen -- tra Dios.
-  Ma -- mó par -- e -- hó_An -- ge --
+  pa -- go don -- de se‿en cuen -- tra Dios.
+  Ma -- mó par -- e -- hó‿An -- ge --
   \set stanza = \stanzaB
   li -- to
   Que tan con -- ten -- to te vuel -- ves vos.
@@ -61,11 +61,11 @@ lyrStropheC = {
 lyrStropheD = {
   \lyricmode {
     \skipA
-  He vis -- to_a la rei -- na_el mun __ do.
+  He vis -- to‿a la rei -- na‿el mun __ do.
   Le mas her -- mo -- sa "\"cu" -- ña -- ta -- "i\"."
   Los o -- jos son dos es -- trell -- as,
   su voz
-  el can -- to de_un ye --  ru -- ti.
+  el can -- to de‿un ye --  ru -- ti.
 }}
 
 strophe = \relative c'' {

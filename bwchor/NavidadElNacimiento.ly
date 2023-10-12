@@ -7,14 +7,14 @@ sheetComposer = "Ariel Ramierez"
 lyrStropheA = {
   \lyricmode {
   \set stanza = "1. "
-   No -- che_a -- nun -- cia -- da,
-   No -- che de_a -- mor,
-   Dios ha na -- ci -- do pé -- ta -- lo_y flor.
-   To -- dos si -- len -- cid_y se -- re -- ni -- dad,
+   No -- che‿a -- nun -- cia -- da,
+   No -- che de‿a -- mor,
+   Dios ha na -- ci -- do pé -- ta -- lo‿y flor.
+   To -- dos si -- len -- cid‿y se -- re -- ni -- dad,
    Pay a los hom -- bres,
    Es na -- vi -- dad.
 
-   An -- ge -- les can -- ten so -- bre_el por -- tal,
+   An -- ge -- les can -- ten so -- bre‿el por -- tal,
    Dios, ha na -- ci -- do
    es na -- vi -- dad.
 }}
@@ -23,19 +23,19 @@ lyrStropheB = {
     \set stanza = "2. "
     En el pe -- se -- bre,
    Mi re -- den -- tor,
-   Es men -- sa -- je -- ro de paz y_a -- mor.
-   Cuan -- do son -- ri -- e, Se_ha -- ce la luz,
-   Y_en sus bra -- ci -- tos,
-   Cre -- ce_u -- na cruz.
+   Es men -- sa -- je -- ro de paz y‿a -- mor.
+   Cuan -- do son -- ri -- e, Se‿ha -- ce la luz,
+   Y‿en sus bra -- ci -- tos,
+   Cre -- ce‿u -- na cruz.
   }
 }
 lyrStropheC = {
   \lyricmode {
     \set stanza = "3. "
-   Es -- ta_es la no -- che Que pro -- me -- tio
+   Es -- ta‿es la no -- che Que pro -- me -- tio
    Dios a los hom -- bres y ya lle -- gó.
-   Es no -- che bue -- na no_hay que dor -- mir,
-   Dios ha na -- ci -- do, Dios es -- ta_a -- qui.
+   Es no -- che bue -- na no‿hay que dor -- mir,
+   Dios ha na -- ci -- do, Dios es -- ta‿a -- qui.
 }}
 
 strophe = \relative c'' {
