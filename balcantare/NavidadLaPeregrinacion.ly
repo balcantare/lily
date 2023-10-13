@@ -1,6 +1,7 @@
 \version "2.24.0"
 sheetName = "Nuestra Navidad - 2 - La Peregrinacion"
 sheetComposer = "Ariel Ramierez"
+#(define book-staff-size 22)
 \include "../include/book.ily"
 
 leftbrace = \markup {

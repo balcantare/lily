@@ -1,10 +1,8 @@
 \version "2.24.0"
 sheetName = "Nuestra Navidad  - 5 - Los Reyes Magos"
 sheetComposer = "Ariel Ramierez"
-%#(define book-staff-size 23)
-
+#(define book-staff-size 22)
 \include "../include/book.ily"
-
 
 lyrStropheA = {
   \lyricmode {

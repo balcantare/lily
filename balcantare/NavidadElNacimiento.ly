@@ -1,6 +1,7 @@
 \version "2.24.0"
 sheetName = "Nuestra Navidad - 3 - El Nacimiento"
 sheetComposer = "Ariel Ramierez"
+#(define book-staff-size 22)
 \include "../include/book.ily"
 
 
@@ -9,8 +10,11 @@ lyrStropheA = {
   \set stanza = "1. "
    No -- che‿a -- nun -- cia -- da,
    No -- che de‿a -- mor,
+   \set stanza = "1. "
    Dios ha na -- ci -- do pé -- ta -- lo‿y flor.
+   \set stanza = "1. "
    To -- dos si -- len -- cid‿y se -- re -- ni -- dad,
+   \set stanza = "1. "
    Pay a los hom -- bres,
    Es na -- vi -- dad.
 
@@ -23,8 +27,11 @@ lyrStropheB = {
     \set stanza = "2. "
     En el pe -- se -- bre,
    Mi re -- den -- tor,
+   \set stanza = "2. "
    Es men -- sa -- je -- ro de paz y‿a -- mor.
+   \set stanza = "2. "
    Cuan -- do son -- ri -- e, Se‿ha -- ce la luz,
+   \set stanza = "2. "
    Y‿en sus bra -- ci -- tos,
    Cre -- ce‿u -- na cruz.
   }
@@ -33,9 +40,12 @@ lyrStropheC = {
   \lyricmode {
     \set stanza = "3. "
    Es -- ta‿es la no -- che Que pro -- me -- tio
-   Dios a los hom -- bres y ya lle -- gó.
-   Es no -- che bue -- na no‿hay que dor -- mir,
-   Dios ha na -- ci -- do, Dios es -- ta‿a -- qui.
+    \set stanza = "3. "
+    Dios a los hom -- bres y ya lle -- gó.
+    \set stanza = "3. "
+    Es no -- che bue -- na no‿hay que dor -- mir,
+    \set stanza = "3. "
+    Dios ha na -- ci -- do, Dios es -- ta‿a -- qui.
 }}
 
 strophe = \relative c'' {

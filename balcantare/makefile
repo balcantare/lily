@@ -1,4 +1,4 @@
-books := balcantare.pdf 
+books := balcantare.pdf NuestraNavidad.pdf
 TOPDIR := ..
 
 include $(TOPDIR)/include/makefile
