@@ -32,4 +32,5 @@ sheetCopyright = "©balcantare.de"
   \markuplist \table-of-contents
 }
 
+\includeSheet "HappyXMas.ly"
 \includeSheet "LasGallinasVanABelen.ly"
