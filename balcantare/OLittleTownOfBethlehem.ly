@@ -18,6 +18,18 @@ stanzaC = \markup {
   \column { \vspace #.4 "3. "}
   \column { \vspace #.2 \leftbrace }
 }
+stanzaD = \markup {
+  \column { \vspace #.4 "4. "}
+  \column { \vspace #.2 \leftbrace }
+}
+stanzaE = \markup {
+  \column { \vspace #.4 "5. "}
+  \column { \vspace #.2 \leftbrace }
+}
+stanzaF = \markup {
+  \column { \vspace #.4 "6. "}
+  \column { \vspace #.2 \leftbrace }
+}
 lyrStropheA = {
   \lyricmode {
   \set stanza = \stanzaA
@@ -46,7 +58,7 @@ lyrStropheC = {
    \set stanza = "2. "
    for Christ is born by Ma -- ry;
    and, gathe -- red all a -- bove,
-   \set stanza = "1. "
+   \set stanza = "2. "
    while mor -- tals sleep the
    an -- gels keep their watch of
    won -- dering love.
@@ -76,6 +88,58 @@ lyrStropheF = {
     be born in us to -- day!
   }
 }
+
+lyrStropheG = {
+  \lyricmode {
+   \set stanza = \stanzaD
+   O Beth -- le -- hem, du klei -- ne Stadt,
+   wie stil -- le liegst du hier,
+   \set stanza = "4. "
+   Doch in den dunk -- len Gas -- sen
+   das ew -- ge Licht heut scheint
+   \set stanza = "4. "
+   für al -- le,  die da trau -- rig sind
+   und die zu -- vor ge -- weint.
+}}
+lyrStropheH = {
+  \lyricmode {
+    du schläfst, und gold -- ne Ster -- ne -- lein
+    ziehn lei -- se ü -- ber dir.
+}}
+lyrStropheI = {
+  \lyricmode {
+   \set stanza = \stanzaE
+   Des Her -- ren hei -- li -- ge Ge -- burt
+   ver -- kün -- det hell der Stern,
+   \set stanza = "5. "
+   denn Chris -- tus ist ge -- bo -- ren
+   und En -- gel hal -- ten Wacht,
+   \set stanza = "5. "
+   der -- weil die Men -- schen schla _ -- fen,
+   die gan -- ze dunk -- le Nacht.
+}}
+lyrStropheJ = {
+  \lyricmode {
+    ein ew -- ger Frie -- de sei be -- schert den
+    Men -- schen nah und fern;
+}}
+lyrStropheK = {
+  \lyricmode {
+   \set stanza = \stanzaF
+   O hei -- lig Kind von Beth -- le -- hem,
+   in uns -- re Her -- zen komm,
+   \set stanza = "6. "
+   Die Weih -- nachts -- en -- gel
+   sin -- gen die fro -- he Bot -- schaft hell:
+   \set stanza = "6. "
+   Komm auch zu uns und bleib bei uns,
+   O Herr Im -- ma -- nu -- el.
+}}
+lyrStropheL = {
+  \lyricmode {
+    wirf al -- le uns -- re Sün -- den fort
+    und mach uns frei und fromm.
+}}
 stropheSopran = \relative c' {
   \voiceOne
   \accidentalStyle neo-modern-voice-cautionary
@@ -162,9 +226,21 @@ chrdStrophe = \chordmode {
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheD
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheE
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheF
+    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheG
+    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheH
+    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheI
+    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheJ
+    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheK
+    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheL
       \new Staff <<
         \new Voice = "StropheBass" { \stropheBass }
       >>
     >>
+    \layout {
+      \context {
+        \Lyrics
+        \override LyricText.font-size = #1
+      }
+    }
   }
 }
