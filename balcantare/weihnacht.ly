@@ -34,4 +34,5 @@ sheetCopyright = "©balcantare.de"
 
 \includeSheet "HappyXMas.ly"
 \includeSheet "LasGallinasVanABelen.ly"
+\includeSheet "ODuStilleZeit.ly"
 \includeSheet "OLittleTownOfBethlehem.ly"
