@@ -104,12 +104,23 @@ strophe = \relative c' {
   d1
   r4 e8 e e e d c
   d4. c8 b4 g
-  a1
-  \set Score.repeatCommands = #'((volta "1"))
-  r1
-  \set Score.repeatCommands = #'((volta #f))
+  \newSpacingSection
+  \override Score.SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1)
+  <<
+    {
+      a1
+      %\set Score.repeatCommands = #'((volta "1"))
+      s1 % r1
+      %\set Score.repeatCommands = #'((volta #f))
+    }
+    \new Voice {
+      \voiceOne
+      r2 r8 g'8 a b c b a g a2
+    }
+  >>
   }
-  %\alternative { r1 }
+  \newSpacingSection
+  \override Score.SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
   \break
   \repeat volta 2 {
   e'4 d8 e4 f8 e4
@@ -164,8 +175,8 @@ chrdStrophe =  \chordmode {
   a:m g a:m s
   c4 g8 c4 f8 c4
   g4 c8 f4 c8
-  g8 \startParenthesis \parenthesize c
-  \endParenthesis \parenthesize g c
+  g8 \startParenthesis \parenthesize c g
+  \endParenthesis \parenthesize c
   g1
 }
 
@@ -178,10 +189,10 @@ chrdStrophe =  \chordmode {
   \bookItem
   \score {
     <<
-    \new ChordNames { \transpose c g \chrdStrophe }
+    \new ChordNames { \transpose c f \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe" { \transpose c g \strophe }
-      \new Voice = "StropheAlt" { \transpose c g \stropheAlt }
+      \new Voice = "Strophe" { \transpose c f \strophe }
+      \new Voice = "StropheAlt" { \transpose c f \stropheAlt }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
@@ -190,9 +201,15 @@ chrdStrophe =  \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheE
     \new Lyrics \lyricsto "Strophe" \lyrStropheF
     \new Staff <<
-      \new Voice = "StropheBass" { \transpose c g \stropheBass }
+      \new Voice = "StropheBass" { \transpose c f \stropheBass }
       >>
 
     >>
+    \layout {
+      \context {
+        \Lyrics
+        \override LyricText.font-size = #1.5
+      }
+    }
   }
 }
