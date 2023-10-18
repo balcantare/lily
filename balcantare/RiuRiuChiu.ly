@@ -161,6 +161,7 @@ stropheA = \relative c'' {
 
 stropheBsop = \relative c'' {
   \voiceOne
+  \override Rest.staff-position = #0
   \key a \minor
   \time 2/4 a8 a g a
   \time 4/4 f4 e8 d4 e8 f[ g]
@@ -180,11 +181,11 @@ stropheBalt = \relative c' {
   \voiceTwo
   f8 f e c
   d4 e8 f4 e8 d[ d]
-  c4 c r
+  c4 c s
   r4 e8 e
   d8 c e c
   d4 c8 d4 d8 c[ c]
-  d4 d r
+  d4 d s
   r e8 e
   d8 c e c
   d4 c8 a4 a8 a[ a]
@@ -192,6 +193,7 @@ stropheBalt = \relative c' {
 }
 
 stropheBten = \relative c' {
+  \override Rest.staff-position = #0
   \voiceOne
   \clef "bass"
   c8 c c a
@@ -210,11 +212,11 @@ stropheBbas = \relative c {
   \voiceTwo
   f8 f c f
   d4 a8 d4 c8 bf[ bf]
-  a4 a r
+  a4 a s
   a'8 a g a
   f4 e8 f
   d4 a8 d4 d8 a[ a]
-  d4 d r
+  d4 d s
   a'8 a g a
   f4 e8 f
   d4 a8 d4 d8 a[ a]
@@ -264,6 +266,7 @@ chrdStrophe = \chordmode {}
   }
   \score {
     <<
+      \new ChoirStaff <<
     \new Staff <<
       \new Voice = "StropheBsop" { \stropheBsop }
       \new Voice = "StropheBalt" { \stropheBalt }
@@ -275,6 +278,7 @@ chrdStrophe = \chordmode {}
       \new Voice = "StropheBten" { \stropheBten }
       \new Voice = "StropheBbas" { \stropheBbas }
       >>
+    >>
     >>
   }
   \score {
