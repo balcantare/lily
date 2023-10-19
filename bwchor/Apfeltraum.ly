@@ -154,6 +154,7 @@ stropheAlt = \relative c' {
 
 stropheBass = \relative c {
   \clef "bass"
+  \key a \minor
   \repeat volta 2 {
   r4 a8 8 8 8 8 8
   g4. g8 g2
