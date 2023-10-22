@@ -1,23 +1,9 @@
 \version "2.24.0"
 sheetName = "Hark! The herald angels sing"
+sheetComposer = "Brahms, Schubert, Mendelsohn"
+sheetPoet = "Charls Wesley, dt. Beate Tarrach"
 \include "../include/book.ily"
 
-leftbrace = \markup {
-  \override #'(font-encoding . fetaBraces)
-  \lookup "brace75"
-}
-stanzaA = \markup {
-  \column { \vspace #.4 "1. "}
-  \column { \vspace #.2 \leftbrace }
-}
-stanzaB = \markup {
-  \column { \vspace #.4 "2. "}
-  \column { \vspace #.2 \leftbrace }
-}
-stanzaC = \markup {
-  \column { \vspace #.4 "3. "}
-  \column { \vspace #.2 \leftbrace }
-}
 lyrStropheA = {
   \lyricmode {
   %\set stanza = \stanzaA
