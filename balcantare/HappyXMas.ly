@@ -85,7 +85,7 @@ strophe = \relative c'' {
   e8 d4 r4.
   r4 g,8 e' g e
   c2.
-  r4 c,8 a' a a16 a
+  r4 c8 a' a a16 a
   g8 f4~ f4.
   r4 f16 f f8 g a
   g2.
@@ -120,10 +120,11 @@ stropheBass = \relative c' {
   g fs e fs
   g fs a g
   \key c \major
-  c, b d c
+  c b d c
   d cs e d
   c b a b
   c b d c
+  s2. s s s s s s s4.
 }
 chrdStrophe = \chordmode {
   s4.
@@ -142,16 +143,16 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-      \new ChordNames { \chrdStrophe }
+      \new ChordNames { \transpose g c \chrdStrophe }
       \new Staff <<
-        \new Voice = "Strophe" { \strophe }
-        \new Voice = "StropheAlt" { \stropheAlt }
+        \new Voice = "Strophe" { \transpose g c \strophe }
+        \new Voice = "StropheAlt" { \transpose g c \stropheAlt }
       >>
     \new	Lyrics \lyricsto "Strophe" \lyrStropheA
     \new	Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyrStropheC
       \new Staff <<
-        \new Voice = "StropheBass" { \stropheBass }
+        \new Voice = "StropheBass" { \transpose g c \stropheBass }
       >>
     >>
   }
