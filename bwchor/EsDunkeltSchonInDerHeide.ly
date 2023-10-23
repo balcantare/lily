@@ -122,11 +122,11 @@ strophe = \relative c'' {
 
 chrdStrophe = \chordmode {
   s8
-  g4. d g d g d g s
+  g4. d c g c d g s
   g c g s
   g d e:m s
   g \set chordBassOnly = ##t
-  g:/fs g:/e s a:m d g
+  g:/fs g:/e g:/d a:m d g
 }
 
 \bookpart {
