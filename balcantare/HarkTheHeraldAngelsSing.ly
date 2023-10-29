@@ -158,14 +158,14 @@ chrdStrophe = \chordmode {
     <<
       \new ChordNames { \chrdStrophe }
       \new Staff <<
-        \new Voice = "StropheSopran" { \stropheSopran }
-        \new Voice = "StropheAlt" { \stropheAlt }
+        \new Voice = "StropheSopran" { \transpose g f \stropheSopran }
+        \new Voice = "StropheAlt" { \transpose g f \stropheAlt }
       >>
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheA
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheB
       \new Staff <<
-        \new Voice = "StropheTenor" { \stropheTenor }
-        \new Voice = "StropheBass" { \stropheBass }
+        \new Voice = "StropheTenor" { \transpose g f \stropheTenor }
+        \new Voice = "StropheBass" { \transpose g f \stropheBass }
       >>
     >>
    %  \layout {
