@@ -190,16 +190,16 @@ stropheBass = \relative c {
   \clef "bass"
   \key g \major
   d2
-  g c b a
+  g <c c,> <b b,> <a a,>
   g e d \breathe e
   a, b c d
-  g1. \breathe
+  <g g,>1. \breathe
   e2
   b2. c4 d2 e4( fs) |
   g2( e) d \breathe d4( c) |
   b2 e c e |
   d1 \breathe e2( fs) |
-  g c b a |
+  g <c c,> <b b,> <a a,> |
   g e d \breathe e |
   a, b4( e) d2 d |
   <g, g'>1.
@@ -223,13 +223,27 @@ stropheTenor = \relative c {
 
 }
 chrdStrophe = \chordmode {
-  s4.
+  s2
+  g1 s2 d
+  g1 e:m
+  a:m c2 d
+  g1 s1
+  g1 d
+  g s
+  e1:m a:m
+  d d:7
+  g1 s2 d2
+  g1 e:m
+  a:m c2 d
+  g1.
+
   }
 
 \bookpart {
   \paper {
     page-count = #1
     #(define fonts (book-font 1))
+    ragged-last-bottom = ##f
   }
   \bookItem
   \score {
