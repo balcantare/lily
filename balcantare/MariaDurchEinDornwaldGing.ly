@@ -85,7 +85,7 @@ stropheAlt = \relative c'' {
   s4
   s1*2
   bf4 a8 a g2
-  a2. \breathe g8 a
+  a2( f4) \breathe g8 a
   bf4. a8 bf4 c8 bf
   a4. g8 a4 bf8 a
   g4.  f8 g4 g
@@ -95,6 +95,7 @@ stropheAlt = \relative c'' {
 }
 
 stropheTenor = \relative c'' {
+  \accidentalStyle neo-modern-voice-cautionary
   \voiceTwo
   \key g \minor
   s4 s1*2
@@ -107,11 +108,20 @@ stropheTenor = \relative c'' {
 }
 
 stropheBass = \relative c' {
+  \accidentalStyle neo-modern-voice-cautionary
   \clef "bass"
   \key g \minor
-  s4
-  s1*9
-  s2.
+  r4
+  g4 fs g2
+  g d
+  g2 c,4 ef
+  fs g a fs
+  g fs g ef
+  fs e fs d
+  ef d ef ef
+  c ef d fs
+  g f ef2
+  d g,4
 }
 
 
@@ -122,6 +132,7 @@ chrdStrophe = \chordmode {
   \paper {
     page-count = #1
     #(define fonts (book-font 1.2))
+    ragged-last-bottom =  ##f
   }
   \bookItem
   \score {
@@ -139,7 +150,7 @@ chrdStrophe = \chordmode {
       >>
     \new Lyrics \lyricsto "StropheTenor" \lyrStropheD
       \new Staff <<
-        \new Voice = "StropheBass" { \stropheBass }
+        \new Voice = "StropheBass" { \transpose bf af \stropheBass }
       >>
     >>
    %  \layout {
