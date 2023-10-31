@@ -36,5 +36,6 @@ sheetCopyright = "©balcantare.de"
   \markuplist \table-of-contents
 }
 
+\includeSheet "HuetetDieFlamme.ly"
 \includeSheet "MateAroha.ly"
 \includeSheet "Tourdion.ly"
