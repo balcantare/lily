@@ -4,9 +4,11 @@ sheetComposer = "Johann Friedrich Reichart 1799"
 sheetPoet = "Johann Gaudenz von Salis-Seewis 1793"
 \include "book.ily"
 
+skipA = \repeat unfold 13 \skip 8
 
 lyrStropheA = {
   \lyricmode {
+  \skipA
   \set stanza = #"1. "
   Bunt sind schon die Wäl -- der,
   gelb die Stop -- pel --
@@ -21,6 +23,7 @@ lyrStropheA = {
 
 lyrStropheB = {
   \lyricmode {
+  \skipA
   \set stanza = #"2. "
   Wie die vol -- le Trau  -- be
   aus dem Re -- ben --
@@ -37,22 +40,24 @@ lyrStropheB = {
 
 lyrStropheC = {
   \lyricmode {
-  \set stanza = #"3. "
+  \skipA
+  \set stanza = #"(3.) "
   Sieh, wie hier die Dir -- ne
   em -- sig Pflaum und
-  \set stanza = #"3. "
+  \set stanza = #"(3.) "
   Bir -- ne
   in ihr Körb -- chen legt,
-  \set stanza = #"3. "
+  \set stanza = #"(3.) "
   dort mit leich -- ten Schrit -- ten
   je -- ne gold -- nen
-  \set stanza = #"3. "
+  \set stanza = #"(3.) "
   Quit -- ten
   in den Land -- hof trägt.
 }}
 
 lyrStropheD = {
   \lyricmode {
+  \skipA
   \set stanza = #"4. "
   Flin -- ke Trä -- ger sprin -- gen,
   und die Mäd -- chen
@@ -68,6 +73,7 @@ lyrStropheD = {
 
 lyrStropheE = {
   \lyricmode {
+  \skipA
   \set stanza = #"5. "
   Gei -- ge tönt und Flö -- te
   bei der A -- bend --
@@ -86,15 +92,20 @@ strophe = \relative c'' {
   \accidentalStyle neo-modern %-voice-cautionary
   \time 6/8
   \key g \major
+  b4 a8 g4 fs8
+  e4 d8 c4 e8
+  d4 e8 fs4 a8
+  g4.~ g4 r8 \bar "||" \break
   g4 g8
   g8( fs) g
   a4. g
+  \voiceOne
   b4 b8
   b( a) b
   c4. b
   a4 a8
   g( b) cs,
-  d4.~ d4 r8
+  d2.
   b'4 a8
   g4 fs8
   e4. e4.
@@ -103,20 +114,36 @@ strophe = \relative c'' {
   fs4. fs
   g8( b) d
   d,8( e) fs
-  g4.~ g4 r8
+  g2.
   \bar "|."
 }
 
+stropheAlt = \relative c'' {
+  s2.*6
+  \voiceTwo
+  g4 g8 g( fs) g
+  a4. g
+  fs e
+  d4 e8 fs4.
+  g4 d8 c4 b8
+  c4. c
+  a4 b8 c( d) e
+  d4. c
+  b8( a) b d4 c8
+  b2.
+}
+
 chrdStrophe = \chordmode {
-  g2. d4.:7 g s2.
+  g2. c d g
+  g2. d4. g s2.
   d4.:7 g
-  c:6 a:7
-  d d:7
-  g e:m
-  c s
-  a:m s
-  d d:7
-  g d:7
+  d a:7
+  d2.
+  g
+  c
+  a:m
+  d:7
+  g4. d:7
   g s
  }
 
@@ -132,6 +159,7 @@ chrdStrophe = \chordmode {
     \new ChordNames { \chrdStrophe }
     \new Staff <<
       \new Voice = "Strophe" { \strophe }
+      \new Voice = "StropheAlt" \stropheAlt
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
