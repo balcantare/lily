@@ -114,13 +114,28 @@ stropheTenor = \relative c' {
   f2. f4
   f4 f f bf,
   c2 c
-  f2. r4
+  a2. r4
 }
 
-stropheBass = \relative c' {
+stropheBass = \relative c, {
   \clef "bass"
   \key f \major
-  s1*16
+  r4 f bf d
+  c f c bf
+  r4 f bf d
+  c f c bf
+  a4 f'2 e4~
+  e d2 f4
+  g e f d
+  e d c c
+  c4 c8 d e4 f
+  g4 f g c,
+  f e8 d c4 bf
+  a4 bf a f
+  a bf2 c4
+  d2. e4
+  f2 c
+  f,2. r4
 }
 
 
