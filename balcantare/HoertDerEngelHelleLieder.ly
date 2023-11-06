@@ -123,7 +123,15 @@ stropheBass = \relative c' {
   g2. r4
 }
 chrdStrophe = \chordmode {
-
+  g1 d2 g
+  g1 d2 g2
+  g2 c
+  a:m d
+  g e:m
+  a:m d
+  g4 d g c
+  g2 d
+  g
 }
 
 \bookpart {

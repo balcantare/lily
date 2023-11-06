@@ -121,9 +121,9 @@ stropheBass = \relative c, {
   \clef "bass"
   \key f \major
   r4 f bf d
-  c f c bf
+  f f c bf
   r4 f bf d
-  c f c bf
+  f f c bf
   a4 f'2 e4~
   e d2 f4
   g e f d
@@ -140,8 +140,21 @@ stropheBass = \relative c, {
 
 
 chrdStrophe = \chordmode {
+  f2 bf
+  f1
+  f2 bf
+  f1
+  f2 c:/e
+  d:m c4 f
+  c2 g
+  c1
+  c1 s
+  f1 s
+  f4 c bf f
+  bf1
+  f2 c
+  f1
   }
-
 \bookpart {
   \paper {
     page-count = #1

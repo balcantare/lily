@@ -10,6 +10,10 @@ lyrStropheA = {
   ü -- ber die Ber -- ge weit,
   ü -- ber die Ber -- ge weit,
   gu -- te Nacht!
+  ü -- ber die Ber -- ge weit,
+  ü -- ber die Ber -- ge weit,
+  gu -- te Nacht!
+
 }}
 
 lyrStropheB = {
@@ -29,14 +33,18 @@ stropheSopran = \relative c' {
   \time 2/2
   g1 \break
   \time 3/2
-  \repeat volta 2 {
+    a4 bf8 c d4 c a2
+    f4 g8 a bf4 a f2
+    c'2( a4 f g) g
+    \time 2/2
+    f1 \break
+  \time 3/2
     a4 bf8 c d4 c a2
     f4 g8 a bf4 a f2
     c'2( a4 f g) g
     \time 2/2
     f1
-  }
-  %\bar "|."
+  \bar "|."
 }
 
 stropheAlt = \relative c' {
@@ -48,9 +56,24 @@ stropheAlt = \relative c' {
   d4 e8 f g4 f d2
   a'2( f4 c d) e
   s1 % f1
+  f4 g8 a bf4 a f2
+  d4 e8 f g4 f d2
+  a'2( f4 c d) e
+  s1 % f1
 }
 
 chrdStrophe = \chordmode {
+  f2 c f
+  s1 bf2
+  c1
+  f2 bf f
+  d:m g:m d:m
+  f1 c2
+  f1
+  f2 bf f
+  d:m g:m d:m
+  f1 c2
+  f1
   }
 
 \bookpart {

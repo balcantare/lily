@@ -12,37 +12,42 @@ stanzaA = \markup {
   \column { \vspace #.2 \leftbrace }
 }
 stanzaB = \markup {
-  \column { \vspace #.4 "2. "}
+  \column { \vspace #.4 "3. "}
   \column { \vspace #.2 \leftbrace }
 }
 
 lyrStropheA = {
   \lyricmode {
-  \set stanza = \stanzaA
+  \set stanza = "1. " %\stanzaA
   Las gal -- li -- nas va a Be -- lén _
-  \set stanza = \stanzaA
+  \set stanza = "1. " %\stanzaA
   y el gal -- lo can -- ta muy bien. _
-  \set stanza = \stanzaA
+  \set stanza = "1. " %\stanzaA
   Bai -- lan un mi -- nu -- e -- ti -- ño
   a -- le --
-  \set stanza = \stanzaA
+  \set stanza = "1. " %\stanzaA
   gran -- do‿a Je -- sùs ni -- ño
   y gi -- ran al -- re -- de --
-  \set stanza = \stanzaA
+  \set stanza = "1. " %\stanzaA
   dor
   de -- lei -- tan -- do‿al Re -- den -- tor.
 }}
 
 lyrStropheB = {
   \lyricmode {
-  %\set stanza = #"2. "
+  \set stanza = "2. "
   Por la no -- che, no por el di -- a,
+  \set stanza = "2. "
   pre -- sen -- ta‿a la Vir -- gen
   Ma -- ri -- a.
+  \set stanza = "2. "
   u -- na tar -- ta el co -- ne -- jo
-  que‿ha tra -- i -- do de muy le -- jos.
-  Lo me -- jor de lo me -- jor
-  pa -- ra nues -- tro Re -- den -- tor.
+  que‿ha tra --
+  \set stanza = "2. "
+  i -- do de muy le -- jos.
+  Lo me -- jor de lo me --
+  \set stanza = "2. "
+  jor pa -- ra nues -- tro Re -- den -- tor.
 }}
 
 
@@ -52,13 +57,13 @@ lyrStropheC = {
     Seht die Hüh -- ner, wie sie da sprin -- gen
     \set stanza = \stanzaB
     auf dem Weg zu beth -- le -- hems Stall. _
-    \set stanza = "2. "
+    \set stanza = "3. "
     Wa -- ckeln lus -- tig mit dem Schwänz -- chen
     und ver --
-    \set stanza = "2. "
+    \set stanza = "3. "
     su -- chen gar ein Tänz -- chen,
     und der Hahn kräht laut: "\"Hur" --
-    \set stanza = "2. " ra!
+    \set stanza = "3. " ra!
     Un -- ser Je -- sus -- kind ist "da!\""
 }}
 
@@ -115,7 +120,7 @@ stropheAlt = \relative c' {
 }
 
 chrdStrophe = \chordmode {
-  s4. c4. g c s c g c
+  c4. c4. g c s c g c
   s
   c2. f g c s f c4. g c
  }
@@ -124,6 +129,7 @@ chrdStrophe = \chordmode {
   \paper {
     page-count = #1
     #(define fonts (book-font 1.2))
+    ragged-last-bottom = ##f
   }
   \bookItem
   \score {

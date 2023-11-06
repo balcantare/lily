@@ -35,12 +35,26 @@ lyrStropheC = {
   \lyricmode {
     \skipA
     \set stanza = "3. "
+    Hier dro -- ben, auf der Hö -- he,
+    da geht ein kal -- ter Wind.
+    \set stanza = "3. "
+    Wie ich mich nach Dir seh -- _ ne,
+    daß wir bei -- sam -- men sind.
+    \set stanza = "3. "
+    Wie ich mich nach Dir seh -- _ ne,
+    daß wir bei -- sam -- men sind.
+}}
+
+lyrStropheD = {
+  \lyricmode {
+    \skipA
+    \set stanza = "4. "
     Ach Lieb' lass dich's er -- bar -- men
     wann ich so e -- lend bin,
-    \set stanza = "3. "
+    \set stanza = "4. "
     Nimm mich in dei -- ne Ar _ -- me,
     so fährt der Win -- ter hin.
-    \set stanza = "3. "
+    \set stanza = "4. "
     Nimm mich in dei -- ne Ar _ -- me,
     so fährt der Win -- ter hin.
 }}
@@ -73,10 +87,10 @@ strophe = \relative c' {
 
 chrdStrophe = \chordmode {
   s4 d1 e:m g2 a d1
-  d e:m g d1
-  e:m g e2 a
+  d s e2:m a d1
+  e:m g e2:m a
   d1
-  e:m g e2 a
+  e:m g e2:m a
   d2
 }
 
@@ -96,6 +110,7 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
+    \new Lyrics \lyricsto "Strophe" \lyrStropheD
     >>
   }
 }

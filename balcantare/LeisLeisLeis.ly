@@ -155,16 +155,17 @@ stropheBass = \relative c {
   a2 b
   cs4 cs b b
   b2( a)~
-  a s2
-  s1
-  s1
-  s1
-  s2 s4 a4~
+  a g2
+  e fs
+  g a
+  b1
+  cs2. a4~
   a2 b
   cs4 cs b b
   b2( a)~
-  a4 s s2
-  s1 s1
+  a4 a b cs
+  d cs b a
+  g1
   a2 g
   d'1
 }

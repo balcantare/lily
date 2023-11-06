@@ -126,6 +126,15 @@ stropheBass = \relative c' {
 
 
 chrdStrophe = \chordmode {
+  s4
+  g1:m
+  s2 d
+  g:m f
+  bf1
+  g:m d
+  g:m d
+  g2:m bf
+  d g4:m
   }
 
 \bookpart {
@@ -137,7 +146,7 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-      \new ChordNames { \chrdStrophe }
+      \new ChordNames { \transpose bf af \chrdStrophe }
       \new Staff <<
         \new Voice = "StropheSopran" { \transpose bf af \stropheSopran }
               >>

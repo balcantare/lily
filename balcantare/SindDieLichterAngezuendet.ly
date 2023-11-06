@@ -112,11 +112,13 @@ stropheAlt = \relative c' {
 }
 
 chrdStrophe = \chordmode {
-  c2. s g s c
-  a:m d:m g c s f
+  c2. g:/b d:m g a:m
+  c d:m g c
+  \set chordBassOnly = ##t
+  c:/e f
   c f c d:m g
-  c s a:m e:m f c
-  d:m a:m g s c s
+  c c:/b a:m e:m f c
+  d:m c f g c s
 }
 
 \bookpart {
