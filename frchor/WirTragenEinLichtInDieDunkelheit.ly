@@ -34,15 +34,15 @@ strophe = \relative c'{
   e4 a fs2
   b4 b8 cs d4 b
   cs2 r2 \break \bar "||"
-  \time 7/8
-  d4. b4 g
-  a4. fs2
-  d'4. b4 g
-  a4.~ a4 r4
-  d4. b4 g
-  a4. fs4 d
-  e8 fs4 g4 a
-  b8[( a) b] a4
+  %\time 7/8
+  d2 b4 g
+  a2 fs2
+  d'2 b4 g
+  a2. r4
+  d2 b4 g
+  a2 fs4 d
+  e4 fs4 g4 a
+  b8( a) b4 a4
   \bar "|."
 }
 
@@ -52,14 +52,14 @@ chrdStrophe = \chordmode {
   g1 d2 a
   d1 a2 fs:m
   g1 a
-  g4. s2
-  d4. s2
-  g4. s2
-  d4. s2
-  g4. s2
-  d4. s2
-  e4.:m s2
-  a4. s4
+  g2 s2
+  d2 s2
+  g2 s2
+  d2 s2
+  g2 s2
+  d2 s2
+  e2:m s2
+  a2 s4
 }
 
 \bookpart {
@@ -70,9 +70,9 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-    \new ChordNames { \transpose d g \chrdStrophe }
+    \new ChordNames { \transpose d d \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe" { \transpose d g  \strophe }
+      \new Voice = "Strophe" { \transpose d d  \strophe }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     >>
