@@ -1,5 +1,5 @@
 \version "2.24.0"
-sheetName = "Hark! The herald angels sing"
+sheetName = "Hark! The herald angels sing (F Dur)"
 sheetComposer = "Brahms, Schubert, Mendelsohn"
 sheetPoet = "Charls Wesley, dt. Beate Tarrach"
 \include "../include/book.ily"
@@ -58,7 +58,9 @@ stropheSopran = \relative c' {
   d g, c b
   a2 \break e'4 e
   e d c b
-  c2 a4 b8_( c)
+  %\override Voice.Stem.length = #3.0
+  c2 a4
+  b8_( c)
   d4 g, g a
   b2 \break e4. e8
   e4 d c b
@@ -170,16 +172,16 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-      \new ChordNames { \chrdStrophe }
+      \new ChordNames { \transpose g f \chrdStrophe }
       \new Staff <<
-        \new Voice = "StropheSopran" { \transpose g g \stropheSopran }
-        \new Voice = "StropheAlt" { \transpose g g \stropheAlt }
+        \new Voice = "StropheSopran" { \transpose g f \stropheSopran }
+        \new Voice = "StropheAlt" { \transpose g f \stropheAlt }
       >>
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheA
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheB
       \new Staff <<
-        \new Voice = "StropheTenor" { \transpose g g \stropheTenor }
-        \new Voice = "StropheBass" { \transpose g g \stropheBass }
+        \new Voice = "StropheTenor" { \transpose g f \stropheTenor }
+        \new Voice = "StropheBass" { \transpose g f \stropheBass }
       >>
     >>
     \layout {
