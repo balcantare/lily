@@ -47,6 +47,7 @@ sheetCopyright = "©friedensingen.de"
 \includeSheet "../bwchor/OdYavoShalomAleinu.ly" % 11
 \includeSheet "SagMirWoDieBlumenSind.ly" % 12
 \includeSheet "../bwchor/SolangeUnsreLiederKlingen.ly" % 13
+\includeSheet "UnserKreisDerSeiOffen.ly"
 \includeSheet "WeShallOvercome.ly"                % 14
 \includeSheet "WerMoechteNichtImLebenBleiben.ly"  % 15
 \includeSheet "WirTragenEinLichtInDieDunkelheit.ly"
