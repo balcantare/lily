@@ -50,6 +50,7 @@ sheetCopyright = "©friedensingen.de"
 \includeSheet "UnserKreisDerSeiOffen.ly"
 \includeSheet "WeShallOvercome.ly"                % 14
 \includeSheet "WerMoechteNichtImLebenBleiben.ly"  % 15
+\includeSheet "WirSindEins.ly"
 \includeSheet "WirTragenEinLichtInDieDunkelheit.ly"
 \includeSheet "../bwchor/WoMenschenSichVergessen.ly"
 \includeSheet "ZogenEinstFuenfWildeSchwaene.ly"   % 16
