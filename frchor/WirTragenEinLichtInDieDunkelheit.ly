@@ -70,18 +70,18 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-    \new ChordNames { \transpose d d \chrdStrophe }
+    \new ChordNames { \transpose d c \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe" { \transpose d d  \strophe }
+      \new Voice = "Strophe" { \transpose d c \strophe }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     >>
-    \layout {
-      \context {
-        \Lyrics
-        \override LyricText.font-size = #+1
-      }
-    }
+%    \layout {
+%      \context {
+%        \Lyrics
+%        \override LyricText.font-size = #+1
+%      }
+%    }
     %\midi {}
   }
 }
