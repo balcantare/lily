@@ -31,7 +31,7 @@ sheetCopyright = "©balcantare.de"
   }
   \markuplist \table-of-contents
 }
-
+\includeSheet "DieSchneekoenigin.ly"
 \includeSheet "EsIstEinSchneeGefallen.ly"
 \includeSheet "GaudeteChristusEstNatus.ly"
 \includeSheet "HappyXMas.ly"
