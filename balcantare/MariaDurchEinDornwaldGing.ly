@@ -94,6 +94,7 @@ stropheAlt = \relative c'' {
   f2 d4-\fermata
 }
 
+
 stropheTenor = \relative c'' {
   \accidentalStyle neo-modern-voice-cautionary
   \voiceTwo
@@ -137,6 +138,26 @@ chrdStrophe = \chordmode {
   d g4:m
   }
 
+zsAlt = \relative c' {
+   \set Staff.keyAlterations = #`((1 . ,FLAT)
+                                 (5 . ,FLAT)
+                                 (6 . ,FLAT))
+   \time 2/2
+
+   c4. df8
+   e8 f g af bf af g f
+   e2 f4. g8
+   af8 c df c bf af g f
+   e2    f4. g8
+   af4 c af8 g f4~
+   f2
+   \bar "||"
+}
+
+chrdZs = \chordmode {
+  c2 s bf:m c df s bf:m c df s c4 f2.:m
+}
+
 \bookpart {
   \paper {
     page-count = #1
@@ -162,11 +183,11 @@ chrdStrophe = \chordmode {
         \new Voice = "StropheBass" { \transpose bf af \stropheBass }
       >>
     >>
-   %  \layout {
-%       \context {
-%         \Lyrics
-%         \override LyricText.font-size = #1
-%       }
-%     }
+  }
+  \score {
+    <<
+    \new ChordNames { \chrdZs }
+    \new Staff << \new Voice = "ZsAlt" { \zsAlt } >>
+    >>
   }
 }
