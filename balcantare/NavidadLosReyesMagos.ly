@@ -10,10 +10,10 @@ lyrStropheA = {
     Lle -- ga -- ron ya los re -- yes y'e -- ran -- tres
    Mel -- chor, Gas -- par, y'el ne -- gro Bal -- ta -- zar.
    A -- rro -- pe‿y miel le lle -- va -- rán
-   y'un pon -- cho blan -- co de al -- pa -- ca real.
+   y'un pon -- cho blan -- co de‿al -- pa -- ca re -- al.
    Chan -- gos y chi -- ni -- tas duer -- man sé
    Que ya Mel -- chor, Gas -- par y Bal -- ta -- zar,
-   To -- dos los re -- ge -- los de -- ja -- rán pa -- ra ju -- gar
+   To -- dos los re -- ga -- los de -- ja -- rán pa -- ra ju -- gar
    ma -- ña -- na‿al des -- per -- tar.
    El Ni -- ño Dio muy bien lo‿a -- gra -- de -- ció
    co -- mió la miel y'el pon -- cho lo‿a -- bri -- gó.
