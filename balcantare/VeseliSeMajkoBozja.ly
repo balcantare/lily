@@ -70,16 +70,16 @@ lyrStropheE = {
     Ve -- sel -- mo se i mi
     bra -- zo ov -- dje za -- jed -- no.
     \set stanza = "3. "
-    Svi se gri -- je -- ha
+    Svi se gri -- jeha
     o -- dre -- ci -- mo,
-    I srda -- čno
+    I sr -- dač -- no
     \set stanza = "3. " u -- te -- ci -- mo,
     Bo -- gu ro -- de -- nom,
     Bo -- gu ro -- de -- nom.
 }}
 lyrStropheF = {
   \lyricmode {
-    Al ve -- sel -- je ne -- ka na -- se bu -- de pra -- ved -- no.
+    Al ve -- sel -- je ne -- ka na -- še bu -- de pra -- ved -- no.
 }}
 lyrStropheG = {
   \lyricmode {
