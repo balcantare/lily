@@ -129,19 +129,21 @@ stropheAlt = \relative c'' {
 }
 
 chrdStrophe = \chordmode {
+  \set chordBassOnly = ##t
   d2. s s a s s s d
   d s s a s s s d
-  g4.:m a d2.:m
-  g4.:m a d2.:m
-  g:m a:7 s d:m g4.:m a
-  d:m s c d:m
-  d:m c d:m s c d:m
+  g4.:m a d:m d:m/a
+  g4.:m a d:m d:m/a
+  g:m g:m/d a:7 a:7/e a a:/e d:m d:m/a g4.:m a
+  d:m d:m c d:m
+  d:m c d:m d:m c d:m
 }
 
 \bookpart {
   \paper {
     page-count = #1
     #(define fonts (book-font 1.1))
+    ragged-last-bottom = ##f
   }
   % \header { subtitle = "" }
   \bookItem

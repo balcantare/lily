@@ -70,7 +70,7 @@ lyrStropheE = {
     Ve -- sel -- mo se i mi
     bra -- zo ov -- dje za -- jed -- no.
     \set stanza = "3. "
-    Svi se gri -- jeha
+    Svi se grije -- ha
     o -- dre -- ci -- mo,
     I sr -- dač -- no
     \set stanza = "3. " u -- te -- ci -- mo,
