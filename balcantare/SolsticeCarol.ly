@@ -150,7 +150,7 @@ stropheBass = \relative c {
 chrdStrophe = \chordmode {
   s4
   d2:m c d2.:m s4
-  f2. c4 f2. s4
+  f2 g4:m7 c4 f2. s4
   c1 f1
   bf2. d:m
   s4
