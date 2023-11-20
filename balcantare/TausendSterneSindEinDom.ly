@@ -8,8 +8,11 @@ lyrStropheA = {
   \lyricmode {
   \set stanza = "1. "
   Tau -- send Ster -- ne sind ein Dom
+  \set stanza = "1. "
   in stil -- ler, wel -- ten -- wei -- ter Nacht.
+  \set stanza = "1. "
   Ein Licht blüht _ auf im Ker -- zen _ -- schein,
+  \set stanza = "1. "
   das uns um -- fängt und glück _ -- lich macht.
 }}
 
@@ -17,8 +20,11 @@ lyrStropheB = {
   \lyricmode {
   \set stanza = "2. "
   All dies Schwei -- gen macht uns froh,
+  \set stanza = "2. "
   ein Leuch -- ten durch die Her -- zen geht.
+  \set stanza = "2. "
   Und sil -- bern _ schwingt der ho -- he _ Dom,
+  \set stanza = "2. "
   vom Hauch der Weih -- nacht still _ um -- weht.
 }}
 
@@ -26,9 +32,13 @@ lyrStropheC = {
   \lyricmode {
   \set stanza = "3. "
   Al -- les Dun -- kel sinkt hin -- weg,
+  \set stanza = "3. "
   wir ha -- ben un -- ser
-  Licht ent -- facht. Es leuch -- tet _ uns zum
+  Licht ent -- facht.
+  \set stanza = "3. "
+  Es leuch -- tet _ uns zum
   neu -- en _ Jahr
+  \set stanza = "3. "
   in tie -- fer, stern -- ver -- klär _ -- ter
   Nacht.
 }}
@@ -43,7 +53,7 @@ stropheSopran = \relative c' {
   g4 g c c
   f f d4. d8
   e4 d8 e c4 c
-  d4 c8 d b4 \breathe e,
+  d4 c8 d b4 \break \breathe e,
   a4 a c c
   d8 c b4 c2
   \bar "|."
@@ -52,7 +62,7 @@ stropheSopran = \relative c' {
 stropheAlt = \relative c' {
   \voiceTwo
   c4 c d b
-  c d8 c b4 \breathe c
+  c d8 c b4 \break \breathe c
   d8 e f4 e8 f g4
   a4 a b4. b8
   b4 b a a8 g
@@ -66,8 +76,8 @@ stropheBass = \relative c' {
   c4 c b g
   f f g a
   b8 c d4 c e,
-  e4 e8 d g4. g8
-  c,4 e f e
+  d4 e8 f g4 \break f
+  c4 e f e
   d d g a8 g
   f4 f e8 g a g
   f4 g <g c,>2
@@ -86,7 +96,8 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.2))
+    #(define fonts (book-font 1.4))
+    ragged-last-bottom = ##f
   }
   \bookItem
   \score {
