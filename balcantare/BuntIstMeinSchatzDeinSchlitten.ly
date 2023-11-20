@@ -7,9 +7,9 @@ lyrStropheA = {
   \lyricmode {
   \set stanza = "1. "
   "\"Bunt" ist, mein Schatz, dein Schlit -- ten,
-  und Glöck -- lein lus -- tig
+  und \set stanza = "1. " Glöck -- lein lus -- tig
   klin -- gen.
-  Und_wo -- hin willst du denn fah -- ren
+  Und_wo -- hin willst du denn \set stanza = "1. " fah -- ren
   mein al -- ler -- liebs -- ter "Schatz?\""
   "\"Das" sag ich "nicht.\""
  }}
@@ -17,8 +17,8 @@ lyrStropheB = {
   \lyricmode {
     \set stanza = "2. "
     "\"Du" wirst dich schon be -- sin -- nen,
-    du wirst mir's schon er -- zäh -- len,
-    wo -- hin du jetzt willst fah -- ren,
+    du \set stanza = "2. " wirst mir's schon er -- zäh -- len,
+    wo -- hin du jetzt willst \set stanza = "2. " fah -- ren,
     mein al -- ler -- lies -- ter "Schatz.\""
     "\"So" hö -- re denn:
   }
@@ -27,8 +27,8 @@ lyrStropheC = {
   \lyricmode {
     \set stanza = "3. "
     Zur Stadt hin will ich fah -- ren,
-    um Sem -- meln ein -- zu -- kau -- fen,
-    für je -- des Mäd -- chen ei -- ne,
+    um \set stanza = "3. " Sem -- meln ein -- zu -- kau -- fen,
+    für je -- des Mäd -- chen \set stanza = "3. " ei -- ne,
     für mei -- ne Lieb -- ste zwei,
     ja Liebs -- te "zwei!\""
 }}
@@ -37,8 +37,8 @@ lyrStropheD = {
   \lyricmode {
     \set stanza = "0. "
     "\"Ha" pi -- sa -- ne su san -- ki
-    a klin -- ko -- ta -- te kon -- je.
-    A hdźe -- ha ty nětk jě -- dźeš,
+    a \set stanza = "0. " klin -- ko -- ta -- te kon -- je.
+    A hdźe -- ha ty nětk \set stanza = "0. " jě -- dźeš,
     ty rja -- ny lu -- by "mój?\""
     "\"Ci" nje -- po -- "wěm.\""
 }}
@@ -63,7 +63,10 @@ strophe = \relative c' {
 }
 
 chrdStrophe = \chordmode {
+ s8
+ f2 s c f s f c f c4 f
 }
+
 
 \bookpart {
   \paper {

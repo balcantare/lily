@@ -5,37 +5,48 @@ sheetComposer = "Reinhard Simmgen, Beate Tarrach"
 
 lyrStropheA = {
   \lyricmode {
+  \set stanza = "1. "
   Wenn die Ta -- ge käl -- ter
   wer -- den und die Näch -- te lang,
-  hört man manch -- mal auf der Er -- den
+  hört man manch -- mal \set stanza = "1. "
+  auf der Er -- den
   ei -- nen hel -- len Klang.
-  Still, hört mal hin, s'ist die Schnee --
+  Still, hört mal
+  hin, \set stanza = "1. "  s'ist die Schnee --
   kö -- ni -- gin!
   was will sie uns lei -- se sa -- gen:
-  'Kin -- der, seid nicht bang.'
+  \set stanza = "1. " 'Kin -- der, seid nicht bang.'
 }}
 
 lyrStropheB = {
   \lyricmode {
+  \set stanza = "2. "
   Sieh, die ers -- ten Flo -- cken
   schwe -- ben auf den Tan -- nen -- baum.
-  Ha -- ben ihm ein Kleid ge -- ge -- ben_aus
+  Ha -- ben ihm ein \set stanza = "2. "
+  Kleid ge -- ge -- ben_aus
   wei -- chem, zar -- tem Flaum
   'Still, schaut mal hin!',
+  \set stanza = "2. "
   sagt die Schnee -- kö -- ni -- gin.
   'Hab' ver -- zau -- bert eu -- re
-  Welt in ei -- nen Win -- ter -- traum.'
+  Welt in \set stanza = "2. "
+  ei -- nen Win -- ter -- traum.'
 }}
 
 lyrStropheC = {
   \lyricmode {
+  \set stanza = "3. "
   Bäu -- me, Wie -- sen und die He -- cke:
   Al -- les liegt ver -- schneit.
-  Un -- ter ei -- ner wei -- ßen
+  Un -- ter ei -- ner \set stanza = "3. "
+  wei -- ßen
   De -- cke_ver -- schla -- fen sie die Zeit.
   'Still, fühl mal hin!'
+  \set stanza = "3. "
   sagt die Schnee -- kö -- ni -- gin.
   'Kalt und ei -- sig ist der Win -- ter_doch
+  \set stanza = "3. "
   weich sein Glit -- zer -- kleid.'
 }}
 
@@ -53,7 +64,7 @@ stropheSopran = \relative c'' {
   f4 f e8( f) e4
   d1
   f2 g4 4
-  a1
+  a1 \break
   f4 f g f8 g
   a2( g)
   a4 a a a
