@@ -19,12 +19,15 @@ stanzaB = \markup {
 lyrStropheA = {
   \lyricmode {
   \set stanza = "1&3. "
-  So this is Chrit -- mas
-  and what have you done?
+  So this is Christ -- mas
+  and what have you/we done?
+  \set stanza = "1&3. "
   An -- o -- ther year o -- ver
   a new one just be -- gun.
+  \set stanza = "1&3. "
   And so this is Christ -- mas.
-  I/we hope you have fun,
+  I/We hope you have fun,
+  \set stanza = "1&3. "
   the near and the dear ones,
   the old and the young.
   A mer -- ry, mer -- ry
@@ -38,10 +41,13 @@ lyrStropheB = {
   \set stanza = #"2. "
   So this is Christ -- mas
   for weak and for strong,
+  \set stanza = #"2. "
   the rich and the poor ones,
   the road is so _ long.
+  \set stanza = #"2. "
   And so hap -- py Christ -- mas,
   for black and for white,
+  \set stanza = #"2. "
   for yel -- low and red  ones
   let's stop all the fights.
 }}
@@ -49,7 +55,7 @@ lyrStropheB = {
 
 lyrStropheC = {
   \lyricmode {
-    %\set stanza = "3. "
+   \set stanza = "Chor: "
    _4.
    War4. is o -- ver
    if you want it,
@@ -74,7 +80,8 @@ strophe = \relative c'' {
   r4 e8 a b c
   b8 a4 r4.
   r4 d,8 b' d b16 a
-  g2.
+  g2. \break
+  \repeat volta 2 {
   r4 g8 e' e e
   \bar "||"
   \key c \major
@@ -84,7 +91,7 @@ strophe = \relative c'' {
   r4 a8 d e f
   e8 d4 r4.
   r4 g,8 e' g e
-  c2.
+  c2. } \break
   r4 c8 a' a a16 a
   g8 f4~ f4.
   r4 f16 f f8 g a
@@ -98,33 +105,19 @@ strophe = \relative c'' {
   \bar "|."
 }
 
-stropheAlt = \relative c'' {
-  \voiceOne
-  s4.
-  b4. a c b
-  c b d c
-  b a g a
-  b a c b
-  e d f e
-  f e g f
-  e d c d
-  c b d c
-  }
-
-stropheBass = \relative c' {
-  \clef "bass"
+stropheTenor = \relative c'' {
+  \clef "treble"
   \key g \major
   s4.
-  g fs a g
-  a gs b a
-  g fs e fs
-  g fs a g
+  <g b> <fs a> <a c> <g b>
+  <a c> <gs b> <b d> <a c>
+  <g b> <fs a> <e g> <fs a>
+  <g b> <fs a> <a c> <g b>
   \key c \major
-  c b d c
-  d cs e d
-  c b a b
-  c b d c
-  s2. s s s s s s s4.
+  <c e> <b d> <d f> <c e>
+  <d f> <cs e> <e g> <d f>
+  <c e> <b d> <a c> <b d>
+  <c e> <b d>
 }
 chrdStrophe = \chordmode {
   s4.
@@ -138,7 +131,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.1))
+    #(define fonts (book-font 1))
   }
   \bookItem
   \score {
@@ -146,13 +139,12 @@ chrdStrophe = \chordmode {
       \new ChordNames { \transpose g c \chrdStrophe }
       \new Staff <<
         \new Voice = "Strophe" { \transpose g c \strophe }
-        \new Voice = "StropheAlt" { \transpose g c \stropheAlt }
       >>
     \new	Lyrics \lyricsto "Strophe" \lyrStropheA
     \new	Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyrStropheC
       \new Staff <<
-        \new Voice = "StropheBass" { \transpose g c \stropheBass }
+        \new Voice = "StropheTenor" { \transpose g c \stropheTenor }
       >>
     >>
   }
