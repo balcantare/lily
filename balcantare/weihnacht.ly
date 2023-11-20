@@ -31,6 +31,8 @@ sheetCopyright = "©balcantare.de"
   }
   \markuplist \table-of-contents
 }
+
+\includeSheet "BraciaPatrzcieJeno.ly"
 \includeSheet "BuntIstMeinSchatzDeinSchlitten.ly"
 \includeSheet "DieSchneekoenigin.ly"
 \includeSheet "EsIstEinSchneeGefallen.ly"
