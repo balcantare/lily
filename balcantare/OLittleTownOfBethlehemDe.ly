@@ -18,6 +18,11 @@ stanzaC = \markup {
   \column { \vspace #.4 "3. "}
   \column { \vspace #.2 \leftbrace }
 }
+stanzaD = \markup {
+  \column { \vspace #.4 "0. "}
+  \column { \vspace #.2 \leftbrace }
+}
+
 lyrStropheA = {
   \lyricmode {
   \set stanza = \stanzaA
@@ -74,6 +79,25 @@ lyrStropheF = {
      und mach uns frei und fromm.
   }
 }
+lyrStropheG = {
+  \lyricmode {
+  \set stanza = \stanzaD
+  O litt -- le town of Beth -- le -- hem,
+  how still we see thee here!
+  \set stanza = "0. "
+  Yet in thy dark streets shi -- neth,
+  the e -- ver -- las -- ting light.
+  \set stanza = "0. "
+  The hopes and fears
+  of all the years
+  are met in thee to -- night.
+}}
+
+lyrStropheH = {
+  \lyricmode {
+  A -- bove thy deep and dream -- less
+  sleep the si -- lent stars go by.
+}}
 
 stropheSopran = \relative c' {
   \voiceOne
@@ -125,7 +149,7 @@ stropheBass = \relative c {
   \clef "bass"
   \key g \major
   d2
-  g <c c,> <b b,> <a a,>
+  g c  b a
   g e d \breathe e
   a, b c d
   <g g,>1. \breathe
@@ -134,7 +158,7 @@ stropheBass = \relative c {
   g2( e) d \breathe d4( c) |
   b2 e c e |
   d1 \breathe e2( fs) |
-  g <c c,> <b b,> <a a,> |
+  g c c b a |
   g e d \breathe e |
   a, b4( e) d2 d |
   <g, g'>1.
@@ -163,7 +187,7 @@ chrdStrophe = \chordmode {
   g1 e:m
   a:m c2 d
   g1 s1
-  g1 d
+  b1:m d
   g s
   e1:m a:m
   d d:7
@@ -188,6 +212,8 @@ chrdStrophe = \chordmode {
         \new Voice = "StropheSopran" { \stropheSopran }
         \new Voice = "StropheAlt" { \stropheAlt }
       >>
+    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheG
+    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheH
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheA
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheB
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheC
@@ -199,11 +225,11 @@ chrdStrophe = \chordmode {
         \new Voice = "StropheBass" { \stropheBass }
       >>
     >>
-   %  \layout {
-%       \context {
-%         \Lyrics
-%         \override LyricText.font-size = #1
-%       }
-%     }
+     \layout {
+       \context {
+         \Lyrics
+         \override LyricText.font-size = #1.5
+       }
+     }
   }
 }
