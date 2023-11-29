@@ -120,9 +120,9 @@ stropheTenor = \relative c' {
 stropheBass = \relative c, {
   \clef "bass"
   \key f \major
-  r4 f bf d
+  r4 f' bf, d
   f f c bf
-  r4 f bf d
+  r4 f' bf, d
   f f c bf
   a4 f'2 e4~
   e d2 f4
@@ -131,11 +131,11 @@ stropheBass = \relative c, {
   c4 c8 d e4 f
   g4 f g c,
   f e8 d c4 bf
-  a4 bf a f
-  a bf2 c4
+  a4 bf a f'
+  a, bf2 c4
   d2. e4
   f2 c
-  f,2. r4
+  f2. r4
 }
 
 
@@ -164,20 +164,20 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-      \new ChordNames { \chrdStrophe }
+      \new ChordNames { \transpose f d \chrdStrophe }
       \new Staff <<
-        \new Voice = "StropheSopran" { \stropheSopran }
-        \new Voice = "StropheAlt" {  \stropheAlt }
+        \new Voice = "StropheSopran" { \transpose f d \stropheSopran }
+        \new Voice = "StropheAlt" { \transpose f d \stropheAlt }
               >>
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheA
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheB
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheC
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheD
     \new Staff <<
-      \new Voice = "StropheTenor" { \stropheTenor }
+      \new Voice = "StropheTenor" { \transpose f d \stropheTenor }
       >>
       \new Staff <<
-        \new Voice = "StropheBass" { \stropheBass }
+        \new Voice = "StropheBass" { \transpose f d \stropheBass }
       >>
     >>
    %  \layout {
