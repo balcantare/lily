@@ -32,11 +32,11 @@ strophe = \relative c' {
   \bar ".|:"
   \repeat volta 2 {
     d8 f16 e d8 c d4
-    d8 e16 f g8 e f e
+    d8 e16 f g8 e f e \break
     d8 f16 e d8 c d4
-    d8 e16 f g8 e f e
+    d8 e16 f g8 e f e  \break
     d8 e16 f g8 e f d
-    f8 e16 d c8 d e4
+    f8 e16 d c8 d e4  \break
     d8 e16 f g8 e f d
     d8 e16 f d8 c d4
   }
