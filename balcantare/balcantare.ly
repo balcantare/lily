@@ -28,6 +28,7 @@
 \includeSheet "AiMoridschej.ly"
 \includeSheet "AjdeJano.ly"
 \includeSheet "AjDevlaleKojOdi.ly"
+\includeSheet "AndoAnTriskell.ly"
 \includeSheet "AndroVerdan.ly"
 \includeSheet "AvecQueLaMarmotte.ly"
 \includeSheet "AvenNashasTusa.ly"
