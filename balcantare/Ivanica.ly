@@ -2,6 +2,42 @@
 sheetName = "Ivanica"
 \include "../include/book.ily"
 
+skipA=\repeat unfold 42 { \skip 8 }
+lyrStropheA = {
+  \lyricmode {
+    \skipA
+    \set stanza = #"1. "
+    Vi _ -- e se vi -- e o -- ro 
+    Ma _ -- ke -- dons _ -- ko _
+    \set stanza = #"1. "
+    Go -- lern so -- bor
+    mi -- se so -- brai kraj _ Va _ -- re -- da -- rot. _
+    O -- o -- tci _ _ pe _ -- se -- na. _ _
+    son _ _ -- ce i _ lju _ _ -- bov.
+    to -- o -- va c _ na _ -- sa
+    Ma -- ke -- do _ -- ni _ -- ja
+  }
+}
+lyrStropheB = {
+  \lyricmode {
+    \skipA
+    \set stanza = #"2. "
+    Si -- ot na -- rod
+    se na -- so -- bral Ma _ -- ke dons _ -- ki _
+    \set stanza = #"2. "
+    Pre -- gr -- na -- til
+    brat -- ski da se raz _ -- re _ -- se _ -- lat.
+}}
+lyrStropheC = {
+  \lyricmode {
+    \skipA
+    \set stanza = #"3. "
+    Da -- li gle -- das, mi -- lo Sko -- pje,
+    da _ -- li slu _ -- sas _
+    \set stanza = #"3. "
+    Kak -- va Ma -- ke -- dons -- ka pes -- na
+    se _ pe _ -- e _ e.
+}}
 strophe = \relative c'' {
   \voiceOne
   %\partial 4
@@ -13,9 +49,9 @@ strophe = \relative c'' {
    \repeat volta 2 {
      g8[ a b] b[ a] g4
      b8[ c d] d[ c] b4
-     d8[ e fs] fs[\prall e] e[\prall d]
+     d8[ e fs] fs[ e] e[\prall d]
      d4. d2
-     fs8[ g a] a[\prall g] g[\prall fs]
+     fs8[ g a] a[\prall g] g[ fs]
      fs4 g8 fs[\prall e] e[\prall d]
      e4 fs8 d[\prall c] c[\prall b]
      b4. b2-\markup{fine}
@@ -138,7 +174,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.5))
+    #(define fonts (book-font 1.2))
   }
   \header {
     title = \sheetName
@@ -151,6 +187,9 @@ chrdStrophe = \chordmode {
       \new Voice = "Strophe" { \strophe }
       \new Voice = "StropheAlt" { \stropheAlt }
       >>
+    \new Lyrics \lyricsto "Strophe" \lyrStropheA
+    \new Lyrics \lyricsto "Strophe" \lyrStropheB
+    \new Lyrics \lyricsto "Strophe" \lyrStropheC  
     >>
   }
 }
