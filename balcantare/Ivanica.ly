@@ -83,7 +83,7 @@ strophe = \relative c'' {
 
    \repeat volta 2 {
      \key g \minor
-     g8[ a bf] bf[\prall a] a[\prall g]
+     g'8[ a bf] bf[\prall a] a[\prall g]
      g[ e g] fs4\prall fs8[ d]
      g8[ a bf] bf[\prall a] a[\prall g]
      d'8[ ef d] c[\prall bf] bf[\prall a]
@@ -124,7 +124,7 @@ stropheAlt = \relative c' {
    c4 c8 b8[ c] a[ b]
    g4. g2
 
-   bf,8[ c d] d[\prall c] c[\prall bf]
+   bf8[ c d] d[\prall c] c[\prall bf]
    cs[ bf cs] d[ a] d[ c]
      bf8[ c d] d[\prall c] c[\prall bf]
      a8[ g' f] ef[\prall d] d[\prall c]
@@ -182,10 +182,10 @@ chrdStrophe = \chordmode {
   \tocItem \markup \sheetName
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames { \transpose g c \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
-      \new Voice = "StropheAlt" { \stropheAlt }
+      \new Voice = "Strophe" { \transpose g c \strophe }
+      \new Voice = "StropheAlt" { \transpose g c \stropheAlt }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
