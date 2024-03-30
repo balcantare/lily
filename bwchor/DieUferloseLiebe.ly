@@ -96,9 +96,9 @@ strophe = \relative c'' {
     b8 a a a~ a4 a8 b
     a8 e e e e e r4  
   } \alternative {
-    {r0 gs8 8 8 8 gs4 8 a8
+    {r1 gs8 8 8 8 gs4 8 a8
      gs8 fs fs fs~ 4 fs8 gs
-     fs8 e e e e e r4 r0
+     fs8 e e e e e r4 r1
     }
     {
       g4 fs8 e8~ e2
