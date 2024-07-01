@@ -168,16 +168,16 @@ chrdStrophe =  \chordmode {
   \bookItem
   \score {
     <<
-    \new ChordNames { \transpose c c \chrdStrophe }
+    \new ChordNames { \transpose d c \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe" { \transpose c c \strophe }
-      \new Voice = "StropheAlt" { \transpose c c \stropheAlt }
+      \new Voice = "Strophe" { \transpose d c \strophe }
+      \new Voice = "StropheAlt" { \transpose d c \stropheAlt }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Staff <<
-      \new Voice = "StropheBass" { \transpose c c \stropheBass }
+      \new Voice = "StropheBass" { \transpose d c \stropheBass }
       >>
 
     >>
