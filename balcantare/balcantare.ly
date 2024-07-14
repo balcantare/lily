@@ -50,6 +50,7 @@
 \includeSheet "JovanoJovanke.ly"
 \includeSheet "JaVstretilVac.ly"
 \includeSheet "KerenSchaworaleDrom.ly"
+\includeSheet "LaGitane.ly"
 \includeSheet "LjubljuZiganaJana.ly"
 \includeSheet "MasurischesSommerliedchen.ly"
 \includeSheet "NaneTsocha.ly"
