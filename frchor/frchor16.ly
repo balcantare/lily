@@ -37,6 +37,7 @@ sheetCopyright = "©friedensingen.de"
 }
 \includeSheet "AllesWohlDemVolke.ly"       % 2
 \includeSheet "DieWeissenTaubenSindMuede.ly"
+\includeSheet "DisLeurQueLonSaime.ly"
 \includeSheet "HabMutKeineAngst.ly"
 \includeSheet "JetztWirdFriedenGemacht.ly" % 3
 \includeSheet "../bwchor/MateAroha.ly"     % 4
