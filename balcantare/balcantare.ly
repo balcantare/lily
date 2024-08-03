@@ -52,6 +52,7 @@
 \includeSheet "JaVstretilVac.ly"
 \includeSheet "KerenSchaworaleDrom.ly"
 \includeSheet "LesChampsElysees.ly"
+\includeSheet "LesChampsElyseesC.ly"
 \includeSheet "LaGitane.ly"
 \includeSheet "LjubljuZiganaJana.ly"
 \includeSheet "MasurischesSommerliedchen.ly"
