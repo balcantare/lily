@@ -32,20 +32,17 @@ lyrStropheA = {
   \set stanza = \stanzaA
   
   à l'in -- con -- nu
-  J'a -- vais en -- vie de 
+  J'a -- vai -- s‿en -- vie de 
   dire Bon -- jour 
   \set stanza = \stanzaA
   à n'im -- por -- te qui
-  \skipB
-  Aux Champs -- É -- ly -- sées
-  aux Champs -- É -- ly -- sées
 }}
 
 lyrStropheAA = {
   \lyricmode {
     \skipA
     N'im -- por -- te qui et ce fut toi
-    _ Je t'ai dit n'im -- por -- te quoi
+    et je t'ai dit n'im -- por -- te quoi
     Il suf -- fi -- sait 
     de te par -- ler   
      \skipB pour
@@ -61,10 +58,12 @@ lyrStropheB = {
   _ sous la pluie, 
   _ à mi -- di \set stanza = #"r. "
   ou à mi -- nuit
-  Il y a tout c'que vous vou -- lez 
+  Il y a tout‿c' -- que vous vou -- lez 
   \set stanza = #"r. " \skipB aux 
-  Champs -- Él -- y -- sées.
-
+  Champs -- Él -- y -- sées. 
+  \set stanza = #"r. "
+  Aux Champs -- É -- ly -- sées
+  aux Champs -- É -- ly -- sées
 }}
 
 lyrStropheC = {
@@ -74,7 +73,7 @@ lyrStropheC = {
     _ Tu m'as dit J'ai rend -- ez -- vous
     dans un sous -- sol \set stanza = \stanzaB 
     a -- vec des fous
-    qui vivent la gui -- tare à la main, 
+    qui vivent la gui -- ta -- re‿à la main, 
     \set stanza = \stanzaB
     du soir au ma -- tin
 }}
@@ -85,7 +84,7 @@ lyrStropheCC = {
     A -- lors, je t'ai ac -- comp -- agn -- ée
     on a chan -- té, on a dan -- sé
     Et l'on n'a mê -- me pas pen -- sé  
-    \skipB à s'em _ -- bras -- ser.
+    \skipB _ à -- s'em -- bras -- ser.
     %\set stanza = #"3. "
 }}
 
@@ -93,10 +92,9 @@ lyrStropheD = {
   \lyricmode {
     \skipA
   \set stanza = \stanzaC
-  _ Hi -- er soir deux in -- con -- nus et ce ma -- tin,
+  Hi -- er au soir deux‿ in -- con -- nus et ce ma -- tin,
   \set stanza = \stanzaC
-  sur l'av -- e -- nue deux a -- mou -- reux, tout 
-  é -- tour -- dis 
+  sur l'av -- e -- nue deux‿ a -- mou -- reux, tou -- t‿é -- tour -- dis 
   \set stanza = \stanzaC
   par la lon -- gue nuit
 }}
@@ -146,9 +144,25 @@ strophe = \relative c'' {
 chrdStrophe = \chordmode {
   a2:m7 d:7 g e:m a:m7 d:7 g s
   g b:7 e:m g:7 c
-  g a:7 s4 s8. s16 c4 d8:7 g s2
+  g a:7 d4 s8. s16 c4 d8:7 g s2
   g b:7 e4:m g:7 s2 c2 g a4:7 d:7 s2
  }
+
+%% Implement an alternate lyric context
+\layout {
+  \context {
+    \Lyrics
+    \name AltLyrics
+    \alias Lyrics
+    \override StanzaNumber.font-series = #'medium
+    \override LyricText.font-shape = #'italic
+    %\override LyricText.color = #(x11-color 'grey20)
+  }
+  \context {
+    \StaffGroup
+    \accepts AltLyrics
+  }
+}
 
 \bookpart {
   \paper {
@@ -159,13 +173,13 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-      \new ChordNames { \chrdStrophe }
+      \new ChordNames { \transpose g g \chrdStrophe }
       \new Staff <<
-        \new Voice = "Strophe" { \strophe }
+        \new Voice = "Strophe" { \transpose g g \strophe }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheAA
-    \new Lyrics \lyricsto "Strophe" \lyrStropheB
+    \new AltLyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheCC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
