@@ -1,6 +1,7 @@
-\version "2.24.0"
+\version "2.24.2"
+sheetCopyright = "©balcantare.de"
 #(define book-staff-size 20)
-\include "book.ily"
+\include "../include/book.ily"
 
 \bookpart {
   \paper{
@@ -19,14 +20,16 @@
   }
   \markup { \fill-line { \center-column {
 	  \line {\abs-fontsize #20 "Balcantare Musikbuch"}
-	  \vspace #1.5
-	  \line {\abs-fontsize #12 "Teil II, 20pt"}
-	  \null
+	  \vspace #2
+        \line { \abs-fontsize #10 "Teil II, 20pt"}
+        \line { \abs-fontsize #10 "balcantare.de"}
+        \vspace #8
 	} } }
   \markuplist \table-of-contents
 
 }
 
+\includeSheet "DisLeurQueLonSaime.ly"
+\includeSheet "DisLeurQueLonSaimeGm.ly"
 \includeSheet "OpaCupa.ly"
 \includeSheet "OpaCupaDm.ly"
-
