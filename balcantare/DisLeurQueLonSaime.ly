@@ -4,7 +4,7 @@ sheetComposer = "HK"
 #(define book-staff-size 20)
 \include "../include/book.ily"
 
-transTo=c
+transTo=bf,
 %transTo=df
 
 skipA=\repeat unfold 21 \skip 8
@@ -27,7 +27,7 @@ lyrStropheA = {
   \lyricmode {
     \skipA
     \set stanza = #"ref. "
-    Oh mais⃫ dis⃫ -- -leur que l'on s'ai -- me
+    Oh mais⃫ dis⃫ -- -leur que l'on s'ai -- me⃫
     Dis⃫ -- -leur que ça nous⃫ fait du bien
     En quoi c'‿la s'rai -- t‿il un pro -- blè -- me
     Nous⃫ nous⃫ te -- nons⃫ par la main
@@ -45,7 +45,7 @@ lyrStropheA = {
     Que commence _ _ le nou -- veau mon -- de
     \set stanza = #"1. "
     Dis⃫ -- leurs⃫ nos⃫ corps⃫ qui vi -- bren⃫t⃫
-    Nos no -- tes⃫ de mu -- si -- que
+    Nos⃫ no -- tes⃫ de mu -- si -- que
     \set stanza = #"1. " Dis⃫ -- leur que nous som -- mes⃫ lib -- res⃫
     \set stanza = #"1. " A cha -- que pas⃫ de danse⃫ sur la pla -- ce pu -- blique⃫
 
@@ -55,7 +55,7 @@ lyrStropheA = {
 lyrStropheAA = {
   \lyricmode {
     \skipB
-    Dis⃫ -- leur nos⃫ cœurs⃫ qui s'ouvren⃫t⃫
+    Dis⃫ -- leur nos⃫ cœurs⃫ qui s'ouvre⃫n⃫t⃫
     _ Quand⃫ le monde_s 'i -- so -- le
     Dis⃫ -- leur qu'on se re -- trouve
     É -- man -- ci -- pés⃫ des⃫ ca -- mi -- so -- les⃫
@@ -86,8 +86,9 @@ lyrStropheBB = {
     \skipB
     Dis⃫ -- leur que l'on a -- vance
     Que c'est in -- ex -- o -- rab -- le
-    Croi -- sant nos dif -- fé -- ren -- ce⃫s⃫
-    Sui -- vant⃫ l'i -- n‿ac -- ces⃫ -- sib -- le⃫‿é -- toile⃫
+    Croi -- sant nos 
+    dif -- fé -- rence⃫s⃫ Sui -- vant⃫ 
+    l'i -- n‿ac -- ces⃫ -- sib -- le⃫‿é -- toi -- le
 }}
 
 strophe = \relative c'' {

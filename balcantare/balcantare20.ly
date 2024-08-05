@@ -30,6 +30,5 @@ sheetCopyright = "©balcantare.de"
 }
 
 \includeSheet "DisLeurQueLonSaime.ly"
-\includeSheet "DisLeurQueLonSaimeGm.ly"
 \includeSheet "OpaCupa.ly"
 \includeSheet "OpaCupaDm.ly"
