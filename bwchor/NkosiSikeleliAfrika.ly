@@ -100,13 +100,15 @@ stropheSopran = \relative c' {
     f4 e
   } \alternative {
     { f2 }
-    { f8 }
+    { \set Score.measurePosition = #(ly:make-moment 0/4)
+      f8 
+    }
   }
   \repeat volta 2 {
     f8 f a 
-    \time 2/4
+ %   \time 2/4
     c4 a
-    \time 4/4
+ %   \time 4/4
     g2~ g8 bf a g
     f8 f f a c a c a
     g2~ g8 bf a g
