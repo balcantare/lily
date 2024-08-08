@@ -1,6 +1,6 @@
 \version "2.22.2"
 sheetCopyright = "©balcantare.de"
-#(define book-staff-size 16)
+#(define book-staff-size 20)
 \include "../include/book.ily"
 
 \bookpart {
@@ -26,7 +26,7 @@ sheetCopyright = "©balcantare.de"
 	\line { \abs-fontsize #18 "Bunte Welt Chors"}
 	\vspace #2
 	\line { \abs-fontsize #18 "Soritz"}
-        \line { \abs-fontsize #10 "Teil II, 16pt"}
+        \line { \abs-fontsize #10 "Teil II, 20pt"}
         \line { \abs-fontsize #10 "balcantare.de"}
         \vspace #8
       }
@@ -36,7 +36,4 @@ sheetCopyright = "©balcantare.de"
   \markuplist \table-of-contents
 }
 
-\includeSheet "HuetetDieFlamme.ly"
-\includeSheet "MateAroha.ly"
-\includeSheet "NkosiSikeleliAfrika.ly"
-\includeSheet "Tourdion.ly"
+\includeSheet "FlussDesLebens.ly"

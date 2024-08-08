@@ -1,7 +1,7 @@
 \version "2.22.2"
 sheetName = "Fluß des Lebens"
 sheetComposer = "Beate Tarrach"
-#(define book-staff-size 16)
+#(define book-staff-size 20)
 \include "../include/book.ily"
 
 
@@ -61,11 +61,12 @@ strophe = \relative c'' {
   d8. a16~ a8 a a4. a8
   b8. a16~ a8 g a4 d8 e
   f8 e4 d8 a4 b 
-  a2. a8 a
+  a2. \break 
+  a8 a
   b8 4 8 4 b8 cs
   d8 a4 g8 fs4. 8
   g8. g16~ 8 8 8. fs16~ 8 g 
-  e2. 
+  e2. %\break 
   \oneVoice
   a8 g
   fs8 8 8 e16 fs~ fs8 8 8 a
@@ -77,6 +78,7 @@ strophe = \relative c'' {
   g8 g4 g8 4 fs
   fs2.
   \voiceTwo
+  \break 
   fs8. e16
   fs2~ 8 a g fs
   d2. d8 d
@@ -122,7 +124,8 @@ stropheAlt = \relative c' {
 
 stropheBass = \relative c' {
 %  \clef "bass"
-  \key d \major
+%  \key d \major
+  \voiceFour
   e8
   fs8. fs16~ 8 e fs4. a8
   g8. fs16~ 8 e fs4 fs8 e
@@ -172,13 +175,14 @@ chrdStrophe =  \chordmode {
     \new Staff <<
       \new Voice = "Strophe" { \transpose d c \strophe }
       \new Voice = "StropheAlt" { \transpose d c \stropheAlt }
-      >>
+      %\new Voice = "StropheBass" { \transpose d c \stropheBass }
+    >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
-    \new Staff <<
-      \new Voice = "StropheBass" { \transpose d c \stropheBass }
-      >>
+    %\new Staff <<
+    %  \new Voice = "StropheBass" { \transpose d c \stropheBass }
+    %  >>
 
     >>
     \layout {
