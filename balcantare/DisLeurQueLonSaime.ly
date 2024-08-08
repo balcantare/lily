@@ -56,7 +56,7 @@ lyrStropheAA = {
   \lyricmode {
     \skipB
     Dis⃫ -- leur nos⃫ cœurs⃫ qui s'ouvre⃫n⃫t⃫
-    _ Quand⃫ le monde_s 'i -- so -- le
+     Quand⃫ le mon -- de s'‿i -- so -- le
     Dis⃫ -- leur qu'on se re -- trouve
     É -- man -- ci -- pés⃫ des⃫ ca -- mi -- so -- les⃫
 }}
@@ -135,10 +135,10 @@ strophe = \relative c'' {
   %ef df df c df c df c
   %df bf \break  
   r bf bf bf bf ef
-  ef bf r4 r2
-  r4 r8 ef ef ef ef c
-  df bf \break  r4 r2
-  f'8 f4. f16 16 f4 df8
+  ef bf \voiceOne r4 r2
+  r4 r8  ef ef ef ef c
+  df bf \break \voiceOne r4 r4.
+  f'8 f4 f8 8 f4 df
   ef8 bf r4 r4. \break ef8
   ef ef ef c df4. df8 c c  df 
   c bf4 r4
@@ -149,12 +149,10 @@ accomp = \relative c'' {
   \voiceThree
   s2.
   s1*28
-  s4 ef8 bf a bf ef bf
+  s4 \voiceTwo ef8 bf a bf ef bf
   ef4 s2.
-  s4 df8 bf df bf a bf
-  df4 s2.
-  s4 ef8 bf a bf ef bf\noBeam
-  ef4
+  s4 df8 bf \voiceTwo a bf df4 s4 s2.
+  s4 ef8 bf a bf ef4 
 }
 
 chrdStrophe = \chordmode {
