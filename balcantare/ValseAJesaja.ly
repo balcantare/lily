@@ -45,6 +45,7 @@ strophe = \relative c' {
   f,2 r8 c'
   d8[ d] \tuplet 3/2 4 { c8( d c) b(c b) }
   e,2 r8 e8
+  \set TabStaff.minimumFret = #5
   ef[ fs] a[ c] b a 
   \set TabStaff.minimumFret = #4
   gs f e[ d] \tuplet 3/2 {c16( d c)} b8
@@ -85,9 +86,9 @@ strophe = \relative c' {
   \repeat volta 1 {
     \set Score.repeatCommands = #'((volta "1 & 2.") end-repeat)
   r8 e8
-  ef fs a[ c] b a
+  ef fs a[ c] b
   \set TabStaff.minimumFret = #4
-
+  a
   gs f e[ d] \tuplet 3/2 {c16( d c)} b8
   a2 r4 
   \set Score.repeatCommands = #'((volta #f))

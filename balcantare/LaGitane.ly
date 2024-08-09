@@ -44,7 +44,10 @@ strophe = \relative c' {
   a4 r8 a8 \tuplet 3/2 {f g gs} 
   a8 f' \tuplet 3/2 {g8 f e} \tuplet 3/2 {d c bf}
   a4 r a4
+  \set TabStaff.restrainOpenStrings = ##t
+    \set TabStaff.minimumFret = #1  
   r8 e'16( d) cs8[ d] cs d
+  \set TabStaff.restrainOpenStrings = ##f
   ef d c[\3 bf] a g
   fs a c[\3 ef] fs a
   g16( a g8) \parenthesize d8 bf8 g[ f]
