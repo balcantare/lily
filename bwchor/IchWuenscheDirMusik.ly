@@ -4,7 +4,7 @@ sheetComposer = "Reinhard Simmgen"
 sheetPoet = "Beate Tarrach"
 \include "../include/book.ily"
 
-skipA=\repeat unfold 15 \skip 8
+skipA=\repeat unfold 16 \skip 8
 
 lyrStropheA = {
   \lyricmode {
@@ -32,7 +32,7 @@ lyrStropheB = {
   \lyricmode {
   \repeat unfold 21 \skip 8
   \set stanza = #"5. " Blu -- men -- wie -- se
-  \repeat unfold 46 \skip 8
+  \repeat unfold 47 \skip 8
    \set stanza = #"3. "
    Ich wün -- sche dir das Zu -- ver -- sicht dich _ 
    aus dem Schat -- ten führt, _
@@ -44,7 +44,7 @@ lyrStropheB = {
 
 lyrStropheC = {
   \lyricmode {
-  \repeat unfold 71 \skip 8  
+  \repeat unfold 72 \skip 8  
   \set stanza = #"4. "
   Ich wün -- sche dir den hel -- len Mut,
   dei -- nem Bauch -- ge -- fühl zu fol -- gen,
@@ -74,22 +74,22 @@ strophe = \relative c' {
   c4
   g'4 g g c 
   a g f e
-  d4 d4 e4 f
-  e2 r4 %\break 
-  c
+  d4 d4 d e4 
+  g,2 r4 %\break 
+  g4
   a'4 a a a
-  a g g f
+  a g a g 
   g4 e2.
   r2.
   %\break 
   c4
   g'4 g g c 
   a g f e
-  d4 d4 e4 f
-  e2 r4 %\break 
+  d4 d4 d e4 
+  g,2 r4 %\break 
   c
   f4 f f g 
-  e4 e d4 c
+  e4 d d4 c
   c2 r2
   r2 \break
   \mark \markup{ \fontsize #4 *}
@@ -98,7 +98,7 @@ strophe = \relative c' {
     a2 g4 f
     d2 e4 f 
     g2 f4 e
-    c2. e4
+    c2. d8 e
     f2 e4 d 
     b2 c4 d 
   } \alternative {
@@ -107,20 +107,20 @@ strophe = \relative c' {
   }
   \bar "||" \break
   c4
-  g'4 g g c 
-  a g f e8 8
-  d4 d4 e4 f
-  f4 e2 \break c4
-  a'4 a a a
-  a g g e
-  d4 d e f
-  f e2 \break e8 g
+  g'4 g g g 
+  g f e c8 8
+  f4 f4 f4 f
+  f4 f2 \break c4
+  f4 f f f
+  f e d c
+  e e e e 
+  e e2 \break e8 g
   c4 c c c
-  b a g e
-  f f g a 
-  g2. \break d8 e
+  c b a  e
+  g f f e 
+  f2. \break c8 c
   f4 f f g 
-  e e d d 
+  e d d c 
   c1 r2
   \mark \markup{ \fontsize #4 *}
  \bar "|."
@@ -134,9 +134,9 @@ chrdStrophe = \chordmode {
   f g c s
   f g c a:m
   f g c s2 c1 s
-  c f g c f
-  c g c a:m
-  g f c f g c
+  c s d:m s f
+  g c s a:m s
+  d:m s f g c
  }
 
 \bookpart {
