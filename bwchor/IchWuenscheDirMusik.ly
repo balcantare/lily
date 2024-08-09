@@ -1,7 +1,6 @@
 \version "2.24.2"
 sheetName = "Ich wünsche dir Musik"
-sheetComposer = "Reinhard Simmgen"
-sheetPoet = "Beate Tarrach"
+sheetComposer = "Frowin"
 \include "../include/book.ily"
 
 skipA=\repeat unfold 16 \skip 8
