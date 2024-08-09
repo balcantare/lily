@@ -1,6 +1,7 @@
-\version "2.22.2"
+\version "2.24.2"
 sheetName = "La Gitane"
 sheetComposer = "Paul Tchan Tchou Vidal"
+#(define book-staff-size 20)
 \include "../include/book.ily"
 
 strophe = \relative c' {
@@ -23,22 +24,22 @@ strophe = \relative c' {
   4 \tuplet 3/2 {bf8 a g} \tuplet 3/2 {f e d }
   cs4~ <cs e g b>2
   r4 \tuplet 3/2 {bf'8 a g} \tuplet 3/2 {f e d }
-  cs4~ <cs e g b>2 r8 \break 
+  cs4~ <cs e g b>2  %\break 
   \repeat volta 2 { \bar "|" }
   \alternative{
-   {a cs[ e] g bf
+   {r8 a cs[ e] g bf
     cs e g[ f] e d
     cs16( d cs8) bf[ a] g f
     e16( f e8) d8[ e] f g
-    a8 \bar "||" 
+    a8 \bar "||" % \break 
   }
-  { r8 \tuplet 3/2 4 {a,8 cs e g bf~ <bf cs g'>~}
+  { r4 \tuplet 3/2 4 {a,8 cs e g bf~ <bf cs g'>~}
     4 4 <cs e bf'>4 
     4 <e g cs>4 4
     <g bf e>4 r8 <f a d>8 4 
     r8 \bar "||" 
   }
-  } \break
+  } %\break
   f \tuplet 3/2 {g8 f e} \tuplet 3/2 {d c bf}
   a4 r8 a8 \tuplet 3/2 {f g gs} 
   a8 f' \tuplet 3/2 {g8 f e} \tuplet 3/2 {d c bf}
@@ -56,7 +57,7 @@ strophe = \relative c' {
   a4~ <a e' g cs f>4. cs'8
   d4 a f 
   d8 }
-  \pageBreak
+  \break
     \mark \markup{ \box{\fontsize #2 B}}
     r8 \tuplet 3/2 { a''8( bf) a } gs8 a
     bf a g\2[ f\2] e\2 d\3
@@ -93,7 +94,7 @@ strophe = \relative c' {
     cs e g[ bf] a f\1
     \set TabStaff.minimumFret = #0
     d4 a f 
-    d8 \bar "||" \pageBreak
+    d8 \bar "||" \break
     \mark \markup{ \box{\fontsize #2 A}}
     f'8 \tuplet 3/2 {g8 f e} c bf
     a4 r8 a8 \tuplet 3/2 {f g gs} 
@@ -131,7 +132,7 @@ strophe = \relative c' {
     e \tuplet 3/2 {d16 e d} cs8 bf \tuplet 3/2 { a8( bf a)}
     g8 f e[ g] f e
     \tuplet 3/2 4 {d8 cs d f f f a a a }
-    d4 \bar "||" \pageBreak
+    d4 \bar "||" \break
     \mark\markup{ \box{\fontsize #2 C}}
     \key d \major
     r8 a8 b d
@@ -173,7 +174,7 @@ strophe = \relative c' {
     \tuplet 3/2 { a( bf a) } g[ g] e e
     \tuplet 3/2 4 { d8 8 8 fs fs fs a a a}
     d4 gs, a
-    \bar "||" \pageBreak
+    \bar "||" \break
     \mark\markup{ \box{\fontsize #2 A}}    
     \key d \minor
     \set TabStaff.minimumFret = #0    
@@ -269,14 +270,11 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    page-count = #5
+    page-count = #4
     #(define fonts (book-font 1))
     ragged-last-bottom = ##t
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem 
   \score {
     <<
     \new ChordNames { \chrdStrophe }
