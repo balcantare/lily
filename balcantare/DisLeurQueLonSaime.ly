@@ -45,7 +45,7 @@ lyrStropheA = {
     Que commence _ _ le nou -- veau mon -- de
     \set stanza = #"1. "
     Dis⃫ -- leurs⃫ nos⃫ corps⃫ qui vi -- bren⃫t⃫
-    Nos⃫ no -- tes⃫ de mu -- si -- que
+    _ _ Nos⃫ no -- tes⃫ de mu -- si -- que
     \set stanza = #"1. " Dis⃫ -- leur que nous som -- mes⃫ lib -- res⃫
     \set stanza = #"1. " A cha -- que pas⃫ de danse⃫ sur la pla -- ce pu -- blique⃫
 
@@ -72,7 +72,7 @@ lyrStropheB = {
     Sur cet -- te Terr⃫e⃫ qui nous⃫ res⃫ -- sem -- ble
     \set stanza = #"2. "
     Dis⃫ -- leur que l'o -- n‿in -- ven -- te 
-    Un autre chant des⃫ pos⃫ -- sib -- les⃫
+    Un au -- tre chant _ des⃫ pos⃫ -- sib -- les⃫
     \set stanza = #"2. "
     Comm⃫e⃫ ce -- s‿oi _ -- seaux qui chan -- ten⃫t⃫
     \set stanza = #"2. "
@@ -136,7 +136,7 @@ strophe = \relative c'' {
   %df bf \break  
   r bf bf bf bf ef
   ef bf \voiceOne r4 r2
-  r4 r8  ef ef ef ef c
+  r8 ef ef ef ef ef ef c
   df bf \break \voiceOne r4 r4.
   f'8 f4 f8 8 f4 df
   ef8 bf r4 r4. \break ef8
