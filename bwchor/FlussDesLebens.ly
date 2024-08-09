@@ -1,7 +1,7 @@
 \version "2.22.2"
 sheetName = "Fluß des Lebens"
 sheetComposer = "Beate Tarrach"
-#(define book-staff-size 20)
+%#(define book-staff-size 20)
 \include "../include/book.ily"
 
 
@@ -125,7 +125,7 @@ stropheAlt = \relative c' {
 stropheBass = \relative c' {
 %  \clef "bass"
 %  \key d \major
-  \voiceFour
+  %\voiceFour
   e8
   fs8. fs16~ 8 e fs4. a8
   g8. fs16~ 8 e fs4 fs8 e
@@ -164,7 +164,7 @@ chrdStrophe =  \chordmode {
 
 \bookpart {
   \paper {
-    page-count = #1
+    page-count = #2
     #(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
@@ -180,9 +180,9 @@ chrdStrophe =  \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
-    %\new Staff <<
-    %  \new Voice = "StropheBass" { \transpose d c \stropheBass }
-    %  >>
+    \new Staff <<
+      \new Voice = "StropheBass" { \transpose d c \stropheBass }
+      >>
 
     >>
     \layout {

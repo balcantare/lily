@@ -36,4 +36,3 @@ sheetCopyright = "©balcantare.de"
   \markuplist \table-of-contents
 }
 
-\includeSheet "FlussDesLebens.ly"
