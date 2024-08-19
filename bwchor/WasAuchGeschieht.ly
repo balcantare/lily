@@ -71,6 +71,19 @@ stropheSopran = \relative c' {
   \accidentalStyle neo-modern %-voice-cautionary
   \time 4/4
   \key d \minor
+  \stopStaff
+  \omit Staff.Clef
+  \omit Staff.KeySignature
+  \omit Staff.StaffSymbol
+  \startStaff
+  s1*4 
+  \break
+
+  \stopStaff
+  \undo \omit Staff.Clef
+  \undo \omit Staff.KeySignature
+  \undo \omit Staff.StaffSymbol
+  \startStaff
   \voiceOne
   d8 a' a a a g g f
   f e g e d4 d
@@ -96,6 +109,7 @@ stropheSopran = \relative c' {
 
 strophe = \relative c' {
     %\voiceTwo
+  s1*4  
   \voiceTwo
   d8 f f f f e e d
   c c c c d4 d
@@ -112,9 +126,11 @@ strophe = \relative c' {
   a,8. a16 cs8 a d2
 }
 
-
-
+chrdIntro = \chordmode {
+   d2:m c d:m a:7 d:m a:7 d1:m
+}
 chrdStrophe = \chordmode {
+  s1*4
   d1:m a2:m7 d:m
   d1:m a2:m7 d:m
   c f
@@ -133,12 +149,17 @@ chrdStrophe = \chordmode {
     ragged-last-bottom = ##f
   }
   \bookItem
+             
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
-    \new Staff <<
-      \new Voice = "StropheSopran" { \stropheSopran }
-      \new Voice = "Strophe" { \strophe }
+    \new ChordNames \chrdStrophe 
+    \new Staff \with {\accepts ChordNames}
+    <<
+      \new ChordNames \with {
+         \override ChordName.Y-offset = #-1.5 
+       } \chrdIntro 
+      \context Voice = "StropheSopran" { \stropheSopran }
+      \context Voice = "Strophe" { \strophe }
       >>
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheA
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheB
