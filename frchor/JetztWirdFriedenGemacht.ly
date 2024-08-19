@@ -4,11 +4,13 @@ sheetComposer = "Beate Tarach"
 #(define book-staff-size 16)
 \include "book.ily"
 
+tran = d
+
 skipA = \repeat unfold 11 { \skip 2 }
 
 lyrStropheA = {
   \lyricmode {
-    \skipA
+    %\skipA
   \set stanza = #"1. "
   \repeat unfold 3 { \skip 16}
   Im -- mer wenn das Blatt sich wen -- det,
@@ -38,7 +40,7 @@ lyrStropheA = {
 
 lyrStropheB = {
   \lyricmode {
-    \skipA
+    % \skipA
   \set stanza = #"2. "
   Ich hab ge -- hofft, \skip 16 daß das Blatt sich
   jetzt_wen -- det.
@@ -63,7 +65,7 @@ lyrStropheB = {
 
 lyrStropheC = {
   \lyricmode {
-    \skipA
+    %\skipA
   \set stanza = #"3. "
   \skip 16 \skip 16 Da -- mit sich \skip 16 die Blätter mal wen -- den,
   \set stanza = #"3. "
@@ -85,7 +87,7 @@ lyrStropheC = {
 
 lyrStropheD = {
   \lyricmode {
-    \skipA
+    %\skipA
   \set stanza = #"4. "
   Ich will er -- le -- ben,
   wie das Blatt sich wen -- det,
@@ -110,12 +112,9 @@ strophe = \relative c'{
   %\partial 4
   %\bar "|."
   \mark \markup{ \fontsize #4 *}
-  r1
-  e4 g2.
-  a8 g~ g2.
-  \tuplet 3/2 { f8 e f }
-  d8 c~ c4. d8
-  d2. \bar "" \break r16  e e d
+  s1*3
+  s2. 
+  \bar "" \break r16  e e d
   e16 e e d e8
   d16 e~
   e16
@@ -165,7 +164,7 @@ strophe = \relative c'{
 }
 
 chrdStrophe = \chordmode {
-  c1:7+ s s s s
+  c1:7+ a:m f g
   c a:m f  d2:m g2
   s2.
   c1 a:m d:m f g
@@ -182,9 +181,9 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames { \transpose c \tran \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" { \transpose c \tran \strophe }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
