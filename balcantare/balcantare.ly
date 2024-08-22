@@ -63,6 +63,7 @@
 \includeSheet "Rutschejok.ly"
 \includeSheet "Schiffsjungentanz.ly"
 \includeSheet "SchukaHisOZiro.ly"
+\includeSheet "StadtDerMusik.ly"
 \includeSheet "StoMiEMilo.ly"
 \includeSheet "TumBalalaike.ly"
 \includeSheet "UtcaUtca.ly"
