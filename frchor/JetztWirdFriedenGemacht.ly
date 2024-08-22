@@ -112,9 +112,20 @@ strophe = \relative c'{
   %\partial 4
   %\bar "|."
   \mark \markup{ \fontsize #4 *}
+  \stopStaff
+  \omit Staff.Clef
+  \omit Staff.KeySignature
+  \omit Staff.StaffSymbol
+  \startStaff
   s1*3
-  s2. 
-  \bar "" \break r16  e e d
+  s2.
+  \break 
+  \stopStaff
+  \undo \omit Staff.Clef
+  \undo \omit Staff.KeySignature
+  \undo \omit Staff.StaffSymbol
+  \startStaff
+  r16  e e d
   e16 e e d e8
   d16 e~
   e16
@@ -163,14 +174,17 @@ strophe = \relative c'{
   \bar "|."
 }
 
+chrdIntro = \chordmode {
+   c1:7+ a:m f g
+}
 chrdStrophe = \chordmode {
-  c1:7+ a:m f g
-  c a:m f  d2:m g2
-  s2.
-  c1 a:m d:m f g
+  s1*4
+  c1:7+ a:m f d2:m g1 s4
+  c1 a:m f  d2:m f g2
+  s2
   c1 a:m d:m g
-  c a:m d:m g
-  a:m
+  c1 a:m d:m g
+  a:m 
 }
 
 \bookpart {
@@ -183,6 +197,9 @@ chrdStrophe = \chordmode {
     <<
     \new ChordNames { \transpose c \tran \chrdStrophe }
     \new Staff <<
+      \new ChordNames \with {
+         \override ChordName.Y-offset = #-1.5 
+       } \transpose c \tran \chrdIntro
       \new Voice = "Strophe" { \transpose c \tran \strophe }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
