@@ -1,6 +1,6 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetCopyright = "©friedensingen.de"
-\include "book.ily"
+\include "../include/book.ily"
 
 \bookpart {
   \paper{
@@ -47,6 +47,7 @@ sheetCopyright = "©friedensingen.de"
 \includeSheet "LasstUnsFriedenSchaffen.ly" % 9
 \includeSheet "../bwchor/NgaIwiE.ly"       % 10
 \includeSheet "../bwchor/OdYavoShalomAleinu.ly" % 11
+\includeSheet "PlanetDesFriedens.ly"
 \includeSheet "SagMirWoDieBlumenSind.ly" % 12
 \includeSheet "../bwchor/SolangeUnsreLiederKlingen.ly" % 13
 \includeSheet "UnserKreisDerSeiOffen.ly"
