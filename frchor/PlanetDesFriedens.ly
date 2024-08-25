@@ -13,11 +13,15 @@ lyrStropheA = {
      \set stanza = #"1. "
      Soll uns -- re Welt ein Pla -- net des
      Frie -- dens sein,
+     \set stanza = #"1. " 
      müs -- sen wir uns von Haß und Krieg
      be -- frein'.
+     \set stanza = #"1. " 
      _ Krie -- ge ge -- win -- nen  nur die 
      mit Macht und Geld.
-     Des -- halb lasst uns kei -- ne Fein -- de
+     Des -- halb 
+     \set stanza = #"1. "
+     lasst uns kei -- ne Fein -- de
      sein mehr auf die -- ser Welt!
      
      Ein Pla -- net des Frie -- dens das sei uns -- re Welt!
@@ -33,9 +37,13 @@ lyrStropheB = {
     \skipA
     \set stanza = #"2. "
     Kann uns -- re Welt ein Pla -- net des Frie -- dens sein?
+    \set stanza = #"2. "
     Kön -- nen wir Völker uns Haß und Leid ver -- zeihn'?
+    \set stanza = #"2. "
     _ Men -- schen der Er -- de _ reicht euch _ die Hand,
-    denn wir al -- le brau -- chen end -- lich Frie -- den,
+    denn wir 
+    \set stanza = #"2. "
+    al -- le brau -- chen end -- lich Frie -- den,
     in je -- dem Land!
 }}
 
@@ -44,9 +52,13 @@ lyrStropheC = {
     \skipA
     \set stanza = #"3. "
     Wird uns -- re Welt ein Pla -- net des Frie -- dens sein,
+    \set stanza = #"3. "
     kann al -- les Leben und Glück auf ihr ge -- deihn'.
+    \set stanza = #"3. "
     Wenn Wun -- den ver -- hei -- len, kann Neu -- es _ ent -- stehn'.
-    Lasst als Mensch _ -- heits -- fa -- mi -- lie uns den_Weg 
+    Lasst als 
+    \set stanza = #"3. "
+    Mensch _ -- heits -- fa -- mi -- lie uns den_Weg 
     ge -- mein -- sam gehn'!
    
 }}
