@@ -26,7 +26,7 @@ sheetCopyright = "©balcantare.de"
 	\line { \abs-fontsize #18 "Bunte Welt Chors"}
 	\vspace #2
 	\line { \abs-fontsize #18 "Soritz"}
-        \line { \abs-fontsize #10 "Teil II, 16pt"}
+        \line { \abs-fontsize #10 "Teil III, 16pt"}
         \line { \abs-fontsize #10 "balcantare.de"}
         \vspace #8
       }
