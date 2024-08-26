@@ -36,3 +36,4 @@ sheetCopyright = "©balcantare.de"
   \markuplist \table-of-contents
 }
 
+\includeSheet "MoegeDieStrasse.ly"
