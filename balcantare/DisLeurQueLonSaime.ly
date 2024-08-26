@@ -4,7 +4,7 @@ sheetComposer = "HK"
 #(define book-staff-size 20)
 \include "../include/book.ily"
 
-transTo=bf,
+transTo=a,
 %transTo=df
 
 skipA=\repeat unfold 21 \skip 8
@@ -120,7 +120,7 @@ strophe = \relative c'' {
   df1 \break
   r8 f f f f ef df f
   ef bf4. ~ 2
-  r8 bf bf c df c4 bf16 af
+  r8 af af bf df c4 bf16 af
   bf1 \bar "||" r4 \break
   \repeat volta 2 {
     r8 bf8 bf bf bf ef
