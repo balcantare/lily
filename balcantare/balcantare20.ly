@@ -1,4 +1,4 @@
-\version "2.24.2"
+\version "2.24.0"
 sheetCopyright = "©balcantare.de"
 #(define book-staff-size 20)
 \include "../include/book.ily"
@@ -30,5 +30,5 @@ sheetCopyright = "©balcantare.de"
 }
 
 \includeSheet "DisLeurQueLonSaime.ly"
-\includeSheet "OpaCupa.ly"
 \includeSheet "OpaCupaDm.ly"
+\includeSheet "StadtDerMusik.ly"

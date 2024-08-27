@@ -2,6 +2,7 @@
 sheetName = "Stadt der Musik"
 sheetComposer = "Reinhard Simmgen"
 sheetPoet = "Beate Tarrach"
+#(define book-staff-size 20)
 \include "../include/book.ily"
 
 leftbrace = \markup {
@@ -14,6 +15,10 @@ stanzaA = \markup {
 }
 stanzaB = \markup {
   \column { \vspace #.33 "2. "}
+  \column { \vspace #.18 \leftbrace}
+}
+stanzaC = \markup {
+  \column { \vspace #.33 "3. "}
   \column { \vspace #.18 \leftbrace}
 }
 
@@ -79,6 +84,32 @@ lyrStropheD = {
 }}
 
 
+lyrStropheE = {
+  \lyricmode {
+    \skipB
+    \set stanza = "3a. "
+    Kör -- per, die beim Tan -- zen sich be 
+    \set stanza = "3b. "
+    Au -- gen -- paa -- re vol -- ler Lust und     
+    \set stanza = \stanzaC 
+    -- rüh -- ren,
+    Schwin -- gen wie in ei -- ner eig -- nen Welt,
+    \set stanza = \stanzaC
+    Wenn sie Hand in Hand ein -- an -- der füh -- ren,
+    \set stanza = \stanzaC
+    von den Lich -- tern rings -- um -- her er -- hellt.
+
+}}
+
+lyrStropheF = {
+  \lyricmode {
+    \skipB \skipA \skipA 
+    Freu -- de,
+    Leich -- tig -- keit in je -- dem Au -- gen -- blick.
+    Zählt nur die -- ser Tanz im Hier und Heu -- te,
+    le -- ben im Mo -- ment be -- deu -- tet Glück!
+}}
+
 strophe = \relative c'' {
   %\voiceOne
   \time 4/4
@@ -99,13 +130,17 @@ strophe = \relative c'' {
   r8 g16 g g8 g g f e d 
   e4 c8 g~ g2
   c4 a'8 g~ g2
-  c,4 f8 e~ e2 \break
+  c,4 f8 e~ e2 %\break
   r8 g16 g g8 g g f e d
   e4 c8 g~ g g c e 
   f16 e8. d8 c d4 c8 g'~
   g2 r8 c,8 c e
   f16 e8. d8 c d4 c8 c~
-  c2 r
+   \newSpacingSection
+  \override Score.SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1)
+ c2 r
+  \newSpacingSection
+  \override Score.SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
   \break
   \repeat volta 2 {
     \bar "||"
@@ -113,15 +148,30 @@ strophe = \relative c'' {
    c'8 c c c c g e c
    \bar ".|:"
    \set Score.repeatCommands = #'((volta "2") end-repeat)
-   b'8 g g e e c c a
+   b'8 g g e e c c a \break
    \set Score.repeatCommands = #'((volta #f))
-   e'4 d2.
+    \newSpacingSection
+  \override Score.SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1)
+ e'4 d2.
+  \newSpacingSection
+  \override Score.SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
    d8 d d e f e f a
+  \newSpacingSection
+  \override Score.SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1)
    g1
+    \newSpacingSection
+  \override Score.SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
+ 
    e8 e e e e d c a
-   e'4 d2.
+    \newSpacingSection
+  \override Score.SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1)
+ e'4 d2.
+  \newSpacingSection
+  \override Score.SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
    a'8 a a a a g a g 
-   g2 r2
+    \newSpacingSection
+  \override Score.SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1)
+ g2 r2
   }
   
 
@@ -159,7 +209,8 @@ chrdStrophe = \chordmode
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.1))
+    #(define fonts (book-font 1))
+    ragged-last-bottom = ##f
   }
   \bookItem
   \score {
@@ -175,6 +226,8 @@ chrdStrophe = \chordmode
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
+    \new Lyrics \lyricsto "Strophe" \lyrStropheE
+    \new Lyrics \lyricsto "Strophe" \lyrStropheF
     >>
   }
 }
