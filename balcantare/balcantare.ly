@@ -24,6 +24,8 @@
 
 }
 
+book= "balcantare"
+
 \includeSheet "AiDaNjaeBudjitje.ly"
 \includeSheet "AiMoridschej.ly"
 \includeSheet "AjdeJano.ly"
@@ -43,6 +45,7 @@
 \includeSheet "DoluNaPtschelina.ly"
 \includeSheet "DorogojDlinnoyu.ly"
 \includeSheet "DvaDubi.ly"
+\includeSheet "../bwchor/EinHochAufDasLeben.ly"
 \includeSheet "EchJablotschka.ly"
 \includeSheet "Ederlezi.ly"
 \includeSheet "FontaineLaJolie.ly"

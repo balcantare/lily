@@ -1,33 +1,9 @@
 \version "2.22.2"
 sheetName = "Keine Kleider"
-sheetPoet = "dt. Beate Tarach"
+sheetPoet = "dt. Beate Tarrach"
 \include "../include/book.ily"
 
-dropLyricsA = {
-\override LyricText.extra-offset = #'(0 . -3)
-\override LyricHyphen.extra-offset = #'(0 . -3)
-\override LyricExtender.extra-offset = #'(0 . -3)
-\override StanzaNumber.extra-offset = #'(0 . -3)
-}
-
-dropLyricsB = {
-\override LyricText.extra-offset = #'(0 . -1.5)
-\override LyricHyphen.extra-offset = #'(0 . -1.5)
-\override LyricExtender.extra-offset = #'(0 . -1.5)
-\override StanzaNumber.extra-offset = #'(0 . -1.5)
-}
-
-raiseLyrics = {
-\revert LyricText.extra-offset
-\revert LyricHyphen.extra-offset
-\revert LyricExtender.extra-offset
-\revert StanzaNumber.extra-offset
-}
-skipA = \repeat unfold 4 { \skip 4 }
-skipB = \repeat unfold 8 { \skip 4 }
-skipC = \repeat unfold 5 { \skip 4 }
-
-lyrStropheA = {
+lyrA = {
   \lyricmode {
   Na -- ne tso -- cha, na -- ne gad,
   mi ki -- nel man -- ge o dad
@@ -35,7 +11,7 @@ lyrStropheA = {
   mi ki -- nel man -- ge o rom ge o rom
 }}
 
-lyrStropheB = {
+lyrB = {
   \lyricmode {
   Kei -- ne Klei -- der, kei -- ne Schuh'!
   Hab' nicht mal ein Ringe -- lein_da -- zu,
@@ -46,7 +22,7 @@ lyrStropheB = {
 }}
 
 
-lyrStropheC = {
+lyrC = {
   \lyricmode {
     Lie -- ber Va -- ter, kauf' mir heut'
     schö -- ne Rin -- ge und_ein neues Kleid!
@@ -55,7 +31,7 @@ lyrStropheC = {
     sind uns leer!
 }}
 
-lyrStropheD = {
+lyrD = {
   \lyricmode {
     Wenn die Ro -- ma wei -- ter ziehn',
     Rings um --  her die Wie -- sen blühn'!
@@ -65,8 +41,7 @@ lyrStropheD = {
 }}
 
 strophe = \relative c' {
-  %\voiceOne
-  \accidentalStyle neo-modern %-voice-cautionary
+  \accidentalStyle neo-modern 
   \time 4/4
   \key a \minor
   a4. b8 c( b) c4
@@ -81,7 +56,6 @@ strophe = \relative c' {
     { a4 a a'( g) }
     { a,4 gs a r }
   } \bar "||" \break
-  %\bar "|."
 }
 
 chrdStrophe = \chordmode {
@@ -90,12 +64,6 @@ chrdStrophe = \chordmode {
   d1:m a:m
   d2:m e:7 a:m a:7
   a4:m e:7 a2:m
-
-  %a1:m g2:7 c
-  %f1 c2 a:7
-  %d1:m a:m
-  %d2:m e:7 a:m a:7
-  %a4:m e:7 a2:m
  }
 
 \bookpart {
@@ -113,10 +81,10 @@ chrdStrophe = \chordmode {
     \new Staff <<
       \new Voice = "Strophe" { \strophe }
       >>
-    \new Lyrics \lyricsto "Strophe" \lyrStropheA
-    \new Lyrics \lyricsto "Strophe" \lyrStropheB
-    \new Lyrics \lyricsto "Strophe" \lyrStropheC
-    \new Lyrics \lyricsto "Strophe" \lyrStropheD
+    \new Lyrics \lyricsto "Strophe" \lyrA
+    \new Lyrics \lyricsto "Strophe" \lyrB
+    \new Lyrics \lyricsto "Strophe" \lyrC
+    \new Lyrics \lyricsto "Strophe" \lyrD
     >>
   }
 }

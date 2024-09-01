@@ -3,6 +3,13 @@ sheetName = "Ein Hoch auf das Leben"
 sheetComposer = "Beate Tarrach"
 \include "../include/book.ily"
 
+tran = #(if (and (defined? 'book)
+                 (string? book)
+                 (equal? book "balcantare"))
+           #{d#}
+           #{f,#}
+           )
+
 lyrStropheA = {
   \lyricmode {
   %\set stanza = #"1. "
@@ -77,18 +84,18 @@ lyrStropheD = {
   nicht mehr nur für uns al -- lein!
 }}
 
-stropheSopran = \relative c' {
+stropheSopran = \relative c'' {
   \accidentalStyle neo-modern %-voice-cautionary
   \time 2/4
   \key b \minor
   \partial 8
   \voiceOne
   fs8 
-  fs'4 fs8 e
+  fs4 fs8 e
   d8 b4.
   a8 a d cs
-  b4. \break fs8
-  fs'8. g16 fs8 e
+  b4. \break fs'8
+  fs8. g16 fs8 e
   d8 b4.
  
   a8 a d cs
@@ -184,11 +191,11 @@ chrdStrophe = \chordmode {
              
   \score {
     <<
-    \new ChordNames \chrdStrophe 
+    \new ChordNames \transpose d \tran \chrdStrophe 
     \new Staff \with {\accepts ChordNames}
     <<
-      \context Voice = "StropheSopran" { \stropheSopran }
-      \context Voice = "StropheAlt" { \stropheAlt }
+      \context Voice = "StropheSopran" { \transpose d \tran \stropheSopran }
+      \context Voice = "StropheAlt" { \transpose d \tran \stropheAlt }
       >>
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheA
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheB

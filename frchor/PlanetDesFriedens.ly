@@ -29,7 +29,7 @@ lyrStropheA = {
      Ein Pla -- net des Frie -- dens ein Ort der Mensch -- lich -- keit!
      Un -- ser Traum braucht ei -- ne Chance auf 
      Wirk -- lich -- keit,
-     ge -- ben wir dem Traum die Chance auf Wirk -- lich -- keit!´
+     ge -- ben wir dem Traum die Chance auf Wirk -- lich -- keit!
 }}
 
 lyrStropheB = {
