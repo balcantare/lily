@@ -1,6 +1,7 @@
 \version "2.24.0"
 sheetName = "Kamper Trinklied"
 sheetComposer = "Wenzel"
+#(define book-staff-size 20)
 \include "../include/book.ily"
 
 leftbrace = \markup {

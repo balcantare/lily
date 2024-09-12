@@ -36,4 +36,6 @@ sheetCopyright = "©balcantare.de"
   \markuplist \table-of-contents
 }
 
+\includeSheet "EinHochAufDasLeben.ly"
+\includeSheet "KamperTrinklied.ly"
 \includeSheet "MoegeDieStrasse.ly"

@@ -28,7 +28,8 @@ sheetCopyright = "©balcantare.de"
   \markuplist \table-of-contents
 
 }
-
+book= "balcantare"
 \includeSheet "DisLeurQueLonSaime.ly"
+\includeSheet "../bwchor/EinHochAufDasLeben.ly"
 \includeSheet "OpaCupaDm.ly"
 \includeSheet "StadtDerMusik.ly"
