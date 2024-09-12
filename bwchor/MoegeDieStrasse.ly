@@ -75,7 +75,8 @@ sopran = \relative c'' {
   a4 a8( c) g4 g
   f4 f8( a) e4 e
   d8 e f[ bf] a g f[ e]
-  f2
+  f2 r2
+  \bar "|."
 }
 
 alt = \relative c' {
