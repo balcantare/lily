@@ -18,7 +18,10 @@
   }
   \markup { \fill-line { \center-column {
 	  \line {\abs-fontsize #20 "Balcantare Liederbuch"}
-	  \null
+	   \vspace #2
+        \line { \abs-fontsize #10 "Teil I, 24pt"}
+        \line { \abs-fontsize #10 "balcantare.de"}
+   
 	} } }
   \markuplist \table-of-contents
 
@@ -27,6 +30,7 @@
 \includeSheet "../bwchor/BuntSindSchonDieWaelder.ly"
 \includeSheet "LesChampsElysees.ly"
 \includeSheet "../bwchor/CuecaBoliviana.ly"
+%\includeSheet "DanserEncore.ly"
 \includeSheet "../frchor/DieErdeIstUnsereMutter.ly"
 %\includeSheet "../balcantare/DisLeurQueLonSaime.ly"
 %\includeSheet "../bwchor/EinHochAufDasLeben.ly"
@@ -41,7 +45,7 @@
 \includeSheet "../bwchor/KeinSchoenerLand.ly"
 \includeSheet "../bwchor/Landlied.ly"
 \includeSheet "../bwchor/MateAroha.ly"
-\includeSheet "../bwchor/MoegeDieStrasse.ly"
+%\includeSheet "../bwchor/MoegeDieStrasse.ly"
 \includeSheet "../bwchor/NgaIwiE.ly"
 \includeSheet "../bwchor/OdYavoShalomAleinu.ly"
 \includeSheet "../frchor/UnterDemPflaster.ly"
