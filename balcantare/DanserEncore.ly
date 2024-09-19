@@ -4,7 +4,7 @@ sheetComposer = "HK"
 #(define book-staff-size 20)
 \include "../include/book.ily"
 % original g minor
-transTo=e
+transTo=g
 %transTo=df
 
 skipA=\repeat unfold 21 \skip 8
@@ -45,7 +45,7 @@ lyrStropheA = {
     Nous sommes de -- s‿oi -- seaux de pas -- sa -- ge
     Ja -- mais do -- ciles ni vrai -- ment sa -- ge
     \set stanza = "1. "
-    Nous ne fai -- son pas al -- lé -- gean -- ce
+    Nous ne fai -- sons pas al -- lé -- gean -- ce
     À l'au -- be‿en tou -- tes cir -- con -- stan -- ces
     \set stanza = "1. "
     Nous ve -- nons bri -- ser le si -- len -- ce
@@ -62,7 +62,7 @@ lyrStropheA = {
 lyrStropheB = {
   \lyricmode {
     \set stanza = "2. "
-    8Au -- to  mé -- tro  bou -- lot  con -- so
+    Au -- to  mé -- tro  bou -- lot  con -- so _
     Au -- to at -- tes -- ta -- tion qu'on sig -- ne
     \set stanza = "2. "
     Ab -- sur -- di -- té sur or -- don -- nan -- ce
@@ -90,12 +90,12 @@ lyrStropheC = {
 
     \set stanza = "3. "
     An -- gois -- sants, jus -- qu'à -- l'in -- dé -- cen -- ce
-    Pour not -- re san -- té men -- ta -- le
+    _ Pour no -- tre san -- té men  -- tale
     \set stanza = "3. "
-    So -- cia -- le‿et en -- vi -- ron -- nemen -- ta -- le
-    Nos sourires, no -- tre intel -- li -- gen -- ce
+    So -- cia -- le‿et en -- vi -- ron -- ne -- men -- tale
+    Nos sourires, no -- tre‿in -- tel -- li -- gen -- ce
     \set stanza = "3. "
-    Ne so -- youns pas sans ré -- sis -- tan -- ce
+    Ne so -- yons pas sans ré -- sis -- tan -- ce
     Les ins -- tru -- ments de leur dé -- men -- ce
 
 }}
