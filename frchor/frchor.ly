@@ -49,6 +49,7 @@ sheetCopyright = "©friedensingen.de"
 \includeSheet "../bwchor/OdYavoShalomAleinu.ly" % 11
 \includeSheet "PlanetDesFriedens.ly"
 \includeSheet "SagMirWoDieBlumenSind.ly" % 12
+\includeSheet "SagMirWoDieBlumenSindDeSb.ly" % 12
 \includeSheet "../bwchor/SolangeUnsreLiederKlingen.ly" % 13
 \includeSheet "UnserKreisDerSeiOffen.ly"
 \includeSheet "UnsreHeimat.ly"
