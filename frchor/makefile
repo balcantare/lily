@@ -1,4 +1,4 @@
-books := frchor.pdf frchor16.pdf
+books := frchor.pdf frchor20.pdf frchor16.pdf
 TOPDIR := ..
 
 include $(TOPDIR)/include/makefile
