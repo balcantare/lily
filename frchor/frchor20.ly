@@ -1,7 +1,7 @@
-\version "2.22.2"
+\version "2.24.0"
 sheetCopyright = "©friedensingen.de"
-#(define book-staff-size 16)
-\include "book.ily"
+#(define book-staff-size 20)
+\include "../include/book.ily"
 
 \bookpart {
   \paper{
@@ -26,7 +26,7 @@ sheetCopyright = "©friedensingen.de"
 	\line { \abs-fontsize #18 "Straßenmusik"}
 	\vspace #2
 	\line { \abs-fontsize #18 "für den Frieden"}
-        \line { \abs-fontsize #10 "Teil III, 16pt"}
+        \line { \abs-fontsize #10 "Teil II, 20pt"}
         \line { \abs-fontsize #10 "friedensingen.de"}
         \vspace #8
       }
@@ -35,10 +35,4 @@ sheetCopyright = "©friedensingen.de"
   \markuplist \table-of-contents
 
 }
-\includeSheet "AllesWohlDemVolke.ly"       % 2
-\includeSheet "DieWeissenTaubenSindMuede.ly"
-\includeSheet "HabMutKeineAngst.ly"
-\includeSheet "JetztWirdFriedenGemacht.ly" % 3
-\includeSheet "../bwchor/MateAroha.ly"     % 4
-\includeSheet "NeinMeineSoehneGebIchNicht.ly" % 5
-\includeSheet "WeitInDerChampagne.ly"         % 6
+\includeSheet "RuestigeRentner.ly"
