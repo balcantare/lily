@@ -35,4 +35,5 @@ sheetCopyright = "©friedensingen.de"
   \markuplist \table-of-contents
 
 }
+\includeSheet "BrotUndRosen.ly"
 \includeSheet "RuestigeRentner.ly"
