@@ -1,6 +1,6 @@
 \version "2.24.0"
 sheetName = "Roter Mond"
-sheetComposer = "arr. Reinhard Simmgen"
+sheetComposer = "Hortenring Ernsthofen 1980"
 \include "../include/book.ily"
 
 % orig g
