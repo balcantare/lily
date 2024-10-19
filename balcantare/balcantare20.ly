@@ -29,6 +29,7 @@ sheetCopyright = "©balcantare.de"
 
 }
 book= "balcantare"
+\includeSheet "DanserEncore.ly"
 \includeSheet "DisLeurQueLonSaime.ly"
 \includeSheet "../bwchor/EinHochAufDasLeben.ly"
 \includeSheet "OpaCupaDm.ly"
