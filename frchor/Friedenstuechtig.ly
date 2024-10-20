@@ -1,5 +1,5 @@
 \version "2.24.0"
-sheetName = "Friedenstüchtig"
+sheetName = "Wir wollen friedenstüchtig werden"
 sheetComposer = "Beate Tarrach"
 %#(define book-staff-size 20)
 \include "../include/book.ily"
@@ -7,19 +7,19 @@ sheetComposer = "Beate Tarrach"
 lyrA = {
   \lyricmode {
   \set stanza = "1. "
-  Ist das der Weg in die Kriegs -- tüch -- tig -- keit
+  Ist das der Weg in die Kriegs -- tüch -- tig -- keit,
   \set stanza = "1. "
-  fort von je -- der Ver -- nunft.
+  fort, von je -- der Ver -- nunft?
   Ist das die Wen -- de, die 
   \set stanza = "1. "
-  ihr pro -- phe -- zeit,
-  dann sa -- gen wir euch nicht mit uns!
+  ihr pro -- phe -- zeit?
+  Dann sa -- gen wir euch: Nicht mit uns!
   Wir wol -- len Frie -- dens -- tüch -- tig 
-  wer -- den nein wir ma -- chen den Kriegs -- kurs nicht mit!
-  wo -- nach wir uns seh -- nen ist Frie -- den auf 
-  Er -- den und das ist ein ur -- al -- tes Lied.
-  wo -- nach wir uns seh -- nen  ist Frie -- den 
-  auf Er -- den und das ist ein ur -- al -- tes
+  wer -- den. Nein, wir ma -- chen den Kriegs -- kurs nicht mit!
+  wo -- nach wir uns seh -- nen, ist Frie -- den auf 
+  Er -- den, und das ist ein ur -- al -- tes Lied.
+  wo -- nach wir uns seh -- nen,  ist Frie -- den 
+  auf Er -- den, und das ist ein ur -- al -- tes
   Lied.
   
 }}
@@ -27,61 +27,51 @@ lyrA = {
 lyrB = {
   \lyricmode {
   \set stanza = "2. "
-  Wird das Wa -- gon -- werk zur Pan -- zer -- fa -- brik
+  Wird der Wa -- gon -- bau zur Pan -- zer -- fa -- brik?
   \set stanza = "2. "
-  wohin führt uns die -- ser Plan.
+  Wohin führt uns die -- ser Plan?
   Schritt _ für Schritt rüs -- tet 
   \set stanza = "2. "
   ihr für den Krieg,
-  doch wir sa -- gen stoppt die -- sen Wahn!
+  doch wir sa -- gen: stoppt die -- sen Wahn!
 }}
 
 lyrC = {
   \lyricmode {
   \set stanza = "3. "
-  Ist euch der Wil -- le der Men -- schen 
+  Ist euch das Wohl all der Men -- schen 
   e -- gal, 
   \set stanza = "3. "
   die_die -- sen Krieg nie -- mals
-  woll'n.
+  woll'n?
   Gabt ihr uns nicht eu -- er 
   \set stanza = "3. "
-  Wort vor der Wahl
-  Re -- spekt eu -- ren Freun -- den zu zoll'n.
+  Wort vor der Wahl,
+  Re -- spekt eu -- rem Vol -- ke zu zoll'n?
  }}
 
 lyrD = {
   \lyricmode {
   \set stanza = "4. "
-  Wollt ihr das einst all die Men -- schen im Land,
+  Was wird, wenn bald hier die Men -- schen im Land,
   \set stanza = "4. "
-  fried -- liches Le -- ben ver -- lier'n.
+  ihr_fried -- liches Le -- ben ver -- lier'n?
   Droht uns -- rer Er -- de ein 
   \set stanza = "4. "
   rie -- si -- ger
-  Brand, wir wol -- len _ das nicht ris -- kier'n.
+  Brand? Wir wol -- len _ das nicht ris -- kier'n!
 }}
 
 lyrE = {
   \lyricmode {
     \set stanza = "5. "
-    Frie -- den das ist _ der ein -- zi -- ge Weg
-    \set stanza = "5. "
-    Frieden ist al -- les was zählt.
-    Krieg und Zer -- stö -- rung ver -- 
-    \set stanza = "5. " feh -- len den
-    Zweck, _ 
-    Blü -- hen soll un -- se -- re Welt.
-}}
-
-lyrF = {
-  \lyricmode {
-  \set stanza = "6. "
-}}
-
-lyrG = {
-  \lyricmode {
-    \set stanza = "7. "
+     Wir sa -- gen NEIN! _ zur Kriegs -- tüch -- tig -- keit.
+    \set stanza = "5. " 
+     Wir_tre -- ten da -- zu_nicht mit an!
+     Soll sie nur kom -- men, die 
+     \set stanza = "5. "
+     Wen -- de der Zeit!
+     Doch nach un -- serm fried -- li -- chen Plan! 
 }}
 
 voice = \relative c' {
@@ -136,8 +126,6 @@ chrd = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrC
     \new Lyrics \lyricsto "Strophe" \lyrD
     \new Lyrics \lyricsto "Strophe" \lyrE
-    \new Lyrics \lyricsto "Strophe" \lyrF
-    \new Lyrics \lyricsto "Strophe" \lyrG 
     >>
   }
 }
