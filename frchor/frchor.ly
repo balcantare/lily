@@ -40,7 +40,6 @@ sheetCopyright = "©friedensingen.de"
 \includeSheet "DerEinfacheFrieden.ly"
 \includeSheet "DerPfahl.ly"             % 4
 \includeSheet "DieErdeIstUnsereMutter.ly" % 5
-\includeSheet "Friedenstuechtig.ly"
 \includeSheet "../balcantare/HappyXMas.ly"
 \includeSheet "HeuteUndHier.ly"           % 6
 \includeSheet "HevenuSchalomAlechem.ly"   % 7
@@ -59,5 +58,6 @@ sheetCopyright = "©friedensingen.de"
 \includeSheet "WerMoechteNichtImLebenBleiben.ly"  % 15
 \includeSheet "WirSindEins.ly"
 \includeSheet "WirTragenEinLichtInDieDunkelheit.ly"
+\includeSheet "Friedenstuechtig.ly"
 \includeSheet "../bwchor/WoMenschenSichVergessen.ly"
 \includeSheet "ZogenEinstFuenfWildeSchwaene.ly"   % 16
