@@ -52,6 +52,7 @@ sheetCopyright = "©friedensingen.de"
 \includeSheet "SagMirWoDieBlumenSind.ly" % 12
 \includeSheet "SagMirWoDieBlumenSindDeSb.ly" % 12
 \includeSheet "../bwchor/SolangeUnsreLiederKlingen.ly" % 13
+\includeSheet "SterneUeberStillenStrassen.ly"
 \includeSheet "UnserKreisDerSeiOffen.ly"
 \includeSheet "UnsreHeimat.ly"
 \includeSheet "UnterDemPflaster.ly"
