@@ -14,8 +14,10 @@ lyrStropheA = {
    Wie -- der von Frie -- den und Freud'.
    \set stanza = "1. "
    Wie sie ge -- sun -- gen in se -- li -- ger Nacht.
-     Glo -- cken, mit hei -- li -- gem Kla -- ng
-     Klingt doch die Er -- de ent -- lang!
+   \set stanza = "1. "
+   Wie sie ge -- sun -- gen in se -- li -- ger Nacht.
+   Glo -- cken, mit hei -- li -- gem Kla -- ng
+   Klin -- get die Er -- de ent -- lang!
 }}
 
 lyrStropheB = {
@@ -28,6 +30,8 @@ lyrStropheB = {
   Tut sich vom Him -- mel dann schwin -- gen
   \set stanza = "2. "
   Ei -- let her -- nie -- der zur Erd'.
+  \set stanza = "2. "
+  Seg -- net den Va -- ter, die Mut -- ter, das Kind.
   \set stanza = "2. "
   Seg -- net den Va -- ter, die Mut -- ter, das Kind.
 }}
@@ -43,6 +47,8 @@ lyrStropheC = {
     Daß sich er -- freu -- en doch al -- le
     \set stanza = "3. "
     se -- li -- ger Weih -- _ nachts -- zeit.
+    \set stanza = "3. "
+    Al -- le auf -- jauch -- zen mit ei -- nem Ge -- sang.
     \set stanza = "3. "
     Al -- le auf -- jauch -- zen mit ei -- nem Ge -- sang.
     %Glocken mit heiligem Klang,
@@ -68,7 +74,7 @@ strophe = \relative c' {
   a4. b8 a4
   a4 g e
   d2.~ d2 r4 \break
-  \repeat volta 2 {
+  \repeat unfold 2 {
     e4. e8 e4 fs4 fs fs
     a4. g8 e4 fs2 r4
   }
@@ -83,7 +89,36 @@ strophe = \relative c' {
 
 
 stropheAlt = \relative c' {
-    }
+  \voiceTwo
+  d4. d8 d4 
+  d4 cs d
+  cs2( b4)
+  cs2.
+  a4. a8 a4
+  cs( b) cs
+  d2.~ d2 s4
+  fs4. fs8 fs4
+  fs d d 
+  b'2( a4)
+  g4.( fs8 e4)
+  fs4. g8 fs4
+  fs4 e cs
+  d2.~ d2 s4
+  cs4. b8 cs4
+  d cs d
+  cs4. b8 cs4
+  d2.
+  a4. b8 cs4
+  d4 cs d
+  cs4. b8 cs4
+  d2 s4
+  fs4. e8 d4 
+  d cs d
+  b'2( a4 g4. fs8 e4)
+  fs4. g8 fs4
+  fs e cs
+  d2.~ d2 s4
+}
 
 chrdStrophe = \chordmode {
   d2. s a s a a:7 d s
@@ -96,7 +131,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.4))
+    #(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
   \bookItem
