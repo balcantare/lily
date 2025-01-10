@@ -1,5 +1,5 @@
 \version "2.24.2"
-sheetName = "La Lune"
+sheetName = "La Lune A"
 sheetComposer = "RY"
 #(define book-staff-size 20)
 \include "../include/book.ily"
@@ -52,8 +52,8 @@ chrdStrophe = \chordmode {
     \new ChordNames { \chrdStrophe }
     \new Staff { \clef "G_8" \strophe }
     \new TabStaff \with {
-      fontSize = #-1
-      \override StaffSymbol.staff-space = #(magstep -1)
+     % fontSize = #-1
+     % \override StaffSymbol.staff-space = #(magstep -1)
     }{ \tabChordRepeats \strophe }  
     >>
     \layout { 
