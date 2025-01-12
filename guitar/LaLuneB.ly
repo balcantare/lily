@@ -17,7 +17,7 @@ strophe = \relative c {
   \mark \markup{ \box{\fontsize #2 A}}
   \override Fingering.font-size = #-3
   r8 e8-2 fs gs 
-  b a gs a cs a cs gs' 
+  b a gs a cs-1 a-2 cs-1 gs'-4 
   <fs cs a e>4. e8-4 cs a fs f 
   e fs  gs a cs a cs gs'
   <fs d gs, e>4. e8 d b gs e
@@ -35,16 +35,16 @@ strophe = \relative c {
   \set TabStaff.minimumFret = #6
   fs-4 as cs e
   d-1 b d fs gs-3 e-1 gs cs
-  a2-2
+  <a, cs e a>2 
   %\bar "||"
   \repeat volta 2 {
   \mark \markup{ \box{\fontsize #2 B}}
-  r8 e[-\prall-2 ds e]
+  r8 e'[-\prall-2 ds e]
   gs d' gs, e 
   \set TabStaff.minimumFret = #8
   fs e ds e 
   \set TabStaff.minimumFret = #5
-  a, cs e cs
+  a,-3 cs e cs
   fs e cs a
   \set TabStaff.minimumFret = #4
   e gs d' b
@@ -53,13 +53,13 @@ strophe = \relative c {
   e2
   \set TabStaff.minimumFret = #8
   r8 e[-\prall-2 ds e]
-  gs d' gs, e 
+  gs-2 d'-3 gs,-2 e-1 
   fs e ds e 
   \set TabStaff.minimumFret = #5
-  a, cs e cs
+  a,-3 cs e cs
   fs e cs a
   \set TabStaff.minimumFret = #4
-  e d' b gs
+  e d'-4 b gs
   e d b gs }
   \alternative {
     { a cs e a cs e a4 } 
@@ -70,26 +70,27 @@ strophe = \relative c {
   \mark \markup{ \box{\fontsize #2 A}}
   s4 \break
   \mark \markup{ \box{\fontsize #2 C}}
+  r8
   \repeat volta 2 {
     \set TabStaff.minimumFret = #8
-     r8 cs''-\prall-2 bs cs
+      cs''-\prall-2 bs cs
      d cs b-4 gs-1
      es-2 cs'-\prall-2 bs cs
      d cs-1 a-2 fs-3 
      cs-3 cs'-\prall-2 bs cs
-     d gs, b es,
-     gs b, d f,
-     fs a cs fs
+     d-2 gs, b es,-3
+     gs-2 b,-1 d f,-1
+     fs-2 a cs fs
      a gs-\prall fs es
      gs fs d b
-     a' \tuplet 3/2 {gs8([ a gs)]} fs8
+     gs a' gs8-\prall fs8
      gs fs cs a 
      fs a gs fs
      cs es gs b
      d cs es gs
   }
   \alternative {
-    { fs8 gs a4 }
+    { fs8 es fs gs a }
     { fs4 f-\prall e2 }
   }
   \bar "||"
@@ -109,8 +110,7 @@ chrdStrophe = \chordmode {
   a s s e:7 a s e:7 s a s
   s s e:7 s
   s cs:7 s fs:m s cs:7 s fs:m s
-  b:m s fs:m s cs:7 s fs:m fs4:m f:7 e:7
-  
+  b:m s fs:m s cs:7 s fs:m s8 fs4:m f:7 e:7
 }
 
 \bookpart {
