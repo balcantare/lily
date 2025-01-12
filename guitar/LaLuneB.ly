@@ -63,12 +63,12 @@ strophe = \relative c {
   e d b gs }
   \alternative {
     { a cs e a cs e a4 } 
-    { a,,8 cs e4~ <e gs d' e> r4}
+    { a,,8 cs e4~ <e gs d' e> r4 }
   }
+  \bar "||"
   s4
   \mark \markup{ \box{\fontsize #2 A}}
-  s4
-  \bar "||" \break
+  s4 \break
   \mark \markup{ \box{\fontsize #2 C}}
   \repeat volta 2 {
     \set TabStaff.minimumFret = #8
