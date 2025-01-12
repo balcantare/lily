@@ -7,7 +7,7 @@ sheetComposer = "RY"
 strophe = \relative c' {
   \accidentalStyle modern
   \time 3/4
-  \key b \major
+  \key e \major
  % \set Timing.measurePosition = #(ly:make-moment -5/8)
   \partial 4.
   \mark \markup{ \box{\fontsize #2 A}}
@@ -29,74 +29,78 @@ strophe = \relative c' {
   ds8-\prall cs as gs fs e
   cs as-1 fs fs gs as
   cs b as b ds fs 
-  b4. b,8 cs ds-1
+  b4. b,8-2 cs ds-1
   fs e ds e gs-1 b cs b as b cs ds
   cs-\prall b gs e cs c
   b4. gs8 fss gs 
-  cs,-2 fs gs b-1 d cs
+  cs,-2 es gs b-1 d cs
   es gs b a gs-\prall fs
-  es fs a cs \ottava #1 fs4~ 
+  es fs a cs \ottava #1 fs4~-1 
   fs4. fs8 fs gs
-    \set TabStaff.minimumFret = #12
-  fs-\prall e-1 cs-2 fs-2 fs gs
-  fs-\prall e c-2 fs-2 fs gs
-  fs-\prall e-1 \ottava #0 b-3  
-  \set TabStaff.minimumFret = #6 gs-1 e-3 ds-2
-  cs-1 gs-3 
+    \set TabStaff.minimumFret = #13
+  fs-\prall e-4 cs-1 fs fs gs
+  fs-\prall e-4 c-1 fs-1 fs gs-3
+  fs-\prall e-4 \ottava #0 
+    \set TabStaff.minimumFret = #11
+  b-2  gs-4
+  \set TabStaff.minimumFret = #8  e-2 ds-1
+  cs-4 
+  \set TabStaff.minimumFret = #6
+  gs-2 
+  es-4
   \set TabStaff.minimumFret = #2
-  es-1 cs bs cs
+   cs-2 bs-1 cs-2
   fs,-1 \set TabStaff.minimumFret = #4
   a cs-1 fs a cs-1 
   \set TabStaff.minimumFret = #8
   ds b as b ds gs
   \tuplet 3/2 {e8(-2 fs e) } ds e gs-1 b
-  e4.-2 \bar "||" \pageBreak
+  <e gs, b>4. \bar "||" \pageBreak
   
-  \key e \major
   \mark \markup{ \box{\fontsize #2 B}}
   \ottava #1
-  gs8 gs a
+  gs8-2 gs a
   \set TabStaff.minimumFret = #14
-  gs-\prall fs ds \set TabStaff.minimumFret = #11
-  bs \ottava #0 gs fs
+  gs-\prall fs ds-3 \set TabStaff.minimumFret = #11
+  bs-1 \ottava #0 gs-3 fs-1
   \set TabStaff.minimumFret = #10
-  ds bs gs gs bs  ds
+  ds-3 bs-1 gs-2 gs bs  ds
   ds cs bs 
-  \set TabStaff.minimumFret = #9 cs e gs
+  \set TabStaff.minimumFret = #9 cs e-1 gs
   cs4. cs8 ds cs
   \set TabStaff.minimumFret = #8
-  cs-\prall bs ds bs gs g
+  cs-\prall bs-1 ds-4 bs gs g
   fs ds bs gs bs ds 
   ds-\prall cs bs cs e gs 
   cs4. 
   \set TabStaff.minimumFret = #14
-  \ottava #1 gs'8 gs a
-  gs-\prall fs ds \set TabStaff.minimumFret = #11 
-  bs \ottava #0 gs fs
+  \ottava #1 gs'8-2 gs a
+  gs-\prall fs ds-3 \set TabStaff.minimumFret = #11 
+  bs-1 \ottava #0 gs-3 fs-1
   \set TabStaff.minimumFret = #10
-  ds bs gs gs bs  ds
-  ds cs bs cs \set TabStaff.minimumFret = #9 e gs
-  cs4. \set TabStaff.minimumFret = #13 cs8 ds cs
-  bs \ottava #1 a' fs 
-  \set TabStaff.minimumFret = #9 ds \ottava #0 bs gs
+  ds-3 bs-1 gs-2 gs bs  ds
+  ds cs bs cs \set TabStaff.minimumFret = #9 e-1 gs
+  cs4. \set TabStaff.minimumFret = #13 cs8-2 ds cs
+  bs \ottava #1 a'-4 fs-2 
+  \set TabStaff.minimumFret = #9 ds-1 \ottava #0 bs-4 gs-1
   \set TabStaff.minimumFret = #8
-  fs ds bs \set TabStaff.minimumFret = #4
-  gs \set TabStaff.minimumFret = #6 fs ds
-  \set TabStaff.minimumFret = #0 cs gs e gs cs4~
-  cs4. cs8 cs c 
-  b ds fs a cs ds
+  fs-3 ds-1 bs-4 \set TabStaff.minimumFret = #4
+  gs-1 \set TabStaff.minimumFret = #6 fs-4 ds-2
+  \set TabStaff.minimumFret = #0 cs-1 gs e gs cs4~
+  cs4. cs8-3 cs c 
+  b ds-1 fs a cs ds
   \set TabStaff.minimumFret = #1
-  cs-\prall b e gs, b cs
-  b a ds fs, a b
-  a-\prall gs b gs e fs
-  e gs b a cs ds
-  cs-\prall b e gs, b e,
-  b a' fs ds b gs'
+  cs-\prall-1 b e gs,-1 b cs
+  b-3 a-1 ds fs, a b
+  a-\prall gs-1 b gs e fs
+  e gs b a-1 cs ds
+  cs-\prall b e gs,-1 b-4 e,
+  b-2 a'-2 fs-4 ds-1 b gs'
   e4. 
   \set TabStaff.minimumFret = #8
-  cs'8 cs c
-  b ds fs a cs ds
-  cs-\prall b e \set TabStaff.minimumFret = #10 
+  cs'8-3 cs c
+  b-2 ds fs a cs ds
+  cs-\prall-1 b e \set TabStaff.minimumFret = #9 
   gs, b cs
   b-\prall a ds fs, a b
   \set TabStaff.minimumFret = #9 
@@ -104,7 +108,7 @@ strophe = \relative c' {
   \set TabStaff.minimumFret = #8
   b ds fs a cs ds
   cs-\prall b e \set TabStaff.minimumFret = #9 gs, 
-  bs cs
+  b cs
   b a \set TabStaff.minimumFret = #8 fs ds b gs'
   e4.
   %\partial 4.
@@ -115,7 +119,15 @@ strophe = \relative c' {
 
 
 chrdStrophe = \chordmode {
-  
+  s4.
+  e2. s2.*4 cs2.:7 fs:m s 
+  b:7 s e s fs:7 s b:7 s
+  e s s s cs:7 s s
+  fs:m s fs:dim e cs:7 fs:m b:7 e
+  s gs:7 s cs:m s gs:7 s
+  cs:m s gs:7 s cs:m s
+  gs:7 s cs:m s
+  \repeat unfold 8 {b:7 e}
 }
 
 \bookpart {
