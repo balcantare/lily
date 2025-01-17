@@ -50,21 +50,23 @@ sheetComposer = "Django"
 
 strophe = \relative c' {
   %\voiceOne
+  \override Fingering.font-size = #-3
   \accidentalStyle modern
   \time 4/4
   \key g \major
   %\bar ".|:"
   \set TabStaff.restrainOpenStrings = ##t
   \set TabStaff.minimumFret = #6
-  r8 e4. ef4 d 
+  r8 e4.-4 ef4 d 
   \set TabStaff.minimumFret = #5
-  \mark \markup{ \box{\fontsize #2 A}}
+  \once\override Score.RehearsalMark.self-alignment-X = #1
+  \mark \markup{ \box{\fontsize #3 A}}
   \repeat volta 2 {
-    cs8 e g b r b r4
-    c,8 ef fs b r b r4
+    cs8-2 e g b r b r4
+    c,8-1 ef fs b r b r4
     \set TabStaff.minimumFret = #7
-    b,8 d fs a r a r4
-    bf,8 df e a r g4.
+    b,8-3 d fs a r a r4
+    bf,8-1 df e a r g4.
     e2 r8 g8 r4
   } \alternative {
     \volta 1 {fs4 r4 d fs 
@@ -73,61 +75,75 @@ strophe = \relative c' {
     \volta 2,3 
     {fs4 r4 d b' g r8 g8~ g2 r1}
   } \break
-  \mark \markup{ \box{\fontsize #2 B}}
-  af,8 bf c df ef4 ef
+  \once\override Score.RehearsalMark.self-alignment-X = #1.5
+  \mark \markup{ \box{\fontsize #3 B}}
+  af,8-2 bf c df ef4 ef
   ef4 r8 c bf af r4
   \set TabStaff.minimumFret = #6 
-  a8 b cs d e4 e 
+  a8-2 b cs d e4 e 
   e r8 cs b a r4
   \bar "||"
-  s1^\markup{ \box{\fontsize #4 A}} \break
+  s1^\markup{ \box{\fontsize #5 A}} \break
   \bar "||"
   \repeat volta 2 {
   \set Score.repeatCommands = #'((volta "Coda") end-repeat)
   fs'4 r4 d b'8 g
   \set Score.repeatCommands = #'((volta #f))
   \set TabStaff.minimumFret = #3 
-  r8 bf a g  f e d c 
+  r8 bf-4 a g  f e d c 
   b4 d,8 af r4 g4 }
   \bar "|."
   \pageBreak
+   \once\override Score.RehearsalMark.self-alignment-X = #1.5
+  \mark \markup{ \box{\fontsize #3 A}}
   \tupletSpan 2
   \set TabStaff.minimumFret = #2
-  \tuplet 3/2 { cs4 e g b a g fs a c ef d c b d fs}
+  \tuplet 3/2 { cs4-3 e g b a g fs a c ef d c b d fs}
   a8 g fs g
-  bf4 e,8 
+  bf4-2 e,8 
   \set TabStaff.minimumFret = #8 
   g r2
   \set TabStaff.minimumFret = #5
-  r2 <a,, e' a c e>8 g'' b d
+  r2 <a,, e' a c e>8 g''-2 b d
  \set TabStaff.minimumFret = #7 
    c b a g fs e d c
   as b g4 g4. \set TabStaff.minimumFret = #4 
-  d8
-  fs8 d fs a g4 r8 g'
+  d8-2
+  fs8 d fs a g4 r8 
+  g'-2^\markup{ \box{\fontsize #5 A}}
   \set TabStaff.minimumFret = #7 
-  a8 a g4 e4. g8
+   a8 a g4 e4. g8
   a4 g8 ef~ ef4. g8
-  a4 g d8 bf'\^ b4
-  a4 g8 e r e4.
+  a4 g d8 \appoggiatura bf'\^ b8~-3 b4
+  a4-3 g8 e r e4.
   r4 r8 
   \set TabStaff.minimumFret = #4
-  b c b' a fs
+  b-1 c b' a fs
   e c a g 
   \set TabStaff.minimumFret = #2 
-  fs d' r8 fs,
-  g b d g ef c a fs
+  fs-2 d' r8 fs,
+  g b d g ef c a-1 fs
   g d af g r2 \break
-  \tuplet 3/2 { ef'4 af c} ef f
+   \once\override Score.RehearsalMark.self-alignment-X = #2
+  \mark \markup{ \box{\fontsize #3 B}}
+
+  \tuplet 3/2 { ef'4-3 af-4 c} ef f
   c4. c8~ c2
-  \tuplet 3/2 { e,4 a cs } e gs
-  fs cs8 e r8 e4.
+  \set TabStaff.minimumFret = #5 
+  \tuplet 3/2 { e,4-3 a-4 cs } e gs
+  fs cs8 e r8 
+  e4.^\markup{ \box{\fontsize #5 A}}
   cs8 e g b r8 b r4
+  \set TabStaff.minimumFret = #2 
+  
   a8 g ef c r8 c4.
   b8 d fs a r4 g8 bf
   a4 g8 bf a4 g8 e~
-  e2 e8 es fs d'
-  b fs d df c bf'\^ b4
+  e2 
+  \set TabStaff.minimumFret = #9 
+  e8 es fs d'
+  b fs d df c \appoggiatura bf'\^ b8~ b4
+  \set TabStaff.minimumFret = #7 
   g8 g g4 g2 r8 e4. ef4 d
   
 \bar "|."
@@ -170,6 +186,9 @@ chrdStrophe = \chordmode {
     \new FretBoards { 
       \override FretBoard.fret-diagram-details.number-type = #'arabic
       \override FretBoard.fret-diagram-details.label-dir = #LEFT
+      \override FretBoard.fret-diagram-details.barre-type = #'straight
+      \override FretBoard.fret-diagram-details.dot-radius = #0.35
+      \override FretBoard.fret-diagram-details.fret-label-font-mag = #0.7
       \chrdStrophe 
     }
     \new ChordNames { \chrdStrophe }
