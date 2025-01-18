@@ -29,5 +29,6 @@
 \includeSheet "LaGitane.ly"
 \includeSheet "LaLuneA.ly"
 \includeSheet "LaLuneB.ly"
+\includeSheet "LeBalDeLaMarine.ly"
 \includeSheet "walz-41.ly"
 \includeSheet "ValseAJesaja.ly"
