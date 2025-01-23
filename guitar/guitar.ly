@@ -30,5 +30,6 @@
 \includeSheet "LaLuneA.ly"
 \includeSheet "LaLuneB.ly"
 \includeSheet "LeBalDeLaMarine.ly"
+\includeSheet "MinorSwing.ly"
 \includeSheet "walz-41.ly"
 \includeSheet "ValseAJesaja.ly"
