@@ -37,9 +37,9 @@ guitar = \relative c' {
   \repeat volta 3 {
     \set TabStaff.restrainOpenStrings = ##t
     \set TabStaff.minimumFret = #3
-     e,4 a c~ c8 d16( c)  
+     e,4-4 a-5 c~-2 c8 d16(-1 c)-3  
      \set TabStaff.minimumFret = #4
-     b4 d8 f~ f2 
+     b4-1 d8-4 f~-3 f2 
   }
   \set TabStaff.minimumFret = #0
   e,,4 f fs g
@@ -51,7 +51,7 @@ guitar = \relative c' {
   \repeat volta 3 {
     \set TabStaff.restrainOpenStrings = ##t
     \set TabStaff.minimumFret = #3
-     a'4 c e~ e8 f16( e) d4 f8 a~ a2
+     a'4-1 c-3 e~ e8 f16( e) d4-1 f8-4 a~-3 a2
      \set TabStaff.minimumFret = #4
   }
   r1 
@@ -63,33 +63,34 @@ guitar = \relative c' {
   \repeat volta 2 {
     r8 <gs, d' fs c'>8 8[ 8] r8 8 <gs d' fs b>4
     r8 <fs c' e a>8 4 4 r4 
-    r8 b'16 a gs8 a b a gs b
+    r8 b'16-4 a-2 gs8-1 a b a gs b
     a4 f8
      \set TabStaff.minimumFret = #3
     d b4 r4
      \set TabStaff.minimumFret = #7
-    r8 b d' c b a
+    r8 b-3 d'-4 c b a
     \tuplet 3/2 {gs8( a gs)} f8 d b4 r
      \set TabStaff.minimumFret = #6
-    r4 \tuplet 3/2 {gs bf d} 
+    r4 \tuplet 3/2 {gs-1 b-4 d-1} 
      \set TabStaff.minimumFret = #9
     f4 \tuplet 3/2 {e8( f) e}
     \set TabStaff.minimumFret = #7
     c8 a a4 a2 
     r4 r8 a'8 b4 c8 d
-    r8 d8~ 4 r8 c b \set TabStaff.minimumFret = #4 a
-    b4 r8 gs b a f e
-    d c b \appoggiatura e\^ f e4 c8 a
-    e a c e a b c a
+    r8 d8~ 4 r8 c-4 b-3 \set TabStaff.minimumFret = #4 a-1
+    b4 r8 gs-1 b-4 a-2 f e
+    d c b %\appoggiatura e\^ 
+          f'-3 e4-2 c8-1 a-4
+    e-3 a-4 c-1 e-1 a-1 b c a
     \set TabStaff.minimumFret = #7
-    b4 fs8 a gs4 e8 ef
-    d c'~ 4 \set TabStaff.minimumFret = #4 b8 a gs b 
-    a8 e c4 a2 
+    b4 fs8-1 a-4 gs4 e8 ef
+    d c'~ 4 \set TabStaff.minimumFret = #4 b8-4 a-2 gs-1 b 
+    a8 e-1 c4-1 a2 
   } \break
   \repeat volta 2 {
-  a4 c e2 a,4 c8 e r8 e~ e4 \set TabStaff.minimumFret = #3 d4 f a2
+  a4-3 c e2 a,4 c8 e r8 e~ e4 \set TabStaff.minimumFret = #3 d4-1 f-4 a2-3
   d,4 f8 a r a~ a4
-  e4 gs b2
+  e4-2 gs-1 b2-4
   e,4 gs8 b r8 c4
   } \alternative {
    \volta 1 { \set TabStaff.minimumFret = #0 e,,,8 
@@ -99,7 +100,7 @@ guitar = \relative c' {
    \volta 2 { r8} 
   }
   \set TabStaff.minimumFret = #4
-  r8 e'' ds e f fs 
+  r8 e''-2 ds e f fs 
   \set TabStaff.minimumFret = #8
   g gs 
   a4 r4 r2
