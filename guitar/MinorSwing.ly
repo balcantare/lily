@@ -66,17 +66,17 @@ guitar = \relative c' {
     r8 b'16-4 a-2 gs8-1 a b a gs b
     a4 f8
      \set TabStaff.minimumFret = #3
-    d b4 r4
+    d-1 b4-2 r4
      \set TabStaff.minimumFret = #7
-    r8 b-3 d'-4 c b a
+    r4 r8 b-2 d'-4 c b a
     \tuplet 3/2 {gs8( a gs)} f8 d b4 r
      \set TabStaff.minimumFret = #6
-    r4 \tuplet 3/2 {gs-1 b-4 d-1} 
+    r4 \tuplet 3/2 {gs8-1 b-4 d-1} 
      \set TabStaff.minimumFret = #9
     f4 \tuplet 3/2 {e8( f) e}
     \set TabStaff.minimumFret = #7
     c8 a a4 a2 
-    r4 r8 a'8 b4 c8 d
+    r4 r8 a'8-4 b4 c8 d
     r8 d8~ 4 r8 c-4 b-3 \set TabStaff.minimumFret = #4 a-1
     b4 r8 gs-1 b-4 a-2 f e
     d c b %\appoggiatura e\^ 
