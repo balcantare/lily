@@ -51,7 +51,7 @@ guitar = \relative c' {
   \repeat volta 3 {
     \set TabStaff.restrainOpenStrings = ##t
     \set TabStaff.minimumFret = #3
-     a'4-1 c-3 e~ e8 f16( e) d4-1 f8-4 a~-3 a2
+     a'4-3 c-1 e~ e8 f16( e) d4-1 f8-4 a~-3 a2
      \set TabStaff.minimumFret = #4
   }
   r1 
