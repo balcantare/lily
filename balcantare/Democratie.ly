@@ -4,7 +4,7 @@ sheetComposer = "HK"
 #(define book-staff-size 20)
 \include "../include/book.ily"
 
-transTo=d,
+transTo=c,
 %transTo=df
 % https://lyricstranslate.com/de/hk-et-les-saltimbanks-democratie-lyrics
 
@@ -31,7 +31,7 @@ lyrStropheA = {
   Les voi -- là qui dé -- filent
   Aux por -- tes du pa -- lais
   \set stanza = "1. "
-  Faudrai -- t-il qu’on se mé -- fie
+  Fau -- t-il qu’on se mé -- fie
   A -- lors que le peup -- le‿a par -- lé
  \set stanza = "1. "
   Les voi -- là qui s’ar -- rangent
@@ -161,9 +161,9 @@ strophe = \relative c''' {
   \tuplet 3/2 {r4 b cs d cs b b g g~} g2
   \tuplet 3/2 {r4 a b cs b a a fs fs~} fs2
   \tuplet 3/2 {r4 g a b a g g e e~ e2
-               g4 fs fs a~ a g fs g d d~} d2
+               b'4 as as cs~ cs b as b fs fs~} fs2
   \bar "||"
-  \tuplet 3/2 {r4 b' cs d e d cs b b~} b2
+  \tuplet 3/2 {r4 b cs d e d cs b b~} b2
   \tuplet 3/2 {r4 e e e d cs d a a~} a2
   \tuplet 3/2 {r4 fs' fs fs e d cs b cs~ cs2 cs4 
                e e e~ e d cs d b b~} b2
