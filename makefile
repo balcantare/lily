@@ -1,5 +1,5 @@
 INSTDIR := out
-SUBDIRS := balcantare frchor bwchor freylax guitar piano
+SUBDIRS := balcantare frchor bwchor freylax guitar piano bass
 
 $(INSTDIR) :
 	mkdir $(INSTDIR)
