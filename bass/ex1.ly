@@ -32,7 +32,7 @@ bass = \relative c, {
   \clef "bass_8"
   \key a \minor
   \bar ".|:"
-  \mark \markup{Latin 1 - Quinte}
+  \mark \markup{Latin 1}
   \repeat volta 2 {
     \set TabStaff.restrainOpenStrings = ##t
     \set TabStaff.minimumFret = #0
@@ -52,7 +52,7 @@ bass = \relative c, {
   a1
   \break
   \bar ".|:-|."
-  \mark \markup{Latin 2 - Quinte, Terz}
+  \mark \markup{Latin 2}
   \repeat volta 2 {
     d4-0 f8-2^\markup { 
       % Dm
@@ -85,7 +85,7 @@ bass = \relative c, {
   d1
   \break
   \bar ".|:-|."
-  \mark \markup{Swing 1 - Quinte, Terz  }
+  \mark \markup{Swing 1 }
   \repeat volta 2 {
   d4 \xNote d^\markup { 
       % Dm

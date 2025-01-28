@@ -26,3 +26,5 @@
 }
 
 \includeSheet "ex1.ly"
+\includeSheet "BoboMale.ly"
+\includeSheet "Malembe.ly"
