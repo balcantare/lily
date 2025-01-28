@@ -42,10 +42,21 @@ stropheBass = \relative c {
   \clef "bass"
   \accidentalStyle neo-modern %-voice-cautionary
   \partial 2
-  s2
-  s1*11
-  s2
- 
+  s4
+  \parenthesize a4
+  d4. a'8~ 4 4
+  d,4. a8~ a4 a
+  d4. a'8~ 4 d,
+  b4. fs'8~ 4 b,
+  a4. e'8~ 4 a4
+  e4. a,8~ a4 a
+  e4. b'8~ 4 e
+  e4. b8~ 4 e
+  g,4. b8~ b4 g
+  a4. e'8~ e4 a,
+  d4. a'8~ 4 a
+  d,-.
+  r4
 }
 
 chrdStrophe = \chordmode { 
