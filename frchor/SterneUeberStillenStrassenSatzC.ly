@@ -63,6 +63,7 @@ lyrStropheD = {
 strophe = \relative c'' {
   \time 6/8
   \key c \major
+  \accidentalStyle modern-voice-cautionary
   \voiceOne
 %  \stopStaff
 %  \omit Staff.Clef
@@ -91,12 +92,13 @@ strophe = \relative c'' {
 
 alt = \relative c' {
   \voiceTwo
+  \accidentalStyle modern-voice-cautionary
   e4 d8 c4 c8
   b4 a8 b4 c8
   c4 d8 e4 d8
   e4 fs8 e4.
   e4 e8 e4 e8
-  d4 g8 g8 a as
+  d4 g8 g8 a bf
   a4 b8 a4 a8
   g4 f8 e4 e8 
   f8 a g g4.
@@ -104,6 +106,7 @@ alt = \relative c' {
 
 bass = \relative c {
   \clef "bass"
+  \accidentalStyle modern-voice-cautionary
   \voiceTwo
   c4 f8 e4 d8
   g4 f8 c4 c8 
@@ -119,6 +122,7 @@ bass = \relative c {
 tenor = \relative c' {
   \voiceOne
   \clef "bass"
+  \accidentalStyle modern-voice-cautionary
   c4 b8 a4 a8
   g4 g8 a g g
   a4 g8 g a b
@@ -135,9 +139,14 @@ chrdStrophe = \chordmode {
   %d4. g a d
   %b:m e:m a d 
   c4 g8:7/f a4:m/e d8:m7 
-  e4.:m/g c g c 
-  d:m g f c g c g 
-  a:m f c d4:m g8 c4. 
+  e4.:m/g g4:7/c c8
+  a4:m g8:/b c4 g8:/b 
+  a4:m d8:7 e4.
+  a:m c4:/e e8:m
+  d4:m/f g8:/d c8:/e f c:7/g
+  d4:m/f g8 a4:m/c a8:m
+  e4:m7 f8 c4:/g a8:m
+  g4:7 g8 c4.
 }
 
 \bookpart {
