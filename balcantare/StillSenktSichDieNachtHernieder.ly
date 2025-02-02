@@ -118,7 +118,9 @@ stropheTenor = \relative c' {
 
 chrdStrophe = \chordmode {
   \set chordBassOnly = ##f
-
+  g1 d2 g s1
+  a2 d c g d:7 g
+  c g a:m d c g d g
 }
 
 \bookpart {
