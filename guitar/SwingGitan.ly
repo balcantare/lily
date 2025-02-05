@@ -214,8 +214,72 @@ strophe = \relative c {
   r8 cs,-1\ds e\us g bf\5 gs-1 a cs
   \set TabStaff.minimumFret = #11
   e g\ds bf\ds df\us \ottava #1 e-2\dots g-4 bf-4 gs-2
-  
-\bar "|."
+   \set TabStaff.minimumFret = #14
+  a8-3 g-1 ef\ds c\ds a c ef f-4 
+  fs\2-4 \ottava #0 bf,\ds c\us cs(-1\ds\glissando d)-1 bf(-1\ds\glissando a)-1 g\ds
+  a4-1\ds g8-3\ds d-2\ds bf-3\ds g-1\us a-3\ds bf-4\us
+  d-3\ds g-3\ds bf-1\ds d-1\ds \ottava #1 g\ds a-1\us bf\ds d,-1\ds
+  cs-1\ds a'\ds a,4\ds a a'8 cs,
+  r8 a' a,4 a'8 cs, r a'
+   \set TabStaff.minimumFret = #9
+  c,4 \ottava #0 r8 d,(-2\ds \tuplet 3/2 { ef8)-3 g-2\ds bf-1\ds} c8-3\us bf-1\ds
+  a-1\us g-4\ds e-1\us f-2\ds fs-1\us  a-1\ds d4-1\ds
+  <fs,-2 a-1>4\ds <a c>4 4 <fs a>8 <g bf>
+  r <bf d> <a cs> <bf d> r8 <gf bf ef> <f a d> <gf bf ef>
+  r d( \tuplet 3/2 {ef) gf-1 bf-1} gf'\ds d\us \parenthesize ef c\ds
+  f,\ds gf\us c\ds a\us bf\ds gf\ds ef\ds cs\us
+  d-3 e-1\ds fs-2 g-3 a-1\ds bf c cs-1
+  d \ottava #1 fs(-4\glissando a)-4 g-2 d\2-1\ds \ottava #0 bf\3-1\ds a\3-1 g\4-4
+  cs4\2-1 a-1 a4. bf8
+  a8\us g fs a c ef d bf
+  g8\ds g\us g4\ds g4\ds cs,8-1 d-2
+  f\4-4 ef-2 a,-1 bf-2 c\5-3 cs\5-4 d4\5-4
+  \bar "||"
+  \set TabStaff.minimumFret = #6
+  r4 r8 d8-1 cs4-1 d8-1 \appoggiatura g\glissando bf~\2
+  bf2 r8 cs,-1\glissando \tuplet 3/2 {d-1 e-3 d-1}
+   \set TabStaff.minimumFret = #5
+  cs4-1 r8 d-2 cs-1 bs-1 cs-1 \appoggiatura fs-2\glissando a-2\2~
+  a1\2
+   \set TabStaff.minimumFret = #4
+  r8 \appoggiatura b,-1 c8~-1 \tuplet 3/2 {c8 d(-3 c)-1} \tuplet 3/2 {b4-1 c-1 \appoggiatura f-2\glissando a-2~\2}
+  a2 r8 c,~-1 \tuplet 3/2 {c8( d-3 c-1)}
+  \set TabStaff.minimumFret = #2
+  bf4-1 r4 a8-1 bf-1 c-3 bf-1
+  \appoggiatura ef\glissando g4\2-2 g8\2 g8~\2 g2\2
+  r4 r8 g,8-2 af4 c8 ef
+  \appoggiatura e\^ f2.( \^ ff4)
+  ef4. d8 cs d ef cs
+  d d,-4\ds e\ds fs\us g\ds a\ds bf\us c-4\ds\glissando
+  d-4\3\us e-1\ds f\us g\2\ds a-1\ds bf-2\us b-3 c-4
+   \set TabStaff.minimumFret = #5
+   \tupletDown
+  cs-4 bf-1 \tuplet 3/2 {a8(-1\ds bf) a\us g\ds e cs\ds a\ds af g\ds}
+  \set TabStaff.minimumFret = #3
+  \tuplet 3/2 {fs8-1\us ef-3 c-1 cs-2 d-2 fs-1 a c ef fs a ef'-2}
+  \set TabStaff.minimumFret = #9
+  \tuplet 3/2 {d(\ds ef) d\us c\ds a\us fs\ds d-3 c-1 a-3 fs d fs }
+  g4 r8 
+  \set TabStaff.minimumFret = #6
+  d'8-1 cs4-1 d8-1 bf'~\2-4
+  bf2 r8  cs,8(-1 \tuplet 3/2 {d8-1 e-3 d)-1}
+  cs4-1 r8 d-2 cs-1 bs\3-1 cs-1 a'-4
+  r8 a~-4 a2.
+  \set TabStaff.minimumFret = #4
+  r8 b,(-1 \tuplet 3/2 { c-1 d-3 c-1)} b8-1 c-1 r \appoggiatura gs'\2\^ a-3\2~
+  a2\2 r8 c,~ \tuplet 3/2 { c8 d c}
+  \set TabStaff.minimumFret = #2
+  bf4 r a bf
+  g'\2 r8 g8\2~ g2\2
+  r4 r8 g, af c ef4
+  \appoggiatura e\^ f2. \^ ff4 
+  ef4. d8 cs d ef cs
+  d4.\mordent g,8\ds bf\ds d\ds g\ds bf\us
+  a4\ds cs,8\ds <e a>4\ds <e bf'>8\us 4\ds
+  r8 <c ef bf'>4\ds <c ef a>8\us 8\ds r <a cs fs>\ds <bf d g>\ds
+  r8 fs(\ds \tuplet 3/2 {g8) bf\ds d\ds} ef\us c\ds a\us fs\ds
+  g\ds d\ds bf\ds g\ds r4 <d' g bf e a>4\fermata
+  \bar "|."
 }
 
 chrdStrophe = \chordmode {
@@ -226,7 +290,7 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    page-count = #2
+    page-count = #4
     #(define fonts (book-font 1))
     % ragged-last-bottom = ##t
   }
