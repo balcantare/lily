@@ -202,6 +202,18 @@ strophe = \relative c {
   \tuplet 3/2 {a8(\ds bf) a\us g\ds e\us cs\ds a g\dots f e ef cs}
   \tupletNeutral
   ef8-3\ds d\us cs\dots d fs a c ef\ds
+  fs d-1 ef4\3-2 r8 bf'-1\ds c-3\us cs-4\ds
+  d-4\ds bf\us g\ds  fs\us a\2\ds g\us d\ds bf\ds
+  g-1\ds \parenthesize d\4\us g \parenthesize d\4 g \parenthesize d\4 g \parenthesize d\4
+  g\ds \parenthesize d\4 ef4\ds ef4\ds 
+  \set TabStaff.minimumFret = #8
+  \tuplet 3/2 {ef'8-1\ds af-2\ds c-1\ds}
+  \tuplet 3/2 {d( ef d)} c4\2-4 f-4 d8 ef
+  \tuplet 3/2 {d8( ef d)} bf8 g\3 e-1 d bf\5 g
+  bf4.\5 g8 r2
+  r8 cs,-1\ds e\us g bf\5 gs-1 a cs
+  \set TabStaff.minimumFret = #11
+  e g\ds bf\ds df\us \ottava #1 e-2\dots g-4 bf-4 gs-2
   
 \bar "|."
 }
