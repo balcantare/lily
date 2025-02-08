@@ -68,9 +68,10 @@ upstroke = #(make-articulation 'upstroke)
 #(set! staff-script-alist
        (acons 'dots `((stencil . #f) (avoid-slur . ignore) (direction . ,DOWN)) 
         staff-script-alist))
+% do no tprint fermata in tabulature
 #(set! tab-script-alist
        (acons 'fermata `((stencil . #f) (avoid-slur . ignore) (direction . ,DOWN))
-        staff-script-alist))
+        tab-script-alist))
 
 dots = #(make-articulation 'dots)
 
@@ -87,20 +88,20 @@ strophe = \relative c {
   %\bar ".|:"
   \set TabStaff.restrainOpenStrings = ##t
   \set TabStaff.minimumFret = #3
-  <g d' g bf d>4\ds_\markup{\fret-diagram-terse "3;5;5;3-(;3-);x"} 4\dots
-  <bf ef g df' ef>4_\markup{\fret-diagram-terse "6-(;6-);5;6;4;x"} 4
-  <af ef' gf c ef>4_\markup{\fret-diagram-terse "4;6;4;5;4;x"} 4
-  <a d fs c' d>4_\markup{\fret-diagram-terse "5-(;5-);4;5;3;x"} 4
-  <g d' g bf d>4_\markup{\fret-diagram-terse "3;5;5;3-(;3-);x"} 4
-  <bf ef g df' ef>4_\markup{\fret-diagram-terse "6-(;6-);5;6;4;x"} 
-  <af ef' gf c ef>4~_\markup{\fret-diagram-terse "4;6;4;5;4;x"} 4
-  <bf ef g df' ef>4_\markup{\fret-diagram-terse "6-(;6-);5;6;4;x"} 
-  <a d fs c' d>4_\markup{\fret-diagram-terse "5-(;5-);4;5;3;x"} 
+  <g d' g bf d>4\ds_\markup{\fret-diagram-terse "3;5;5;3-(;3-);x;"} 4\dots
+  <bf ef g df' ef>4_\markup{\fret-diagram-terse "6-(;6-);5;6;4;x;"} 4
+  <af ef' gf c ef>4_\markup{\fret-diagram-terse "4;6;4;5;4;x;"} 4
+  <a d fs c' d>4_\markup{\fret-diagram-terse "5-(;5-);4;5;3;x;"} 4
+  <g d' g bf d>4_\markup{\fret-diagram-terse "3;5;5;3-(;3-);x;"} 4
+  <bf ef g df' ef>4_\markup{\fret-diagram-terse "6-(;6-);5;6;4;x;"} 
+  <af ef' gf c ef>4~_\markup{\hspace #1 \fret-diagram-terse "4;6;4;5;4;x;"} 4
+  <bf ef g df' ef>4_\markup{\fret-diagram-terse "6-(;6-);5;6;4;x;"} 
+  <a d fs c' d>4_\markup{\fret-diagram-terse "5-(;5-);4;5;3;x;"} 
   \break
   bf'4(-2\ds
   \set TabStaff.minimumFret = #6
   d4)-2\ds r cs-1\ds 
-  d8-1\ds bf'~-4\ds
+  d8-1\ds bf'~-4\2\ds
   bf2 r8 cs,8~(-1\ds 16 d-1 e-3 d-1)
   cs4-1\ds r8 d-2\us cs-1\ds bs-\3-1\us cs4-1\ds
   a'4-4\ds r8 a~\ds a2
@@ -239,8 +240,8 @@ strophe = \relative c {
   d4.\mordent g,8\ds_\markup{\fret-diagram "c:3-1-3;4-5;3-3;2-3;1-3;"} 
   bf\ds d\ds g\ds bf\us_\markup{\fret-diagram "c:2-1-5;3-6;2-5;1-5;"}
   a4\ds
-  cs,8\ds <e a>4\ds\us_\markup{\fret-diagram "3-6;2-5;1-6;"} 
-  <e bf'>8 4\ds
+  cs,8\ds <e a>4\ds_\markup{\fret-diagram "3-6;2-5;1-6;"} 
+  <e bf'>8\us 4\ds
   r8_\markup{\fret-diagram "3-5;2-4;1-6;"}  <c ef bf'>4\ds
    <c ef a>8\us 8\ds_\markup{\fret-diagram "3-5;2-4;1-5;"}
    r <a cs fs>\ds <bf d g>\ds_\markup{\fret-diagram "c:3-1-2;3-2;2-2;1-2;"} 
