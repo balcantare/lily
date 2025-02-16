@@ -289,6 +289,7 @@ chrdStrophe = \chordmode {
       \override TextScript.fret-diagram-details.barre-type = #'straight
       \override TextScript.fret-diagram-details.dot-radius = #0.35
       \override TextScript.fret-diagram-details.fret-label-font-mag = #0.7
+      \override TextScript.fret-diagram-details.fret-count = 3
       \override TextScript.fret-diagram-details.label-bass-fret = ##t  
     }{ \clef "G_8" \strophe }
     \new TabStaff \with {
