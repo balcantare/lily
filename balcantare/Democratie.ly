@@ -32,20 +32,20 @@ lyrStropheA = {
   Aux por -- tes du pa -- lais
   \set stanza = "1. "
   Fau -- t-il qu’on se mé -- fie
-  A -- lors que le peup -- le‿a par -- lé
+  A -- lors que le peu -- ple‿a par -- lé
  \set stanza = "1. "
   Les voi -- là qui s’ar -- rangent
-  Se -- lon leurs con -- ve -- nances
+  _ Se -- lon leurs con -- ve -- nances
   \set stanza = "1. "
   Voi -- là qu’on les dé -- range
   Voi -- là en -- core qu’ils ma -- ni -- gancent
  
   \set stanza = "1. "
-  Car c’est un jeu de dupes
-  Au -- quel ils nous con -- vient
+  _ Car c’est un jeu de dupes
+  Au -- quel ils nous con -- vi'
   \set stanza = "1. "
-  Tout ce qui sort de -- s‿ur -- nes
-  Doit con -- venir à leurs en -- vies
+  Tout ce qui sort de -- s‿urnes
+  Doit con -- ve -- nir à leur -- s‿en -- vies
   
   \set stanza = "1. "
   Si nous choi -- sis -- sons mal
@@ -56,11 +56,11 @@ lyrStropheA = {
   
   %% Refrain
   No -- tre mai -- son: Dé -- mo -- cra -- tie!
-  No -- tre hori -- zon: Dé -- mo -- cra -- tie!
+  No -- tr'‿ho -- ri -- zon: Dé -- mo -- cra -- tie!
   No -- tre rai -- son: Dé -- mo -- cra -- tie!
   On se bat pour la Dé -- mo -- cra -- tie!
   No -- tre mai -- son: Dé -- mo -- cra -- tie!
-  No -- tre hori -- zon: Dé -- mo -- cra -- tie!
+  No -- tr'‿ho -- ri -- zon: Dé -- mo -- cra -- tie!
   No -- tre rai -- son: Dé -- mo -- cra -- tie!
   On se bat pour la Dé -- mo -- cra -- tie!
   }
@@ -77,24 +77,24 @@ lyrStropheB = {
  
   \set stanza = "2. "
   L’art de la rhé -- to -- rique
-  Dans leurs plus beaux ha -- bits
+  _ Dans leurs plus beau -- x‿ha -- bits
   \set stanza = "2. "
   Par -- lent de Ré -- pu -- blique
   Et dinent a -- vec les grands lob -- bys
 
   \set stanza = "2. "
-  De -- vant les ca -- mé -- ras
+  _ De -- vant les ca -- mé -- ras
   Te -- nues par leur -- s‿a -- mis
   \set stanza = "2. "
   Ils nous poin -- tent du doigt
   Et nous re -- couv -- rent d’in -- fa -- mie
  
   \set stanza = "2. "
-  Men -- son -- ges et bo -- niments
+  Men -- son -- ges‿et bo -- ni -- ments
   Sont le pain quo -- ti -- dien
   \set stanza = "2. "
-  Qu’il -- s‿of -- frent aux pau -- vres gens
-  “A -- va -- lez, et tout‿i -- ra bien”
+  Qu’il -- s‿of -- fr'‿aux pau -- vres gens
+  “A -- va -- lez, et tou -- t‿i -- ra bien”
 }}
 
 lyrStropheC = {
@@ -108,13 +108,13 @@ lyrStropheC = {
  
   \set stanza = "3. "
   Je ne peux plus les croire
-  Il -- s‿nous‿ont tan -- t‿a -- bu -- sés
+  Il -- s‿nou -- s‿ont tan -- t‿a -- bu -- sés
   \set stanza = "3. "
-  Ils ne vou -- laient pas nous voir
-  Unis, mais tou -- jours di -- vi -- sés
+  Ils‿ne vou -- laient pas nous voir
+  U -- nis, mais tou -- jours di -- vi -- sés
   
   \set stanza = "3. "
-  Je suis de ceux quics’op -- posent
+  Je suis de ceux quis’op -- po -- sent
   De ceux qui dé -- non -- cent
   \set stanza = "3. "
   De ceux qui pro -- po -- sent
@@ -141,10 +141,10 @@ strophe = \relative c''' {
   g4. \break cs8 cs cs cs d
   cs cs cs d e d cs b 
   fs4. \break fs8 fs fs fs a 
-  g4. a8 b a g fs
+  g4 \parenthesize a8 a b a g fs
   e4. \break  b'8 b b b b
   as as as b cs b as g 
-  fs4. \break  b8 b b b cs
+  fs4 \break \parenthesize b8 b b b b cs
   d4. d8 d d e d 
   cs4. \break d8 d d d d
   cs8 cs cs d e d cs b 
