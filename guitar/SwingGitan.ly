@@ -3,6 +3,7 @@ sheetName = "Swing Gitan"
 sheetComposer = "As played by Angelo Debarre"
 #(define book-staff-size 20)
 \include "../include/book.ily"
+%\include "fret-diagrams-modified.scm"
 
 reversedDownbowMarkup =
 \markup \rotate #180 \musicglyph #"scripts.downbow"
@@ -288,7 +289,7 @@ chrdStrophe = \chordmode {
       \override TextScript.fret-diagram-details.barre-type = #'straight
       \override TextScript.fret-diagram-details.dot-radius = #0.35
       \override TextScript.fret-diagram-details.fret-label-font-mag = #0.7
-  
+      \override TextScript.fret-diagram-details.label-bass-fret = ##t  
     }{ \clef "G_8" \strophe }
     \new TabStaff \with {
       scriptDefinitions = #tab-script-alist  
