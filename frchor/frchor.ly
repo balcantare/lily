@@ -41,6 +41,7 @@ sheetCopyright = "©friedensingen.de"
 \includeSheet "DerPfahl.ly"             % 4
 \includeSheet "DieErdeIstUnsereMutter.ly" % 5
 \includeSheet "EinTaennleinSchliefZurWinternacht.ly"
+\includeSheet "FriedenWieDasEigneLeben.ly"
 \includeSheet "../balcantare/HappyXMas.ly"
 \includeSheet "HeuteUndHier.ly"           % 6
 \includeSheet "HevenuSchalomAlechem.ly"   % 7
