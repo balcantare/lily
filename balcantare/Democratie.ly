@@ -114,8 +114,8 @@ lyrStropheC = {
   U -- nis, mais tou -- jours di -- vi -- sés
   
   \set stanza = "3. "
-  Je suis de ceux quis’op -- po -- sent
-  De ceux qui dé -- non -- cent
+  Je suis de ceux qui -- s’op -- posent
+  _ De ceux qui dé -- noncent
   \set stanza = "3. "
   De ceux qui pro -- po -- sent
   Le che -- min de la ré -- sis -- tance
