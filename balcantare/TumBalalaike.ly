@@ -92,13 +92,14 @@ strophe = \relative c'' {
 
 chrdStrophe = \chordmode {
   c2.:m s s g
-  f:m f:m/d g:7 c:m
-  c:m c c c f:m6 s
-  g:7 c:m
-  c:m s s g
-  f:m/af f:m/d g:7 c:m
-  c:m s s  s f:m6 s
-  g:7 c:m
+  f:m s  g:7 c:m
+  c:m s f:m c:m f:m
+  s g:7 c:m
+  c2.:m s s g
+  f:m s  g:7 c:m
+  c:m s f:m c:m f:m
+  s g:7 c:m
+  
  }
 
 \bookpart {
