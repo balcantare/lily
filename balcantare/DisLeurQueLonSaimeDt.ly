@@ -9,7 +9,7 @@ transTo=a,
 %transTo=df
 
 skipA=\repeat unfold 21 \skip 8
-skipB=\repeat unfold 86 \skip 8
+skipB=\repeat unfold 85 \skip 8
 
 leftbrace = \markup {
   \override #'(font-encoding . fetaBraces)
@@ -29,7 +29,7 @@ lyrStropheA = {
     \skipA
     \set stanza = #"ref. "
     Men -- schen ha -- ben sich ge -- fun -- den, 
-    _ es ist kein Pro -- blem da -- bei.
+    es ist kein Pro -- blem da -- bei.
     Wir al -- le sind uns tief ver -- bun -- den. 
     Uns -- re Lie -- be macht uns frei.
 
@@ -49,9 +49,10 @@ lyrStropheA = {
     
     \set stanza = #"1. "
     Und uns -- re Kör -- per schwin -- gen.
-    _ Ganz laut wolln’ _ wir es sin -- gen:
+    Ganz laut wolln’ wir es sin -- gen:
     \set stanza = #"1. "
-    _ dass wir ein -- an -- der lie -- ben.
+    dass wir ein -- an -- der lie -- ben.
+    \set stanza = #"1. "
     Die Her -- zen sind ver -- eint, 
     wir sind die neu -- e Zeit!
   }
@@ -70,30 +71,28 @@ lyrStropheB = {
   \lyricmode {
     \skipB
     \set stanza = \stanzaB
-    Dis⃫ -- leur qu'o -- n‿es⃫ -- t‿u -- nie⃫s⃫
-    Dis⃫ -- leur qu'o -- n‿es⃫ -- t‿en -- sem -- ble
+    Sag ih -- nen: wir sind frei
+    und nie -- mand kann uns zwin -- gen,
     \set stanza = \stanzaB
-    Dis⃫ -- leur qu'o -- n‿es⃫ -- t‿en vie
-    Sur cet -- te Terr⃫e⃫ qui nous⃫ res⃫ -- sem -- ble
+    wie Vö -- gel, die da -- bei 
+    ihr Lied hi -- naus zum Him -- mel sin -- gen.
     \set stanza = #"2. "
-    Dis⃫ -- leur que l'o -- n‿in -- ven -- te 
-    Un au -- tre chant _ des⃫ pos⃫ -- sib -- les⃫
+    Wir fol -- gen un -- ser'n Ster -- nen
+    in un -- ge -- ahn -- te Fer -- nen.
     \set stanza = #"2. "
-    Comm⃫e⃫ ce -- s‿oi _ -- seaux qui chan -- ten⃫t⃫
+    Wir fol -- gen uns -- rer Lie -- be,
     \set stanza = #"2. "
-    Au petit⃫ matin d'un grand soir,
-    heu -- reux⃫ et⃫ in -- do -- cile⃫s⃫
+    wir ge -- hen nicht zu -- rück, wir le -- ben un -- ser Glück!
   }
 }
 
 lyrStropheBB = {
   \lyricmode {
     \skipB
-    Dis⃫ -- leur que l'on a -- vance
-    Que c'est in -- ex -- o -- rab -- le
-    Croi -- sant nos 
-    dif -- fé -- rence⃫s⃫ Sui -- vant⃫ 
-    l'i -- n‿ac -- ces⃫ -- sib -- le⃫‿é -- toi -- le
+  Wir trot -- zen Schnee und Wind.
+  Wir wis -- sen, dass der Win -- ter
+  im Son -- nen -- licht zer -- rinnt.
+  Wir sind die neu -- en Er -- den -- kin -- der!
 }}
 
 strophe = \relative c'' {
@@ -114,7 +113,7 @@ strophe = \relative c'' {
   \bar ".|:"
   bf[ c] df c4 bf16 af
   af8 gf4.~ 2
-  r8 af8 af bf c16 bf af4 gf8
+  r4 af8 bf c16 bf af4 gf8
   f1
   r8 bf bf c df c bf df
   ef bf4.~ 2
@@ -141,9 +140,9 @@ strophe = \relative c'' {
   %df bf \break  
   r bf bf bf bf ef
   ef bf \voiceOne r4 r2
-  r8 ef ef ef ef ef ef c
+  r4.  ef8 ef ef ef c
   df bf \break \voiceOne r4 r4.
-  f'8 f4 f8 8 f4 df
+  r8 f'4 f8 8 f4 df
   ef8 bf r4 r4. \break ef8
   ef ef ef c df4. df8 c c  df 
   c bf4 r4
@@ -191,8 +190,8 @@ chrdStrophe = \chordmode {
       >>
       \new Lyrics \lyricsto "Strophe" \lyrStropheA
       \new Lyrics \lyricsto "Strophe" \lyrStropheAA
-%      \new Lyrics \lyricsto "Strophe" \lyrStropheB
-%      \new Lyrics \lyricsto "Strophe" \lyrStropheBB
+      \new Lyrics \lyricsto "Strophe" \lyrStropheB
+      \new Lyrics \lyricsto "Strophe" \lyrStropheBB
     >>
   }
 }
