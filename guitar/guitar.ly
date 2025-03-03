@@ -34,5 +34,6 @@
 \includeSheet "MazurkaChoro.ly"
 \includeSheet "MinorSwing.ly"
 \includeSheet "SwingGitan.ly"
+\includeSheet "TroublantBolero.ly"
 \includeSheet "walz-41.ly"
 \includeSheet "ValseAJesaja.ly"
