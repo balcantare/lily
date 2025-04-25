@@ -1,7 +1,7 @@
 \version "2.24.0"
 sheetName = "Planet des Friedens"
 sheetComposer = "Reinhard Simmgen"
-sheetPoet = "Beate Tarach"
+sheetPoet = "Beate Tarrach"
 \include "../include/book.ily"
 
 

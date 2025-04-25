@@ -1,7 +1,7 @@
 \version "2.22.2"
 sheetName = "Mate Aroha"
 sheetComposer = "trad. Maori"
-sheetPoet = "dt. Text Beate Tarach"
+sheetPoet = "dt. Text Beate Tarrach"
 #(define book-staff-size 16)
 \include "../include/book.ily"
 

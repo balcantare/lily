@@ -1,6 +1,6 @@
 \version "2.22.2"
 sheetName = "Solange unsre Lieder klingen"
-sheetComposer = "Beate Tarach"
+sheetComposer = "Beate Tarrach"
 \include "book.ily"
 
 dropLyricsA = {

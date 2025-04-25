@@ -1,7 +1,7 @@
 \version "2.24.0"
 sheetName = "La Pigiatura"
 sheetComposer = "Traubenpresserlied aus \"Der gezähmte Widerspenstige\""
-sheetPoet = "dt. Text Beate Tarach"
+sheetPoet = "dt. Text Beate Tarrach"
 \include "../include/book.ily"
 
 dropLyricsA = {

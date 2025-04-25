@@ -1,6 +1,6 @@
 \version "2.24.0"
 sheetName = "Heute und hier"
-sheetComposer = "Beate Tarach"
+sheetComposer = "Beate Tarrach"
 \include "book.ily"
 
 

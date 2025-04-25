@@ -22,6 +22,14 @@ lyrStropheB = {
     Mer -- ry meet and mer -- ry part.
     _ Mer -- ry meet a -- gain.
 }}
+lyrStropheC = {
+  \lyricmode {
+    Que le cer -- cle soi -- t‿ou -- vert
+    mai -- s‿in -- in -- ter -- rom -- pu
+    Que la paix sur la terre soit tou -- jours
+    dans vos _ coeurs la joie vient
+    et la joie part au plai -- sir de‿vous re -- voir.
+}}
 
 strophe = \relative c'{
   \time 4/4
@@ -60,6 +68,7 @@ chrdStrophe = \chordmode {
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
+    \new Lyrics \lyricsto "Strophe" \lyrStropheC
     >>
     \layout {
       \context {

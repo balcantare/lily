@@ -1,6 +1,6 @@
 \version "2.24.0"
 sheetName = "Alles Wohl dem Volke!"
-sheetComposer = "Beate Tarach"
+sheetComposer = "Beate Tarrach"
 #(define book-staff-size 16)
 \include "book.ily"
 

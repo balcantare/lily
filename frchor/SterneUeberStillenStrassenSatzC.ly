@@ -100,7 +100,7 @@ alt = \relative c' {
   e4 e8 e4 e8
   d4 g8 g8 a bf
   a4 b8 a4 a8
-  g4 f8 e4 e8 
+  g4 f8 e4 e8 \accidentalStyle modern-voice-cautionary
   f8 a g g4.
 }
 

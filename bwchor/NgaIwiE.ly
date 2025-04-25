@@ -1,7 +1,7 @@
 \version "2.22.2"
 sheetName = "Nga iwi e"
 sheetComposer = "trad. Maori"
-sheetPoet = "dt. Text Beate Tarach"
+sheetPoet = "dt. Text Beate Tarrach"
 \include "book.ily"
 
 lyrStropheA = {

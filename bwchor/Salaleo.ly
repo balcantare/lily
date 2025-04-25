@@ -1,7 +1,7 @@
 \version "2.24.0"
 sheetName = "Salaleo"
 sheetComposer = "Begrüßungslied aus Ghana, arr. Reinhard Simmgen"
-sheetPoet = "dt. Beate Tarach"
+sheetPoet = "dt. Beate Tarrach"
 \include "../include/book.ily"
 
 lyrStropheA = {

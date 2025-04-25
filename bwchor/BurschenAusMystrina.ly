@@ -1,7 +1,7 @@
 \version "2.24.0"
 sheetName = "Burschen aus Mystrina"
 sheetComposer = "Slowakisches Volkslied, arr. Reinhard Simmgen"
-sheetPoet = "dt. Beate Tarach"
+sheetPoet = "dt. Beate Tarrach"
 \include "../include/book.ily"
 
 lyrStropheA = {

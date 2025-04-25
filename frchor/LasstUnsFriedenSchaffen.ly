@@ -1,6 +1,6 @@
 \version "2.22.2"
 sheetName = "Lasst uns Frieden schaffen"
-sheetComposer = "Beate Tarach"
+sheetComposer = "Beate Tarrach"
 \include "book.ily"
 
 skipA = \repeat unfold 21 {\skip 8}
