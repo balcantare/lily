@@ -5,12 +5,16 @@ sheetComposer = "Beate Tarrach"
 
 lyrStropheA = {
   \lyricmode {
+    \set stanza = "1. "
     Har -- ter Fels und Meer,
     Har -- ter Fels und Meer,
+    \set stanza = "1. "
     Le -- ben rings um -- her,
     Le -- ben rings um -- her,
+    \set stanza = "1. "
     Wind der uns um -- schwärmt,
     Wind der uns um -- schwärmt,
+    \set stanza = "1. "
     Son -- ne die uns wärmt,
     Son -- ne die uns wärmt.
     All die Wun -- der gibt es auf Er -- den,
@@ -24,12 +28,16 @@ lyrStropheA = {
 
 lyrStropheB = {
   \lyricmode {
+    \set stanza = "2. "
     Mut -- ter mit dem Kind,
     Mut -- ter mit dem Kind,
+    \set stanza = "2. "
     Le -- ben neu be -- ginnt,
     Le -- ben neu be -- ginnt,
+    \set stanza = "2. "
     Sa -- men -- korn das fällt,
     Sa -- men -- korn das fällt,
+    \set stanza = "2. "
     Hoff -- nung für die Welt,
     Hoff -- nung für die Welt.
     
