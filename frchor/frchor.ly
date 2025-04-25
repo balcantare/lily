@@ -50,6 +50,7 @@ sheetCopyright = "©friedensingen.de"
 \includeSheet "../bwchor/NgaIwiE.ly"       % 10
 \includeSheet "../bwchor/OdYavoShalomAleinu.ly" % 11
 \includeSheet "OLittleTownOfBethlehemDeD.ly"
+\includeSheet "OmManiPadmeHum.ly"
 \includeSheet "PlanetDesFriedens.ly"
 \includeSheet "SagMirWoDieBlumenSind.ly" % 12
 \includeSheet "SagMirWoDieBlumenSindDeSb.ly" % 12
