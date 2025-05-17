@@ -2,7 +2,6 @@
 sheetName = "Unter den Toren"
 sheetComposer = "Erik Martin"
 sheetPoet = "Erich Scholz"
-%#(define book-staff-size 20)
 \include "../include/book.ily"
 
 
@@ -97,10 +96,10 @@ chrdStrophe = \chordmode {
              
   \score {
     <<
-    \new ChordNames \chrdStrophe 
+    \new ChordNames \transpose g f \chrdStrophe 
     \new Staff \with {\accepts ChordNames}
     <<
-      \context Voice = "StropheSopran" \stropheSopran
+      \context Voice = "StropheSopran" \transpose g f \stropheSopran
     >>
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheA
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheB
