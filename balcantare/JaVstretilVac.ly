@@ -113,13 +113,14 @@ chrdStrophe = \chordmode {
   \paper {
     page-count = #1
     #(define fonts (book-font 1.4))
+    ragged-last-bottom = ##f
   }
   \bookItem
   \score {
     <<
-      \new ChordNames { \chrdStrophe }
+      \new ChordNames { \transpose c bf \chrdStrophe }
       \new Staff <<
-        \new Voice = "Strophe" { \strophe }
+        \new Voice = "Strophe" { \transpose c bf, \strophe }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
