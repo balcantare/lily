@@ -118,9 +118,9 @@ sopran = \relative c' {
   a4 g8 f e4
   d2 
   \bar "||" \break
-  a'4
+  a'4 d4
   \repeat volta 2 {
-    d4 d8 c d c
+    d8 c d c
     bf2 g4
     c4 c8 bf c bf
     a2 f4
@@ -128,8 +128,8 @@ sopran = \relative c' {
     g4. e8
   } \alternative {
     { f8 g
-      a2.~ a2 bf8[ c] }
-    { f, e 
+      a2.~ a2 bf8[ c] d4 }
+    { f,8 e 
       d2.~ d2 }
   }
   \bar "|."
@@ -156,7 +156,7 @@ alt = \relative c' {
   g4 g8 f g f
   e4. cs8
   d8 e
-  f2.( fs2) g8[ a]
+  f2.( fs2) g8[ a] bf4
   d,8 cs
   d2.~ d2
 }
@@ -164,12 +164,12 @@ alt = \relative c' {
 
 chrd =  \chordmode {
   s4
-  d2.:m g d2:m c4 f2. g:m
+  d2.:m g:m d2:m c4 f2. g:m
   c f2 a4:7 d2:m g8:m c:7
   f2 a4:7 d2:m 
   s4
-  g2.:m c f d:m g:m
-  a2.:7 d:m d:7
+  d2.:m c f d:m g:m
+  a2.:7 d:m d:7 g4:m
   s4 d2.:m s2
 }
 
