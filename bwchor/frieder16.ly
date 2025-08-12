@@ -1,6 +1,6 @@
 \version "2.24.2"
 sheetCopyright = "©musikhaus-loebner.de"
-#(define book-staff-size 24)
+#(define book-staff-size 16)
 \include "../include/book.ily"
 
 % \bookpart {
@@ -30,4 +30,4 @@ sheetCopyright = "©musikhaus-loebner.de"
 %   \markuplist \table-of-contents
 % }
 
-\includeSheet "FriederLeierkasten.ly"
+\includeSheet "FriederLeierkasten16.ly"
