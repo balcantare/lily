@@ -242,8 +242,8 @@ lyrStropheM = {
   \set stanza = #"13. "
   Macht gu -- te Lau -- ne nicht zu knapp
   \set stanza = #"13. "Und ü -- ber o -- der un -- ter Tag
-  Bleibt nur ge -- sund und   
-  \set stanza = #"13. "macht nicht 
+  \set stanza = #"13. "Bleibt nur ge -- sund und   
+  macht nicht 
   schlapp!
   \set stanza = #"13. "Wir sind Euch treu gar kei -- ne Frag
 }}
