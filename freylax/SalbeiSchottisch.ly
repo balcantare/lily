@@ -1,6 +1,6 @@
-\version "2.22.2"
+\version "2.24.2"
 sheetName = "Salbei Schottisch"
-\include "book.ily"
+\include "../include/book.ily"
 
 strophe = \relative c'' {
   \time 2/4
@@ -8,6 +8,7 @@ strophe = \relative c'' {
   \bar ".|:"
   \partial 4
   \repeat volta 2 {
+  \mark \markup{ \box{\fontsize #4 A}}
   a8 b
   c a a g
   a4 a8 b
@@ -20,6 +21,7 @@ strophe = \relative c'' {
   a4
   } \break
   \repeat volta 2 {
+  \mark \markup{ \box{\fontsize #4 B}}
   \repeatTie
   a4
 
@@ -44,6 +46,9 @@ chrdStrophe = \chordmode {
     page-count = #1
   }
   \bookItem
+  \header {
+    subtitle = "Schottish |AABB|"
+  }
   \score {
     <<
     \new ChordNames { \chrdStrophe }

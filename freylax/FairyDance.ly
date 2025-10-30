@@ -1,6 +1,6 @@
-\version "2.22.2"
+\version "2.24.2"
 sheetName = "Fairy Dance"
-\include "book.ily"
+\include "../include/book.ily"
 
 strophe = \relative c'' {
   \time 3/4
@@ -47,6 +47,9 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
+  }
+  \header {
+    subtitle = "Walzer"
   }
   \bookItem
   \score {

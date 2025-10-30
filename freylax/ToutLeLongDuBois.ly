@@ -1,18 +1,20 @@
-\version "2.22.2"
+\version "2.24.2"
 sheetName = "Tout le long du bois"
-\include "book.ily"
+\include "../include/book.ily"
 
 strophe = \relative c' {
   \time 2/4
   \key c \major
   \bar ".|:"
   \repeat volta 2 {
+    \mark \markup{ \box{\fontsize #4 A}}
     e4 a8 b c4 a8 b
     c8 c b a g2
     e4 a8 b c a a b
     c4 b a2
   }
   \repeat volta 2 {
+    \mark \markup{ \box{\fontsize #4 B}}
     c4 a8 b c4 a8 b
     c c b a g2
     c8 c a b c a a b
@@ -32,6 +34,9 @@ chrdStrophe = \chordmode {
     page-count = #1
   }
   \bookItem
+  \header{
+    subtitle = "Andro |AABB|"
+  }
   \score {
     <<
     \new ChordNames { \chrdStrophe }
