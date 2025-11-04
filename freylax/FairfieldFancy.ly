@@ -1,5 +1,5 @@
 \version "2.24.2"
-sheetName = "Faifield Fancy"
+sheetName = "Fairfield Fancy"
 \include "../include/book.ily"
 
 strophe = \relative c' {
