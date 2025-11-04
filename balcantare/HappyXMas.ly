@@ -136,15 +136,15 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-      \new ChordNames { \transpose g c \chrdStrophe }
+      \new ChordNames { \transpose g d \chrdStrophe }
       \new Staff <<
-        \new Voice = "Strophe" { \transpose g c \strophe }
+        \new Voice = "Strophe" { \transpose g d \strophe }
       >>
     \new	Lyrics \lyricsto "Strophe" \lyrStropheA
     \new	Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyrStropheC
       \new Staff <<
-        \new Voice = "StropheTenor" { \transpose g c \stropheTenor }
+        \new Voice = "StropheTenor" { \transpose g d \stropheTenor }
       >>
     >>
   }
