@@ -28,6 +28,7 @@ sheetCopyright = "©freylax"
   \markuplist \table-of-contents
 
 }
+\includeSheet "Cercle.ly"
 \includeSheet "DeMontfort.ly"
 \includeSheet "Dubbele.ly"
 \includeSheet "FairfieldFancy.ly"
