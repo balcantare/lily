@@ -1,6 +1,6 @@
 \version "2.24.2"
 sheetComposer = "ry"
-sheetName = "Cercle"
+sheetName = "Cerclevolu"
 \include "../include/book.ily"
 
 strophe = \relative c'' {
