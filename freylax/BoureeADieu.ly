@@ -39,6 +39,7 @@ a4.:m g8 s2 f4. g8 s2 d2:m s f e:m e:m
 \bookpart {
   \paper {
     page-count = #1
+    #(define fonts (book-font 1.4))
   }
   \bookItem
   \header {

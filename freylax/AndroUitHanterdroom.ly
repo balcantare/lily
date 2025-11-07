@@ -46,6 +46,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
+    #(define fonts (book-font 1.4))
   }
   \bookItem
   \header {
