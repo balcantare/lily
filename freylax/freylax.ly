@@ -28,7 +28,9 @@ sheetCopyright = "©freylax"
   \markuplist \table-of-contents
 
 }
+\includeSheet "AndroUitHanterdroom.ly"
 \includeSheet "../balcantare/Biserka.ly"
+\includeSheet "BoureeADieu.ly"
 \includeSheet "Cerclevolu.ly"
 \includeSheet "DeMontfort.ly"
 \includeSheet "DeTweedeKoepel.ly"
@@ -40,6 +42,7 @@ sheetCopyright = "©freylax"
 \includeSheet "Hepter.ly"
 \includeSheet "IetsVoorVyf.ly"
 \includeSheet "KijkenInHetKampvuur.ly"
+\includeSheet "Kriebels.ly"
 \includeSheet "../latino/laurita.ly"
 \includeSheet "MazurkaLizzee.ly"
 \includeSheet "MazurkaVoorEenDooieMus.ly"
