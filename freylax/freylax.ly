@@ -1,6 +1,6 @@
-\version "2.22.2"
+\version "2.24.2"
 sheetCopyright = "©freylax"
-\include "book.ily"
+\include "../include/book.ily"
 
 \bookpart {
   \paper{
@@ -28,6 +28,7 @@ sheetCopyright = "©freylax"
   \markuplist \table-of-contents
 
 }
+\includeSheet "../balcantare/Biserka.ly"
 \includeSheet "Cerclevolu.ly"
 \includeSheet "DeMontfort.ly"
 \includeSheet "DeTweedeKoepel.ly"
@@ -39,6 +40,7 @@ sheetCopyright = "©freylax"
 \includeSheet "Hepter.ly"
 \includeSheet "IetsVoorVyf.ly"
 \includeSheet "KijkenInHetKampvuur.ly"
+\includeSheet "../latino/laurita.ly"
 \includeSheet "MazurkaLizzee.ly"
 \includeSheet "MazurkaVoorEenDooieMus.ly"
 \includeSheet "MichaelsJig.ly"
@@ -49,5 +51,6 @@ sheetCopyright = "©freylax"
 \includeSheet "ScottishPourBruno.ly"
 \includeSheet "ScottishVreeswijk.ly"
 \includeSheet "ToutLeLongDuBois.ly" % 3
+\includeSheet "../balcantare/Valenki.ly"
 \includeSheet "WalsVoorDeWilgen.ly"
 \includeSheet "Zelda.ly"     % 4
