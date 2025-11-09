@@ -35,6 +35,7 @@
 \includeSheet "MinorSwing.ly"
 \includeSheet "NuagesSolo.ly"
 \includeSheet "SwingGitan.ly"
+\includeSheet "TeleGlues.ly"
 \includeSheet "TroublantBolero.ly"
 \includeSheet "walz-41.ly"
 \includeSheet "ValseAJesaja.ly"
