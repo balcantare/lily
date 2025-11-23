@@ -32,4 +32,5 @@ sheetCopyright = "©balcantare.de"
   \markuplist \table-of-contents
 }
 
+\includeSheet "TennLys.ly"
 \includeSheet "NavidadLosReyesMagosGm.ly"
