@@ -148,7 +148,7 @@ stropheAlt = \relative c'' {
   e4) fs g g
   a a b a
   g4( a) bf g
-  g2( fs
+  fs2( g
   fs1)
 
 }
@@ -167,11 +167,11 @@ stropheBass = \relative c {
   a2 b
   cs4 cs b b
   b2( a)~
-  a g2
-  e fs
-  g a
-  b1
-  cs2. a4~
+  a4 b b cs
+  d2 g 
+  g4 e d b 
+  a1
+  a4 b cs a4~
   a2 b
   cs4 cs b b
   b2( a)~
@@ -182,7 +182,7 @@ stropheBass = \relative c {
   d'1
 }
 chrdStrophe = \chordmode {
-  d2 fs:m b1
+  d2 fs:m b1:m
   g2 e:m
   a1 d2 fs:m
   b1:m g2 a2
@@ -222,7 +222,7 @@ chrdStrophe = \chordmode {
     \layout {
       \context {
         \Lyrics
- %       \override LyricText.font-size = #2
+        \override LyricText.font-size = #0
       }
     }
   }
