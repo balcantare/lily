@@ -33,5 +33,4 @@ sheetCopyright = "©balcantare.de"
 }
 
 \includeSheet "LeisLeisLeis.ly"
-\includeSheet "MaryHadABaby.ly"
 \includeSheet "RiuRiuChiu.ly"

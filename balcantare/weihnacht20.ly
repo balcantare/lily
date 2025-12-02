@@ -34,4 +34,5 @@ sheetCopyright = "©balcantare.de"
 
 \includeSheet "TennLys.ly"
 \includeSheet "TennLysC.ly"
+\includeSheet "MaryHadABaby.ly"
 \includeSheet "NavidadLosReyesMagosGm.ly"

@@ -1,8 +1,10 @@
 \version "2.24.0"
 sheetName = "Mary had a Baby"
 sheetComposer = "trad, Satz Christoph Kapfhammer"
-#(define book-staff-size 16)
+#(define book-staff-size 20)
 \include "../include/book.ily"
+
+trans = d
 
 rightbrace = \markup {
   \rotate #180 {
@@ -192,23 +194,23 @@ stropheTenor = \relative c' {
 }
 
 chrdStrophe = \chordmode {
-  c1 s a:m c s s s g
-  f c e:m a:m c s a:m c
+  c1 s f c s s s g
+  f c e:m a:m c s f c
 }
 
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.2))
+    #(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
   \bookItem
   \score {
     <<
-      \new ChordNames { \chrdStrophe }
+      \new ChordNames { \transpose c \trans \chrdStrophe }
       \new Staff <<
-        \new Voice = "StropheSopran" { \stropheSopran }
-        \new Voice = "StropheAlt" { \stropheAlt }
+        \new Voice = "StropheSopran" { \transpose c \trans \stropheSopran }
+        \new Voice = "StropheAlt" { \transpose c \trans \stropheAlt }
       >>
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheA
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheB
@@ -218,9 +220,15 @@ chrdStrophe = \chordmode {
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheF
     \new	Lyrics \lyricsto "StropheSopran" \lyrStropheG
     \new Staff <<
-        \new Voice = "StropheTenor" { \stropheTenor }
-        \new Voice = "StropheBass" { \stropheBass }
+        \new Voice = "StropheTenor" { \transpose c \trans \stropheTenor }
+        \new Voice = "StropheBass" { \transpose c \trans \stropheBass }
       >>
     >>
+    \layout {
+      \context {
+        \Lyrics
+        \override LyricText.font-size = #1
+      }
+    }
   }
 }
