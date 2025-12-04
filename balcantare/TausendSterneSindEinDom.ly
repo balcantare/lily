@@ -43,6 +43,17 @@ lyrStropheC = {
   Nacht.
 }}
 
+intro = \relative c'' {
+  e4 e d8. e16 d4
+  c4 c b8. c16 b4
+  a4 a g e'
+  d8 c b4 c2
+  \bar "||"
+}
+chrdIntro = \chordmode {
+  c2 g a:m e:m f c g:/b c 
+}
+
 stropheSopran = \relative c' {
   \voiceOne
   \accidentalStyle neo-modern-voice-cautionary
@@ -96,10 +107,18 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.4))
+    #(define fonts (book-font 1.2))
     ragged-last-bottom = ##f
   }
   \bookItem
+  \score {
+     <<
+       \new ChordNames { \chrdIntro }
+       \new Staff <<
+         \new Voice = "Intro" { \intro }
+       >>
+     >>
+  }
   \score {
     <<
       \new ChordNames { \chrdStrophe }
