@@ -152,13 +152,40 @@ chrdStrophe = \chordmode {
   g1 d e:m d c d2 g c d g1
 }
 
+intro = \relative c'' {
+  \accidentalStyle neo-modern-voice-cautionary
+  \time 4/4
+  \key g \major
+  b2 c 
+  b4. a8 g4 b
+  a4 g2 fs4
+  g2 g \bar "||"
+}
+
+chrdIntro = \chordmode {
+  g2 c4 d
+  g1
+  c2 d
+  g1
+}
+
+
 \bookpart {
   \paper {
     page-count = #1
     #(define fonts (book-font 1))
     ragged-last-bottom = ##f
+    ragged-last = ##f
   }
   \bookItem
+  \score {
+    <<
+     \new ChordNames { \chrdIntro }
+     \new Staff <<
+       \new Voice = "Intro" { \intro}
+     >>
+    >>
+  }
   \score {
     <<
       \new ChordNames { \chrdStrophe }

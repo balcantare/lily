@@ -4,13 +4,18 @@ sheetPoet = "Erika Engel"
 sheetComposer = "Hans Sandig"
 \include "../include/book.ily"
 
+skipA={\repeat unfold 12 \skip 8}
+
 lyrStropheA = {
   \lyricmode {
+    \skipA
   \set stanza = "1. "
   Sind die Lich -- ter an -- ge -- zün -- det,
   Freu -- de zieht in je -- den Raum.
+  \set stanza = "1. "
   Weih -- nachts -- freu -- de wird
-  ver  -- kün -- det un -- ter je -- dem
+  ver  -- kün -- det 
+  \set stanza = "1. " un -- ter je -- dem
   Lich -- ter -- baum.
   Leuch -- te Licht mit hel -- lem
   Schein, ü -- ber -- all,
@@ -19,33 +24,44 @@ lyrStropheA = {
 
 lyrStropheB = {
   \lyricmode {
+    \skipA
    \set stanza = "2. "
    Sü -- se Din -- ge,
    schö -- ne Ga -- ben ge -- hen
    nun von Hand zu Hand.
+   \set stanza = "2. "
    Je -- des Kind soll Freu -- de
-   ha -- ben, je -- des Kind in je -- dem Land.
+   ha -- ben, 
+   \set stanza = "2. "
+   je -- des Kind in je -- dem Land.
 }}
 
 lyrStropheC = {
   \lyricmode {
+    \skipA
    \set stanza = "3. "
   Sind die Lich -- ter an -- ge -- zün -- det,
   rings ist je -- der Raum er -- hellt.
+  \set stanza = "3. "
   Weih -- nachts -- frie -- de wird
-  ver -- kün -- det, zieht hi -- naus in al -- le
-  Welt.
+  ver -- kün -- det, 
+  \set stanza = "3. "
+  zieht hi -- naus in al -- le Welt.
   \repeat unfold 14 \skip 4
    \set stanza = "3. "
    Frie -- de sein.
 }}
 
 stropheSopran = \relative c' {
-  \voiceOne
-  \override Rest.staff-position = #0
   \accidentalStyle neo-modern-voice-cautionary
   \time 3/4
   \key c \major
+  e4 g8 c4 g8
+  a4 f8 d4 c8
+  c4. c4 d8
+  d2 r4 \bar "||" \break
+  \voiceOne
+  \override Rest.staff-position = #0
   e2 f4
   g2 g4
   f2 e4
@@ -78,6 +94,7 @@ stropheSopran = \relative c' {
 }
 
 stropheAlt = \relative c' {
+  \repeat unfold 4 s2.
   \voiceTwo
   \language english
   c2 d4
@@ -112,6 +129,7 @@ stropheAlt = \relative c' {
 }
 
 chrdStrophe = \chordmode {
+  c4. a:m d:m g c f g2.
   c2. g:/b d:m g a:m
   c d:m g c
   \set chordBassOnly = ##t
@@ -124,7 +142,8 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.4))
+    #(define fonts (book-font 1.2))
+    ragged-last-bottom = ##f
   }
   % \header { subtitle = "" }
   \bookItem
