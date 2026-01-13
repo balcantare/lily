@@ -4,6 +4,8 @@ sheetComposer = "Beate Tarrach, Reinhard Simmgen"
 #(define book-staff-size 16)
 \include "../include/book.ily"
 
+transto = e
+
 leftbrace = \markup {
   \override #'(font-encoding . fetaBraces)
   \lookup "brace75"
@@ -201,20 +203,20 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-      \new ChordNames { \chrdStrophe }
+      \new ChordNames { \transpose d \transto \chrdStrophe }
       \new Staff <<
-        \new Voice = "Strophe" { \strophe }
+        \new Voice = "Strophe" { \transpose d \transto \strophe }
       >>
 
      \new Lyrics \lyricsto "Strophe" \lyrStropheA
      \new Lyrics \lyricsto "Strophe" \lyrStropheB
      \new Staff <<
-        \new Voice = "StropheAlt" { \stropheAlt }
+        \new Voice = "StropheAlt" { \transpose d \transto \stropheAlt }
       >>
      \new Lyrics \lyrStropheAbass
      \new Lyrics \lyrStropheBbass
      \new Staff <<
-        \new Voice = "StropheBass" { \stropheBass }
+        \new Voice = "StropheBass" { \transpose d \transto \stropheBass }
      >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
