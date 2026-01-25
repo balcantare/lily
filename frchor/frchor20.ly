@@ -35,5 +35,7 @@ sheetCopyright = "©friedensingen.de"
   \markuplist \table-of-contents
 
 }
+book = frchor
+\includeSheet "../bwchor/EinHochAufDasLeben.ly"
 \includeSheet "BrotUndRosen.ly"
 \includeSheet "RuestigeRentner.ly"

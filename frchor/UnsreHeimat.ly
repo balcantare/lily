@@ -26,40 +26,40 @@ strophe = \relative c'{
   \key d \major
   \partial 2
   fs4 g 
-  a2 a4~ 
-  a fs g
+  a2. 2. 
+  r4 fs g
   a b a 
   fs d e
-  fs2 fs4~
-  fs d e
+  fs2. 2. \break
+  r4 d e
   fs a fs 
   d b d 
   e d fs 
   e \break fs g 
-  a2 a4~
-  a fs g
+  a2. 2.
+  r4 fs g
   a d b 
   a fs gs
   a cs b 
-  a gs a 
-  fs2 fs4~
-  fs a gs
+  a \break gs a 
+  fs2. 2.
+  r4 a gs
   fs a gs
   fs cs' b
-  a2 a4~
-  a cs b
+  a2. 2. \break
+  r4 cs b
   a e' d 
   cs b cs
-  a2 a4~
-  a fs g
+  a2. 2. \break
+  r4 fs g
   a b a
   fs d e
-  fs2 fs4~
-  fs d e 
+  fs2. 2.
+  r4 d e 
   fs a fs
   d b d 
   e d fs
-  e fs g
+  e \break fs g
   a fs g
   a d  cs
   d2.~
@@ -69,14 +69,13 @@ strophe = \relative c'{
 chrdStrophe = \chordmode {
   s2
   d2. s s
-  g2 s4
-  b2.:m  g 
-  d2. g a s d s g
+  s s s  
+  s2. s b:m g e:m a d s s g
   d2 s4 fs2.:m  cs:7 fs2.:m s
-  s e:7
-  a2. s s cs:7 fs2.:m
-  g  d b2:m s4 g2. e:m  d2.
-  g a s g  a:7 d2.
+  s s e:7
+  a2. s s s e:7 a2. s
+  a:7 d b:m d s s b:m g
+  e:m a d a:7 d2.
 }
 
 \bookpart {

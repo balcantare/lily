@@ -1,20 +1,21 @@
 \version "2.24.0"
 sheetName = "Hab Mut, keine Angst!"
 sheetComposer = "Beate Tarrach"
-#(define book-staff-size 16)
+%#(define book-staff-size 16)
 \include "../include/book.ily"
+
+tran=c
 
 lyrStropheA = {
   \lyricmode {
     \set stanza = "1. "
     Vol -- ler Zwei -- fel um das Mor -- gen,
-    doch im \set stanza = "1. " Her --  zen noch Ge -- sang,
-    durch uns -- re A -- dern fließt
+    doch im  Her --  zen noch Ge -- sang,
+    \set stanza = "1. " durch uns -- re A -- dern fließt
     le -- ben -- di -- ges Blut.
-    \set stanza = "1. "
-    Die Ge -- dan -- ken sind frei,
+    \set stanza = "1. " Die Ge -- dan -- ken sind frei,
     sie trot -- zen dem Zwang
-    und die \set stanza = "1. "
+    \set stanza = "1. " und die 
     See -- le schreit:
     Hab end -- lich Mut!
     Hab Mut, kei -- ne Angst,
@@ -28,77 +29,79 @@ lyrStropheA = {
     Hab nur Mut und nimm es selbst
     in die Hand!
 }}
+
 lyrStropheB = {
   \lyricmode {
     \set stanza = "2. "
-    Du kannst si -- cher sein, es geht bei
-    vie -- lem \set stanza = "2. " nur um Macht und Geld,
-    _ drum sei wach -- sam und gib gut auf dich acht!
-    \set stanza = "2. " Du musst im -- mer frei entscheiden,
-    du_musst tun, was dir gefällt,
-    weil das \set stanza = "2. " sonst ein ande -- rer für dich macht!
-}}
+     Folg nicht blind -- lings je -- der Wei -- sung,
+      _ fang selbst zu den -- ken an
+     \set stanza = "2. " _ und hör im -- mer auf dein Bauch _ -- ge -- fühl!
+     \set stanza = "2. " Leg den  Fin -- ger in_die Wunde, 
+     weil_nur das was än -- dern_kann.
+     \set stanza = "2. " Stell die  Fra -- ge: was_ist das für ein Spiel?
+  }
+}
 lyrStropheC = {
   \lyricmode {
     \set stanza = "3. "
-    Es ist end -- lich an der Zeit _
-    für Ge -- \set stanza = "3. " rech -- tig -- keit im Land,
-    daß die Ge -- win -- ner mal die Rech -- nung
-    be -- zahln'.
-    \set stanza = "3. " Sie ver -- die -- nen an Kriesen,
-    ha -- ben uns in der_Hand
-    und wir \set stanza = "3. " las -- sen uns_das ein -- fach
-    ge -- fallen.
-  }
-}
+    Du kannst si -- cher sein, es geht bei
+    vie -- lem nur um Macht und Geld,
+    \set stanza = "3. " _ drum sei wach -- sam und gib gut auf dich acht!
+    \set stanza = "3. " Du musst im -- mer frei entscheiden,
+    du_musst tun, was dir gefällt,
+    \set stanza = "3. " weil das  sonst ein ande -- rer für dich macht!
+}}
 lyrStropheD = {
   \lyricmode {
     \set stanza = "4. "
     Drum lass dei -- ne Stim -- me hö -- ren,
-    auch wenn \set stanza = "4. " das nicht ein -- fach ist! _
-    Hab Ver -- trau -- en, _ du bist nicht al -- lein!
+    auch wenn  das nicht ein -- fach ist! 
+    \set stanza = "4. " _ Hab Ver -- trau -- en, _ du bist nicht al -- lein!
     \set stanza = "4. " Vie -- le Men -- schen wer -- den_da_sein,
     wenn_du klar und of -- fen_bist.
-    Und es \set stanza = "4. " wächst die Kraft beim Zu -- sam -- mensein.
+    \set stanza = "4. " Und es  wächst die Kraft beim Zu -- sam -- mensein.
 }}
 
 strophe = \relative c'{
-  \time 4/4
+  \time 2/4
   \key d \major
   \partial 4
   \bar "|."
   a8 a
   fs'8 8 8 16 16~ 8 8 g fs
-  fs e e d16 e~ e8 e fs e
+  fs e e d16 e~ \autoBeamOff e8 \break e \autoBeamOn fs[ e]
   e d d b d e d e~
   %\set Score.measureLength = #(ly:make-moment 4/4)
-  e2. \break a,8 a
+  e2 r4 \break a,8 a
   fs'8 8 8 8~ fs4.  a8
-  a8 g fs d~ 4 8 8
-  d b b4 d8 e d cs~
-  cs2 r4 \break cs
-  d4 b8 a16 b~ b4. cs8
-  d4 d8 e16 d~ d4 e
-  fs4 fs8 fs fs e e d
-  fs e e e~ e e e fs
-  g4 g8 g g4 fs
-  e8 d b b~ b2
-  \time 2/4
-  r4 d
-  \time 4/4
-  d d8 d e8 e e d16 fs~
-  fs2 r4 a8 g
-  fs d  d d
-  fs4 e8 d16 d~
-  d2.
+  a8 g fs d( 4) \break 8 8
+  d b b4 \tuplet 3/2 { d4 e d} 
+  e2 r4 a
+  a4 fs8 e16 d~ d4. \break d8
+  \tuplet 3/2 { g4 g a} e4 fs
+  g4 g8 a
+  b8 b b b
+  b a g a~
+  a d, d d
+  b'4 b8 b
+  cs4 cs
+  cs8 a g fs~
+  2
+  r4 e4
+  d4 d8 d
+  b'8 b b a16 a~
+  a2 |
+  r4 b8 cs
+  d a a d,
+  g4 fs8 d16 d~
+  d2
   \bar "|."
 }
 chrdStrophe = \chordmode {
  s4
- d1 a g a d g b:m a b:m g d a g s s2
- d2 a b1:m
- d2 b4:m a
- d2
+ d1 a g a d g e2:m g a1 d g2 a 
+ g s e2:m a g a1 
+ b:m g a d2 g4 a d2
 }
 
 \bookpart {
@@ -110,9 +113,9 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames { \transpose d \tran \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" { \transpose d \tran \strophe }
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB

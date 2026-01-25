@@ -8,7 +8,8 @@ sheetComposer = "Beate Tarrach"
  
 tran = #(if (and (defined? 'book)
                  (string? book)
-                 (equal? book "balcantare"))
+                 (or (equal? book "balcantare")
+                     (equal? book "frchor")))
            #{d#}
            #{f,#}
            )

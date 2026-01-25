@@ -8,6 +8,7 @@ lyrStropheA = {
     Om ma -- ni pad -- me hum.
     Om ma -- ni pad -- me hum.
     Om ma -- ni pad -- me hum.
+    Om ma -- ni pad -- me hum.    
     Om ma -- ni pad -- me hum.
 }}
 
@@ -26,7 +27,10 @@ strophe = \relative c'{
   f1 f4 e e d~
   d4 d2.~ d1 \break
   a'1 a4 g g f~
-  f g2.~ g1
+  f f2.~ f1 \break
+  e1 
+  e4 d d c
+  d1~ 1
   \bar "|."
 }
 
@@ -35,7 +39,9 @@ chrdStrophe = \chordmode {
   d:m s g s
   c g:/b a:m e:m/g
   f s g s
-  f s g
+  f s s s
+  c s g
+  
 }
 
 \bookpart {

@@ -4,6 +4,7 @@ sheetComposer = "Beate Tarrach"
 %#(define book-staff-size 20)
 \include "../include/book.ily"
 
+tran = d
 
 lyrStropheA = {
   \lyricmode {
@@ -171,17 +172,17 @@ chrdStrophe =  \chordmode {
   \bookItem
   \score {
     <<
-    \new ChordNames { \transpose d c \chrdStrophe }
+    \new ChordNames { \transpose d \tran \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe" { \transpose d c \strophe }
-      \new Voice = "StropheAlt" { \transpose d c \stropheAlt }
+      \new Voice = "Strophe" { \transpose d \tran \strophe }
+      \new Voice = "StropheAlt" { \transpose d \tran \stropheAlt }
       %\new Voice = "StropheBass" { \transpose d c \stropheBass }
     >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Staff <<
-      \new Voice = "StropheBass" { \transpose d c \stropheBass }
+      \new Voice = "StropheBass" { \transpose d \tran \stropheBass }
       >>
 
     >>
