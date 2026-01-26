@@ -36,6 +36,7 @@ sheetCopyright = "©friedensingen.de"
 }
 
 \includeSheet "../bwchor/AmaniLeo.ly"   % 2
+\includeSheet "DasLaecheln.ly"
 \includeSheet "DasWeicheWasserBm.ly"      % 3
 \includeSheet "DerEinfacheFrieden.ly"
 \includeSheet "DerPfahl.ly"             % 4

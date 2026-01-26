@@ -37,6 +37,7 @@ sheetCopyright = "©balcantare.de"
 }
 
 \includeSheet "EinHochAufDasLeben.ly"
+\includeSheet "HellErstrahlenTausendSterne.ly"
 \includeSheet "KamperTrinklied.ly"
 \includeSheet "MoegeDieStrasse.ly"
 \includeSheet "TheRose.ly"
