@@ -36,6 +36,8 @@ sheetCopyright = "©friedensingen.de"
 
 }
 book = frchor
-\includeSheet "../bwchor/EinHochAufDasLeben.ly"
+
 \includeSheet "BrotUndRosen.ly"
+\includeSheet "../balcantare/DisLeurQueLonSaimeDt.ly"
+\includeSheet "../bwchor/EinHochAufDasLeben.ly"
 \includeSheet "RuestigeRentner.ly"
