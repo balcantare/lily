@@ -2,7 +2,7 @@
 sheetName = "Sterne über stillen Straßen (Bf)"
 sheetComposer = "Gerhard Wohlgemuth"
 sheetPoet = "Egon Günther"
-\include "book.ily"
+\include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
@@ -111,5 +111,8 @@ d4. g a d a d e:m a g d a d a b:m g d e4:m a8 d4.
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

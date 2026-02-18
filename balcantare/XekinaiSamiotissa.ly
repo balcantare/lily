@@ -1,6 +1,6 @@
 \version "2.22.2"
 sheetName = "Xekinai - Samiotissa"
-\include "book.ily"
+\include "../include/book.ily"
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -1.5)
@@ -151,6 +151,7 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
+    #(set-global-staff-size 20)
     page-count = #1
     ragged-last-bottom = ##f
     #(define fonts (book-font 1))

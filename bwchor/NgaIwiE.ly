@@ -2,7 +2,7 @@
 sheetName = "Nga iwi e"
 sheetComposer = "trad. Maori"
 sheetPoet = "dt. Text Beate Tarrach"
-\include "book.ily"
+\include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
@@ -124,5 +124,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheE
     \new Lyrics \lyricsto "Strophe" \lyrStropheF
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

@@ -1,7 +1,7 @@
 \version "2.22.2"
 fileName = "AvenNashasTusa.ly"
 sheetName = "Aven, nashas tusa"
-\include "book.ily"
+\include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
@@ -124,6 +124,7 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
+    #(set-global-staff-size 20)
     page-count = #1
   }
   \header {

@@ -1,7 +1,7 @@
 \version "2.22.2"
 fileName = "CuecaBoliviana.ly"
 sheetName = "Cueca Boliviana"
-\include "book.ily"
+\include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
@@ -149,5 +149,8 @@ chrdStrophe = \transpose ef f
     \new Lyrics \lyricsto "Strophe" \lyrStropheE
     \new Lyrics \lyricsto "Strophe" \lyrStropheF
    >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

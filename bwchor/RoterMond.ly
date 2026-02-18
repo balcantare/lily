@@ -131,5 +131,8 @@ chrd =  \chordmode {
 %    \new Lyrics \lyricsto "Alt" \lyrG
 %    \new Lyrics \lyricsto "Alt" \lyrH  
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

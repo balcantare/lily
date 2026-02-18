@@ -95,5 +95,8 @@ chrd = \chordmode {
        \new Voice \alttwo 
     >>
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

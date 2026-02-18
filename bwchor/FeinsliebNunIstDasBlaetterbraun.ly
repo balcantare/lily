@@ -186,5 +186,8 @@ c2 s4 g:7 c2 s4 g:7 c2
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

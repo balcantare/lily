@@ -1,7 +1,7 @@
 \version "2.24.2"
 sheetName = "Banana Boat Song"
 sheetComposer = "Jamaika"
-\include "book.ily"
+\include "../include/book.ily"
 
 
 leftbrace = \markup {
@@ -153,5 +153,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     \new Lyrics \lyricsto "Strophe" \lyrStropheE
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

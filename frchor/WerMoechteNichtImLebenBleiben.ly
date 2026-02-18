@@ -2,7 +2,7 @@
 sheetName = "Wer möchte nicht im Leben bleiben"
 sheetPoet = "Wera Küchenmeister"
 sheetComposer = "Kurt Schwaen"
-\include "book.ily"
+\include "../include/book.ily"
 
 skipA = \repeat unfold 24 { \skip 2 }
 
@@ -130,5 +130,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

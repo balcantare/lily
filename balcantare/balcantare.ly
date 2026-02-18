@@ -1,5 +1,5 @@
 \version "2.22.2"
-\include "book.ily"
+\include "../include/book.ily"
 
 \bookpart {
   \paper{

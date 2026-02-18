@@ -1,6 +1,6 @@
 \version "2.22.2"
 sheetName = "Der Pfahl"
-\include "book.ily"
+\include "../include/book.ily"
 
 leftbrace = \markup {
   \override #'(font-encoding . fetaBraces)
@@ -175,6 +175,9 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheE
     \new Lyrics \lyricsto "Strophe" \lyrStropheF
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
   \markup {
     \vspace #0.5

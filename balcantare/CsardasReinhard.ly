@@ -1,7 +1,7 @@
 \version "2.22.2"
 fileName = "CsardasReinhard.ly"
 sheetName = "Csárdás (Reinhard)"
-\include "book.ily"
+\include "../include/book.ily"
 
 strophe = \relative c'' {
   %\voiceOne
@@ -170,6 +170,7 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
+    #(set-global-staff-size 20)
     page-count = #1
   }
   \header {

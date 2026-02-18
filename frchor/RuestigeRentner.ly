@@ -176,5 +176,8 @@ chrd = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrC
     \new Lyrics \lyricsto "Strophe" \lyrD
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

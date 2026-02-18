@@ -1,7 +1,7 @@
 \version "2.24.0"
 sheetName = "Die Erde ist unsere Mutter"
 sheetComposer = "Beate Tarrach"
-\include "book.ily"
+\include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
@@ -200,5 +200,8 @@ staffSize = #(define-music-function (parser location new-size) (number?)
     \new Lyrics \lyricsto "StropheA" \lyrStropheA
     \new Lyrics \lyricsto "StropheB" \lyrStropheB
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

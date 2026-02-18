@@ -1,6 +1,5 @@
 \version "2.22.2"
-fileName = "AjdeJano.ly"
-sheetName = "Ajde Jano"
+sheetName = "Florian"
 \include "../include/book.ily"
 
 dropLyricsA = {
@@ -143,7 +142,6 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    #(set-global-staff-size 20)
     page-count = #1
     #(define fonts (book-font 1.4))
   }
@@ -163,5 +161,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

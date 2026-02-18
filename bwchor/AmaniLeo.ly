@@ -1,7 +1,7 @@
 \version "2.22.2"
 fileName = "AmaniLeo.ly"
 sheetName = "Amani Leo"
-\include "book.ily"
+\include "../include/book.ily"
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -3)
@@ -108,5 +108,8 @@ chrdStrophe = \chordmode {
       \new Voice = "StropheAlt" { \stropheAlt }
       >>
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

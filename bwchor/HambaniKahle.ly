@@ -88,5 +88,8 @@ chrdStrophe = \chordmode {
       \new Lyrics \lyricsto "StropheAlt" \lyrStropheC
 
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

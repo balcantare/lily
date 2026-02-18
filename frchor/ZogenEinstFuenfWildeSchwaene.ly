@@ -1,6 +1,6 @@
 \version "2.22.2"
 sheetName = "Zogen einst fünf wilde Schwäne"
-\include "book.ily"
+\include "../include/book.ily"
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -4.5)
@@ -153,5 +153,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

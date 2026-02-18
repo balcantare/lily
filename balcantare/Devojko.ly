@@ -1,7 +1,7 @@
 \version "2.22.2"
 fileName = "Devojko.ly"
 sheetName = "Devojko"
-\include "book.ily"
+\include "../include/book.ily"
 
 skipA = \repeat unfold 21 { \skip 4 }
 
@@ -127,6 +127,7 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
+    #(set-global-staff-size 20)
     page-count = #1
     #(define fonts (book-font 1.6))
   }

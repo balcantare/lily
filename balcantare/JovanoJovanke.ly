@@ -1,7 +1,7 @@
 \version "2.22.2"
 fileName = "JovanoJovanke.ly"
 sheetName = "Jovano Jovanke"
-\include "book.ily"
+\include "../include/book.ily"
 
 lyrIntro = {
   \lyricmode {
@@ -160,6 +160,7 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
+    #(set-global-staff-size 20)
     page-count = #1
     #(define fonts (book-font 1.35))
     ragged-right = ##f

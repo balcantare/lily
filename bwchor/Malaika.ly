@@ -117,5 +117,8 @@ chrdStrophe = \chordmode {
       \new Voice = "Alt" \alt 
       >>
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

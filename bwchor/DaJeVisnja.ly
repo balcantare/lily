@@ -1,7 +1,7 @@
 \version "2.22.2"
 fileName = "DaJeVisnja.ly"
 sheetName = "Da je višnja"
-\include "book.ily"
+\include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
@@ -133,5 +133,8 @@ chrdStrophe =  \chordmode {
       \new Voice = "Basso" { \stropheBass }
       >>
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

@@ -1,6 +1,6 @@
 \version "2.22.2"
 sheetName = "Hevenu Schalom Alechem"
-\include "book.ily"
+\include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
@@ -177,5 +177,8 @@ chrdStrophe = \transpose a d \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheG
     \new Lyrics \lyricsto "Strophe" \lyrStropheH
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

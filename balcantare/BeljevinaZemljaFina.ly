@@ -1,7 +1,7 @@
 \version "2.22.2"
 fileName = "BeljevinaZemljaFina.ly"
 sheetName = "Beljevina zemlja fina"
-\include "book.ily"
+\include "../include/book.ily"
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -7.0)
@@ -113,6 +113,7 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
+    #(set-global-staff-size 20)
     page-count = #1
     #(define fonts (book-font 1.4))
   }

@@ -159,6 +159,9 @@ chrdStrophe = \chordmode {
         \new Voice = "Intro" { \intro }
       >>
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
   \score {
     <<

@@ -1,7 +1,7 @@
 \version "2.22.2"
 sheetName = "Hineh Matov"
 sheetPoet = "Beate Tarrach"
-\include "book.ily"
+\include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
@@ -86,5 +86,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "StropheAlt" \lyrStropheB
     \new Lyrics \lyricsto "StropheAlt" \lyrStropheD
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

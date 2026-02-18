@@ -1,7 +1,7 @@
 \version "2.22.2"
 sheetName = "Solange unsre Lieder klingen"
 sheetComposer = "Beate Tarrach"
-\include "book.ily"
+\include "../include/book.ily"
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -3)
@@ -165,5 +165,8 @@ chrdStrophe = \chordmode {
     %  >>
     %\new Lyrics \lyricsto "StropheAlt" \lyrStropheD
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

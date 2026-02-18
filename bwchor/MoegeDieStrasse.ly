@@ -193,5 +193,8 @@ chrd =  \chordmode {
       \new Voice \tenor
       >>
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

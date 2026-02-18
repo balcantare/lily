@@ -1,7 +1,7 @@
 \version "2.22.2"
 sheetName = "Lasst uns Frieden schaffen"
 sheetComposer = "Beate Tarrach"
-\include "book.ily"
+\include "../include/book.ily"
 
 skipA = \repeat unfold 21 {\skip 8}
 
@@ -155,5 +155,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

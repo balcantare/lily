@@ -1,7 +1,7 @@
 \version "2.24.0"
 sheetName = "Ein Tännlein schlief zur Winternacht"
 sheetComposer = "Maria-Anita Görischk"
-\include "book.ily"
+\include "../include/book.ily"
 
 lyrStropheA = {
   \lyricmode {
@@ -82,5 +82,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

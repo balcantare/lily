@@ -160,5 +160,8 @@ chrdStrophe = \chordmode {
       \new Voice = "Tenor" { \stropheSopran }
       >>
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

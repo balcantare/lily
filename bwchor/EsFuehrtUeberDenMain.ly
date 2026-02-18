@@ -196,5 +196,8 @@ chrd =  \chordmode {
     \new Lyrics \lyricsto "Sopran" \lyrG
     \new Lyrics \lyricsto "Sopran" \lyrH  
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

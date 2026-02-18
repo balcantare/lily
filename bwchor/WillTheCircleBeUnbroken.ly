@@ -156,5 +156,8 @@ chrdStrophe = \chordmode {
       \new Voice = "Basso" { \stropheBass }
       >>
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

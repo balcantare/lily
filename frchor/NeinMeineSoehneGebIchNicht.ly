@@ -2,7 +2,7 @@
 sheetName = "Nein, meine Söhne geb' ich nicht!"
 sheetComposer = "Reinhard Mey"
 #(define book-staff-size 16)
-\include "book.ily"
+\include "../include/book.ily"
 
 skipA = \repeat unfold 8 { \skip 2 }
 
@@ -161,6 +161,7 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
+    #(set-global-staff-size 20)
     page-count = #1
     %#(ly:reset-all-fonts)
     %#(layout-set-absolute-staff-size (* 16 pt))

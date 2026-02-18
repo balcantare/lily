@@ -1,7 +1,7 @@
 \version "2.24.0"
 sheetName = "Wir tragen ein Licht in die Dunkelheit"
 sheetComposer = "Unmada Manfred Kindel"
-\include "book.ily"
+\include "../include/book.ily"
 
 
 skipA = \repeat unfold 7 { \skip 2 }
@@ -64,6 +64,7 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
+    #(set-global-staff-size 20)
     page-count = #1
     #(define fonts (book-font 1.4))
   }

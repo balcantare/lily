@@ -1,7 +1,7 @@
 \version "2.22.2"
 sheetName = "Od yavo' shalom aleinu"
 sheetComposer = "Mosh Ben-Ari"
-\include "book.ily"
+\include "../include/book.ily"
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -1.5)
 \override LyricHyphen.extra-offset = #'(0 . -1.5)
@@ -105,5 +105,8 @@ chrdStrophe =  \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

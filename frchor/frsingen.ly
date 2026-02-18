@@ -1,7 +1,7 @@
 \version "2.22.2"
 sheetCopyright = "©friedensingen.de"
 #(define book-staff-size 16)
-\include "book.ily"
+\include "../include/book.ily"
 
 \bookpart {
   \paper{

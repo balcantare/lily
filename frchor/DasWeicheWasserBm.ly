@@ -1,7 +1,7 @@
 \version "2.22.2"
 sheetName = "Das weiche Wasser"
 sheetComposer = "Bots"
-\include "book.ily"
+\include "../include/book.ily"
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -3)
@@ -176,5 +176,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

@@ -1,7 +1,7 @@
 \version "2.22.2"
 fileName = "AjDevlaleKojOdi.ly"
 sheetName = "Aj Dewlale Koj Odi"
-\include "book.ily"
+\include "../include/book.ily"
 
 skipA = \repeat unfold 24 { \skip 2 }
 
@@ -110,6 +110,7 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
+    #(set-global-staff-size 20)
     page-count = #1
     #(define fonts (book-font 1.4))
   }

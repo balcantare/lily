@@ -1,7 +1,7 @@
 \version "2.22.2"
 fileName = "RainAndThunder.ly"
 sheetName = "Rain and Thunder"
-\include "book.ily"
+\include "../include/book.ily"
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -3)
@@ -216,5 +216,8 @@ staffSize = #(define-music-function (parser location new-size) (number?)
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

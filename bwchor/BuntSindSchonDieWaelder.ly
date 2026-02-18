@@ -2,7 +2,7 @@
 sheetName = "Bunt sind schon die Wälder"
 sheetComposer = "Johann Friedrich Reichart 1799"
 sheetPoet = "Johann Gaudenz von Salis-Seewis 1793"
-\include "book.ily"
+\include "../include/book.ily"
 
 skipA = \repeat unfold 13 \skip 8
 
@@ -167,5 +167,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     \new Lyrics \lyricsto "Strophe" \lyrStropheE
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

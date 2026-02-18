@@ -2,7 +2,7 @@
 sheetName = "Sag mir wo die Blumen sind"
 sheetComposer = "Pete Seeger"
 sheetPoet = "dt. Text Max Colpet"
-\include "book.ily"
+\include "../include/book.ily"
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -5.5)
@@ -201,5 +201,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     \new Lyrics \lyricsto "Strophe" \lyrStropheE
     >>
+    \layout {
+      #(layout-set-staff-size 20)
+    }
   }
 }

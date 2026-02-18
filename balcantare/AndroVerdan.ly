@@ -1,7 +1,7 @@
 \version "2.24.0"
 fileName = "AndroVerdan.ly"
 sheetName = "Andro Verdan"
-\include "book.ily"
+\include "../include/book.ily"
 
 dropLyricsA = {
 \override LyricText.extra-offset = #'(0 . -4.5)
@@ -161,6 +161,7 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
+    #(set-global-staff-size 20)
     page-count = #1
   }
   \header {
