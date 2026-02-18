@@ -98,11 +98,13 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    #(set-global-staff-size 20)
     #(define fonts (book-font 1.1))
   }
   \bookItem
   \score {
+  \layout {
+    #(layout-set-staff-size-with-jazz 20)
+  }
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<

@@ -248,7 +248,6 @@ chrdStropheB = \chordmode {
 
 \bookpart {
   \paper {
-    #(set-global-staff-size 20)
     page-count = #1
     #(define fonts (book-font 1.2))
     ragged-last-bottom = ##f
@@ -270,6 +269,9 @@ chrdStropheB = \chordmode {
     >>
   }
   \score {
+  \layout {
+    #(layout-set-staff-size-with-jazz 20)
+  }
     <<
       \new ChordNames { \chrdStropheB }
       \new Staff <<

@@ -55,17 +55,34 @@ endParenthesis = {
           (list point-stencil (cadr par-list))))
 }
 
-\paper {
+% Define these functions at top level so they're available globally
+#(define-public (book-font font-factor)
+   (set-global-fonts
+    #:music "lilyjazz"
+    #:brace "lilyjazz"
+    ;;#:roman "lilyjazz-text"
+    #:sans "lilyjazz-chord"
+    #:factor font-factor
+   )
+)
 
-  #(define-public (book-font font-factor)
-     (set-global-fonts
-      #:music "lilyjazz"
-      #:brace "lilyjazz"
-      ;;#:roman "lilyjazz-text"
-      #:sans "lilyjazz-chord"
-      #:factor font-factor ;;%(/ staff-height pt font-factor)
-     )
-  )
+% Custom function to set staff size while preserving jazz fonts
+% This is needed because layout-set-staff-size resets fonts to default
+#(define-public (layout-set-staff-size-with-jazz sz)
+   "Set staff size and preserve lilyjazz fonts"
+   (let* ((mod (current-module))
+          (factor (/ sz 20.0)))  ; Calculate font factor based on staff size
+     ;; First set the staff size normally
+     (layout-set-staff-size sz)
+     ;; Then re-apply the jazz fonts with the correct factor
+     (module-define! mod 'fonts
+                     (set-global-fonts
+                      #:music "lilyjazz"
+                      #:brace "lilyjazz"
+                      #:sans "lilyjazz-chord"
+                      #:factor factor))))
+
+\paper {
 
   #(define fonts (book-font 1.2))
 

@@ -140,7 +140,6 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    #(set-global-staff-size 20)
     page-count = #1
     #(define fonts (book-font 1.2))
   }

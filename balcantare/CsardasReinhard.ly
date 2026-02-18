@@ -170,7 +170,6 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    #(set-global-staff-size 20)
     page-count = #1
   }
   \header {
@@ -178,6 +177,9 @@ chrdStrophe = \chordmode {
   }
   \tocItem \markup \sheetName
   \score {
+  \layout {
+    #(layout-set-staff-size-with-jazz 20)
+  }
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
