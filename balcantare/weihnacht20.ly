@@ -1,6 +1,5 @@
 \version "2.22.2"
 sheetCopyright = "©balcantare.de"
-#(define book-staff-size 20)
 \include "../include/book.ily"
 
 \bookpart {

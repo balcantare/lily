@@ -1,6 +1,5 @@
 \version "2.24.0"
 sheetName = "Opa Cupa (Dm)"
-#(define book-staff-size 20)
 \include "../include/book.ily"
 
 skipA = \repeat unfold 87 \skip 8

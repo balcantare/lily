@@ -1,7 +1,6 @@
 \version "2.24.2"
 sheetName = "Danser Encore"
 sheetComposer = "HK"
-#(define book-staff-size 20)
 \include "../include/book.ily"
 % original g minor
 transTo=g

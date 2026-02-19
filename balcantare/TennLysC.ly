@@ -2,7 +2,6 @@
 sheetName = "Tenn Lys (C)"
 sheetComposer = "Sigvald Tvelt"
 sheetPoet = "Eyvind Skeie"
-#(define book-staff-size 20)
 \include "../include/book.ily"
 
 trans_to = c

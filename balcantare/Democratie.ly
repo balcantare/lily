@@ -1,7 +1,6 @@
 \version "2.24.2"
 sheetName = "Démocratie"
 sheetComposer = "HK"
-#(define book-staff-size 20)
 \include "../include/book.ily"
 
 transTo=c,

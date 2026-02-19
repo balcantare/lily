@@ -2,7 +2,6 @@
 sheetName = "Stadt der Musik"
 sheetComposer = "Reinhard Simmgen"
 sheetPoet = "Beate Tarrach"
-#(define book-staff-size 20)
 \include "../include/book.ily"
 
 leftbrace = \markup {

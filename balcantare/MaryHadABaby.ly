@@ -1,7 +1,6 @@
 \version "2.24.0"
 sheetName = "Mary had a Baby"
 sheetComposer = "trad, Satz Christoph Kapfhammer"
-#(define book-staff-size 20)
 \include "../include/book.ily"
 
 trans = d

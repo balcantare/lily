@@ -2,7 +2,6 @@
 sheetName = "Disleur que l'on s'aime Dt."
 sheetComposer = "HK"
 sheetPoet = "HK, Beate Tarrach"
-#(define book-staff-size 20)
 \include "../include/book.ily"
 
 transTo=a,

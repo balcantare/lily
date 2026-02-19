@@ -2,7 +2,6 @@
 sheetName = "Tenn Lys"
 sheetComposer = "Sigvald Tvelt"
 sheetPoet = "Eyvind Skeie"
-#(define book-staff-size 20)
 \include "../include/book.ily"
 
 

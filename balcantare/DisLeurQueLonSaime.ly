@@ -1,7 +1,6 @@
 \version "2.24.2"
 sheetName = "Disleur que l'on s'aime"
 sheetComposer = "HK"
-#(define book-staff-size 20)
 \include "../include/book.ily"
 
 transTo=a,

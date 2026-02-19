@@ -1,7 +1,6 @@
 \version "2.24.2"
 sheetName = "The Star of County Down"
 sheetComposer = "Irish Tune"
-#(define book-staff-size 20)
 \include "../include/book.ily"
 
 
