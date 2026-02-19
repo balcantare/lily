@@ -212,6 +212,7 @@ chrdIntro = \chordmode {
     \new Lyrics \lyricsto "StropheBariton" \lyrStropheBaritonD
     >>
    %  \layout {
+      #(layout-set-staff-size-with-jazz 24)
 %       \context {
 %         \Lyrics
 %         \override LyricText.font-size = #1

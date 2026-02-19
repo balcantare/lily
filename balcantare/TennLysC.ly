@@ -193,6 +193,8 @@ chrdStrophe = \chordmode {
     >>
     >>
     \layout {
+      #(layout-set-staff-size-with-jazz 20)
+      
       \context {
         \Lyrics
        % \override LyricText.font-size = #1

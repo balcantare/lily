@@ -1,6 +1,6 @@
 \version "2.24.2"
 sheetName = "Test Danser Encore"
-% NOTE: NO book-staff-size defined - should use layout-set-staff-size-with-jazz 20
+% NOTE: NO book-staff-size defined - should use layout-set-staff-size-with-jazz 24
 \include "../include/book.ily"
 
 \bookpart {
@@ -22,7 +22,7 @@ sheetName = "Test Danser Encore"
       >>
   }
   \layout {
-    #(layout-set-staff-size-with-jazz 20)
+    #(layout-set-staff-size-with-jazz 24)
   }
 }
 }

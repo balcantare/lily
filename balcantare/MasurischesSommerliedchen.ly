@@ -147,23 +147,17 @@ chrdStrophe = \chordmode {
   d g d a d a d s
   d d g d b:m s e:m a
   d g d a d a d
-  
- 
-  
-  
-  
- 
  }
 
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1))
+    ragged-last-bottom = ##f
   }
   \bookItem
   \score {
   \layout {
-    #(layout-set-staff-size-with-jazz 20)
+    #(layout-set-staff-size-with-jazz 22)
   }
     <<
       \new ChordNames { \chrdStrophe }
