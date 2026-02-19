@@ -112,6 +112,7 @@ d4. g a d a d e:m a g d a d a b:m g d e4:m a8 d4.
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     >>
     \layout {
+      #(layout-set-staff-size-with-jazz 24)
       #(layout-set-staff-size 20)
     }
   }

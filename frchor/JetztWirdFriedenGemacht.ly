@@ -210,6 +210,7 @@ chrdStrophe = \chordmode {
 
     >>
      \layout {
+      #(layout-set-staff-size-with-jazz 16)
 
       \context {
         \Lyrics

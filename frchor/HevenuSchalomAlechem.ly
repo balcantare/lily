@@ -178,6 +178,7 @@ chrdStrophe = \transpose a d \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheH
     >>
     \layout {
+      #(layout-set-staff-size-with-jazz 24)
       #(layout-set-staff-size 20)
     }
   }

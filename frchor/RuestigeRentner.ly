@@ -177,6 +177,7 @@ chrd = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrD
     >>
     \layout {
+      #(layout-set-staff-size-with-jazz 20)
       #(layout-set-staff-size 20)
     }
   }

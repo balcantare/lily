@@ -201,6 +201,7 @@ staffSize = #(define-music-function (parser location new-size) (number?)
     \new Lyrics \lyricsto "StropheB" \lyrStropheB
     >>
     \layout {
+      #(layout-set-staff-size-with-jazz 24)
       #(layout-set-staff-size 20)
     }
   }
