@@ -1,7 +1,7 @@
 \version "2.24.0"
 sheetName = "Kamper Trinklied"
 sheetComposer = "Wenzel"
-#(define book-staff-size 20)
+
 \include "../include/book.ily"
 
 leftbrace = \markup {
@@ -186,6 +186,7 @@ chrd =  \chordmode {
  
     >>
     \layout {
+      #(layout-set-staff-size-with-jazz 20)
       \context {
         \Lyrics
         %\override LyricText.font-size = #1.5

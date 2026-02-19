@@ -1,7 +1,7 @@
 \version "2.22.2"
 sheetName = "Tourdion"
 sheetComposer = "Pierre Attaingnant, 1530"
-#(define book-staff-size 16)
+
 \include "../include/book.ily"
 
 lyrStropheSopranA = {
@@ -191,6 +191,7 @@ chrdStrophe =  \chordmode {
     \new Lyrics \lyricsto "Basso" \lyrStropheBass
     >>
     \layout {
+      #(layout-set-staff-size-with-jazz 16)
       \context {
         \Lyrics
         \override LyricText #'font-size = #1

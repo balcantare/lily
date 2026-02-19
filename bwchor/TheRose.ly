@@ -1,7 +1,7 @@
 \version "2.24.0"
 sheetName = "The Rose"
 sheetComposer = "Amanda Mc Broom"
-#(define book-staff-size 20)
+
 \include "../include/book.ily"
 
 leftbrace = \markup {
@@ -202,6 +202,7 @@ chrdStrophe =  \chordmode {
 
     >>
     \layout {
+      #(layout-set-staff-size-with-jazz 20)
       \context {
         \Lyrics
         \override LyricText.font-size = #1.6

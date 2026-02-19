@@ -1,7 +1,7 @@
 \version "2.24.2"
 sheetName = "Ein Hoch auf das Leben"
 sheetComposer = "Beate Tarrach"
-#(define book-staff-size 20)
+
 \include "../include/book.ily"
 
 %book = balcantare
@@ -214,7 +214,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheD
     >>
     \layout {
-      #(layout-set-staff-size 20)
+      #(layout-set-staff-size-with-jazz 20)
+
     }
   }
 }

@@ -2,7 +2,7 @@
 sheetName = "Mate Aroha"
 sheetComposer = "trad. Maori"
 sheetPoet = "dt. Text Beate Tarrach"
-#(define book-staff-size 16)
+
 \include "../include/book.ily"
 
 dropLyricsA = {
@@ -274,6 +274,7 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "StropheAlt" \lyrStropheIa
   >>
   %\layout {
+      #(layout-set-staff-size-with-jazz 16)
   %    \context {
   %      \Lyrics
   %      \override LyricText #'font-size = #0

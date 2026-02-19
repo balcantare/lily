@@ -1,6 +1,6 @@
 \version "2.24.0"
 sheetName = "Möge die Straße - Irischer Reisesegen"
-#(define book-staff-size 20)
+
 \include "../include/book.ily"
 
 lyrA = {
@@ -194,7 +194,8 @@ chrd =  \chordmode {
       >>
     >>
     \layout {
-      #(layout-set-staff-size 20)
+      #(layout-set-staff-size-with-jazz 20)
+
     }
   }
 }

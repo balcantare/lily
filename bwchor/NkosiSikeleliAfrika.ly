@@ -1,6 +1,6 @@
 \version "2.24.2"
 sheetName = "Nkosi sikelel'i Afrika"
-#(define book-staff-size 16)
+
 \include "../include/book.ily"
 
 lyrSopran = {
@@ -276,7 +276,8 @@ chrdStrophe = \chordmode {
       >>
     >>
     \layout {
-      #(layout-set-staff-size 20)
+      #(layout-set-staff-size-with-jazz 16)
+
     }
   }
 }

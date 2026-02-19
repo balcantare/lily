@@ -1,7 +1,7 @@
 \version "2.24.2"
 sheetName = "Hütet die Flamme"
 sheetComposer = "Beate Tarrach"
-#(define book-staff-size 16)
+
 \include "../include/book.ily"
 
 skipA = \repeat unfold 26 \skip 8
@@ -209,7 +209,8 @@ chrdStrophe = \chordmode {
       >>
     >>
 \layout {
-      #(layout-set-staff-size 20)
+      #(layout-set-staff-size-with-jazz 16)
+
     }
   }
 }
