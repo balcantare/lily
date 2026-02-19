@@ -264,11 +264,8 @@ chrdStrophe = \chordmode {
         \new Voice = "StropheBass" { \stropheBass }
       >>
     >>
-   %  \layout {
-%       \context {
-%         \Lyrics
-%         \override LyricText.font-size = #1
-%       }
-%     }
+    \layout {
+      #(layout-set-staff-size-with-jazz 24)
+    }
   }
 }

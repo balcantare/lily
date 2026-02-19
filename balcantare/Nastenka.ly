@@ -112,6 +112,9 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     >>
+    \layout {
+      #(layout-set-staff-size-with-jazz 24)
+    }
   }
   \markup { \vspace #3  \hspace #6 \fontsize #2
     \column{

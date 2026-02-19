@@ -1,20 +1,3 @@
-#(if
-  (or (not (defined? 'current-book-staff-size))
-      ;(not (equal? current-book-staff-size
-      ;             book-staff-size))
-      )
-  (begin
-    (if
-      (not (defined? 'book-staff-size))
-      ;(define book-staff-size 24)
-      (primitive-eval (list 'define 'book-staff-size 24))
-    )
-    ;(define current-book-staff-size book-staff-size)
-    (primitive-eval (list 'define 'current-book-staff-size book-staff-size))
-    (set-global-staff-size book-staff-size)
-  )
-)
-
 includeOnce =
 #(define-void-function (filename) (string?)
    (if
