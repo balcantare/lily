@@ -200,6 +200,7 @@ chrdStrophe =  \chordmode {
     \new Lyrics \lyricsto "Basso" \lyrStropheD
     >>
     \layout {
+      #(layout-set-staff-size-with-jazz 24)
       \context {
         \Lyrics
         \override LyricText.font-size = #0.55

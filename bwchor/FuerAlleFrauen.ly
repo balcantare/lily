@@ -54,6 +54,7 @@ chrd =  \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrA 
     >>
     \layout {
+      #(layout-set-staff-size-with-jazz 24)
       \context {
         \Lyrics
         % \override LyricText.font-size = #1.5

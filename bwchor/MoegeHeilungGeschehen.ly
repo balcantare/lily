@@ -95,7 +95,8 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Alt" \lyrE
     >>
     \layout {
-      #(layout-set-staff-size 20)
+      #(layout-set-staff-size-with-jazz 24)
+
     }
   }
 }

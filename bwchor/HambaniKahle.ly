@@ -89,7 +89,8 @@ chrdStrophe = \chordmode {
 
     >>
     \layout {
-      #(layout-set-staff-size 20)
+      #(layout-set-staff-size-with-jazz 24)
+
     }
   }
 }
