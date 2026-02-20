@@ -146,6 +146,7 @@ chrdStrophe = \chordmode {
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 20)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
@@ -157,9 +158,5 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     \new Lyrics \lyricsto "Strophe" \lyrStropheE
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-
-    }
   }
 }

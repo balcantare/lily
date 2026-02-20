@@ -176,7 +176,16 @@ chrdStrophe = \chordmode {
   d1 s s a d s s2 a d1
   d a d a d a d2 a d2.
   d2.
-  d2. s a s d s a s4.d
+  d2. s a s d s a g4 a8 d4.
+  d2. s a4. d a2. d s a g4 a8 d8
+  s4
+  g1 s c d g s c d g s c d g s c d s4 s1 s4 s1 s2
+  g1 s s d g s c s2 d c1 s2 d
+  g c d1 g2 c d1
+  g2 c g1 c2 g c4g d2
+  g2. d g s4. d
+  g2. d g s
+  g c s4. g d2. g c s d4.
 }
 
 \bookpart {

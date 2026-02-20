@@ -167,13 +167,11 @@ chrd =  \chordmode {
 
 \bookpart {
   \paper {
-    #(set-global-staff-size 20)
     page-count = #1
-    #(define fonts (book-font 1))
-    %ragged-last-bottom = ##f
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 20)}
     <<
     \new ChordNames \chrd 
     \new Staff <<
@@ -183,14 +181,6 @@ chrd =  \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrB
     \new Lyrics \lyricsto "Strophe" \lyrC
     \new Lyrics \lyricsto "Strophe" \lyrD
- 
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 20)
-      \context {
-        \Lyrics
-        %\override LyricText.font-size = #1.5
-      }
-    }
   }
 }

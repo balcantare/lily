@@ -93,14 +93,14 @@ stropheAlt = \relative c' {
   \partial 4
   s4 |
   s8 s s s s | s8 s s s s | s8 s s s s |
-  s8 s s s s | s
+  s8 s s s s  s
   \voiceTwo
   e4
-  e4. e4 |
-  e4. e4 |
-  e4. d4 |
-  d4. d4 |
-  e4. e4 |
+  e4. e4 
+  e4. e4 
+  e4. d4 
+  d4. d4 
+  e4. e4 
   e4.
   d4
   d4. d4 |

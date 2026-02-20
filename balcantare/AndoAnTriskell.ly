@@ -62,7 +62,7 @@ chrdStrophe = \chordmode {
    g1:m s2 f a:m d:m g1:m 
    g2:m d4:m f g1:m s2 d4:m f g1:m
    g2:m c:m f bf g:m d4:m f g2:m d4:m f
-   g2:m c:m f bf g:m d4:m f f2 g:m
+   g2:m c:m f bf g:m d4:m f f2 g4:m
 }
 
 \bookpart {

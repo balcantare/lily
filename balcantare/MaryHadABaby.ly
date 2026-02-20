@@ -205,30 +205,24 @@ chrdStrophe = \chordmode {
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 18)}
     <<
       \new ChordNames { \transpose c \trans \chrdStrophe }
       \new Staff <<
         \new Voice = "StropheSopran" { \transpose c \trans \stropheSopran }
         \new Voice = "StropheAlt" { \transpose c \trans \stropheAlt }
       >>
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheA
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheB
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheC
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheD
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheE
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheF
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheG
-    \new Staff <<
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheA
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheB
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheC
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheD
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheE
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheF
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheG
+      \new Staff <<
         \new Voice = "StropheTenor" { \transpose c \trans \stropheTenor }
         \new Voice = "StropheBass" { \transpose c \trans \stropheBass }
       >>
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 20)
-      \context {
-        \Lyrics
-        \override LyricText.font-size = #1
-      }
-    }
   }
 }

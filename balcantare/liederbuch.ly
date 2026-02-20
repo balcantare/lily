@@ -1,4 +1,4 @@
-\version "2.24.0"
+\version "2.24.2"
 \include "../include/book.ily"
 
 \bookpart {
@@ -19,7 +19,6 @@
   \markup { \fill-line { \center-column {
 	  \line {\abs-fontsize #20 "Balcantare Liederbuch"}
 	   \vspace #2
-        \line { \abs-fontsize #10 "Teil I, 24pt"}
         \line { \abs-fontsize #10 "balcantare.de"}
    
 	} } }
@@ -30,22 +29,22 @@
 \includeSheet "../bwchor/BuntSindSchonDieWaelder.ly"
 \includeSheet "LesChampsElysees.ly"
 \includeSheet "../bwchor/CuecaBoliviana.ly"
-%\includeSheet "DanserEncore.ly"
+\includeSheet "DanserEncore.ly"
 \includeSheet "../frchor/DieErdeIstUnsereMutter.ly"
-%\includeSheet "../balcantare/DisLeurQueLonSaime.ly"
-%\includeSheet "../bwchor/EinHochAufDasLeben.ly"
+\includeSheet "DisLeurQueLonSaime.ly"
+\includeSheet "../bwchor/EinHochAufDasLeben.ly"
 \includeSheet "../bwchor/EPoiTaiTai.ly"
-%\includeSheet "../bwchor/HinehMatov.ly"
+\includeSheet "../bwchor/HinehMatov.ly"
 \includeSheet "../frchor/HeuteUndHier.ly"
 \includeSheet "../frchor/HevenuSchalomAlechem.ly"
 \includeSheet "../bwchor/HomeIsWhereMyHeartIs.ly"
 \includeSheet "../bwchor/IchWuenscheDirMusik.ly"
-%\includeSheet "../bwchor/KamperTrinklied.ly"
+\includeSheet "../bwchor/KamperTrinklied.ly"
 \includeSheet "../bwchor/KeineKleider.ly"
 \includeSheet "../bwchor/KeinSchoenerLand.ly"
 \includeSheet "../bwchor/Landlied.ly"
 \includeSheet "../bwchor/MateAroha.ly"
-%\includeSheet "../bwchor/MoegeDieStrasse.ly"
+\includeSheet "../bwchor/MoegeDieStrasse.ly"
 \includeSheet "../bwchor/NgaIwiE.ly"
 \includeSheet "../bwchor/OdYavoShalomAleinu.ly"
 \includeSheet "../frchor/UnterDemPflaster.ly"
@@ -54,4 +53,4 @@
 \includeSheet "../frchor/WeShallOvercome.ly"
 \includeSheet "../bwchor/WoMenschenSichVergessen.ly"
 \includeSheet "../frchor/ZogenEinstFuenfWildeSchwaene.ly"
-% \includeSheet "TumBalalaike.ly"
+\includeSheet "TumBalalaike.ly"

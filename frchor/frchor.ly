@@ -26,7 +26,6 @@ sheetCopyright = "©friedensingen.de"
 	\vspace #1.5
 	\line { \abs-fontsize #26 "für den Frieden"}
 	\vspace #0.5
-        \line { \abs-fontsize #14 "Teil I, 24pt"}
         \line { \abs-fontsize #14 "friedensingen.de"}
         \vspace #4
       }
@@ -35,29 +34,38 @@ sheetCopyright = "©friedensingen.de"
   \markuplist \table-of-contents
 }
 
-\includeSheet "../bwchor/AmaniLeo.ly"   % 2
+\includeSheet "AllesWohlDemVolke.ly"   
+\includeSheet "../bwchor/AmaniLeo.ly"
+\includeSheet "BrotUndRosen.ly"
 \includeSheet "DasLaecheln.ly"
-\includeSheet "DasWeicheWasserBm.ly"      % 3
+\includeSheet "DasWeicheWasserBm.ly"      
 \includeSheet "DerEinfacheFrieden.ly"
-\includeSheet "DerPfahl.ly"             % 4
-\includeSheet "DieErdeIstUnsereMutter.ly" % 5
+\includeSheet "DerPfahl.ly"             
+\includeSheet "DieErdeIstUnsereMutter.ly" 
+\includeSheet "DieWeissenTaubenSindMuede.ly"
+\includeSheet "../balcantare/DisLeurQueLonSaimeDt.ly"
+\includeSheet "../bwchor/EinHochAufDasLeben.ly"
 \includeSheet "EinTaennleinSchliefZurWinternacht.ly"
 \includeSheet "FriedenWieDasEigneLeben.ly"
 \includeSheet "HabMutKeineAngst.ly"
 \includeSheet "../balcantare/HappyXMas.ly"
-\includeSheet "HeuteUndHier.ly"           % 6
-\includeSheet "HevenuSchalomAlechem.ly"   % 7
-\includeSheet "../bwchor/HinehMatov.ly"   % 8
-\includeSheet "LasstUnsFriedenSchaffen.ly" % 9
-\includeSheet "../bwchor/NgaIwiE.ly"       % 10
-\includeSheet "../bwchor/OdYavoShalomAleinu.ly" % 11
+\includeSheet "HeuteUndHier.ly"           
+\includeSheet "HevenuSchalomAlechem.ly"   
+\includeSheet "../bwchor/HinehMatov.ly"   
+\includeSheet "JetztWirdFriedenGemacht.ly" 
+\includeSheet "LasstUnsFriedenSchaffen.ly" 
+\includeSheet "../bwchor/MateAroha.ly"     
+\includeSheet "NeinMeineSoehneGebIchNicht.ly" 
+\includeSheet "../bwchor/NgaIwiE.ly"       
+\includeSheet "../bwchor/OdYavoShalomAleinu.ly" 
 \includeSheet "OLittleTownOfBethlehemDeD.ly"
 \includeSheet "OmManiPadmeHum.ly"
 \includeSheet "PeaceShalomSalamaleikum.ly"
 \includeSheet "PlanetDesFriedens.ly"
-\includeSheet "SagMirWoDieBlumenSind.ly" % 12
-\includeSheet "SagMirWoDieBlumenSindDeSb.ly" % 12
-\includeSheet "../bwchor/SolangeUnsreLiederKlingen.ly" % 13
+\includeSheet "RuestigeRentner.ly"
+\includeSheet "SagMirWoDieBlumenSind.ly" 
+\includeSheet "SagMirWoDieBlumenSindDeSb.ly" 
+\includeSheet "../bwchor/SolangeUnsreLiederKlingen.ly"
 \includeSheet "SterneUeberStillenStrassen.ly"
 \includeSheet "../balcantare/StillSenktSichDieNachtHerniederC.ly"
 \includeSheet "SuesserDieGlockenNieKlingenC.ly"
@@ -66,10 +74,11 @@ sheetCopyright = "©friedensingen.de"
 \includeSheet "UnserKreisDerSeiOffen.ly"
 \includeSheet "UnsreHeimat.ly"
 \includeSheet "UnterDemPflaster.ly"
-\includeSheet "WeShallOvercome.ly"                % 14
-\includeSheet "WerMoechteNichtImLebenBleiben.ly"  % 15
+\includeSheet "WeitInDerChampagne.ly"         
+\includeSheet "WeShallOvercome.ly"                
+\includeSheet "WerMoechteNichtImLebenBleiben.ly"  
 \includeSheet "WirSindEins.ly"
 \includeSheet "WirTragenEinLichtInDieDunkelheit.ly"
 \includeSheet "Friedenstuechtig.ly"
 \includeSheet "../bwchor/WoMenschenSichVergessen.ly"
-\includeSheet "ZogenEinstFuenfWildeSchwaene.ly"   % 16
+\includeSheet "ZogenEinstFuenfWildeSchwaene.ly"   

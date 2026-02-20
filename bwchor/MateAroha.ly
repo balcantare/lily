@@ -239,47 +239,39 @@ chrdStrophe = \chordmode {
 
 \bookpart {
   \paper {
-    #(set-global-staff-size 20)
     page-count = #1
-    #(define fonts (book-font 1))
   }
   \bookItem
   \score {
-  <<
-    \new ChordNames { \chrdStrophe }
-    \new Staff <<
-     \new Voice = "Strophe" { \strophe }
-    >>
-    \new Lyrics \lyricsto "Strophe" \lyrStropheA
-    \new Lyrics \lyricsto "Strophe" \lyrStropheB
-    \new Lyrics \lyricsto "Strophe" \lyrStropheC
-    \new Lyrics \lyricsto "Strophe" \lyrStropheD
-    \new Lyrics \lyricsto "Strophe" \lyrStropheE
-    \new Lyrics \lyricsto "Strophe" \lyrStropheF
-    \new Lyrics \lyricsto "Strophe" \lyrStropheG
-    \new Lyrics \lyricsto "Strophe" \lyrStropheH
-    \new Lyrics \lyricsto "Strophe" \lyrStropheI
+    \layout {#(layout-set-staff-size-with-jazz 16)}
+    <<
+      \new ChordNames { \chrdStrophe }
+      \new Staff <<
+        \new Voice = "Strophe" { \strophe }
+      >>
+      \new Lyrics \lyricsto "Strophe" \lyrStropheA
+      \new Lyrics \lyricsto "Strophe" \lyrStropheB
+      \new Lyrics \lyricsto "Strophe" \lyrStropheC
+      \new Lyrics \lyricsto "Strophe" \lyrStropheD
+      \new Lyrics \lyricsto "Strophe" \lyrStropheE
+      \new Lyrics \lyricsto "Strophe" \lyrStropheF
+      \new Lyrics \lyricsto "Strophe" \lyrStropheG
+      \new Lyrics \lyricsto "Strophe" \lyrStropheH
+      \new Lyrics \lyricsto "Strophe" \lyrStropheI
 
-    \new Staff <<
-      \new Voice = "StropheAlt" { \stropheAlt }
+      \new Staff <<
+        \new Voice = "StropheAlt" { \stropheAlt }
+      >>
+      \new Lyrics \lyricsto "StropheAlt" \lyrStropheAa
+      \new Lyrics \lyricsto "StropheAlt" \lyrStropheBa
+      \new Lyrics \lyricsto "StropheAlt" \lyrStropheCa
+      \new Lyrics \lyricsto "StropheAlt" \lyrStropheDa
+      \new Lyrics \lyricsto "StropheAlt" \lyrStropheEa
+      \new Lyrics \lyricsto "StropheAlt" \lyrStropheFa
+      \new Lyrics \lyricsto "StropheAlt" \lyrStropheGa
+      \new Lyrics \lyricsto "StropheAlt" \lyrStropheHa
+      \new Lyrics \lyricsto "StropheAlt" \lyrStropheIa
     >>
-    \new Lyrics \lyricsto "StropheAlt" \lyrStropheAa
-    \new	 Lyrics \lyricsto "StropheAlt" \lyrStropheBa
-    \new Lyrics \lyricsto "StropheAlt" \lyrStropheCa
-    \new Lyrics \lyricsto "StropheAlt" \lyrStropheDa
-    \new Lyrics \lyricsto "StropheAlt" \lyrStropheEa
-    \new Lyrics \lyricsto "StropheAlt" \lyrStropheFa
-    \new Lyrics \lyricsto "StropheAlt" \lyrStropheGa
-    \new Lyrics \lyricsto "StropheAlt" \lyrStropheHa
-    \new Lyrics \lyricsto "StropheAlt" \lyrStropheIa
-  >>
-  %\layout {
-      #(layout-set-staff-size-with-jazz 16)
-  %    \context {
-  %      \Lyrics
-  %      \override LyricText #'font-size = #0
-  %    }
-  %  }
   }
 }
 

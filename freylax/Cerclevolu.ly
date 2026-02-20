@@ -99,14 +99,13 @@ chrdStrophe = \chordmode {
     subtitle = "Cercle circassien |AABBCCDDEEFF|"
   }
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
       \new Voice = "Strophe" { \strophe }
       >>
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-    }
+  }
 }
   

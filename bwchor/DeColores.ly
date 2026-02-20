@@ -148,6 +148,7 @@ chrdStrophe = \chordmode {
   }
   \tocItem \markup \sheetName
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 22)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
@@ -160,9 +161,5 @@ chrdStrophe = \chordmode {
       \new Voice = "Tenor" { \stropheSopran }
       >>
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-
-    }
   }
 }

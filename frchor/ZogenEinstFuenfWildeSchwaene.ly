@@ -109,7 +109,7 @@ strophe = \relative c' {
   \break
   \repeat volta 2 {
    d2 c'
-   b4 g b2
+   b4 g b2 \break
    a4 a8 a fs4 d
   } \alternative {
    { g4( b) d2 }
@@ -143,6 +143,7 @@ chrdStrophe = \chordmode {
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
@@ -153,9 +154,5 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-      #(layout-set-staff-size 20)
-    }
   }
 }

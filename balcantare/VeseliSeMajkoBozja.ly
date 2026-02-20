@@ -168,35 +168,28 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.4))
     ragged-last-bottom = ##f
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
       \new ChordNames { \transpose c d \chrdStrophe }
       \new Staff <<
         \new Voice = "StropheSopran" { \transpose c d \stropheSopran }
         \new Voice = "StropheAlt" { \transpose c d \stropheAlt }
       >>
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheA
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheB
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheC
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheD
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheE
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheF
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheG
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheH
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheA
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheB
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheC
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheD
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheE
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheF
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheG
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheH
       \new Staff <<
         \new Voice = "StropheBass" { \transpose c d \stropheBass }
       >>
     >>
-    %\layout {
-      #(layout-set-staff-size-with-jazz 24)
-    % \context {
-    %   \Lyrics
-    %   \override LyricText.font-size = #1
-    % }
-   %}
   }
 }

@@ -137,11 +137,11 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 22)}
     <<
     \new Staff\with {
       fontSize = #-3
@@ -158,15 +158,5 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     >>
-    %\layout {
-    %\layout {
-    %  \override Score.SpacingSpanner.packed-spacing = ##f
-    %}
-
-    %\context {
-    %  \Score
-    %  \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1)
-    %}
-  %}
   }
 }

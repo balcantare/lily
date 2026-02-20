@@ -119,13 +119,17 @@ chrdStrophe =  \chordmode {
 
 \bookpart {
   \paper {
-    #(set-global-staff-size 20)
     page-count = #1
-    #(define fonts (book-font 1.1))
     ragged-last-bottom = ##f
   }
   \bookItem
   \score {
+    \layout {
+      #(layout-set-staff-size-with-jazz 20)
+      \context {
+        \Staff \RemoveAllEmptyStaves
+      }
+    }
     <<
     \new ChordNames { \transpose e d \chrdStrophe }
     \new Staff <<
@@ -139,13 +143,6 @@ chrdStrophe =  \chordmode {
     \new Staff <<
       \new Voice = "StropheBass" { \transpose e d \stropheBass }
       >>
-
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-      \context {
-        \Staff \RemoveAllEmptyStaves
-      }
-    }
   }
 }

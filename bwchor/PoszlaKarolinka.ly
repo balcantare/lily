@@ -254,19 +254,19 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
-  \bookItem
-  \markup{ \vspace #0.5 \fill-line {
-    \center-column {
-      \line { \fontsize #2 {
+  \header {
+    subtitle = \markup {
+      \line { \fontsize #1 {
         \box{A}\box{B}\box{B}*Ak
         \bold{|:} \box{A}\box{B}*Md
         \box{A}\box{B}\box{C}*Ak \bold{:|}
-        \box{A}\box{B}\box{B}} \rest {4} }}}
+        \box{A}\box{B}\box{B}} \rest {4} }}
   }
+  \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 22)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
@@ -282,9 +282,5 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheG
     \new Lyrics \lyricsto "Strophe" \lyrStropheH
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-
-    }
   }
 }

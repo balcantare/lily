@@ -183,6 +183,7 @@ chrdStrophe = \chordmode {
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 18)}
     <<
     \new ChordNames { \chrdRefrain }
     \new Staff <<
@@ -192,6 +193,7 @@ chrdStrophe = \chordmode {
     >>
   }
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 18)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff \with {\omit TimeSignature }
@@ -208,9 +210,5 @@ chrdStrophe = \chordmode {
       \new Voice = "StropheTenor" { \stropheTenor }
       >>
     >>
-\layout {
-      #(layout-set-staff-size-with-jazz 16)
-
-    }
   }
 }

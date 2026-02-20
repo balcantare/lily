@@ -252,11 +252,11 @@ chrdStrophe = \chordmode {}
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1))
     %ragged-last-bottom = ##f
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 16)}
     <<
     \new Staff <<
       \new Voice = "Strophe" { \stropheA }
@@ -265,28 +265,26 @@ chrdStrophe = \chordmode {}
     >>
   }
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 16)}
     <<
       \new ChoirStaff <<
-    \new Staff <<
-      \new Voice = "StropheBsop" { \stropheBsop }
-      \new Voice = "StropheBalt" { \stropheBalt }
+        \new Staff <<
+          \new Voice = "StropheBsop" { \stropheBsop }
+          \new Voice = "StropheBalt" { \stropheBalt }
+        >>
+        \new Lyrics \lyrStropheBsop
+        \new Lyrics \lyrStropheBalt
+        \new Lyrics \lyrStropheB
+        \new Staff <<
+          \new Voice = "StropheBten" { \stropheBten }
+          \new Voice = "StropheBbas" { \stropheBbas }
+        >>
       >>
-    \new Lyrics \lyrStropheBsop
-    \new Lyrics \lyrStropheBalt
-    \new Lyrics \lyrStropheB
-    \new Staff <<
-      \new Voice = "StropheBten" { \stropheBten }
-      \new Voice = "StropheBbas" { \stropheBbas }
-      >>
-    >>
     >>
   }
   \score {
-  \layout {
-      #(layout-set-staff-size-with-jazz 16)
-    
-  }
-     <<
+    \layout {#(layout-set-staff-size-with-jazz 16)}
+    <<
     \new Staff <<
       \new Voice = "StropheC" { \stropheC }
       >>

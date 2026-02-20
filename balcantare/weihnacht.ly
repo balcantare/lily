@@ -1,14 +1,13 @@
-\version "2.22.2"
+\version "2.24.2"
 sheetCopyright = "©balcantare.de"
-%#(define book-staff-size 16)
 \include "../include/book.ily"
 
 \bookpart {
   \paper{
-     tocTitleMarkup = \markup \huge \column {
-      \fill-line { \null "Inhalt" \null }
+    tocTitleMarkup = \markup \huge \column {
+    \fill-line { \null "Inhalt" \null }
       \hspace #1
-     }
+    }
   }
   \header {
     title = ##f
@@ -17,17 +16,16 @@ sheetCopyright = "©balcantare.de"
     tagline = ##f
     subtitle = ##f
   }
-  \markup { \fill-line {
-    \override #'(baseline-skip . 4)
+  \markup { 
+    \fill-line {
+      \override #'(baseline-skip . 4)
       \center-column {
-        	\line { \abs-fontsize #26 "Weihnachtsmusik"}
-	\vspace #1.5
-	\line { \abs-fontsize #14 "24pt"}
-        \line { \abs-fontsize #14 "balcantare.de"}
-        \vspace #4
+        \line { \abs-fontsize #26 "Weihnachtsmusik"}
+	 \vspace #1.5
+         \line { \abs-fontsize #14 "balcantare.de"}
+         \vspace #4      
       }
     }
-
   }
   \markuplist \table-of-contents
 }
@@ -45,10 +43,14 @@ sheetCopyright = "©balcantare.de"
 \includeSheet "HoertDerEngelHelleLieder.ly"
 \includeSheet "LasGallinasVanABelen.ly"
 \includeSheet "LaVirgenEMasaElPan.ly"
+\includeSheet "LeisLeisLeis.ly"
 \includeSheet "MariaDurchEinDornwaldGing.ly"
+\includeSheet "MaryHadABaby.ly"
+\includeSheet "NavidadLosReyesMagosGm.ly"
 \includeSheet "OLittleTownOfBethlehemDe.ly"
 \includeSheet "ODuFroehliche.ly"
 \includeSheet "ODuStilleZeit.ly"
+\includeSheet "RiuRiuChiu.ly"
 \includeSheet "QuandoNascetteNinno.ly"
 \includeSheet "SindDieLichterAngezuendet.ly"
 \includeSheet "SolsticeCarol.ly"
@@ -56,4 +58,6 @@ sheetCopyright = "©balcantare.de"
 \includeSheet "StillSenktSichDieNachtHernieder.ly"
 \includeSheet "SuesserDieGlockenNieKlingen.ly"
 \includeSheet "TausendSterneSindEinDom.ly"
+\includeSheet "TennLys.ly"
+\includeSheet "TennLysC.ly"
 \includeSheet "VeseliSeMajkoBozja.ly"

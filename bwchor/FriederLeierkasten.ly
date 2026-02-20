@@ -1,7 +1,6 @@
 \version "2.24.2"
 sheetName = "Frieders Leierkasten Couplet"
 sheetPoet = "Frieder Löbner"
-#(define book-staff-size 24)
 \include "../include/book.ily"
 
 lyrStropheA = {
@@ -274,7 +273,6 @@ strophe = \relative c'' {
   \pageBreak
 }
 
-
 chrdStrophe = \chordmode {
   s4
   f2.
@@ -285,11 +283,11 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #4
-    #(define fonts (book-font 1.4))
     ragged-last-bottom = ##f
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
@@ -304,6 +302,7 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheG
   >>}
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 24)}
        <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
@@ -316,9 +315,5 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheL
     \new Lyrics \lyricsto "Strophe" \lyrStropheM
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-
-    }
   }
 }

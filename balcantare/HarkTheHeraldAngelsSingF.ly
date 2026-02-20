@@ -167,29 +167,22 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1))
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 20)}
     <<
       \new ChordNames { \transpose g f \chrdStrophe }
       \new Staff <<
         \new Voice = "StropheSopran" { \transpose g f \stropheSopran }
         \new Voice = "StropheAlt" { \transpose g f \stropheAlt }
       >>
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheA
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheB
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheA
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheB
       \new Staff <<
         \new Voice = "StropheTenor" { \transpose g f \stropheTenor }
         \new Voice = "StropheBass" { \transpose g f \stropheBass }
       >>
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-     \context {
-       \Lyrics
-       \override LyricText.font-size = #1
-     }
-   }
   }
 }

@@ -27,30 +27,31 @@ lyrStropheA = {
   Komm her, Ma -- rie,
   ein letz -- tes Glas,
   ge -- nie -- ßen wir den
-  \set stanza = #"1."
   Au -- gen -- blick,
+  \set stanza = #"1."
   ab mor -- gen gibt's statt Wein nur Was -- ser.
   \set stanza = #"1."
   Komm her und schenk uns noch -- mal ein,
   so viel wird mor -- gen
-  \set stanza = #"1."
   an -- ders sein!
+  \set stanza = #"1."
   Ma -- rie, die Welt wird lang -- sam blas -- ser.
   \set stanza = #"1-3."
   Die wei -- ßen Tau -- ben sind mü -- de,
-  sie flie -- gen lan -- ge schon nicht mehr.
-  \set stanza = #"1-3."
+  sie flie -- gen lan -- ge schon nicht \set stanza = #"1-3." mehr.
   Sie ha -- ben viel zu schwe -- re Flü -- gel,
-  und ih -- re Schnä -- bel sind längst
+  und ih -- re 
   \set stanza = #"1-3."
+  Schnä -- bel sind längst
+  
   leer.
 
   Je -- doch die Fal -- ken flie -- gen wei -- ter!
-  Sie sind so stark wie nie vor --
-  \set stanza = #"1-3." her,
+  \set stanza = #"1-3." Sie sind so stark wie nie vor --
+  her,
   und ih -- re Flü -- gel wer -- den
   brei -- ter,
-  und täg -- lich \set stanza = #"1-3."
+ \set stanza = #"1-3." und täg -- lich 
   kom -- men im -- mer mehr,
   nur wei -- ße Tau -- ben flie -- gen nicht mehr.
 }}
@@ -60,28 +61,27 @@ lyrStropheB = {
   \set stanza = #"2."
   Bleib noch, Ma -- rie, der letz -- te Rest
   reicht für uns bei -- de
-  \set stanza = #"2."
   al -- le -- mal,
+  \set stanza = #"2."
   ab mor -- gen gibt's statt Brot nur Stei -- ne
   \set stanza = #"2."
   Komm her und schenk uns noch -- mal ein,
   denn so wie heut' wird's
-  \set stanza = #"2."
   nie mehr sein.
+   \set stanza = #"2."
   Ma -- rie, die Welt kreist von al -- lei -- ne.
-
   \set stanza = #"4-5."
   Die wei -- ßen Tau -- ben sind mü -- de,
-  doch las -- sen wir sie nicht al -- lein.
-  \set stanza = #"4-5."
-  Wir sind der Wind für ih -- re Flü -- gel.
-  Wir kön -- nen ih -- nen Auf -- trieb
-  \set stanza = #"4-5." sein.
+  doch las -- sen wir sie nicht al -- \set stanza = #"4-5."
+ lein.
+    Wir sind der Wind für ih -- re Flü -- gel.
+  Wir kön -- nen \set stanza = #"4-5." ih -- nen Auf -- trieb
+   sein.
   Wenn auch die Fal -- ken wei -- ter flie -- gen,
-  so sind doch ih -- re Her -- zen \set stanza = #"4-5."
+  \set stanza = #"4-5." so sind doch ih -- re Her -- zen 
   leer.
   Und des -- halb könn’ sie uns nicht krie -- gen
-  und uns -- re \set stanza = #"4-5."
+ \set stanza = #"4-5." und uns -- re 
   Tau -- ben ziehn’ übers Meer,
   ja, wei -- ße Tau -- ben ziehn’ ü -- bers Meer!
 }}
@@ -91,14 +91,14 @@ lyrStropheC = {
     \set stanza = #"3."
     Sie her, Ma -- rie, das lee -- re Bett,
     der Spie -- gel uns' -- rer
-    \set stanza = #"3."
     gro -- ßen Zeit;
+    \set stanza = #"3."
     ab mor -- gen gibt's statt Glas nur Scher -- ben.
     \set stanza = #"3."
     Komm her und schenk uns noch -- mal ein,
     den letz -- ten Schluck vom
-    \set stanza = #"3."
     letz -- ten Wein.
+    \set stanza = #"3."
     Ma -- rie, die Welt be -- ginnt zu ster -- ben.
 }}
 lyrStropheD = {
@@ -106,14 +106,14 @@ lyrStropheD = {
     \set stanza = #"4."
     Wach auf, Ma -- rie, ein neu -- er Tag
     der für uns al -- le
-    \set stanza = #"4."
     heut be -- gann!
+    \set stanza = #"4."
     Wir las -- sen uns den Mut nicht neh -- men.
     \set stanza = #"4."
     Wo ges -- tern noch der Rot -- wein lag
     fängt heut ein Quell zu
-    \set stanza = #"4."
     spru -- deln an:
+    \set stanza = #"4."
     die Kraft, nach der wir uns so seh -- nen!
 }}
 lyrStropheE = {
@@ -121,14 +121,14 @@ lyrStropheE = {
     \set stanza = #"5."
     Komm mit, Ma -- rie, mach auf dein Herz!
     Wir neh -- men all die
-    \set stanza = #"5."
     an -- dern mit,
+    \set stanza = #"5."
     die lang schon auf den Auf -- bruch hof -- fen.
     \set stanza = #"5."
     Komm mit, Ma -- rie, be -- sieg den Schmerz,
     wir sin -- gen heut’ ein
-    \set stanza = #"5."
     neu -- es Lied!
+    \set stanza = #"5."
     Ma -- rie, die Welt- sie steht uns of -- fen.
 }}
 strophe = \relative c' {
@@ -140,16 +140,17 @@ strophe = \relative c' {
   fs'8. fs16 a8. fs16
   e8. e16 a8. e16
   g8 g a g
-  g8. fs16 d8. d16
+  g8. fs16 d8. \break d16
   g8 g g g
   g4. d8
   d8 e4.~
   e4 r8
+  \break
   a,
   fs'8. fs16 a8. fs16
   e8. e16 a8. e16
   a8 g a g
-  g8. fs16 d8. d16
+  g8. fs16 d8. \break d16
   g4. fs8
   fs8 e d cs
   cs8 d4.~
@@ -215,10 +216,11 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.1))
+    ragged-last-bottom = ##f
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 17)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
@@ -230,9 +232,5 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     \new Lyrics \lyricsto "Strophe" \lyrStropheE
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 16)
-      #(layout-set-staff-size 20)
-    }
   }
 }

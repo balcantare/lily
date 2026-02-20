@@ -169,25 +169,19 @@ chrdStrophe = \chordmode {
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 20)}
     <<
       \new ChordNames { \chrdStrophe }
       \new Staff <<
         \new Voice = "StropheSopran" { \transpose g g \stropheSopran }
         \new Voice = "StropheAlt" { \transpose g g \stropheAlt }
       >>
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheA
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheB
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheA
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheB
       \new Staff <<
         \new Voice = "StropheTenor" { \transpose g g \stropheTenor }
         \new Voice = "StropheBass" { \transpose g g \stropheBass }
       >>
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-     \context {
-       \Lyrics
-       \override LyricText.font-size = #1
-     }
-   }
   }
 }

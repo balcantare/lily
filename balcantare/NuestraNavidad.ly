@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.2"
 sheetCopyright = "©balcantare.de"
 \include "../include/book.ily"
 
@@ -23,7 +23,6 @@ sheetCopyright = "©balcantare.de"
 	\vspace #1.5
 	\line { \abs-fontsize #26 "Ariel Ramirez"}
 	\vspace #1.5
-	\line { \abs-fontsize #14 "22pt"}
         \line { \abs-fontsize #14 "balcantare.de"}
         \vspace #4
       }

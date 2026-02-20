@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.2"
 \include "../include/book.ily"
 
 \bookpart {
@@ -24,9 +24,7 @@
 
 }
 
-
 book= "balcantare"
-
 \includeSheet "AiDaNjaeBudjitje.ly"
 \includeSheet "AiMoridschej.ly"
 \includeSheet "AjdeJano.ly"

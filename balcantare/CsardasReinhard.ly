@@ -1,5 +1,4 @@
-\version "2.22.2"
-fileName = "CsardasReinhard.ly"
+\version "2.24.2"
 sheetName = "Csárdás (Reinhard)"
 \include "../include/book.ily"
 
@@ -171,15 +170,11 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
+    ragged-last-bottom = ##f
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
+  \bookItem
   \score {
-  \layout {
-    #(layout-set-staff-size-with-jazz 24)
-  }
+    \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<

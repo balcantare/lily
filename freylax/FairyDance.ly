@@ -2,7 +2,7 @@
 sheetName = "Fairy Dance"
 \include "../include/book.ily"
 
-strophe = \relative c'' {
+Ostrophe = \relative c'' {
   \time 3/4
   \key c \major
   %\bar ".|:"
@@ -62,4 +62,5 @@ chrdStrophe = \chordmode {
     \layout {
       #(layout-set-staff-size-with-jazz 24)
     }
+  }
 }

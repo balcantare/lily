@@ -25,7 +25,6 @@ sheetCopyright = "©balcantare.de"
 	\vspace #1.5
 	\line { \abs-fontsize #26 "Soritz"}
 	\vspace #0.5
-        \line { \abs-fontsize #14 "Teil I, 24pt"}
         \line { \abs-fontsize #14 "balcantare.de"}
         \vspace #4
       }

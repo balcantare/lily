@@ -1,8 +1,7 @@
-\version "2.22.2"
+\version "2.24.2"
 sheetName = "Pacha Mama"
 sheetComposer = "Ronny Hickel"
 \include "../include/book.ily"
-
 
 lyrStropheA = {
   \lyricmode {
@@ -64,8 +63,6 @@ stropheAlt = \relative c' {
   f4 f8 ef c4. c8
   g'8 g g g f f f ef
   f4 f8 ef c2
-  
-
 }
 
 stropheBass = \relative c' {
@@ -99,13 +96,18 @@ chrdStrophe =  \chordmode {
 
 \bookpart {
   \paper {
-    #(set-global-staff-size 20)
     page-count = #1
-    #(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
   \bookItem
   \score {
+    \layout {
+      #(layout-set-staff-size-with-jazz 20)
+      \context {
+        \Lyrics
+        \override LyricText.font-size = #2.5
+      }
+    }
     <<
     \new ChordNames { \transpose c c \chrdStrophe }
     \new Staff <<
@@ -116,14 +118,6 @@ chrdStrophe =  \chordmode {
     \new Staff <<
       \new Voice = "StropheBass" { \transpose c c \stropheBass }
       >>
-
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-      \context {
-        \Lyrics
-        \override LyricText.font-size = #2.5
-      }
-    }
   }
 }

@@ -187,6 +187,7 @@ chrdIntro = \chordmode {
     >>
   }
   \score {
+    \layout { #(layout-set-staff-size-with-jazz 20) }    
     <<
       \new ChordNames { \chrdStrophe }
       \new Staff <<
@@ -211,12 +212,5 @@ chrdIntro = \chordmode {
     \new Lyrics \lyricsto "StropheBariton" \lyrStropheBaritonC
     \new Lyrics \lyricsto "StropheBariton" \lyrStropheBaritonD
     >>
-   %  \layout {
-      #(layout-set-staff-size-with-jazz 24)
-%       \context {
-%         \Lyrics
-%         \override LyricText.font-size = #1
-%       }
-%     }
   }
 }

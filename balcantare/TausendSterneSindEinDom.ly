@@ -120,25 +120,19 @@ chrdStrophe = \chordmode {
      >>
   }
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
       \new ChordNames { \chrdStrophe }
       \new Staff <<
         \new Voice = "StropheSopran" { \stropheSopran }
         \new Voice = "StropheAlt" { \stropheAlt }
       >>
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheA
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheB
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheC
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheA
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheB
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheC
       \new Staff <<
         \new Voice = "StropheBass" {  \stropheBass }
       >>
     >>
-    %\layout {
-      #(layout-set-staff-size-with-jazz 24)
-    %  \context {
-    %    \Lyrics
-    %    \override LyricText.font-size = #1
-    %  }
-    %}
   }
 }

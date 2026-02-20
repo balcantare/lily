@@ -87,11 +87,11 @@ lyrStropheE = {
   \lyricmode {
     \skipB
     \set stanza = "3a. "
-    Kör -- per, die beim Tan -- zen sich be 
+    Kör -- per, die beim Tan -- zen sich be- 
     \set stanza = "3b. "
     Au -- gen -- paa -- re vol -- ler Lust und     
     \set stanza = \stanzaC 
-    -- rüh -- ren,
+    -rüh -- ren,
     Schwin -- gen wie in ei -- ner eig -- nen Welt,
     \set stanza = \stanzaC
     Wenn sie Hand in Hand ein -- an -- der füh -- ren,
@@ -208,14 +208,11 @@ chrdStrophe = \chordmode
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
   \bookItem
   \score {
-  \layout {
-    #(layout-set-staff-size-with-jazz 20)
-  }
+    \layout {#(layout-set-staff-size-with-jazz 20)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<

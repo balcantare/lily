@@ -158,9 +158,9 @@ stropheBass = \relative c {
   g2( e) d \breathe d4( c) |
   b2 e c e |
   d1 \breathe e2( fs) |
-  g c c b a |
-  g e d \breathe e |
-  a, b4( e) d2 d |
+  g c c b a 
+  g e d \breathe e 
+  a, b4( e) d2 d 
   <g, g'>1.
 }
 
@@ -201,36 +201,34 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
   \bookItem
   \score {
+     \layout {
+      #(layout-set-staff-size-with-jazz 20)
+      \context {\Lyrics
+         \override LyricText.font-size = #1.5
+      }
+    }
     <<
       \new ChordNames { \chrdStrophe }
       \new Staff <<
         \new Voice = "StropheSopran" { \stropheSopran }
         \new Voice = "StropheAlt" { \stropheAlt }
       >>
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheG
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheH
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheA
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheB
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheC
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheD
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheE
-    \new	Lyrics \lyricsto "StropheSopran" \lyrStropheF
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheG
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheH
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheA
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheB
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheC
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheD
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheE
+      \new Lyrics \lyricsto "StropheSopran" \lyrStropheF
       \new Staff <<
         \new Voice = "StropheTenor" { \stropheTenor }
         \new Voice = "StropheBass" { \stropheBass }
       >>
     >>
-     \layout {
-      #(layout-set-staff-size-with-jazz 24)
-       \context {
-         \Lyrics
-         \override LyricText.font-size = #1.5
-       }
-     }
   }
 }

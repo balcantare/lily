@@ -93,5 +93,6 @@ b4 s8 b4 s8
     \layout {
       #(layout-set-staff-size-with-jazz 24)
     }
+  }
 }
   

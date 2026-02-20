@@ -1,6 +1,5 @@
 \version "2.24.0"
 sheetName = "Es ist ein Schnee gefallen"
-%#(define book-staff-size 22)
 \include "../include/book.ily"
 
 skipA = \repeat unfold 15 \skip 8
@@ -12,9 +11,11 @@ lyrStropheA = {
   ist noch nit Zeit.
   \set stanza = "1. "
   Ich wollt zu mei -- nem Buh -- len gahn,
+  \set stanza = "1. "
   der Weg ist mir ver -- schneit.
   \set stanza = "1. "
   Ich wollt zu mei -- nem Buh -- len gahn,
+  \set stanza = "1. "
   der Weg ist mir ver -- schneit.
  }}
 lyrStropheB = {
@@ -25,9 +26,11 @@ lyrStropheB = {
     es ist mir wor -- den alt.
     \set stanza = "2. "
     Zer -- bro -- chen sind die Rie _ -- gel,
+    \set stanza = "2. "
     mein Stüb -- lein ist mir kalt.
     \set stanza = "2. "
     Zer -- bro -- chen sind die Rie _ -- gel,
+    \set stanza = "2. "
     mein Stüb -- lein ist mir kalt.
   }
 }
@@ -39,9 +42,11 @@ lyrStropheC = {
     da geht ein kal -- ter Wind.
     \set stanza = "3. "
     Wie ich mich nach Dir seh -- _ ne,
+    \set stanza = "3. "
     daß wir bei -- sam -- men sind.
     \set stanza = "3. "
     Wie ich mich nach Dir seh -- _ ne,
+    \set stanza = "3. "
     daß wir bei -- sam -- men sind.
 }}
 
@@ -53,9 +58,11 @@ lyrStropheD = {
     wann ich so e -- lend bin,
     \set stanza = "4. "
     Nimm mich in dei -- ne Ar _ -- me,
+    \set stanza = "4. "
     so fährt der Win -- ter hin.
     \set stanza = "4. "
     Nimm mich in dei -- ne Ar _ -- me,
+    \set stanza = "4. "
     so fährt der Win -- ter hin.
 }}
 
@@ -75,11 +82,11 @@ strophe = \relative c' {
   e4. fs8 g4 a
   fs2. \break fs4
   e4. e8 e4 fs
-  g4. g8 g4. fs8
+  g4. g8 g4. \break fs8
   e4. d8 d4 cs
   d2. \break fs4
   e4. e8 e4 fs
-  g4. g8 g4. fs8
+  g4. g8 g4. \break fs8
   e4. d8 d4 cs
   d2.
   \bar "|."
@@ -97,15 +104,11 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.1))
-    %ragged-last-bottom = ##f
+    ragged-last-bottom = ##f
   }
   \bookItem
   \score {
-  \layout {
-      #(layout-set-staff-size-with-jazz 24)
-    
-  }
+  \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<

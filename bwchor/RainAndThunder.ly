@@ -192,19 +192,13 @@ staffSize = #(define-music-function (parser location new-size) (number?)
   #})
 
 \bookpart {
-  %#(set-global-staff-size 19)
-
   \paper {
     page-count = #1
-    #(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
-  \header {
-    title = \sheetName
-  }
-  \tocItem \markup \sheetName
-
+  \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 19)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff \with { \staffSize #-4 }
@@ -217,9 +211,5 @@ staffSize = #(define-music-function (parser location new-size) (number?)
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-
-    }
   }
 }

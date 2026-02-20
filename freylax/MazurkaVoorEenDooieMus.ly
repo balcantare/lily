@@ -44,7 +44,6 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.4))
   }
   \bookItem
   \header{
@@ -60,5 +59,6 @@ chrdStrophe = \chordmode {
     \layout {
       #(layout-set-staff-size-with-jazz 24)
     }
+  }
 }
   

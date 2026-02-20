@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.2"
 sheetName = "Čerešnički"
 sheetComposer = "slowakisches Volkslied, arr. Reinhard Simmgen"
 \include "../include/book.ily"
@@ -201,7 +201,6 @@ chrdStrophe =  \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
   \header {
@@ -209,6 +208,7 @@ chrdStrophe =  \chordmode {
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 20)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
@@ -229,11 +229,6 @@ chrdStrophe =  \chordmode {
     \new Lyrics \lyricsto "StropheBass" \lyrStropheAbass
     \new Lyrics \lyricsto "StropheBass" \lyrStropheBbass
     \new Lyrics \lyricsto "StropheBass" \lyrStropheCbass
-
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-
-    }
   }
 }

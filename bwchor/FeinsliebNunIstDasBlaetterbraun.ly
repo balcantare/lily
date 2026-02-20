@@ -170,11 +170,11 @@ c2 s4 g:7 c2 s4 g:7 c2
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1))
-  ragged-last-bottom = ##f
+    ragged-last-bottom = ##f
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 20)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
@@ -186,9 +186,5 @@ c2 s4 g:7 c2 s4 g:7 c2
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     \new Lyrics \lyricsto "Strophe" \lyrStropheD
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-
-    }
   }
 }

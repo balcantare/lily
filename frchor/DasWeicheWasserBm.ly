@@ -99,7 +99,7 @@ strophe = \relative c' {
   <<
     {
      \voiceTwo
-     r1
+     s1
      \time 1/2
      r4 a4
      \time 2/2
@@ -155,18 +155,17 @@ chrdStrophe = \chordmode {
     g2 d2 g b
     e2:m d
     g2 d2 b2. s4 e1:m
-
-
 }
 
 
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.1))
+    ragged-last-bottom = ##f
   }
   \bookItem
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 22)}
     <<
     \new ChordNames { \transpose g d \chrdStrophe }
     \new Staff <<
@@ -176,9 +175,5 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-      #(layout-set-staff-size 20)
-    }
   }
 }

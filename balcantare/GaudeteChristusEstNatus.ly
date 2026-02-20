@@ -145,6 +145,7 @@ chrdStrophe = \chordmode {
   }
   \bookItem
   \score {
+    \layout { #(layout-set-staff-size-with-jazz 24)}
     <<
       \new ChordNames { \chrdStrophe }
       \new Staff <<
@@ -163,12 +164,5 @@ chrdStrophe = \chordmode {
         \new Voice = "StropheBass" { \transpose c bf, \stropheBass }
       >>
     >>
-    %\layout {
-      #(layout-set-staff-size-with-jazz 24)
-    %  \context {
-    %    \Lyrics
-    %    \override LyricText.font-size = #1
-    %  }
-    %}
   }
 }
