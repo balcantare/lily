@@ -216,7 +216,8 @@ chrdStrophe = \chordmode {
      % \override StaffSymbol.staff-space = #(magstep -1)
     }{ \tabChordRepeats \strophe }  
     >>
-    \layout { 
+    \layout {
+      #(layout-set-staff-size-with-jazz 20) 
       \omit Voice.StringNumber 
     }
   }

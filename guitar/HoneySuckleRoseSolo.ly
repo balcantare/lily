@@ -308,7 +308,8 @@ chrdStrophe = \chordmode {
        \new TabVoice = "lower" \lower
     >>  
     >>
-    \layout { 
+    \layout {
+      #(layout-set-staff-size-with-jazz 20) 
       \omit Voice.StringNumber 
     }
   }

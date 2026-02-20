@@ -287,7 +287,8 @@ chrdStrophe = \chordmode {
     %  \new Voice = "Bass" { \stropheBass}
     %>>
     >>
-  \layout { 
+  \layout {
+      #(layout-set-staff-size-with-jazz 20) 
     \omit Voice.StringNumber 
   }
 

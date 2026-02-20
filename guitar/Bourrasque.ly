@@ -221,7 +221,8 @@ chrdBass = \relative c {
     \new TabStaff { \chrdBass }
     
     >>
-    \layout { 
+    \layout {
+      #(layout-set-staff-size-with-jazz 20) 
       \omit Voice.StringNumber 
     }
   }

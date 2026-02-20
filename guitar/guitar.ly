@@ -1,5 +1,4 @@
 \version "2.24.2"
-#(define book-staff-size 20)
 \include "../include/book.ily"
 
 \bookpart {
