@@ -90,6 +90,8 @@ b4 s8 b4 s8
       \new Voice = "Strophe" { \strophe }
       >>
     >>
-  }
+    \layout {
+      #(layout-set-staff-size-with-jazz 24)
+    }
 }
   

@@ -56,5 +56,7 @@ chrdStrophe = \chordmode {
       \new Voice = "Strophe" { \strophe }
       >>
     >>
-  }
+    \layout {
+      #(layout-set-staff-size-with-jazz 24)
+    }
 }

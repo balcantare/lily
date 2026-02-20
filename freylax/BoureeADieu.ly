@@ -56,6 +56,7 @@ a4.:m g8 s2 f4. g8 s2 d2:m s f e:m e:m
 
 }
 \layout {
+      #(layout-set-staff-size-with-jazz 24)
   \context {
     \omit SystemStartBar
   } 
