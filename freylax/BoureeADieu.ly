@@ -34,18 +34,19 @@ a2:m s f g a:m s f g
 a4.:m g8 s2 f4. g8 s2 d2:m s f e:m e:m
 }
 
-
-
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.4))
   }
   \bookItem
   \header {
     subtitle = "Bourée in 2 |AABB|"
   }
   \score {
+    \layout {
+      #(layout-set-staff-size-with-jazz 24)
+      \context {\omit SystemStartBar} 
+    }
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
@@ -53,11 +54,4 @@ a4.:m g8 s2 f4. g8 s2 d2:m s f e:m e:m
       >>
     >>
   }
-
 }
-\layout {
-      #(layout-set-staff-size-with-jazz 24)
-  \context {
-    \omit SystemStartBar
-  } 
- }

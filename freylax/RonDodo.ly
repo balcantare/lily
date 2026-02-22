@@ -69,13 +69,13 @@ b4 s8 b4 s8
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.4))
   }
   \bookItem
   \header{
     subtitle = "Rondeau en couple |AABB|"
   }
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff \with {
@@ -90,9 +90,6 @@ b4 s8 b4 s8
       \new Voice = "Strophe" { \strophe }
       >>
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-    }
   }
 }
   

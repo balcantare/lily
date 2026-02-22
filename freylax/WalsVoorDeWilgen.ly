@@ -43,7 +43,6 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.4))
     ragged-last-bottom = ##t
   }
   \bookItem
@@ -51,15 +50,13 @@ chrdStrophe = \chordmode {
     subtitle = "Wals |AABB|"
   }
   \score {
+    \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
       \new Voice = "Strophe" { \strophe }
       >>
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 24)
-    }
   }
 }
   
