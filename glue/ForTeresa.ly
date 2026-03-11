@@ -59,6 +59,7 @@ chrdStrophe = \chordmode {
   \paper {
     page-count = #1
     ragged-last-bottom = ##t
+    system-system-spacing.padding = #8
   }
   \bookItem
   \score {
