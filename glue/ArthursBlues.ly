@@ -6,6 +6,7 @@ sheetComposer = "RY"
 strophe = \relative c'' {
   %\voiceOne
   \time 4/4
+  \accidentalStyle modern-voice-cautionary
   \key ef \major
   g8 fs g bf c ef4 c8~
   4 bf8 g~ g ef f ef

@@ -32,4 +32,5 @@ sheetCopyright = "©glue"
 
 \includeSheet "ArthursBlues.ly"
 \includeSheet "ForTeresa.ly"
+\includeSheet "JungleBlues.ly"
 \includeSheet "SlivovitzPolka.ly"
