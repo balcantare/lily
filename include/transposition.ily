@@ -13,6 +13,13 @@
 #(define (symbol-or-list? x)
   (or (symbol? x) (list? x)))
 
+%% Helper: normalize pitch to octave 0 (middle C), preserving notename and alteration
+%% This allows sheetTonality = c to work same as sheetTonality = c'
+#(define (normalize-pitch-octave p)
+  (if (ly:pitch? p)
+      (ly:make-pitch 0 (ly:pitch-notename p) (ly:pitch-alteration p))
+      p))
+
 %% Map note symbol to quint value
 %% Mapping: -6=gf, -5=df, -4=af, -3=ef, -2=bf, -1=f, 0=c, 1=g, 2=d, 3=a, 4=e, 5=b, 6=fs
 #(define (note->quint sym)
@@ -124,7 +131,7 @@
 #(define (calc-target-pitch)
   (if (not (and (defined? 'transposeFor) transposeFor))
       #f
-      (let* ((sp-val (if (and (defined? 'sheetTonality) sheetTonality) sheetTonality (ly:make-pitch 0 0 0)))
+      (let* ((sp-val (normalize-pitch-octave (if (and (defined? 'sheetTonality) sheetTonality) sheetTonality (ly:make-pitch 0 0 0))))
              (sp-oct (ly:pitch-octave sp-val))
              (fp-sym (if (symbol? transposeFor) transposeFor (string->symbol "c")))
              (fp-val (if (ly:pitch? transposeFor) transposeFor (quint->pitch (note->quint fp-sym))))
@@ -145,7 +152,7 @@ doTranspose =
 #(define-music-function (music) (ly:music?)
   (let ((tgt (calc-target-pitch)))
     (if tgt
-        (let ((sp (if (and (defined? 'sheetTonality) sheetTonality) sheetTonality (ly:make-pitch 0 0 0))))
+        (let ((sp (normalize-pitch-octave (if (and (defined? 'sheetTonality) sheetTonality) sheetTonality (ly:make-pitch 0 0 0)))))
           #{ \transpose #sp #tgt #music #})
         music)))
 
