@@ -3,6 +3,8 @@ sheetComposer = "Wouter Kuyper"
 sheetName = "Iets voor vÿf"
 \include "../include/book.ily"
 
+sheetTonality = c
+
 strophe = \relative c'' {
   \time 5/4
   \key a \minor
@@ -65,9 +67,9 @@ chrdStrophe = \chordmode {
   \score {
     \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     >>
   }

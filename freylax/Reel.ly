@@ -2,6 +2,8 @@
 sheetName = "Reel"
 \include "../include/book.ily"
 
+sheetTonality = g
+
 strophe = \relative c' {
   \time 2/4
   \key g \major
@@ -40,6 +42,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
+    system-system-spacing.padding = #8
   }
   \bookItem
   \header {
@@ -47,9 +50,9 @@ chrdStrophe = \chordmode {
   }
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe
       >>
     >>
     \layout {

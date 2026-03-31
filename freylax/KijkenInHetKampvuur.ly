@@ -3,6 +3,9 @@ sheetComposer = "Wouter Kuyper"
 sheetName = "Kijken in het Kampvuur"
 \include "../include/book.ily"
 
+sheetTonality = c
+octaveBf = -1
+
 strophe = \relative c'' {
   \time 9/8
   \key a \minor
@@ -56,6 +59,7 @@ chrdStrophe = \chordmode {
   \paper {
     page-count = #1
     ragged-last-bottom = ##t
+    system-system-spacing.padding = #8
   }
   \bookItem
   \header{
@@ -64,9 +68,9 @@ chrdStrophe = \chordmode {
   \score {
     \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     >>
   }

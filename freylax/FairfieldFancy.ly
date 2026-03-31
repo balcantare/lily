@@ -2,13 +2,15 @@
 sheetName = "Fairfield Fancy"
 \include "../include/book.ily"
 
+sheetTonality = c
+
 strophe = \relative c' {
   \time 2/4
   \key a \minor
   \bar ".|:"
   \mark \markup{ \box{\fontsize #4 A}}
   \repeat volta 2 {
-     e8 a a gs 
+     \ifTransposeFor #'bf {e'8}{e8} a a gs 
      a4 a8 b
      c a e' a, f' a, e' a,
      d, g g fs
@@ -25,7 +27,7 @@ strophe = \relative c' {
   } \break  
   \repeat volta 2 {
   \mark \markup{ \box{\fontsize #4 B}}
-    e'8 a a gs 
+    \ifTransposeFor #'bf {e8}{e'8} a a gs 
     a4 a8 b
     c a b a 
     c a b a
@@ -55,6 +57,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
+    system-system-spacing.padding = #8
   }
   \bookItem
   \header {
@@ -62,9 +65,9 @@ chrdStrophe = \chordmode {
   }
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     >>
     \layout {

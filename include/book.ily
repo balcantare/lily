@@ -13,6 +13,7 @@ includeOnce =
 \includeOnce "chordbass.ily"
 \includeOnce "gitlog.ily"
 \includeOnce "bookDefines.ily"
+\includeOnce "transposition.ily"
 
 \paper {
   #(define fonts (book-font 1.2))

@@ -3,6 +3,9 @@ sheetName = "Kriebels"
 sheetComposer = "Wouter Kuyper"
 \include "../include/book.ily"
 
+sheetTonality = c
+octaveBf = 0
+
 strophe = \relative c'' {
   \time 2/4
   \key a \minor
@@ -30,6 +33,7 @@ a4.:m g8 s4 f4 s2 e:m
 \bookpart {
   \paper {
     page-count = #1
+    system-system-spacing.padding = #8
   }
   \bookItem
   \header {
@@ -43,9 +47,9 @@ a4.:m g8 s4 f4 s2 e:m
       } 
     }
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     >>
   }

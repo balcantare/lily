@@ -3,6 +3,7 @@ sheetComposer = "Richard Galliano"
 sheetName = "Laurita"
 \include "../include/book.ily"
 
+sheetTonality = f
 
 Notes = \relative c'''{
   \time 3/4
@@ -64,9 +65,9 @@ Chords =
   }
   \score {
     <<
-    \new ChordNames { \Chords }
+    \new ChordNames \doTranspose \Chords 
     \new Staff <<
-      \new Voice = "Strophe" { \Notes }
+      \new Voice = "Strophe" \doTranspose \Notes 
       >>
     >>
   }

@@ -3,6 +3,8 @@ sheetComposer = "Paul Young"
 sheetName = "Michael's Jig"
 \include "../include/book.ily"
 
+sheetTonality = g
+
 strophe = \relative c'' {
   \time 6/8
   \key e \minor
@@ -75,9 +77,9 @@ chrdStrophe = \chordmode {
   \score {
     \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     >>
   }

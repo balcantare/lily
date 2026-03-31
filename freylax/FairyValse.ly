@@ -2,6 +2,8 @@
 sheetName = "FairyValse"
 \include "../include/book.ily"
 
+sheetTonality = c
+
 strophe = \relative c'' {
   \time 3/4
   \key c \major
@@ -47,14 +49,15 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
+    system-system-spacing.padding = #8
   }
   \bookItem
   \header { subtitle = "Walzer" }
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     >>
     \layout {

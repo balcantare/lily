@@ -2,7 +2,9 @@
 sheetName = "Fairy Dance"
 \include "../include/book.ily"
 
-Ostrophe = \relative c'' {
+sheetTonality = c
+
+strophe = \relative c'' {
   \time 3/4
   \key c \major
   %\bar ".|:"
@@ -17,7 +19,7 @@ Ostrophe = \relative c'' {
   c2.~
   c4 c b
   c2.
-  d8 c4. d4
+  d8 c4. d4 \break
   e2.
   g8 e4. d8 e
   d2.~
@@ -47,6 +49,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
+    system-system-spacing.padding = #8
   }
   \header {
     subtitle = "Walzer"
@@ -54,9 +57,9 @@ chrdStrophe = \chordmode {
   \bookItem
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     >>
     \layout {

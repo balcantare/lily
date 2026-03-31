@@ -3,6 +3,9 @@ sheetName = "Biserka"
 sheetComposer = "Serbien, Aman Folk Orchestra"
 \include "../include/book.ily"
 
+sheetTonality = c
+octaveBf = -1
+
 strophe = \relative c'' {
   %\autoBeamOff
   \accidentalStyle modern-voice-cautionary
@@ -79,7 +82,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    %ragged-last-bottom = ##f
+    system-system-spacing.padding = #8
     #(define fonts (book-font 1.4))
   }
   \bookItem
@@ -88,9 +91,9 @@ chrdStrophe = \chordmode {
     #(layout-set-staff-size-with-jazz 24)
   }
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames { \doTranspose \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe"  \strophe
+      \new Voice = "Strophe" \doTranspose \strophe
       >>
     >>
   }

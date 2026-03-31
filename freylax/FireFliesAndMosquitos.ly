@@ -3,6 +3,9 @@ sheetComposer = "Wouter Kuyper"
 sheetName = "Fireflies and Mosquitos"
 \include "../include/book.ily"
 
+sheetTonality = g
+octaveBf = 0
+
 strophe = \relative c'' {
   \time 2/4
   \key g \major
@@ -63,6 +66,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
+    system-system-spacing.padding = #8
   }
   \bookItem
   \header{
@@ -71,9 +75,9 @@ chrdStrophe = \chordmode {
   \score {
     \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     >>
   }

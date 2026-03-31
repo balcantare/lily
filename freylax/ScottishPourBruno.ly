@@ -3,6 +3,8 @@ sheetComposer = "Wouter Kuyper"
 sheetName = "Scottish pour Bruno"
 \include "../include/book.ily"
 
+sheetTonality = c
+
 strophe = \relative c'' {
   \time 4/4
   \key a \minor
@@ -44,6 +46,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
+    system-system-spacing.padding = #8
   }
   \bookItem
   \header{
@@ -51,9 +54,9 @@ chrdStrophe = \chordmode {
   }
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe
       >>
     >>
     \layout {

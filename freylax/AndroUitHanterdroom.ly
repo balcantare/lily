@@ -3,6 +3,10 @@ sheetName = "Andro uit Hanterdroom"
 sheetComposer = "Wouter Kuyper"
 \include "../include/book.ily"
 
+transposeFor = bf
+sheetTonality = c
+octaveBf = 0
+
 strophe = \relative c'' {
   \time 4/4
   \key a \minor
@@ -41,11 +45,10 @@ chrdStrophe = \chordmode {
   
 }
 
-
-
 \bookpart {
   \paper {
     page-count = #1
+    system-system-spacing.padding = #8
   }
   \bookItem
   \header {
@@ -54,9 +57,9 @@ chrdStrophe = \chordmode {
   \score {
     \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames { \doTranspose \chrdStrophe }
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" { \doTranspose \strophe }
     >>
     >>
   }

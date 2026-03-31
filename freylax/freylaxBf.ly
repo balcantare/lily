@@ -20,7 +20,7 @@ sheetCopyright = "©freylax"
     \fill-line {
       \override #'(baseline-skip . 8)
       \center-column {
-        	\line { \abs-fontsize #24 "freylax Noten"}
+        	\line { \abs-fontsize #24 "freylax Noten für Bf Instrumente"}
 	\vspace #8
       }
     }
@@ -28,7 +28,7 @@ sheetCopyright = "©freylax"
   \markuplist \table-of-contents
 }
 
-
+transposeFor = bf
 
 \includeSheet "AndroUitHanterdroom.ly"
 \includeSheet "../balcantare/Biserka.ly"
@@ -55,7 +55,7 @@ sheetCopyright = "©freylax"
 \includeSheet "SalbeiSchottisch.ly"
 \includeSheet "ScottishPourBruno.ly"
 \includeSheet "ScottishVreeswijk.ly"
-\includeSheet "ToutLeLongDuBois.ly" % 3
+\includeSheet "ToutLeLongDuBois.ly" 
 \includeSheet "../balcantare/Valenki.ly"
 \includeSheet "WalsVoorDeWilgen.ly"
 \includeSheet "Zelda.ly"     % 4

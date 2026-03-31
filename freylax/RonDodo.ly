@@ -3,6 +3,8 @@ sheetComposer = "Wouter Kuyper"
 sheetName = "Ron Dodo"
 \include "../include/book.ily"
 
+sheetTonality = c
+
 strophe = \relative c'' {
   \time 6/8
   \key a \minor
@@ -69,6 +71,7 @@ b4 s8 b4 s8
 \bookpart {
   \paper {
     page-count = #1
+    system-system-spacing.padding = #8
   }
   \bookItem
   \header{
@@ -77,7 +80,7 @@ b4 s8 b4 s8
   \score {
     \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff \with {
       \override VerticalAxisGroup.default-staff-staff-spacing =
       #'((basic-distance . 4)
@@ -87,7 +90,7 @@ b4 s8 b4 s8
       \new Voice = "Rythm" { \rythm }
     >>
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     >>
   }

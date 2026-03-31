@@ -3,6 +3,8 @@ sheetName = "Валенки, валенки прячет моя маменька
 sheetComposer = "Russland"
 \include "../include/book.ily"
 
+tonality = g
+
 % https://kindbi.ru/article/valenki-valenki-prjachet-moja-mamenka/
 
 lyrStropheA = {
@@ -112,9 +114,9 @@ chrdStrophe = \chordmode {
     #(layout-set-staff-size-with-jazz 24)
   }
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB

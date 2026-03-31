@@ -3,6 +3,8 @@ sheetComposer = "Wouter Kuyper"
 sheetName = "Wals voor de Wilgen"
 \include "../include/book.ily"
 
+sheetTonality = g
+
 strophe = \relative c'' {
   \time 3/4
   \key e \minor
@@ -44,6 +46,7 @@ chrdStrophe = \chordmode {
   \paper {
     page-count = #1
     ragged-last-bottom = ##t
+    system-system-spacing.padding = #8
   }
   \bookItem
   \header{
@@ -52,9 +55,9 @@ chrdStrophe = \chordmode {
   \score {
     \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     >>
   }

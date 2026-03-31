@@ -3,6 +3,8 @@ sheetComposer = "ry"
 sheetName = "Cerclevolu"
 \include "../include/book.ily"
 
+sheetTonality = c
+
 strophe = \relative c'' {
   \time 6/8
   \key c \major
@@ -101,9 +103,9 @@ chrdStrophe = \chordmode {
   \score {
     \layout {#(layout-set-staff-size-with-jazz 24)}
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     >>
   }

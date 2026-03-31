@@ -3,6 +3,8 @@ sheetName = "De Montfort"
 sheetComposer = "Jo Freya"
 \include "../include/book.ily"
 
+sheetTonality = c
+
 strophe = \relative c'' {
   \time 2/4
   \key a \minor
@@ -66,6 +68,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
+    system-system-spacing.padding = #8
   }
   \bookItem
   \header {
@@ -73,7 +76,7 @@ chrdStrophe = \chordmode {
   }
   \score {
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff \with {
       \override VerticalAxisGroup.default-staff-staff-spacing =
       #'((basic-distance . 4)
@@ -83,7 +86,7 @@ chrdStrophe = \chordmode {
       \new Voice = "Rythm" { \rythm }
     >>
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     >>
   }
