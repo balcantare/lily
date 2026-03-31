@@ -28,8 +28,6 @@ sheetCopyright = "©freylax"
   \markuplist \table-of-contents
 }
 
-
-
 \includeSheet "AndroUitHanterdroom.ly"
 \includeSheet "../balcantare/Biserka.ly"
 \includeSheet "BoureeADieu.ly"

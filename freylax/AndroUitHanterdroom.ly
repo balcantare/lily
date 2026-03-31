@@ -3,7 +3,6 @@ sheetName = "Andro uit Hanterdroom"
 sheetComposer = "Wouter Kuyper"
 \include "../include/book.ily"
 
-transposeFor = bf
 sheetTonality = c
 octaveBf = 0
 
