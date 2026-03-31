@@ -1,4 +1,4 @@
-books := freylax.pdf 
+books := freylax.pdf freylaxBf.pdf
 TOPDIR := ..
 
 include $(TOPDIR)/include/makefile
