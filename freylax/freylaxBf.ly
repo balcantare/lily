@@ -41,6 +41,7 @@ transposeFor = bf
 \includeSheet "FairyDance.ly"
 \includeSheet "FairyValse.ly"
 \includeSheet "FireFliesAndMosquitos.ly"
+\includeSheet "Geburtstagslied.ly"
 \includeSheet "Hepter.ly"
 \includeSheet "IetsVoorVyf.ly"
 \includeSheet "KijkenInHetKampvuur.ly"
