@@ -34,6 +34,7 @@ sheetCopyright = "©friedensingen.de"
   \markuplist \table-of-contents
 }
 
+\includeSheet "AllesMussKleinBeginnen.ly"
 \includeSheet "AllesWohlDemVolke.ly"   
 \includeSheet "../bwchor/AmaniLeo.ly"
 \includeSheet "BrotUndRosen.ly"
