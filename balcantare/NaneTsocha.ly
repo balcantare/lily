@@ -4,7 +4,8 @@ sheetName = "Nane Zocha"
 
 sheetTonality = c
 
-bookTransposeTo = #'((freylax . f))
+%% Set transposition for freylax book: F major (isolated to this sheet)
+\setBookTranspose #'((freylax . f))
 
 lyrStropheA = {
   \lyricmode {

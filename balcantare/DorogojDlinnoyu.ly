@@ -1,6 +1,11 @@
-\version "2.22.2"
+\version "2.24.2"
 sheetName = "Dorogoj Dlinnoyu"
 \include "../include/book.ily"
+
+sheetTonality = f
+
+%% Set transposition for freylax book: F major +1 octave (isolated to this sheet)
+\setBookTranspose #'((freylax . (c . 1)))
 
 lyrStropheA = {
   \lyricmode {
@@ -64,7 +69,7 @@ strophe = \relative c' {
   d'8 d e f g f e d
   f4 d2.
   e8 8 e e e b cs d
-  e1 } r4
+  e1 } r4 \break
   \repeat volta 2 {
     f f e
     e d8 8~ 8 d d c
@@ -91,7 +96,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.4))
+    ragged-last-bottom = ##f
   }
   \bookItem
   \score {
@@ -99,12 +104,12 @@ chrdStrophe = \chordmode {
     #(layout-set-staff-size-with-jazz 24)
   }
     <<
-      \new ChordNames { \transpose f g {\chrdStrophe }}
+      \new ChordNames \doTranspose \chrdStrophe 
       \new Staff <<
-        \new Voice = "Strophe" { \transpose f g { \strophe} }
+        \new Voice = "Strophe" \doTranspose \strophe
       >>
-    \new	Lyrics \lyricsto "Strophe" \lyrStropheA
-    \new	Lyrics \lyricsto "Strophe" \lyrStropheB
+    \new Lyrics \lyricsto "Strophe" \lyrStropheA
+    \new Lyrics \lyricsto "Strophe" \lyrStropheB
     \new Lyrics \lyricsto "Strophe" \lyrStropheC
     >>
   }

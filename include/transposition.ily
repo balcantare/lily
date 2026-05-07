@@ -10,12 +10,12 @@
 %%   transposeFor - Instrument (e.g., bf, ef, a) - optional
 %%   bookTransposeTo - Per-book and per-sheet transposition targets
 %%
-%% Usage in common location (e.g., book file):
-%%   bookTransposeTo = #'((freylax . f)              % default for freylax book
-%%                       ((freylax . NaneTsocha) . (f . 1)))  % specific sheet with octave
+%% Usage in sheet files:
+%%   \setBookTranspose #'((freylax . (c . 1)))  % +1 octave for this sheet only
+%%   \setBookTranspose #'((freylax . f))          % F major for this sheet only
 %%
-%% The lookup first checks for ((book . sheetName) . target), then falls back to (book . target).
-%% This allows per-sheet octave adjustments without affecting other sheets.
+%% The \setBookTranspose command stores the entry with ((book . sheetName) key)
+%% so it doesn't affect other sheets.
 
 %% Helper: titlecase a string (capitalize first character)
 #(define (string-titlecase str)
@@ -33,6 +33,31 @@
   (if (ly:pitch? p)
       (ly:make-pitch 0 (ly:pitch-notename p) (ly:pitch-alteration p))
       p))
+
+%% Set book transposition for current sheet (isolated, doesn't affect other sheets)
+%% Usage: \setBookTranspose #'((freylax . (c . 1)))
+%% This creates ((book . sheetName) . target) entries for isolation
+#(define allBookTransposes '())
+
+#(define (set-book-transpose! alist)
+  (let* ((book-sym (if (and (defined? 'book) (string? book))
+                        (string->symbol book)
+                        #f))
+         (sheet-sym (if (and (defined? 'sheetName) (string? sheetName))
+                         (string->symbol sheetName)
+                         #f)))
+    (if (and book-sym sheet-sym)
+        (let ((specific-alist
+               (map (lambda (entry)
+                      (cons (cons book-sym sheet-sym) (cdr entry)))
+                    alist)))
+          (set! allBookTransposes (append allBookTransposes specific-alist)))
+        #f)))
+
+%% Music function wrapper for \setBookTranspose
+setBookTranspose = #(define-music-function (alist) (list?)
+  (set-book-transpose! alist)
+  (make-music 'Music 'void #t))
 
 %% Map note symbol to quint value
 %% Mapping: -6=gf, -5=df, -4=af, -3=ef, -2=bf, -1=f, 0=c, 1=g, 2=d, 3=a, 4=e, 5=b, 6=fs
@@ -146,46 +171,50 @@
 %% Look up (target-key . octave-adjustment) for current sheet/book in bookTransposeTo alist
 %% Returns (pitch . octave-adjustment) pair, or #f if not found
 %% Priority: 1) (book . sheetName) entry (per-sheet), 2) book entry (book-level default)
-%% Usage in sheet: bookTransposeTo = #'(((freylax . NaneTsocha) . (f . 1))  % specific sheet
-%%                                   (freylax . g))                      % default for book
-%% Usage in book: book = "freylax"
+%% Usage in sheet files:
+%%   \setBookTranspose #'((freylax . (c . 1)))  % +1 octave for this sheet only
+%%   \setBookTranspose #'((freylax . f))          % F major for this sheet only
+%%
+%% The \setBookTranspose command stores the entry with ((book . sheetName) key)
+%% so it doesn't affect other sheets.
 #(define (lookup-transpose-to)
   "Look up (target-key . octave-adjustment) for current sheet/book.
-   First checks for (book . sheetName) entry, then falls back to book entry.
+   First checks allBookTransposes (accumulated sheet entries), then bookTransposeTo (defaults).
    Returns (pitch . octave-adjustment) pair, or #f if not found."
-  (and (defined? 'bookTransposeTo)
-       (let* ((book-sym (if (and (defined? 'book) (string? book))
-                            (string->symbol book)
-                            #f))
-              (sheet-sym (if (and (defined? 'sheetName) (string? sheetName))
-                             (string->symbol sheetName)
-                             #f))
-              (specific-key (and book-sym sheet-sym (cons book-sym sheet-sym)))
-              (result (and specific-key (assoc specific-key bookTransposeTo))))
-         (if result
-             ;; Found specific (book . sheetName) entry
-             (let ((value (cdr result)))
-               (cond
-                 ((and (pair? value) (not (symbol? value)) (not (ly:pitch? value)))
-                  (cons (if (ly:pitch? (car value))
-                            (car value)
-                            (quint->pitch (note->quint (car value))))
-                        (cdr value)))
-                 (else
-                  (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0))))
-             ;; Fall back to book entry
-             (and book-sym
-                  (let ((book-result (assoc book-sym bookTransposeTo)))
-                    (and book-result
-                         (let ((value (cdr book-result)))
-                           (cond
-                             ((and (pair? value) (not (symbol? value)) (not (ly:pitch? value)))
-                              (cons (if (ly:pitch? (car value))
-                                        (car value)
-                                        (quint->pitch (note->quint (car value))))
-                                    (cdr value)))
-                             (else
-                              (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0)))))))))))
+  (let* ((book-sym (if (and (defined? 'book) (string? book))
+                       (string->symbol book)
+                       #f))
+         (sheet-sym (if (and (defined? 'sheetName) (string? sheetName))
+                        (string->symbol sheetName)
+                        #f))
+         (specific-key (and book-sym sheet-sym (cons book-sym sheet-sym))))
+    ;; First, check allBookTransposes (accumulated from \setBookTranspose calls)
+    (let ((result1 (and specific-key (defined? 'allBookTransposes)
+                       (assoc specific-key allBookTransposes))))
+      (if result1
+          ;; Found in accumulated sheet-specific entries
+          (let ((value (cdr result1)))
+            (cond
+              ((and (pair? value) (not (symbol? value)) (not (ly:pitch? value)))
+               (cons (if (ly:pitch? (car value))
+                         (car value)
+                         (quint->pitch (note->quint (car value))))
+                     (cdr value)))
+              (else
+               (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0))))
+          ;; Fall back to bookTransposeTo (book-level defaults)
+          (and (defined? 'bookTransposeTo) book-sym
+               (let ((book-result (assoc book-sym bookTransposeTo)))
+                 (and book-result
+                      (let ((value (cdr book-result)))
+                        (cond
+                          ((and (pair? value) (not (symbol? value)) (not (ly:pitch? value)))
+                           (cons (if (ly:pitch? (car value))
+                                     (car value)
+                                     (quint->pitch (note->quint (car value))))
+                                 (cdr value)))
+                          (else
+                           (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0))))))))))))))))
 
 %% Legacy name for backward compatibility
 #(define lookup-book-transpose-to lookup-transpose-to)
@@ -219,10 +248,8 @@
                   (if (and (defined? 'sheetTonality) sheetTonality)
                       sheetTonality
                       (ly:make-pitch 0 0 0))))
-             (book-octave (ly:pitch-octave book-concert-pitch))
-             (book-oct-adjust (get-book-octave-adjustment))
-             (os (+ book-octave book-oct-adjust)))
-        (ly:make-pitch os
+             (book-oct-adjust (get-book-octave-adjustment)))
+        (ly:make-pitch book-oct-adjust
                        (ly:pitch-notename book-concert-pitch)
                        (ly:pitch-alteration book-concert-pitch))))
      ;; Have instrument (with or without book key): calculate target
