@@ -2,6 +2,20 @@
 \language "english"
 
 %% Transposition Macro using Quint (Fifth) Space
+%%
+%% Variables:
+%%   sheetTonality - Key the sheet is written in (e.g., c, d, a)
+%%   sheetName - Name of the sheet (already defined in book.ily)
+%%   book - Book name (set in book file, e.g., "freylax")
+%%   transposeFor - Instrument (e.g., bf, ef, a) - optional
+%%   bookTransposeTo - Per-book and per-sheet transposition targets
+%%
+%% Usage in common location (e.g., book file):
+%%   bookTransposeTo = #'((freylax . f)              % default for freylax book
+%%                       ((freylax . NaneTsocha) . (f . 1)))  % specific sheet with octave
+%%
+%% The lookup first checks for ((book . sheetName) . target), then falls back to (book . target).
+%% This allows per-sheet octave adjustments without affecting other sheets.
 
 %% Helper: titlecase a string (capitalize first character)
 #(define (string-titlecase str)
@@ -129,36 +143,58 @@
                     (else 0)))
             0))))
 
-%% Look up (target-key . octave-adjustment) for current book in bookTransposeTo alist
+%% Look up (target-key . octave-adjustment) for current sheet/book in bookTransposeTo alist
 %% Returns (pitch . octave-adjustment) pair, or #f if not found
-%% Usage in sheet: bookTransposeTo = #'((bwchor . (a . 0)) (balcantare . d))
-%% Usage in book: book = "bwchor"
-#(define (lookup-book-transpose-to)
-  "Look up (target-key . octave-adjustment) for current book in bookTransposeTo alist.
+%% Priority: 1) (book . sheetName) entry (per-sheet), 2) book entry (book-level default)
+%% Usage in sheet: bookTransposeTo = #'(((freylax . NaneTsocha) . (f . 1))  % specific sheet
+%%                                   (freylax . g))                      % default for book
+%% Usage in book: book = "freylax"
+#(define (lookup-transpose-to)
+  "Look up (target-key . octave-adjustment) for current sheet/book.
+   First checks for (book . sheetName) entry, then falls back to book entry.
    Returns (pitch . octave-adjustment) pair, or #f if not found."
-  (if (and (defined? 'book) (string? book) (defined? 'bookTransposeTo))
-      (let ((result (assoc (string->symbol book) bookTransposeTo)))
-        (if result
-            (let ((value (cdr result)))
-              (cond
-               ;; alist with (pitch . octave): #'((bwchor . (a . 1)))
-               ;; value is (a . 1), cdr is 1 (not a pair)
-               ((and (pair? value) (not (symbol? value)) (not (ly:pitch? value)))
-                (cons (if (ly:pitch? (car value))
-                          (car value)
-                          (quint->pitch (note->quint (car value))))
-                      (cdr value)))
-               ;; alist with just pitch: #'((bwchor . a))
-               ;; value is a (symbol) or a ly:pitch
-               (else
-                (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0))))
-            #f))
-      #f))
+  (and (defined? 'bookTransposeTo)
+       (let* ((book-sym (if (and (defined? 'book) (string? book))
+                            (string->symbol book)
+                            #f))
+              (sheet-sym (if (and (defined? 'sheetName) (string? sheetName))
+                             (string->symbol sheetName)
+                             #f))
+              ;; Try (book . sheetName) first
+              (specific-key (and book-sym sheet-sym (cons book-sym sheet-sym)))
+              (result (and specific-key (assoc specific-key bookTransposeTo))))
+         (if result
+             ;; Found specific (book . sheetName) entry
+             (let ((value (cdr result)))
+               (cond
+                ((and (pair? value) (not (symbol? value)) (not (ly:pitch? value)))
+                 (cons (if (ly:pitch? (car value))
+                           (car value)
+                           (quint->pitch (note->quint (car value))))
+                       (cdr value)))
+                (else
+                 (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0))))
+             ;; Fall back to book entry
+             (and book-sym
+                  (let ((book-result (assoc book-sym bookTransposeTo)))
+                    (and book-result
+                         (let ((value (cdr book-result)))
+                           (cond
+                            ((and (pair? value) (not (symbol? value)) (not (ly:pitch? value)))
+                             (cons (if (ly:pitch? (car value))
+                                       (car value)
+                                       (quint->pitch (note->quint (car value))))
+                                   (cdr value)))
+                            (else
+                             (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0))))))))))))
 
-%% Get octave adjustment from bookTransposeTo entry
+%% Legacy name for backward compatibility
+#(define lookup-book-transpose-to lookup-transpose-to)
+
+%% Get octave adjustment from transpose lookup
 #(define (get-book-octave-adjustment)
-  "Get octave adjustment from bookTransposeTo entry."
-  (let ((lookup (lookup-book-transpose-to)))
+  "Get octave adjustment from transpose lookup."
+  (let ((lookup (lookup-transpose-to)))
     (if lookup (cdr lookup) 0)))
 
 %% Calculate target pitch using quint space
