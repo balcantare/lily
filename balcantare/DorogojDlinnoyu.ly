@@ -93,6 +93,16 @@ chrdStrophe = \chordmode {
   d1:m g:m c f g:m d:m a d4:m
  }
 
+\layout {
+  \context {
+    \Lyrics
+    \override VerticalAxisGroup.staff-affinity = #UP
+    \override VerticalAxisGroup.nonstaff-nonstaff-spacing.minimum-distance = #4.8
+    \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.minimum-distance = #2
+    \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing.minimum-distance = #10
+  }
+}
+
 \bookpart {
   \paper {
     page-count = #1

@@ -214,7 +214,7 @@ setBookTranspose = #(define-music-function (alist) (list?)
                                      (quint->pitch (note->quint (car value))))
                                  (cdr value)))
                           (else
-                           (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0))))))))))))))))
+                           (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0)))))))))))
 
 %% Legacy name for backward compatibility
 #(define lookup-book-transpose-to lookup-transpose-to)

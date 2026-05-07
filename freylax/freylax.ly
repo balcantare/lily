@@ -30,6 +30,7 @@ sheetCopyright = "©freylax"
 
 book = "freylax"
 
+\includeSheet "ADayInTheLiveOfAFool.ly"
 \includeSheet "AndroUitHanterdroom.ly"
 \includeSheet "../balcantare/Biserka.ly"
 \includeSheet "BoureeADieu.ly"
