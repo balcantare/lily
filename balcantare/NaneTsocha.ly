@@ -1,6 +1,10 @@
-\version "2.22.2"
+\version "2.24.2"
 sheetName = "Nane Zocha"
 \include "../include/book.ily"
+
+sheetTonality = c
+
+bookTransposeTo = #'((freylax . f))
 
 lyrStropheA = {
   \lyricmode {
@@ -95,7 +99,7 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    #(define fonts (book-font 1.4))
+    ragged-last-bottom = ##f
   }
   \bookItem
   \score {
@@ -103,9 +107,9 @@ chrdStrophe = \chordmode {
     #(layout-set-staff-size-with-jazz 24)
   }
     <<
-    \new ChordNames { \chrdStrophe }
+    \new ChordNames \doTranspose \chrdStrophe 
     \new Staff <<
-      \new Voice = "Strophe" { \strophe }
+      \new Voice = "Strophe" \doTranspose \strophe 
       >>
     \new Lyrics \lyricsto "Strophe" \lyrStropheA
     \new Lyrics \lyricsto "Strophe" \lyrStropheB

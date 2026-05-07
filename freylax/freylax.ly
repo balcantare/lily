@@ -28,6 +28,8 @@ sheetCopyright = "©freylax"
   \markuplist \table-of-contents
 }
 
+book = "freylax"
+
 \includeSheet "AndroUitHanterdroom.ly"
 \includeSheet "../balcantare/Biserka.ly"
 \includeSheet "BoureeADieu.ly"
@@ -51,6 +53,7 @@ sheetCopyright = "©freylax"
 \includeSheet "MazurkaLizzee.ly"
 \includeSheet "MazurkaVoorEenDooieMus.ly"
 \includeSheet "MichaelsJig.ly"
+\includeSheet "../balcantare/NaneTsocha.ly"
 \includeSheet "Reel.ly"
 \includeSheet "RonDodo.ly"
 \includeSheet "Sangshyttevalsen.ly"

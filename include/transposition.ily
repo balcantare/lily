@@ -91,7 +91,10 @@
 
 %% Convert quint value to pitch
 #(define (quint->pitch q)
-  (let* ((q (modulo q 13))
+  (let* ((q (cond
+             ((< q -6) (modulo (+ q 13) 13))
+             ((> q 6) (modulo q 13))
+             (else q)))  ; Keep values in -6 to 6 range as-is
          (info (case q
                  ((-6) '(6 . -1/2)) ((-5) '(1 . -1/2)) ((-4) '(5 . -1/2))
                  ((-3) '(2 . -1/2)) ((-2) '(6 . -1/2)) ((-1) '(3 . 0))
@@ -126,21 +129,88 @@
                     (else 0)))
             0))))
 
+%% Look up (target-key . octave-adjustment) for current book in bookTransposeTo alist
+%% Returns (pitch . octave-adjustment) pair, or #f if not found
+%% Usage in sheet: bookTransposeTo = #'((bwchor . (a . 0)) (balcantare . d))
+%% Usage in book: book = "bwchor"
+#(define (lookup-book-transpose-to)
+  "Look up (target-key . octave-adjustment) for current book in bookTransposeTo alist.
+   Returns (pitch . octave-adjustment) pair, or #f if not found."
+  (if (and (defined? 'book) (string? book) (defined? 'bookTransposeTo))
+      (let ((result (assoc (string->symbol book) bookTransposeTo)))
+        (if result
+            (let ((value (cdr result)))
+              (cond
+               ;; alist with (pitch . octave): #'((bwchor . (a . 1)))
+               ;; value is (a . 1), cdr is 1 (not a pair)
+               ((and (pair? value) (not (symbol? value)) (not (ly:pitch? value)))
+                (cons (if (ly:pitch? (car value))
+                          (car value)
+                          (quint->pitch (note->quint (car value))))
+                      (cdr value)))
+               ;; alist with just pitch: #'((bwchor . a))
+               ;; value is a (symbol) or a ly:pitch
+               (else
+                (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0))))
+            #f))
+      #f))
+
+%% Get octave adjustment from bookTransposeTo entry
+#(define (get-book-octave-adjustment)
+  "Get octave adjustment from bookTransposeTo entry."
+  (let ((lookup (lookup-book-transpose-to)))
+    (if lookup (cdr lookup) 0)))
+
 %% Calculate target pitch using quint space
-%% Preserves the octave from sheetTonality
+%% Now uses book's concert key (from bookTransposeTo) as basis for instrument transposition
+%% Flow: sheetTonality -> (optional) bookTransposeTo concert key -> instrument transposition
+%% If no bookTransposeTo and no transposeFor, returns #f (no transposition)
 #(define (calc-target-pitch)
-  (if (not (and (defined? 'transposeFor) transposeFor))
-      #f
-      (let* ((sp-val (normalize-pitch-octave (if (and (defined? 'sheetTonality) sheetTonality) sheetTonality (ly:make-pitch 0 0 0))))
-             (sp-oct (ly:pitch-octave sp-val))
+  (let* (;; Step 1: Get book's target concert key (or fall back to sheetTonality)
+         (book-lookup (lookup-book-transpose-to))
+         (book-concert-pitch (if book-lookup
+                                (car book-lookup)
+                                #f))
+         ;; Step 2: Determine if we should transpose
+         (has-book-key (and book-lookup book-concert-pitch))
+         (has-instrument (and (defined? 'transposeFor) transposeFor)))
+    (cond
+     ;; No book key and no instrument: no transposition
+     ((and (not has-book-key) (not has-instrument))
+      #f)
+     ;; Have book key but no instrument: transpose to book's concert key
+     ((and has-book-key (not has-instrument))
+      (let* ((sp (normalize-pitch-octave
+                  (if (and (defined? 'sheetTonality) sheetTonality)
+                      sheetTonality
+                      (ly:make-pitch 0 0 0))))
+             (book-octave (ly:pitch-octave book-concert-pitch))
+             (book-oct-adjust (get-book-octave-adjustment))
+             (os (+ book-octave book-oct-adjust)))
+        (ly:make-pitch os
+                       (ly:pitch-notename book-concert-pitch)
+                       (ly:pitch-alteration book-concert-pitch))))
+     ;; Have instrument (with or without book key): calculate target
+     (else
+      (let* ((base-pitch (if has-book-key
+                             book-concert-pitch
+                             (normalize-pitch-octave
+                              (if (and (defined? 'sheetTonality) sheetTonality)
+                                  sheetTonality
+                                  (ly:make-pitch 0 0 0)))))
+             (base-octave (ly:pitch-octave base-pitch))
              (fp-sym (if (symbol? transposeFor) transposeFor (string->symbol "c")))
-             (fp-val (if (ly:pitch? transposeFor) transposeFor (quint->pitch (note->quint fp-sym))))
-             (sq (pitch->quint sp-val))
+             (fp-val (if (ly:pitch? transposeFor)
+                         transposeFor
+                         (quint->pitch (note->quint fp-sym))))
+             (bq (pitch->quint base-pitch))
              (fq (pitch->quint fp-val))
-             (tq (modulo (- sq fq) 13))
-             (os (get-octave-adjustment))
+             (tq (modulo (- bq fq) 13))
+             (book-oct-adjust (get-book-octave-adjustment))
+             (inst-oct-adjust (get-octave-adjustment))
+             (os (+ base-octave book-oct-adjust inst-oct-adjust))
              (bp (quint->pitch tq)))
-        (ly:make-pitch (+ sp-oct os) (ly:pitch-notename bp) (ly:pitch-alteration bp)))))
+        (ly:make-pitch os (ly:pitch-notename bp) (ly:pitch-alteration bp)))))))
 
 %% Main transposition function
 %% Usage: \doTranspose \music
