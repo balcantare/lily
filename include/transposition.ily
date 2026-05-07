@@ -160,33 +160,32 @@
               (sheet-sym (if (and (defined? 'sheetName) (string? sheetName))
                              (string->symbol sheetName)
                              #f))
-              ;; Try (book . sheetName) first
               (specific-key (and book-sym sheet-sym (cons book-sym sheet-sym)))
               (result (and specific-key (assoc specific-key bookTransposeTo))))
          (if result
              ;; Found specific (book . sheetName) entry
              (let ((value (cdr result)))
                (cond
-                ((and (pair? value) (not (symbol? value)) (not (ly:pitch? value)))
-                 (cons (if (ly:pitch? (car value))
-                           (car value)
-                           (quint->pitch (note->quint (car value))))
-                       (cdr value)))
-                (else
-                 (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0))))
+                 ((and (pair? value) (not (symbol? value)) (not (ly:pitch? value)))
+                  (cons (if (ly:pitch? (car value))
+                            (car value)
+                            (quint->pitch (note->quint (car value))))
+                        (cdr value)))
+                 (else
+                  (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0))))
              ;; Fall back to book entry
              (and book-sym
                   (let ((book-result (assoc book-sym bookTransposeTo)))
                     (and book-result
                          (let ((value (cdr book-result)))
                            (cond
-                            ((and (pair? value) (not (symbol? value)) (not (ly:pitch? value)))
-                             (cons (if (ly:pitch? (car value))
-                                       (car value)
-                                       (quint->pitch (note->quint (car value))))
-                                   (cdr value)))
-                            (else
-                             (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0))))))))))))
+                             ((and (pair? value) (not (symbol? value)) (not (ly:pitch? value)))
+                              (cons (if (ly:pitch? (car value))
+                                        (car value)
+                                        (quint->pitch (note->quint (car value))))
+                                    (cdr value)))
+                             (else
+                              (cons (if (ly:pitch? value) value (quint->pitch (note->quint value))) 0)))))))))))
 
 %% Legacy name for backward compatibility
 #(define lookup-book-transpose-to lookup-transpose-to)
