@@ -75,26 +75,27 @@ chrdStrophe = \chordmode {
     subtitle = "Bourée à deux |AAB|"
   }
   \score {
+    \layout {
+      #(layout-set-staff-size-with-jazz 24)
+      \context {
+        \Score
+        \omit SystemStartBar
+      }
+    }
     <<
-    \new ChordNames \doTranspose \chrdStrophe 
+    \new ChordNames \doTranspose \chrdStrophe
     \new Staff \with {
       \override VerticalAxisGroup.default-staff-staff-spacing =
       #'((basic-distance . 4)
-         (padding . -8)) 
+         (padding . -8))
     }<<
       \override Staff.StaffSymbol.line-count = #0
       \new Voice = "Rythm" { \rythm }
     >>
     \new Staff <<
-      \new Voice = "Strophe" \doTranspose \strophe 
+      \new Voice = "Strophe" \doTranspose \strophe
       >>
     >>
   }
 
 }
-\layout {
-      #(layout-set-staff-size-with-jazz 24)
-  \context {
-    \omit SystemStartBar
-  } 
- }

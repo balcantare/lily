@@ -149,22 +149,6 @@ chrdStrophe = \chordmode {
   g b:7 e4:m g:7 s2 c2 g a4:7 d:7 s2
  }
 
-%% Implement an alternate lyric context
-\layout {
-  \context {
-    \Lyrics
-    \name AltLyrics
-    \alias Lyrics
-    \override StanzaNumber.font-series = #'medium
-    \override LyricText.font-shape = #'italic
-    %\override LyricText.color = #(x11-color 'grey20)
-  }
-  \context {
-    \StaffGroup
-    \accepts AltLyrics
-  }
-}
-
 \bookpart {
   \paper {
     page-count = #1
@@ -175,6 +159,19 @@ chrdStrophe = \chordmode {
   \score {
   \layout {
     #(layout-set-staff-size-with-jazz 24)
+    %% Implement an alternate lyric context
+    \context {
+      \Lyrics
+      \name AltLyrics
+      \alias Lyrics
+      \override StanzaNumber.font-series = #'medium
+      \override LyricText.font-shape = #'italic
+      %\override LyricText.color = #(x11-color 'grey20)
+    }
+    \context {
+      \StaffGroup
+      \accepts AltLyrics
+    }
   }
     <<
       \new ChordNames { \transpose g c \chrdStrophe }

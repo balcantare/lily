@@ -173,26 +173,26 @@ chrdStrophe = \chordmode {
   s b:7 s s s e a b:7 s s s s s e a b:7 s2
 }
 
-\layout {
-  \context {
-    \Lyrics
-    \override VerticalAxisGroup.staff-affinity = #UP
-    \override VerticalAxisGroup.nonstaff-nonstaff-spacing.minimum-distance = #4.8
-    \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.minimum-distance = #2
-    \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing.minimum-distance = #10
-  }
-}
-
 \bookpart {
   \paper {
     page-count = #1
     ragged-last-bottom = ##f
   }
   \bookItem
-             
+
   \score {
+    \layout {
+      #(layout-set-staff-size-with-jazz 20)
+      \context {
+        \Lyrics
+        \override VerticalAxisGroup.staff-affinity = #UP
+        \override VerticalAxisGroup.nonstaff-nonstaff-spacing.minimum-distance = #4.8
+        \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.minimum-distance = #2
+        \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing.minimum-distance = #10
+      }
+    }
     <<
-    \new ChordNames \doTranspose \chrdStrophe 
+    \new ChordNames \doTranspose \chrdStrophe
     \new Staff \with {\accepts ChordNames}
     <<
       \context Voice = "StropheSopran" { \doTranspose \stropheSopran }
@@ -202,9 +202,5 @@ chrdStrophe = \chordmode {
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheB
     \new Lyrics \lyricsto "StropheSopran" \lyrStropheC
     >>
-    \layout {
-      #(layout-set-staff-size-with-jazz 20)
-
-    }
   }
 }

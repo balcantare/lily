@@ -123,16 +123,6 @@ chrdStrophe = \chordmode {
   
 }
 
-\layout {
-  \context {
-    \Lyrics
-    \override VerticalAxisGroup.staff-affinity = #UP
-    \override VerticalAxisGroup.nonstaff-nonstaff-spacing.minimum-distance = #4.8
-    \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.minimum-distance = #2
-    \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing.minimum-distance = #10
-  }
-}
-
 \bookpart {
   \paper {
     page-count = #1
@@ -147,6 +137,13 @@ chrdStrophe = \chordmode {
   \score {
     \layout {
       #(layout-set-staff-size-with-jazz 22)
+      \context {
+        \Lyrics
+        \override VerticalAxisGroup.staff-affinity = #UP
+        \override VerticalAxisGroup.nonstaff-nonstaff-spacing.minimum-distance = #4.8
+        \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.minimum-distance = #2
+        \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing.minimum-distance = #10
+      }
     } 
     << 
       \new ChordNames \doTranspose \chrdStrophe 
