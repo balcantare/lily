@@ -108,7 +108,6 @@ chrdStrophe = \chordmode {
 \bookpart {
   \paper {
     page-count = #1
-    %#(define fonts (book-font 1))
     ragged-last-bottom = ##f
   }
   \bookItem
