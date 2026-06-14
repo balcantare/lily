@@ -8,6 +8,7 @@ strophe = \relative c'' {
   \accidentalStyle modern
   \time 4/4
   \key a \minor
+  \accidentalStyle modern-cautionary
   \once\override Score.RehearsalMark.self-alignment-X = #1
   \mark \markup{ \box{\fontsize #4 A}}
   e4. d8 c8 b4 a8~

@@ -8,6 +8,7 @@ strophe = \relative c'' {
   \accidentalStyle modern
   \time 4/4
   \key e \minor
+  \accidentalStyle modern-cautionary
    \mark \markup{ \box{\fontsize #2 In/Out}}
     \bar ".|:"
   \repeat volta 2 {

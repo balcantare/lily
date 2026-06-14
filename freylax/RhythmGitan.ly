@@ -8,7 +8,7 @@ octaveBf = 0
 strophe = \relative c'' {
   \time 4/4
   \key g \minor
-  \language "english"
+  \accidentalStyle modern-cautionary
   \once\override Score.RehearsalMark.self-alignment-X = #1
   \mark \markup{ \box{\fontsize #4 A}}
   bf8   bf8   g8   bf8~   bf4   r4 |

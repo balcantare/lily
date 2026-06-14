@@ -10,6 +10,7 @@ octaveBf = 0
 strophe = \relative c' {
   \time 4/4
   \key d \minor
+  \accidentalStyle modern-cautionary
   \partial 4.
   \bar ".|:"
   \repeat volta 2 {
@@ -82,7 +83,7 @@ chrdStrophe = \chordmode {
   }
   \bookItem
   \header{
-    subtitle = \markup { El Choclo }
+    subtitle = \markup { Tango |AA|BB|CC| }
   }
   \score {
     \layout {
