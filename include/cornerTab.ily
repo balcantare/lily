@@ -51,7 +51,7 @@
     (if (or (not (string? prefix)) (string-null? prefix))
         empty-stencil
         (let* (;; --- tunable layout constants ---
-               (fontsize   6)     ; letter size
+               (fontsize   5)     ; letter size
                (box-w      15.0)  ; fixed outer width  of the L (same for all tabs)
                (box-h      5.5)   ; fixed outer height of the L
                (line-thick 0.4)
