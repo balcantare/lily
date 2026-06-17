@@ -36,6 +36,7 @@ includeOnce =
 #(include-from-here "gitlog.ily")
 #(include-from-here "bookDefines.ily")
 #(include-from-here "transposition.ily")
+#(include-from-here "cornerTab.ily")
 
 \paper {
   #(define fonts (book-font 1.2))
