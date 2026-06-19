@@ -55,7 +55,6 @@
                (box-w      15.0)  ; fixed outer width  of the L (same for all tabs)
                (box-h      5.5)   ; fixed outer height of the L
                (line-thick 0.4)
-               (y-nudge    0)     ; tune so the L's top sits at the paper's top edge
                ;; --- build the text stencil ---
                (txt-stil (interpret-markup layout props
                            (markup #:bold #:fontsize fontsize prefix)))
@@ -73,11 +72,17 @@
                (vline (make-line-stencil line-thick 0 0 0 (- box-h)))           ; left
                (hline (make-line-stencil line-thick 0 (- box-h) box-w (- box-h))); bottom
                (tab-stil (ly:stencil-add (ly:stencil-add vline hline) txt-placed))
-               ;; --- push into the paper corner ---
+               ;; --- push into the paper corner, then inset by the printer's
+               ;;     non-printable margin so the full L is visible at 100%.
+               ;;     Values in staff-spaces (~1.75mm each here).  Derived from
+               ;;     the clipped measurements: full_length - visible
+               ;;     (right ~5.4mm -> 3.0ss, top ~4.6mm -> 2.6ss).  Tune to taste.
                (rm (paper-margin layout 'right-margin))
                (tm (paper-margin layout 'top-margin))
+               (inset-right 3.0)   ; move left  (~5.3mm)
+               (inset-top   2.6)   ; move down  (~4.6mm)
                (shifted (ly:stencil-translate tab-stil
-                          (cons rm (+ tm y-nudge)))))
+                          (cons (- rm inset-right) (- tm inset-top)))))
           ;; Report zero Y extent so the header does not reserve vertical
           ;; space for the tab (the title stays at its original position);
           ;; the ink still renders in the corner via the shift above.
