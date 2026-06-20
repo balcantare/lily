@@ -11,7 +11,6 @@ strophe = \relative c' {
   \key a \minor
   \accidentalStyle modern-cautionary
   \partial 2
-  \repeat volta 2 {
     \once \override Score.RehearsalMark.self-alignment-X = #RIGHT
   \mark \markup{ \box{\fontsize #4 A}}
 r8 e ds e
@@ -30,7 +29,7 @@ c2~ c8 a'8 af8 g8 |
 f8 a4 d8~ 8 c8 a8 f8 |
 e8 a4 c8~ 8 c8 b8 as8 |
 b8 e,8 gs8 b8 e8 d8 c8 b8 |
-a2  } \break
+a2  \break
   \repeat volta 2 {
     \once \override Score.RehearsalMark.self-alignment-X = #RIGHT
   \mark \markup{ \box{\fontsize #4 B}}
@@ -103,7 +102,7 @@ chrdStrophe = \chordmode {
   }
   \bookItem
   \header{
-    subtitle = \markup { Choro | AA BB A(A) CC |}
+    subtitle = \markup { Choro | A BB A CC A |}
   }
   \score {
     \layout {

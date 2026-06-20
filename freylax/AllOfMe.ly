@@ -3,50 +3,97 @@ sheetName = "All Of Me"
 sheetComposer = "Seymour Simons Gerald Marks"
 \include "../include/book.ily"
 
-sheetTonality = d
+sheetTonality = c
 octaveBf = 0
 
-strophe = \relative c' {
+Lyrics = \lyricmode {
+ All of me
+ Why not take all of me
+ Can't you see
+ I'm no good with -- out you
+ Take my lips
+ I want to lose them
+ Take my arms
+ I'll ne -- ver use them
+ Your good -- bye left me with eyes that cry
+ How can I go on dear, with -- out you
+ You took the part that once was my heart
+ So why not take all of me.
+}
+
+strophe = \relative c'' {
   \time 4/4
-  \key d \major
-  \language "english"
-d'4. a8 fs2~ |
-fs2   \tuplet 3/2 {d'4 e4 d4} |
-cs4. as8 fs2~ |
-fs1 |
-b4. a8 fs2~ |
-fs4 es4   \tuplet 3/2 {fs4 c'4 b4} |
-a2 g2~ |
-g1 |
-fs4. f8 e2~ |
-e2   \tuplet 3/2 {fs4 as4 cs4} |
-e2 d2~ |
-d1 |
-cs4. c8 b2~ |
-b2   \tuplet 3/2 {b4 e4 cs4} |
-b1 |
-cs1 |
-d4. a8 fs2~ |
-fs2   \tuplet 3/2 {d'4 e4 d4} |
-cs4. as8 fs2~ |
-fs1 |
-b4. a8 fs2~ |
-fs4 es4   \tuplet 3/2 {fs4 c'4 b4} |
-a2 g2~ |
-g1 |
-e'2 d4 cs4 |
-e2. d4 |
-cs2 fs,4 a4 |
-cs2. b4 |
-d2 b4 d4 |
-fs2 fs2 |
-d1 |
+  \key c \major
+\language "english"
+  \partial 1
+  \bar ".|:"
+  \repeat volta 2 {
+\once \override Score.RehearsalMark.self-alignment-X = #RIGHT
+\mark \markup{ \box{\fontsize #4 A}}
+    c4. g8 e2~ |
+e2   \tuplet 3/2 {c'4 d4 c4} |
+b4. gs8 e2~ |
+e1 |\break
+a4. g8 e2~ |
+e4 ds4   \tuplet 3/2 {e4 bf'4 a4} |
+g2 f2~ | 
+f1 |\break
+\once \override Score.RehearsalMark.self-alignment-X = #RIGHT
+\mark \markup{ \box{\fontsize #4 B}}
+e4. ef8 d2~ |
+d2   \tuplet 3/2 {e4 gs4 b4} |
+d2 c2~ |
+c1 |\break
+b4. bf8 a2~ |
+a2   \tuplet 3/2 {a4 d4 b4} |
+a1 |
+b1 |\break
+\once \override Score.RehearsalMark.self-alignment-X = #RIGHT
+\mark \markup{ \box{\fontsize #4 A}}
+c4. g8 e2~ |
+e2   \tuplet 3/2 {c'4 d4 c4} |
+b4. gs8 e2~ |
+e1 |\break
+a4. g8 e2~ |
+e4 ds4   \tuplet 3/2 {e4 bf'4 a4} |
+g2 f2~ |
+f1 |\break
+\once \override Score.RehearsalMark.self-alignment-X = #RIGHT
+\mark \markup{ \box{\fontsize #4 C}}
+d'2 c4 b4 |
+d2. c4 |
+b2 e,4 g4 |
+b2. a4 |\break
+c2 a4 c4 |
+e2 e2 |
+\once \override Score.RehearsalMark.self-alignment-X = #LEFT
+\mark \markup{ \box{\fontsize #2 ..Coda}}
+c1 |
+r1 |}
+\break
+\once \override Score.RehearsalMark.self-alignment-X = 0
+\mark \markup{ \box{\fontsize #2 Coda}}
+b2 e,4 gs
+b2 a c2 a4 c4 |
+e2 e2 |
+c1 |
 r1 |
-%\bar "|."
+
+
+\bar "|."
 }
 
 chrdStrophe = \chordmode {
-  d1 | s1 | fs1:7 | s1 | b1:7 | s1 | e1:m7 | s1 | fs1:7 | s1 | b1:m7 | s1 | e1:7 | s1 | e1:m7 | a1:7 | d1 | s1 | fs1:7 | s1 | b1:7 | s1 | e1:m7 | s1 | e1:m7 | f1:d | fs1:m7 | b1:7 | e1:dim | a1:7 | d1 | e1:m7 a1:7 | 
+  c1 | s1 | e1:7 | s1 | 
+  a1:7 | s1 | d1:m7 | s1 | 
+  e1:7 | s1 | a1:m7 | s1 | 
+  d1:7 | s1 | d1:m7 | g1:7 | 
+  c1 | s1 | e1:7 | s1 | 
+  a1:7 | s1 | d1:m7 | s1 | 
+  d1:m7 | ef1:dim | c:6 
+  a:7 d:m7 | g1:7 | c1 | 
+  d2:m7 g2:7 | 
+  e1:m7 a:7 d:m7 g:7 c
 }
 \bookpart {
   \paper {
@@ -55,17 +102,18 @@ chrdStrophe = \chordmode {
   }
   \bookItem
   \header{
-    subtitle = \markup { All Of Me }
+    subtitle = \markup { Swing C |: A B A C :| Coda }
   }
   \score {
     \layout {
-      #(layout-set-staff-size-with-jazz 24)
+      #(layout-set-staff-size-with-jazz 22)
     }
     <<
     \new ChordNames { \chrdStrophe }
     \new Staff <<
       \new Voice = "Strophe" { \strophe }
       >>
+      \new Lyrics \lyricsto "Strophe" \Lyrics
     >>
   }
 }
