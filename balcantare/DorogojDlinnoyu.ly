@@ -7,6 +7,7 @@ sheetTonality = f
 %% Set transposition for freylax book: F major +1 octave (isolated to this sheet)
 \setBookTranspose #'((freylax . (c . 1)))
 
+
 lyrStropheA = {
   \lyricmode {
   \set stanza = #"1. "
