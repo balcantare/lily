@@ -14,8 +14,9 @@
 %%   \setBookTranspose #'((freylax . (c . 1)))  % +1 octave for this sheet only
 %%   \setBookTranspose #'((freylax . f))          % F major for this sheet only
 %%
-%% The \setBookTranspose command stores the entry with ((book . sheetName) key)
-%% so it doesn't affect other sheets.
+%% The \setBookTranspose command stores each entry under the key
+%% (<book named in the entry> . sheetName), so it applies only to this sheet and
+%% only when that sheet is compiled inside the book it names.
 
 %% Helper: titlecase a string (capitalize first character)
 #(define (string-titlecase str)
@@ -36,20 +37,24 @@
 
 %% Set book transposition for current sheet (isolated, doesn't affect other sheets)
 %% Usage: \setBookTranspose #'((freylax . (c . 1)))
-%% This creates ((book . sheetName) . target) entries for isolation
+%% This creates ((<entry book> . sheetName) . target) entries, so the setting is
+%% isolated both to this sheet and to the book the entry names.
 #(define allBookTransposes '())
 
 #(define (set-book-transpose! alist)
-  (let* ((book-sym (if (and (defined? 'book) (string? book))
-                        (string->symbol book)
-                        #f))
-         (sheet-sym (if (and (defined? 'sheetName) (string? sheetName))
-                         (string->symbol sheetName)
-                         #f)))
-    (if (and book-sym sheet-sym)
+  (let ((sheet-sym (if (and (defined? 'sheetName) (string? sheetName))
+                       (string->symbol sheetName)
+                       #f)))
+    (if sheet-sym
         (let ((specific-alist
+               ;; Key each entry by the book it names, NOT by the book currently
+               ;; being compiled.  Otherwise an entry meant for book A would also
+               ;; be applied when the same sheet is compiled inside book B.
                (map (lambda (entry)
-                      (cons (cons book-sym sheet-sym) (cdr entry)))
+                      (let ((entry-book (if (string? (car entry))
+                                            (string->symbol (car entry))
+                                            (car entry))))
+                        (cons (cons entry-book sheet-sym) (cdr entry))))
                     alist)))
           (set! allBookTransposes (append allBookTransposes specific-alist)))
         #f)))
@@ -175,8 +180,9 @@ setBookTranspose = #(define-music-function (alist) (list?)
 %%   \setBookTranspose #'((freylax . (c . 1)))  % +1 octave for this sheet only
 %%   \setBookTranspose #'((freylax . f))          % F major for this sheet only
 %%
-%% The \setBookTranspose command stores the entry with ((book . sheetName) key)
-%% so it doesn't affect other sheets.
+%% The \setBookTranspose command stores each entry under the key
+%% (<book named in the entry> . sheetName), so it applies only to this sheet and
+%% only when that sheet is compiled inside the book it names.
 #(define (lookup-transpose-to)
   "Look up (target-key . octave-adjustment) for current sheet/book.
    First checks allBookTransposes (accumulated sheet entries), then bookTransposeTo (defaults).
