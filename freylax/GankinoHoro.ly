@@ -2,8 +2,9 @@
 sheetName = "Gankino Horo"
 \include "../include/book.ily"
 
-sheetTonality = c
+sheetTonality = ef
 octaveBf = -1
+\setBookTranspose #'((freylax . g))
 
 strophe = \relative c' {
   \accidentalStyle modern-voice-cautionary
