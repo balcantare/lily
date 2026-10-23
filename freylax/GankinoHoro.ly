@@ -67,11 +67,29 @@ strophe = \relative c' {
   >>
   } 
   \break
+  \mark \markup{ \box{\fontsize #4 D}}
+  \key ef \major
+  \repeat volta 2 {
+  << { \voiceOne 
+       g'16 af bf af g8-\prall f16 g af bf af 
+       g af bf af g8-\prall ef16 f8 f16 ef
+       g16 af bf af g8-\prall f16 g af bf af 
+       g af bf af g8-\prall ef16 f d  ef8
+     }
+     \new Voice { \voiceTwo 
+       bf16 c df c bf8 af16 bf16 c df c
+       bf16 c df c bf8 g16 a8 af
+       bf16 c df c bf8 af16 bf16 c df c
+       bf16 c df c bf8 g16 af8 g       
+     }
+  >>
+  }
+  \break
   \mark \markup{ \box{\fontsize #4 E}}
   \key ef \major
   \repeat volta 2 {
     << { \voiceOne
-    d16 ef f g af g f g8-\prall g16 ef
+    d'16 ef f g af g f g8-\prall g16 ef
     f ef d ef f8-\prall bf,16 g'8-\prall g16 ef
     d16 ef f g af g f g8-\prall g16 ef
     f ef d ef f8-\prall bf16 f8-\prall f
@@ -125,9 +143,12 @@ chrdStrophe = \chordmode {
     %#(define fonts (book-font 1.4))
   }
   \bookItem
+  \header {
+    subtitle = "Horo |: AA BB CC DD EE FF GG :|"
+  }
   \score {
   \layout {
-    #(layout-set-staff-size-with-jazz 25)
+    #(layout-set-staff-size-with-jazz 24)
   }
     <<
     \new ChordNames { \doTranspose \chrdStrophe }
