@@ -130,6 +130,7 @@ chrdStrophe = \chordmode {
   ef16*11 af16*7 ef4 af16*7 ef4 f4 bf8. ef4
   af4.. ef4:/g c4..:m f4:m af4.. ef4 bf4.. ef4
   af4.. f4:m af4.. ef4 af4.. df4 f8:m c:m f4..:m
+  ef4 bf8. ef4 s4.. f8 bf ef4 bf8. ef4 s4.. f8 bf 
   bf4.. ef4 f4 bf8. ef4 bf4.. ef4 f4 bf4..
   f4.. bf4 f4.. bf4 f4.. bf4 ef4 f8. bf4
   ef4 af8. ef4 ef4 af8. ef4 ef4 af8. ef4 ef8 af8 bf8. ef4 
@@ -148,7 +149,7 @@ chrdStrophe = \chordmode {
   }
   \score {
   \layout {
-    #(layout-set-staff-size-with-jazz 24)
+    #(layout-set-staff-size-with-jazz 22)
   }
     <<
     \new ChordNames { \doTranspose \chrdStrophe }
